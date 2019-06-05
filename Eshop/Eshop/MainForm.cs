@@ -12,6 +12,8 @@ namespace Eshop
 {
     public partial class MainForm : Form
     {
+        private bool adminLogged = false;
+
         public MainForm()
         {
             InitializeComponent();
@@ -28,7 +30,7 @@ namespace Eshop
         {
             SaveLogDialog logPrompt = new SaveLogDialog
             {
-                StartPosition = FormStartPosition.CenterParent
+                StartPosition = StartPosition
             };
             logPrompt.ShowDialog();
 
@@ -43,16 +45,6 @@ namespace Eshop
             Logger.Log("08/11/2019 12:38:13 user canceled order 256 in total 4500 CZK");
             Logger.Log("08/11/2019 12:40:15 admin received order 256 in total 700 CZK");
             Logger.Log("END");
-        }
-
-        /// <summary>
-        /// Deaktivuje ramecek kolem tably, focus nastavi na zadny element
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void UserViewsTabControl_Enter(object sender, EventArgs e)
-        {
-            ActiveControl = null;
         }
 
         private void AddProductButton_Click(object sender, EventArgs e)
@@ -75,7 +67,7 @@ namespace Eshop
 
         private void DeleteProductButton_Click(object sender, EventArgs e)
         {
-            DeleteConfirmDialog deleteProduct = new DeleteConfirmDialog
+            DeleteProductDialog deleteProduct = new DeleteProductDialog
             {
                 StartPosition = StartPosition,
             };
@@ -84,11 +76,57 @@ namespace Eshop
 
         private void ProductDetailButton_Click(object sender, EventArgs e)
         {
-            DetailsForm productDetails = new DetailsForm
+            ProductDetailsForm productDetails = new ProductDetailsForm
             {
                 StartPosition = StartPosition,
             };
+            
             productDetails.ShowDialog();
+        }
+
+        private void LoginToOrderButton_Click(object sender, EventArgs e)
+        {
+            LoginRegisterDialog customerLogin = new LoginRegisterDialog
+            {
+                StartPosition = StartPosition,
+            };
+            customerLogin.Text = "Přihlášení zákazníka";
+            customerLogin.ShowDialog();
+        }
+
+        private void CustomerOrderDetailButton_Click(object sender, EventArgs e)
+        {
+            OrderDetailForm customerOrderDetail = new OrderDetailForm
+            {
+                StartPosition = StartPosition,
+            };
+            customerOrderDetail.ShowDialog();
+        }
+
+        private void AdminOrderDetailButton_Click(object sender, EventArgs e)
+        {
+            OrderDetailForm adminOrderDetail = new OrderDetailForm
+            {
+                StartPosition = StartPosition,
+            };
+            adminOrderDetail.ShowDialog();
+        }
+
+        private void LoginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoginRegisterDialog customerLogin = new LoginRegisterDialog();
+            customerLogin.ShowDialog();
+        }
+
+        private void UserViewsTabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (UserViewsTabControl.SelectedTab == UserViewsTabControl.TabPages["adminTabPage"]
+                && !adminLogged)
+            {
+                LoginRegisterDialog adminLogin = new LoginRegisterDialog();
+                adminLogin.TransformToAdminLogin();
+                adminLogin.ShowDialog();
+            }
         }
     }
 }

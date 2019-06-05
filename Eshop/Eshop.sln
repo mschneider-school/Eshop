@@ -5,7 +5,11 @@ VisualStudioVersion = 15.0.27428.2043
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eshop", "Eshop\Eshop.csproj", "{5A6366F4-B52E-471A-B093-D0211704B085}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2748EEBD-848C-48FC-B5B9-84505B4931F9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppData", "AppData", "{EDD262EB-64C5-4C48-81D7-66CE77355976}"
+	ProjectSection(SolutionItems) = preProject
+		Eshop\bin\Debug\applog.xml = Eshop\bin\Debug\applog.xml
+		AppData\mobileshop.db = AppData\mobileshop.db
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

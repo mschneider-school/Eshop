@@ -28,107 +28,121 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.logInstructLabel = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.FileOptionButton = new System.Windows.Forms.Button();
+            this.ConfirmWrapperTLPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.ConfirmButtonsTLPanel = new System.Windows.Forms.TableLayoutPanel();
             this.ConsoleOptionButton = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
+            this.FileOptionButton = new System.Windows.Forms.Button();
+            this.ConfirmationLabel = new System.Windows.Forms.Label();
+            this.ConfirmWrapperTLPanel.SuspendLayout();
+            this.ConfirmButtonsTLPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // ConfirmWrapperTLPanel
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.logInstructLabel, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.61111F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.38889F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(334, 133);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.ConfirmWrapperTLPanel.AutoSize = true;
+            this.ConfirmWrapperTLPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ConfirmWrapperTLPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.ConfirmWrapperTLPanel.ColumnCount = 1;
+            this.ConfirmWrapperTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.ConfirmWrapperTLPanel.Controls.Add(this.ConfirmButtonsTLPanel, 0, 1);
+            this.ConfirmWrapperTLPanel.Controls.Add(this.ConfirmationLabel, 0, 0);
+            this.ConfirmWrapperTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ConfirmWrapperTLPanel.Location = new System.Drawing.Point(0, 0);
+            this.ConfirmWrapperTLPanel.Name = "ConfirmWrapperTLPanel";
+            this.ConfirmWrapperTLPanel.RowCount = 2;
+            this.ConfirmWrapperTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.ConfirmWrapperTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
+            this.ConfirmWrapperTLPanel.Size = new System.Drawing.Size(351, 192);
+            this.ConfirmWrapperTLPanel.TabIndex = 0;
             // 
-            // logInstructLabel
+            // ConfirmButtonsTLPanel
             // 
-            this.logInstructLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.logInstructLabel.AutoSize = true;
-            this.logInstructLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logInstructLabel.Location = new System.Drawing.Point(69, 22);
-            this.logInstructLabel.Name = "logInstructLabel";
-            this.logInstructLabel.Size = new System.Drawing.Size(195, 20);
-            this.logInstructLabel.TabIndex = 1;
-            this.logInstructLabel.Text = "Logy se budou ukládat do:";
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.86666F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.13334F));
-            this.tableLayoutPanel2.Controls.Add(this.FileOptionButton, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.ConsoleOptionButton, 1, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 67);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(328, 63);
-            this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // FileOptionButton
-            // 
-            this.FileOptionButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.FileOptionButton.AutoSize = true;
-            this.FileOptionButton.Location = new System.Drawing.Point(9, 13);
-            this.FileOptionButton.Name = "FileOptionButton";
-            this.FileOptionButton.Padding = new System.Windows.Forms.Padding(32, 3, 32, 3);
-            this.FileOptionButton.Size = new System.Drawing.Size(144, 36);
-            this.FileOptionButton.TabIndex = 0;
-            this.FileOptionButton.Text = "Souboru";
-            this.FileOptionButton.UseVisualStyleBackColor = true;
-            this.FileOptionButton.Click += new System.EventHandler(this.FileOptionButton_Click);
+            this.ConfirmButtonsTLPanel.AutoSize = true;
+            this.ConfirmButtonsTLPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ConfirmButtonsTLPanel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.ConfirmButtonsTLPanel.ColumnCount = 2;
+            this.ConfirmButtonsTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.ConfirmButtonsTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.ConfirmButtonsTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.ConfirmButtonsTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.ConfirmButtonsTLPanel.Controls.Add(this.ConsoleOptionButton, 1, 0);
+            this.ConfirmButtonsTLPanel.Controls.Add(this.FileOptionButton, 0, 0);
+            this.ConfirmButtonsTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ConfirmButtonsTLPanel.Location = new System.Drawing.Point(0, 119);
+            this.ConfirmButtonsTLPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.ConfirmButtonsTLPanel.Name = "ConfirmButtonsTLPanel";
+            this.ConfirmButtonsTLPanel.RowCount = 1;
+            this.ConfirmButtonsTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.ConfirmButtonsTLPanel.Size = new System.Drawing.Size(351, 73);
+            this.ConfirmButtonsTLPanel.TabIndex = 1;
             // 
             // ConsoleOptionButton
             // 
-            this.ConsoleOptionButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ConsoleOptionButton.AutoSize = true;
-            this.ConsoleOptionButton.Location = new System.Drawing.Point(175, 13);
+            this.ConsoleOptionButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ConsoleOptionButton.Location = new System.Drawing.Point(182, 21);
+            this.ConsoleOptionButton.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
             this.ConsoleOptionButton.Name = "ConsoleOptionButton";
-            this.ConsoleOptionButton.Padding = new System.Windows.Forms.Padding(32, 3, 32, 3);
-            this.ConsoleOptionButton.Size = new System.Drawing.Size(140, 36);
-            this.ConsoleOptionButton.TabIndex = 1;
+            this.ConsoleOptionButton.Size = new System.Drawing.Size(162, 33);
+            this.ConsoleOptionButton.TabIndex = 0;
+            this.ConsoleOptionButton.TabStop = false;
             this.ConsoleOptionButton.Text = "Konzole";
             this.ConsoleOptionButton.UseVisualStyleBackColor = true;
             this.ConsoleOptionButton.Click += new System.EventHandler(this.ConsoleOptionButton_Click);
             // 
-            // SaveLogPrompt
+            // FileOptionButton
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.FileOptionButton.AutoSize = true;
+            this.FileOptionButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FileOptionButton.Location = new System.Drawing.Point(7, 21);
+            this.FileOptionButton.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
+            this.FileOptionButton.Name = "FileOptionButton";
+            this.FileOptionButton.Size = new System.Drawing.Size(161, 33);
+            this.FileOptionButton.TabIndex = 0;
+            this.FileOptionButton.TabStop = false;
+            this.FileOptionButton.Text = "Soubor";
+            this.FileOptionButton.UseVisualStyleBackColor = true;
+            this.FileOptionButton.Click += new System.EventHandler(this.FileOptionButton_Click);
+            // 
+            // ConfirmationLabel
+            // 
+            this.ConfirmationLabel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ConfirmationLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ConfirmationLabel.Location = new System.Drawing.Point(0, 0);
+            this.ConfirmationLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.ConfirmationLabel.Name = "ConfirmationLabel";
+            this.ConfirmationLabel.Size = new System.Drawing.Size(351, 119);
+            this.ConfirmationLabel.TabIndex = 0;
+            this.ConfirmationLabel.Text = "Vyberte prosím místo pro záznamy o běhu aplikace";
+            this.ConfirmationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // SaveLogDialog
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 133);
-            this.ControlBox = false;
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.ClientSize = new System.Drawing.Size(351, 192);
+            this.Controls.Add(this.ConfirmWrapperTLPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "SaveLogPrompt";
+            this.Name = "SaveLogDialog";
             this.Text = "Vítejte!";
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SaveLogDialog_FormClosing);
+            this.ConfirmWrapperTLPanel.ResumeLayout(false);
+            this.ConfirmWrapperTLPanel.PerformLayout();
+            this.ConfirmButtonsTLPanel.ResumeLayout(false);
+            this.ConfirmButtonsTLPanel.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel ConfirmWrapperTLPanel;
+        private System.Windows.Forms.Label ConfirmationLabel;
+        private System.Windows.Forms.TableLayoutPanel ConfirmButtonsTLPanel;
         private System.Windows.Forms.Button ConsoleOptionButton;
-        private System.Windows.Forms.Label logInstructLabel;
         private System.Windows.Forms.Button FileOptionButton;
     }
 }

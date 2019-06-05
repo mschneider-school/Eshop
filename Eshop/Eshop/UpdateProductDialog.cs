@@ -15,7 +15,7 @@ namespace Eshop
         public UpdateProductDialog()
         {
             InitializeComponent();
-            AddProductSplitContainer.SplitterWidth = 10;
+            AddProductSplitContainer.SplitterWidth = 15;
         }
 
         private void LoadPhotoButton_Click(object sender, EventArgs e)
@@ -35,52 +35,6 @@ namespace Eshop
                 }
             }
 
-        }
-        /// <summary>
-        /// Vymazani formulare a pridaneho obrazku
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ClearFormButton_Click(object sender, EventArgs e)
-        {
-            // polozky formulare nastaveny na puvodni hodnotu 
-            ProductIDTextBox.Clear();
-            ProductNameTextBox.Clear();
-            ProductCathegoryCBox.SelectedIndex = -1;
-            ProductCathegoryCBox.ResetText();
-            ProductPriceTextBox.Clear();
-            ProductDescriptionRTBox.Clear();
-
-            // obrazek je smazan
-            ProductPictureBox.ImageLocation = string.Empty;
-        }
-
-        private void AddProductSplitContainer_Panel1_SizeChanged(object sender, EventArgs e)
-        {
-            var splitPanel = AddProductSplitContainer.Panel1;
-            var detailsPanel = ProductDetailsFLPanel;
-            if (splitPanel.Width < 380 || detailsPanel.Height > 147)
-            {
-                if (detailsPanel.Bottom > detailsPanel.Height)
-                {
-                    detailsPanel.AutoScroll = true;
-                }
-
-                ProductIDTLPanel.Width = splitPanel.Width - 40;
-                ProductNameTLPanel.Width = splitPanel.Width - 40;
-                ProductCathegoryTLPanel.Width = splitPanel.Width - 40;
-                ProductPriceTLPanel.Width = splitPanel.Width - 40;
-                ProductDescriptionRTBox.Width = splitPanel.Width - 40;
-            }
-            else
-            {
-                ProductDetailsFLPanel.AutoScroll = false;
-                ProductIDTLPanel.Width = splitPanel.Width / 2 - 15;
-                ProductNameTLPanel.Width = splitPanel.Width / 2 - 15;
-                ProductCathegoryTLPanel.Width = splitPanel.Width / 2 - 15;
-                ProductPriceTLPanel.Width = splitPanel.Width / 2 - 15;
-                ProductDescriptionRTBox.Width = splitPanel.Width / 2 - 15;
-            }
         }
     }
 }

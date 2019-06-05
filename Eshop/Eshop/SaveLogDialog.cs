@@ -10,11 +10,9 @@ using System.Windows.Forms;
 
 namespace Eshop
 {
-    /// <summary>
-    /// Uvodni formular pro vyber metody logovani v programu
-    /// </summary>
     public partial class SaveLogDialog : Form
     {
+        private bool logChosen;
         public SaveLogDialog()
         {
             InitializeComponent();
@@ -23,13 +21,21 @@ namespace Eshop
         private void FileOptionButton_Click(object sender, EventArgs e)
         {
             Logger.LogToFile(true);
+            logChosen = true;
             Close();
         }
 
         private void ConsoleOptionButton_Click(object sender, EventArgs e)
         {
             Logger.LogToFile(false);
+            logChosen = true;
             Close();
+        }
+
+        // formular se nezavre dokud nebyla zadana volba pro logovani
+        private void SaveLogDialog_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!logChosen) e.Cancel = true;
         }
     }
 }

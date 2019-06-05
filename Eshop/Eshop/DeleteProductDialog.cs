@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Eshop
 {
-    public partial class DeleteConfirmDialog : Form
+    public partial class DeleteProductDialog : Form
     {
-        public DeleteConfirmDialog()
+        public DeleteProductDialog()
         {
             InitializeComponent();
         }
