@@ -91,6 +91,7 @@
             // ConfirmActionButton
             // 
             this.ConfirmActionButton.AutoSize = true;
+            this.ConfirmActionButton.DialogResult = System.Windows.Forms.DialogResult.Yes;
             this.ConfirmActionButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ConfirmActionButton.Location = new System.Drawing.Point(10, 21);
             this.ConfirmActionButton.Margin = new System.Windows.Forms.Padding(10, 21, 7, 19);
@@ -99,6 +100,7 @@
             this.ConfirmActionButton.TabIndex = 1;
             this.ConfirmActionButton.Text = "Ano";
             this.ConfirmActionButton.UseVisualStyleBackColor = true;
+            this.ConfirmActionButton.Click += new System.EventHandler(this.ConfirmActionButton_Click);
             // 
             // ConfirmationLabel
             // 
@@ -122,7 +124,6 @@
             this.MaximizeBox = false;
             this.Name = "DeleteProductDialog";
             this.Text = "Vymazání produktu";
-            this.Load += new System.EventHandler(this.DeleteConfirmDialog_Load);
             this.ConfirmWrapperTLPanel.ResumeLayout(false);
             this.ConfirmWrapperTLPanel.PerformLayout();
             this.ConfirmButtonsTLPanel.ResumeLayout(false);

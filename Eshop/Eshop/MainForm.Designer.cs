@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.UserViewsTabControl = new System.Windows.Forms.TabControl();
             this.CustomerTabPage = new System.Windows.Forms.TabPage();
@@ -125,6 +130,10 @@
             this.DeleteProductButton = new System.Windows.Forms.Button();
             this.ProductDetailButton = new System.Windows.Forms.Button();
             this.AddProductButton = new System.Windows.Forms.Button();
+            this.ProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CathegoryColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PriceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TableLayoutPanel1.SuspendLayout();
             this.UserViewsTabControl.SuspendLayout();
             this.CustomerTabPage.SuspendLayout();
@@ -178,10 +187,11 @@
             this.TableLayoutPanel1.Controls.Add(this.UserViewsTabControl, 0, 0);
             this.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.TableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TableLayoutPanel1.Name = "TableLayoutPanel1";
             this.TableLayoutPanel1.RowCount = 1;
             this.TableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.TableLayoutPanel1.Size = new System.Drawing.Size(1106, 858);
+            this.TableLayoutPanel1.Size = new System.Drawing.Size(737, 581);
             this.TableLayoutPanel1.TabIndex = 0;
             // 
             // UserViewsTabControl
@@ -190,12 +200,12 @@
             this.UserViewsTabControl.Controls.Add(this.AdminTabPage);
             this.UserViewsTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UserViewsTabControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.UserViewsTabControl.Location = new System.Drawing.Point(15, 15);
-            this.UserViewsTabControl.Margin = new System.Windows.Forms.Padding(15);
+            this.UserViewsTabControl.Location = new System.Drawing.Point(10, 10);
+            this.UserViewsTabControl.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
             this.UserViewsTabControl.Name = "UserViewsTabControl";
             this.UserViewsTabControl.Padding = new System.Drawing.Point(15, 8);
             this.UserViewsTabControl.SelectedIndex = 0;
-            this.UserViewsTabControl.Size = new System.Drawing.Size(1076, 828);
+            this.UserViewsTabControl.Size = new System.Drawing.Size(717, 561);
             this.UserViewsTabControl.TabIndex = 0;
             this.UserViewsTabControl.TabStop = false;
             this.UserViewsTabControl.SelectedIndexChanged += new System.EventHandler(this.UserViewsTabControl_SelectedIndexChanged);
@@ -204,10 +214,10 @@
             // 
             this.CustomerTabPage.Controls.Add(this.tableLayoutPanel2);
             this.CustomerTabPage.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.CustomerTabPage.Location = new System.Drawing.Point(4, 39);
+            this.CustomerTabPage.Location = new System.Drawing.Point(4, 32);
             this.CustomerTabPage.Margin = new System.Windows.Forms.Padding(0);
             this.CustomerTabPage.Name = "CustomerTabPage";
-            this.CustomerTabPage.Size = new System.Drawing.Size(1068, 785);
+            this.CustomerTabPage.Size = new System.Drawing.Size(709, 431);
             this.CustomerTabPage.TabIndex = 1;
             this.CustomerTabPage.Text = "Zákazník";
             // 
@@ -224,9 +234,9 @@
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1068, 785);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(709, 431);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // EshopManagerFramePanel
@@ -237,7 +247,7 @@
             this.EshopManagerFramePanel.Location = new System.Drawing.Point(0, 0);
             this.EshopManagerFramePanel.Margin = new System.Windows.Forms.Padding(0);
             this.EshopManagerFramePanel.Name = "EshopManagerFramePanel";
-            this.EshopManagerFramePanel.Size = new System.Drawing.Size(1068, 35);
+            this.EshopManagerFramePanel.Size = new System.Drawing.Size(709, 23);
             this.EshopManagerFramePanel.TabIndex = 0;
             // 
             // BackgroundTabPanel
@@ -246,9 +256,10 @@
             this.BackgroundTabPanel.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BackgroundTabPanel.Controls.Add(this.StoreTabControl);
             this.BackgroundTabPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BackgroundTabPanel.Location = new System.Drawing.Point(3, 38);
+            this.BackgroundTabPanel.Location = new System.Drawing.Point(2, 25);
+            this.BackgroundTabPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BackgroundTabPanel.Name = "BackgroundTabPanel";
-            this.BackgroundTabPanel.Size = new System.Drawing.Size(1062, 744);
+            this.BackgroundTabPanel.Size = new System.Drawing.Size(705, 404);
             this.BackgroundTabPanel.TabIndex = 1;
             // 
             // StoreTabControl
@@ -263,7 +274,7 @@
             this.StoreTabControl.Name = "StoreTabControl";
             this.StoreTabControl.Padding = new System.Drawing.Point(6, 7);
             this.StoreTabControl.SelectedIndex = 0;
-            this.StoreTabControl.Size = new System.Drawing.Size(1062, 744);
+            this.StoreTabControl.Size = new System.Drawing.Size(705, 404);
             this.StoreTabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.StoreTabControl.TabIndex = 0;
             // 
@@ -271,10 +282,10 @@
             // 
             this.StoreTab.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.StoreTab.Controls.Add(this.ProductPickerTLPanel);
-            this.StoreTab.Location = new System.Drawing.Point(4, 37);
+            this.StoreTab.Location = new System.Drawing.Point(4, 30);
             this.StoreTab.Margin = new System.Windows.Forms.Padding(0);
             this.StoreTab.Name = "StoreTab";
-            this.StoreTab.Size = new System.Drawing.Size(1054, 703);
+            this.StoreTab.Size = new System.Drawing.Size(697, 370);
             this.StoreTab.TabIndex = 2;
             this.StoreTab.Text = "Obchod";
             // 
@@ -291,9 +302,9 @@
             this.ProductPickerTLPanel.Margin = new System.Windows.Forms.Padding(0);
             this.ProductPickerTLPanel.Name = "ProductPickerTLPanel";
             this.ProductPickerTLPanel.RowCount = 2;
-            this.ProductPickerTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.ProductPickerTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.ProductPickerTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.ProductPickerTLPanel.Size = new System.Drawing.Size(1054, 703);
+            this.ProductPickerTLPanel.Size = new System.Drawing.Size(697, 370);
             this.ProductPickerTLPanel.TabIndex = 2;
             // 
             // ProductMenuStrip
@@ -310,16 +321,15 @@
             this.OrderByPriceToolStripMenuItem});
             this.ProductMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.ProductMenuStrip.Name = "ProductMenuStrip";
-            this.ProductMenuStrip.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
             this.ProductMenuStrip.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.ProductMenuStrip.Size = new System.Drawing.Size(1054, 46);
+            this.ProductMenuStrip.Size = new System.Drawing.Size(697, 30);
             this.ProductMenuStrip.TabIndex = 1;
             this.ProductMenuStrip.Text = "menuStrip1";
             // 
             // LoginToolStripMenuItem
             // 
             this.LoginToolStripMenuItem.Name = "LoginToolStripMenuItem";
-            this.LoginToolStripMenuItem.Size = new System.Drawing.Size(107, 40);
+            this.LoginToolStripMenuItem.Size = new System.Drawing.Size(75, 26);
             this.LoginToolStripMenuItem.Text = "Přihlásit se";
             this.LoginToolStripMenuItem.Click += new System.EventHandler(this.LoginToolStripMenuItem_Click);
             // 
@@ -335,49 +345,49 @@
             this.ScreenProtectorsTSMenuItem});
             this.ChooseCathegoryStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChooseCathegoryStripMenuItem.Name = "ChooseCathegoryStripMenuItem";
-            this.ChooseCathegoryStripMenuItem.Size = new System.Drawing.Size(135, 40);
+            this.ChooseCathegoryStripMenuItem.Size = new System.Drawing.Size(96, 26);
             this.ChooseCathegoryStripMenuItem.Text = "Zvolit kategorii";
             // 
             // SmartWatchesTSMenuItem
             // 
             this.SmartWatchesTSMenuItem.Name = "SmartWatchesTSMenuItem";
-            this.SmartWatchesTSMenuItem.Size = new System.Drawing.Size(233, 30);
+            this.SmartWatchesTSMenuItem.Size = new System.Drawing.Size(169, 22);
             this.SmartWatchesTSMenuItem.Text = "Chytré hodinky";
             // 
             // ChargersCabelsTSMenuItem
             // 
             this.ChargersCabelsTSMenuItem.Name = "ChargersCabelsTSMenuItem";
-            this.ChargersCabelsTSMenuItem.Size = new System.Drawing.Size(233, 30);
+            this.ChargersCabelsTSMenuItem.Size = new System.Drawing.Size(169, 22);
             this.ChargersCabelsTSMenuItem.Text = "Nabíječky a kabely";
             // 
             // CoversTSMenuItem
             // 
             this.CoversTSMenuItem.Name = "CoversTSMenuItem";
-            this.CoversTSMenuItem.Size = new System.Drawing.Size(233, 30);
+            this.CoversTSMenuItem.Size = new System.Drawing.Size(169, 22);
             this.CoversTSMenuItem.Text = "Pouzdra a kryty";
             // 
             // SmartphonesTSMenuItem
             // 
             this.SmartphonesTSMenuItem.Name = "SmartphonesTSMenuItem";
-            this.SmartphonesTSMenuItem.Size = new System.Drawing.Size(233, 30);
+            this.SmartphonesTSMenuItem.Size = new System.Drawing.Size(169, 22);
             this.SmartphonesTSMenuItem.Text = "Smartfóny";
             // 
             // TabletsTSMenuItem
             // 
             this.TabletsTSMenuItem.Name = "TabletsTSMenuItem";
-            this.TabletsTSMenuItem.Size = new System.Drawing.Size(233, 30);
+            this.TabletsTSMenuItem.Size = new System.Drawing.Size(169, 22);
             this.TabletsTSMenuItem.Text = "Tablety";
             // 
             // KeypadPhonesTSMenuItem
             // 
             this.KeypadPhonesTSMenuItem.Name = "KeypadPhonesTSMenuItem";
-            this.KeypadPhonesTSMenuItem.Size = new System.Drawing.Size(233, 30);
+            this.KeypadPhonesTSMenuItem.Size = new System.Drawing.Size(169, 22);
             this.KeypadPhonesTSMenuItem.Text = "Tlačítkové telefony";
             // 
             // ScreenProtectorsTSMenuItem
             // 
             this.ScreenProtectorsTSMenuItem.Name = "ScreenProtectorsTSMenuItem";
-            this.ScreenProtectorsTSMenuItem.Size = new System.Drawing.Size(233, 30);
+            this.ScreenProtectorsTSMenuItem.Size = new System.Drawing.Size(169, 22);
             this.ScreenProtectorsTSMenuItem.Text = "Tvrzená skla";
             // 
             // OrderByPriceToolStripMenuItem
@@ -387,19 +397,19 @@
             this.DescendingPriceOrderTSMenuItem});
             this.OrderByPriceToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OrderByPriceToolStripMenuItem.Name = "OrderByPriceToolStripMenuItem";
-            this.OrderByPriceToolStripMenuItem.Size = new System.Drawing.Size(163, 40);
+            this.OrderByPriceToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
             this.OrderByPriceToolStripMenuItem.Text = "Seřadit podle ceny";
             // 
             // AscendingPriceOrderTSMenuItem
             // 
             this.AscendingPriceOrderTSMenuItem.Name = "AscendingPriceOrderTSMenuItem";
-            this.AscendingPriceOrderTSMenuItem.Size = new System.Drawing.Size(300, 30);
+            this.AscendingPriceOrderTSMenuItem.Size = new System.Drawing.Size(216, 22);
             this.AscendingPriceOrderTSMenuItem.Text = "Vzestupně od nejlevnějšího";
             // 
             // DescendingPriceOrderTSMenuItem
             // 
             this.DescendingPriceOrderTSMenuItem.Name = "DescendingPriceOrderTSMenuItem";
-            this.DescendingPriceOrderTSMenuItem.Size = new System.Drawing.Size(300, 30);
+            this.DescendingPriceOrderTSMenuItem.Size = new System.Drawing.Size(216, 22);
             this.DescendingPriceOrderTSMenuItem.Text = "Sestupně od nejdražšího";
             // 
             // ProductsContainerFLPanel
@@ -408,19 +418,19 @@
             this.ProductsContainerFLPanel.AutoSize = true;
             this.ProductsContainerFLPanel.BackColor = System.Drawing.SystemColors.Control;
             this.ProductsContainerFLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProductsContainerFLPanel.Location = new System.Drawing.Point(10, 46);
-            this.ProductsContainerFLPanel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 15);
+            this.ProductsContainerFLPanel.Location = new System.Drawing.Point(7, 30);
+            this.ProductsContainerFLPanel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 10);
             this.ProductsContainerFLPanel.Name = "ProductsContainerFLPanel";
-            this.ProductsContainerFLPanel.Size = new System.Drawing.Size(1034, 642);
+            this.ProductsContainerFLPanel.Size = new System.Drawing.Size(683, 330);
             this.ProductsContainerFLPanel.TabIndex = 2;
             // 
             // BinTab
             // 
             this.BinTab.Controls.Add(this.BinViewerTLPanel);
-            this.BinTab.Location = new System.Drawing.Point(4, 37);
+            this.BinTab.Location = new System.Drawing.Point(4, 30);
             this.BinTab.Margin = new System.Windows.Forms.Padding(0);
             this.BinTab.Name = "BinTab";
-            this.BinTab.Size = new System.Drawing.Size(1054, 703);
+            this.BinTab.Size = new System.Drawing.Size(700, 459);
             this.BinTab.TabIndex = 1;
             this.BinTab.Text = "Košík";
             this.BinTab.UseVisualStyleBackColor = true;
@@ -439,10 +449,10 @@
             this.BinViewerTLPanel.Margin = new System.Windows.Forms.Padding(0);
             this.BinViewerTLPanel.Name = "BinViewerTLPanel";
             this.BinViewerTLPanel.RowCount = 3;
-            this.BinViewerTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 89F));
+            this.BinViewerTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
             this.BinViewerTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.BinViewerTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 112F));
-            this.BinViewerTLPanel.Size = new System.Drawing.Size(1054, 703);
+            this.BinViewerTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
+            this.BinViewerTLPanel.Size = new System.Drawing.Size(700, 459);
             this.BinViewerTLPanel.TabIndex = 0;
             // 
             // BinItemsLabel
@@ -450,9 +460,10 @@
             this.BinItemsLabel.AutoSize = true;
             this.BinItemsLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BinItemsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BinItemsLabel.Location = new System.Drawing.Point(3, 0);
+            this.BinItemsLabel.Location = new System.Drawing.Point(2, 0);
+            this.BinItemsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.BinItemsLabel.Name = "BinItemsLabel";
-            this.BinItemsLabel.Size = new System.Drawing.Size(1048, 89);
+            this.BinItemsLabel.Size = new System.Drawing.Size(696, 58);
             this.BinItemsLabel.TabIndex = 0;
             this.BinItemsLabel.Text = "Seznam produktů";
             this.BinItemsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -462,11 +473,11 @@
             this.BinItemsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.BinItemsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BinItemsDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.BinItemsDataGridView.Location = new System.Drawing.Point(10, 98);
-            this.BinItemsDataGridView.Margin = new System.Windows.Forms.Padding(10, 9, 10, 42);
+            this.BinItemsDataGridView.Location = new System.Drawing.Point(7, 64);
+            this.BinItemsDataGridView.Margin = new System.Windows.Forms.Padding(7, 6, 7, 27);
             this.BinItemsDataGridView.Name = "BinItemsDataGridView";
             this.BinItemsDataGridView.RowTemplate.Height = 28;
-            this.BinItemsDataGridView.Size = new System.Drawing.Size(1034, 451);
+            this.BinItemsDataGridView.Size = new System.Drawing.Size(686, 295);
             this.BinItemsDataGridView.TabIndex = 0;
             this.BinItemsDataGridView.TabStop = false;
             // 
@@ -484,12 +495,12 @@
             this.BinControlsTLPanel.Controls.Add(this.LoginToOrderButton, 2, 0);
             this.BinControlsTLPanel.Controls.Add(this.RemoveFromBinButton, 0, 0);
             this.BinControlsTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BinControlsTLPanel.Location = new System.Drawing.Point(0, 591);
+            this.BinControlsTLPanel.Location = new System.Drawing.Point(0, 386);
             this.BinControlsTLPanel.Margin = new System.Windows.Forms.Padding(0);
             this.BinControlsTLPanel.Name = "BinControlsTLPanel";
             this.BinControlsTLPanel.RowCount = 1;
             this.BinControlsTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.BinControlsTLPanel.Size = new System.Drawing.Size(1054, 112);
+            this.BinControlsTLPanel.Size = new System.Drawing.Size(700, 73);
             this.BinControlsTLPanel.TabIndex = 0;
             // 
             // ShowDetailButton
@@ -497,10 +508,10 @@
             this.ShowDetailButton.AutoSize = true;
             this.ShowDetailButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ShowDetailButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.ShowDetailButton.Location = new System.Drawing.Point(273, 32);
-            this.ShowDetailButton.Margin = new System.Windows.Forms.Padding(10, 32, 10, 29);
+            this.ShowDetailButton.Location = new System.Drawing.Point(182, 21);
+            this.ShowDetailButton.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
             this.ShowDetailButton.Name = "ShowDetailButton";
-            this.ShowDetailButton.Size = new System.Drawing.Size(243, 51);
+            this.ShowDetailButton.Size = new System.Drawing.Size(161, 33);
             this.ShowDetailButton.TabIndex = 1;
             this.ShowDetailButton.Text = "Zobrazit detail";
             this.ShowDetailButton.UseVisualStyleBackColor = true;
@@ -510,10 +521,10 @@
             this.ClearBinButton.AutoSize = true;
             this.ClearBinButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ClearBinButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.ClearBinButton.Location = new System.Drawing.Point(536, 32);
-            this.ClearBinButton.Margin = new System.Windows.Forms.Padding(10, 32, 10, 29);
+            this.ClearBinButton.Location = new System.Drawing.Point(357, 21);
+            this.ClearBinButton.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
             this.ClearBinButton.Name = "ClearBinButton";
-            this.ClearBinButton.Size = new System.Drawing.Size(243, 51);
+            this.ClearBinButton.Size = new System.Drawing.Size(161, 33);
             this.ClearBinButton.TabIndex = 2;
             this.ClearBinButton.Text = "Vyprázdnit košík";
             this.ClearBinButton.UseVisualStyleBackColor = true;
@@ -527,10 +538,10 @@
             this.LoginToOrderButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.LoginToOrderButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.LoginToOrderButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.LoginToOrderButton.Location = new System.Drawing.Point(799, 32);
-            this.LoginToOrderButton.Margin = new System.Windows.Forms.Padding(10, 32, 10, 31);
+            this.LoginToOrderButton.Location = new System.Drawing.Point(532, 21);
+            this.LoginToOrderButton.Margin = new System.Windows.Forms.Padding(7, 21, 7, 20);
             this.LoginToOrderButton.Name = "LoginToOrderButton";
-            this.LoginToOrderButton.Size = new System.Drawing.Size(245, 49);
+            this.LoginToOrderButton.Size = new System.Drawing.Size(161, 32);
             this.LoginToOrderButton.TabIndex = 3;
             this.LoginToOrderButton.Text = "Přejít k objednávce";
             this.LoginToOrderButton.UseVisualStyleBackColor = false;
@@ -542,10 +553,10 @@
             this.RemoveFromBinButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.RemoveFromBinButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RemoveFromBinButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.RemoveFromBinButton.Location = new System.Drawing.Point(10, 32);
-            this.RemoveFromBinButton.Margin = new System.Windows.Forms.Padding(10, 32, 10, 29);
+            this.RemoveFromBinButton.Location = new System.Drawing.Point(7, 21);
+            this.RemoveFromBinButton.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
             this.RemoveFromBinButton.Name = "RemoveFromBinButton";
-            this.RemoveFromBinButton.Size = new System.Drawing.Size(243, 51);
+            this.RemoveFromBinButton.Size = new System.Drawing.Size(161, 33);
             this.RemoveFromBinButton.TabIndex = 0;
             this.RemoveFromBinButton.Text = "Odebrat produkt";
             this.RemoveFromBinButton.UseVisualStyleBackColor = false;
@@ -553,10 +564,9 @@
             // AccountTab
             // 
             this.AccountTab.Controls.Add(this.RegistrationTLPanel);
-            this.AccountTab.Location = new System.Drawing.Point(4, 37);
-            this.AccountTab.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.AccountTab.Location = new System.Drawing.Point(4, 30);
             this.AccountTab.Name = "AccountTab";
-            this.AccountTab.Size = new System.Drawing.Size(1054, 703);
+            this.AccountTab.Size = new System.Drawing.Size(700, 459);
             this.AccountTab.TabIndex = 3;
             this.AccountTab.Text = "Registrace";
             this.AccountTab.UseVisualStyleBackColor = true;
@@ -571,13 +581,12 @@
             this.RegistrationTLPanel.Controls.Add(this.PersonalDetailsTLPanel, 0, 1);
             this.RegistrationTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RegistrationTLPanel.Location = new System.Drawing.Point(0, 0);
-            this.RegistrationTLPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.RegistrationTLPanel.Name = "RegistrationTLPanel";
             this.RegistrationTLPanel.RowCount = 3;
-            this.RegistrationTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 89F));
+            this.RegistrationTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
             this.RegistrationTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.RegistrationTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 112F));
-            this.RegistrationTLPanel.Size = new System.Drawing.Size(1054, 703);
+            this.RegistrationTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
+            this.RegistrationTLPanel.Size = new System.Drawing.Size(700, 459);
             this.RegistrationTLPanel.TabIndex = 0;
             // 
             // RegistrationControlsTLPanel
@@ -587,17 +596,17 @@
             this.RegistrationControlsTLPanel.ColumnCount = 2;
             this.RegistrationControlsTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.RegistrationControlsTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.RegistrationControlsTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.RegistrationControlsTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.RegistrationControlsTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.RegistrationControlsTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.RegistrationControlsTLPanel.Controls.Add(this.button5, 1, 0);
             this.RegistrationControlsTLPanel.Controls.Add(this.button8, 0, 0);
             this.RegistrationControlsTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RegistrationControlsTLPanel.Location = new System.Drawing.Point(0, 591);
+            this.RegistrationControlsTLPanel.Location = new System.Drawing.Point(0, 386);
             this.RegistrationControlsTLPanel.Margin = new System.Windows.Forms.Padding(0);
             this.RegistrationControlsTLPanel.Name = "RegistrationControlsTLPanel";
             this.RegistrationControlsTLPanel.RowCount = 1;
             this.RegistrationControlsTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.RegistrationControlsTLPanel.Size = new System.Drawing.Size(1054, 112);
+            this.RegistrationControlsTLPanel.Size = new System.Drawing.Size(700, 73);
             this.RegistrationControlsTLPanel.TabIndex = 3;
             // 
             // button5
@@ -609,10 +618,10 @@
             this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button5.Location = new System.Drawing.Point(537, 32);
-            this.button5.Margin = new System.Windows.Forms.Padding(10, 32, 10, 31);
+            this.button5.Location = new System.Drawing.Point(357, 21);
+            this.button5.Margin = new System.Windows.Forms.Padding(7, 21, 7, 20);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(507, 49);
+            this.button5.Size = new System.Drawing.Size(336, 32);
             this.button5.TabIndex = 1;
             this.button5.Text = "Zaregistrovat a objednat";
             this.button5.UseVisualStyleBackColor = false;
@@ -623,10 +632,10 @@
             this.button8.BackColor = System.Drawing.SystemColors.ControlLight;
             this.button8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button8.Location = new System.Drawing.Point(10, 32);
-            this.button8.Margin = new System.Windows.Forms.Padding(10, 32, 10, 29);
+            this.button8.Location = new System.Drawing.Point(7, 21);
+            this.button8.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(507, 51);
+            this.button8.Size = new System.Drawing.Size(336, 33);
             this.button8.TabIndex = 2;
             this.button8.Text = "Návrat do košíku";
             this.button8.UseVisualStyleBackColor = false;
@@ -636,10 +645,9 @@
             this.RegisterLabel.AutoSize = true;
             this.RegisterLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RegisterLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegisterLabel.Location = new System.Drawing.Point(4, 0);
-            this.RegisterLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.RegisterLabel.Location = new System.Drawing.Point(3, 0);
             this.RegisterLabel.Name = "RegisterLabel";
-            this.RegisterLabel.Size = new System.Drawing.Size(1046, 89);
+            this.RegisterLabel.Size = new System.Drawing.Size(694, 58);
             this.RegisterLabel.TabIndex = 0;
             this.RegisterLabel.Text = "Registrace zákazníka";
             this.RegisterLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -659,15 +667,15 @@
             this.PersonalDetailsTLPanel.Controls.Add(this.EmailTLPanel, 0, 0);
             this.PersonalDetailsTLPanel.Controls.Add(this.AddressNumericsSplitTLPanel, 1, 3);
             this.PersonalDetailsTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PersonalDetailsTLPanel.Location = new System.Drawing.Point(4, 94);
-            this.PersonalDetailsTLPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 42);
+            this.PersonalDetailsTLPanel.Location = new System.Drawing.Point(3, 61);
+            this.PersonalDetailsTLPanel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 27);
             this.PersonalDetailsTLPanel.Name = "PersonalDetailsTLPanel";
             this.PersonalDetailsTLPanel.RowCount = 4;
             this.PersonalDetailsTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.PersonalDetailsTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.PersonalDetailsTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.PersonalDetailsTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.PersonalDetailsTLPanel.Size = new System.Drawing.Size(1046, 455);
+            this.PersonalDetailsTLPanel.Size = new System.Drawing.Size(694, 298);
             this.PersonalDetailsTLPanel.TabIndex = 1;
             // 
             // LastNameTLPanel
@@ -678,13 +686,13 @@
             this.LastNameTLPanel.Controls.Add(this.LastNameTextBox, 0, 1);
             this.LastNameTLPanel.Controls.Add(this.LastNameLabel, 0, 0);
             this.LastNameTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LastNameTLPanel.Location = new System.Drawing.Point(8, 347);
-            this.LastNameTLPanel.Margin = new System.Windows.Forms.Padding(8, 8, 10, 8);
+            this.LastNameTLPanel.Location = new System.Drawing.Point(5, 227);
+            this.LastNameTLPanel.Margin = new System.Windows.Forms.Padding(5, 5, 7, 5);
             this.LastNameTLPanel.Name = "LastNameTLPanel";
             this.LastNameTLPanel.RowCount = 2;
             this.LastNameTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.LastNameTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.LastNameTLPanel.Size = new System.Drawing.Size(505, 100);
+            this.LastNameTLPanel.Size = new System.Drawing.Size(335, 66);
             this.LastNameTLPanel.TabIndex = 4;
             // 
             // LastNameTextBox
@@ -692,20 +700,20 @@
             this.LastNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LastNameTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.LastNameTextBox.Location = new System.Drawing.Point(15, 48);
-            this.LastNameTextBox.Margin = new System.Windows.Forms.Padding(15, 8, 15, 17);
+            this.LastNameTextBox.Location = new System.Drawing.Point(10, 31);
+            this.LastNameTextBox.Margin = new System.Windows.Forms.Padding(10, 5, 10, 11);
             this.LastNameTextBox.Name = "LastNameTextBox";
-            this.LastNameTextBox.Size = new System.Drawing.Size(475, 26);
+            this.LastNameTextBox.Size = new System.Drawing.Size(315, 20);
             this.LastNameTextBox.TabIndex = 4;
             // 
             // LastNameLabel
             // 
             this.LastNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.LastNameLabel.AutoSize = true;
-            this.LastNameLabel.Location = new System.Drawing.Point(10, 18);
-            this.LastNameLabel.Margin = new System.Windows.Forms.Padding(10, 17, 4, 0);
+            this.LastNameLabel.Location = new System.Drawing.Point(7, 12);
+            this.LastNameLabel.Margin = new System.Windows.Forms.Padding(7, 11, 3, 0);
             this.LastNameLabel.Name = "LastNameLabel";
-            this.LastNameLabel.Size = new System.Drawing.Size(68, 20);
+            this.LastNameLabel.Size = new System.Drawing.Size(51, 13);
             this.LastNameLabel.TabIndex = 0;
             this.LastNameLabel.Text = "Příjmení:";
             this.LastNameLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -718,13 +726,13 @@
             this.StreetTLPanel.Controls.Add(this.StreetTextBox, 0, 1);
             this.StreetTLPanel.Controls.Add(this.StreetLabel, 0, 0);
             this.StreetTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.StreetTLPanel.Location = new System.Drawing.Point(533, 234);
-            this.StreetTLPanel.Margin = new System.Windows.Forms.Padding(10, 8, 8, 8);
+            this.StreetTLPanel.Location = new System.Drawing.Point(354, 153);
+            this.StreetTLPanel.Margin = new System.Windows.Forms.Padding(7, 5, 5, 5);
             this.StreetTLPanel.Name = "StreetTLPanel";
             this.StreetTLPanel.RowCount = 2;
             this.StreetTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.StreetTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.StreetTLPanel.Size = new System.Drawing.Size(505, 97);
+            this.StreetTLPanel.Size = new System.Drawing.Size(335, 64);
             this.StreetTLPanel.TabIndex = 7;
             // 
             // StreetTextBox
@@ -732,21 +740,20 @@
             this.StreetTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.StreetTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.StreetTextBox.Location = new System.Drawing.Point(15, 46);
-            this.StreetTextBox.Margin = new System.Windows.Forms.Padding(15, 8, 15, 22);
-            this.StreetTextBox.Multiline = true;
+            this.StreetTextBox.Location = new System.Drawing.Point(10, 30);
+            this.StreetTextBox.Margin = new System.Windows.Forms.Padding(10, 5, 10, 11);
             this.StreetTextBox.Name = "StreetTextBox";
-            this.StreetTextBox.Size = new System.Drawing.Size(475, 22);
+            this.StreetTextBox.Size = new System.Drawing.Size(315, 20);
             this.StreetTextBox.TabIndex = 7;
             // 
             // StreetLabel
             // 
             this.StreetLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.StreetLabel.AutoSize = true;
-            this.StreetLabel.Location = new System.Drawing.Point(10, 17);
-            this.StreetLabel.Margin = new System.Windows.Forms.Padding(10, 17, 4, 0);
+            this.StreetLabel.Location = new System.Drawing.Point(7, 11);
+            this.StreetLabel.Margin = new System.Windows.Forms.Padding(7, 11, 3, 0);
             this.StreetLabel.Name = "StreetLabel";
-            this.StreetLabel.Size = new System.Drawing.Size(48, 20);
+            this.StreetLabel.Size = new System.Drawing.Size(34, 13);
             this.StreetLabel.TabIndex = 0;
             this.StreetLabel.Text = "Ulice:";
             this.StreetLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -759,13 +766,13 @@
             this.FirstNameTLPanel.Controls.Add(this.FirstNameTextBox, 0, 1);
             this.FirstNameTLPanel.Controls.Add(this.FirstNameLabel, 0, 0);
             this.FirstNameTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FirstNameTLPanel.Location = new System.Drawing.Point(8, 234);
-            this.FirstNameTLPanel.Margin = new System.Windows.Forms.Padding(8, 8, 10, 8);
+            this.FirstNameTLPanel.Location = new System.Drawing.Point(5, 153);
+            this.FirstNameTLPanel.Margin = new System.Windows.Forms.Padding(5, 5, 7, 5);
             this.FirstNameTLPanel.Name = "FirstNameTLPanel";
             this.FirstNameTLPanel.RowCount = 2;
             this.FirstNameTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.FirstNameTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.FirstNameTLPanel.Size = new System.Drawing.Size(505, 97);
+            this.FirstNameTLPanel.Size = new System.Drawing.Size(335, 64);
             this.FirstNameTLPanel.TabIndex = 3;
             // 
             // FirstNameTextBox
@@ -773,20 +780,20 @@
             this.FirstNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FirstNameTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.FirstNameTextBox.Location = new System.Drawing.Point(15, 46);
-            this.FirstNameTextBox.Margin = new System.Windows.Forms.Padding(15, 8, 15, 17);
+            this.FirstNameTextBox.Location = new System.Drawing.Point(10, 30);
+            this.FirstNameTextBox.Margin = new System.Windows.Forms.Padding(10, 5, 10, 11);
             this.FirstNameTextBox.Name = "FirstNameTextBox";
-            this.FirstNameTextBox.Size = new System.Drawing.Size(475, 26);
+            this.FirstNameTextBox.Size = new System.Drawing.Size(315, 20);
             this.FirstNameTextBox.TabIndex = 3;
             // 
             // FirstNameLabel
             // 
             this.FirstNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.FirstNameLabel.AutoSize = true;
-            this.FirstNameLabel.Location = new System.Drawing.Point(10, 17);
-            this.FirstNameLabel.Margin = new System.Windows.Forms.Padding(10, 17, 4, 0);
+            this.FirstNameLabel.Location = new System.Drawing.Point(7, 11);
+            this.FirstNameLabel.Margin = new System.Windows.Forms.Padding(7, 11, 3, 0);
             this.FirstNameLabel.Name = "FirstNameLabel";
-            this.FirstNameLabel.Size = new System.Drawing.Size(61, 20);
+            this.FirstNameLabel.Size = new System.Drawing.Size(41, 13);
             this.FirstNameLabel.TabIndex = 0;
             this.FirstNameLabel.Text = "Jméno:";
             this.FirstNameLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -799,13 +806,13 @@
             this.CityTLPanel.Controls.Add(this.CityTextBox, 0, 1);
             this.CityTLPanel.Controls.Add(this.CityLabel, 0, 0);
             this.CityTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CityTLPanel.Location = new System.Drawing.Point(533, 121);
-            this.CityTLPanel.Margin = new System.Windows.Forms.Padding(10, 8, 8, 8);
+            this.CityTLPanel.Location = new System.Drawing.Point(354, 79);
+            this.CityTLPanel.Margin = new System.Windows.Forms.Padding(7, 5, 5, 5);
             this.CityTLPanel.Name = "CityTLPanel";
             this.CityTLPanel.RowCount = 2;
             this.CityTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.CityTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.CityTLPanel.Size = new System.Drawing.Size(505, 97);
+            this.CityTLPanel.Size = new System.Drawing.Size(335, 64);
             this.CityTLPanel.TabIndex = 6;
             // 
             // CityTextBox
@@ -813,20 +820,20 @@
             this.CityTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CityTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.CityTextBox.Location = new System.Drawing.Point(15, 46);
-            this.CityTextBox.Margin = new System.Windows.Forms.Padding(15, 8, 15, 17);
+            this.CityTextBox.Location = new System.Drawing.Point(10, 30);
+            this.CityTextBox.Margin = new System.Windows.Forms.Padding(10, 5, 10, 11);
             this.CityTextBox.Name = "CityTextBox";
-            this.CityTextBox.Size = new System.Drawing.Size(475, 26);
+            this.CityTextBox.Size = new System.Drawing.Size(315, 20);
             this.CityTextBox.TabIndex = 6;
             // 
             // CityLabel
             // 
             this.CityLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.CityLabel.AutoSize = true;
-            this.CityLabel.Location = new System.Drawing.Point(10, 17);
-            this.CityLabel.Margin = new System.Windows.Forms.Padding(10, 17, 4, 0);
+            this.CityLabel.Location = new System.Drawing.Point(7, 11);
+            this.CityLabel.Margin = new System.Windows.Forms.Padding(7, 11, 3, 0);
             this.CityLabel.Name = "CityLabel";
-            this.CityLabel.Size = new System.Drawing.Size(51, 20);
+            this.CityLabel.Size = new System.Drawing.Size(36, 13);
             this.CityLabel.TabIndex = 0;
             this.CityLabel.Text = "Obec:";
             this.CityLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -839,13 +846,13 @@
             this.PasswordTLPanel.Controls.Add(this.PasswordTextBox, 0, 1);
             this.PasswordTLPanel.Controls.Add(this.PasswordLabel, 0, 0);
             this.PasswordTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PasswordTLPanel.Location = new System.Drawing.Point(8, 121);
-            this.PasswordTLPanel.Margin = new System.Windows.Forms.Padding(8, 8, 10, 8);
+            this.PasswordTLPanel.Location = new System.Drawing.Point(5, 79);
+            this.PasswordTLPanel.Margin = new System.Windows.Forms.Padding(5, 5, 7, 5);
             this.PasswordTLPanel.Name = "PasswordTLPanel";
             this.PasswordTLPanel.RowCount = 2;
             this.PasswordTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.PasswordTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.PasswordTLPanel.Size = new System.Drawing.Size(505, 97);
+            this.PasswordTLPanel.Size = new System.Drawing.Size(335, 64);
             this.PasswordTLPanel.TabIndex = 2;
             // 
             // PasswordTextBox
@@ -853,21 +860,21 @@
             this.PasswordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PasswordTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.PasswordTextBox.Location = new System.Drawing.Point(15, 46);
-            this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(15, 8, 15, 17);
+            this.PasswordTextBox.Location = new System.Drawing.Point(10, 30);
+            this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(10, 5, 10, 11);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.PasswordChar = '*';
-            this.PasswordTextBox.Size = new System.Drawing.Size(475, 26);
+            this.PasswordTextBox.Size = new System.Drawing.Size(315, 20);
             this.PasswordTextBox.TabIndex = 2;
             // 
             // PasswordLabel
             // 
             this.PasswordLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.PasswordLabel.AutoSize = true;
-            this.PasswordLabel.Location = new System.Drawing.Point(10, 17);
-            this.PasswordLabel.Margin = new System.Windows.Forms.Padding(10, 17, 4, 0);
+            this.PasswordLabel.Location = new System.Drawing.Point(7, 11);
+            this.PasswordLabel.Margin = new System.Windows.Forms.Padding(7, 11, 3, 0);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(54, 20);
+            this.PasswordLabel.Size = new System.Drawing.Size(37, 13);
             this.PasswordLabel.TabIndex = 0;
             this.PasswordLabel.Text = "Heslo:";
             // 
@@ -879,23 +886,23 @@
             this.PhoneTLPanel.Controls.Add(this.PhoneLabel, 0, 0);
             this.PhoneTLPanel.Controls.Add(this.MobileMTextBox, 0, 1);
             this.PhoneTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PhoneTLPanel.Location = new System.Drawing.Point(533, 8);
-            this.PhoneTLPanel.Margin = new System.Windows.Forms.Padding(10, 8, 8, 8);
+            this.PhoneTLPanel.Location = new System.Drawing.Point(354, 5);
+            this.PhoneTLPanel.Margin = new System.Windows.Forms.Padding(7, 5, 5, 5);
             this.PhoneTLPanel.Name = "PhoneTLPanel";
             this.PhoneTLPanel.RowCount = 2;
             this.PhoneTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.PhoneTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.PhoneTLPanel.Size = new System.Drawing.Size(505, 97);
+            this.PhoneTLPanel.Size = new System.Drawing.Size(335, 64);
             this.PhoneTLPanel.TabIndex = 5;
             // 
             // PhoneLabel
             // 
             this.PhoneLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.PhoneLabel.AutoSize = true;
-            this.PhoneLabel.Location = new System.Drawing.Point(10, 17);
-            this.PhoneLabel.Margin = new System.Windows.Forms.Padding(10, 17, 4, 0);
+            this.PhoneLabel.Location = new System.Drawing.Point(7, 11);
+            this.PhoneLabel.Margin = new System.Windows.Forms.Padding(7, 11, 3, 0);
             this.PhoneLabel.Name = "PhoneLabel";
-            this.PhoneLabel.Size = new System.Drawing.Size(50, 20);
+            this.PhoneLabel.Size = new System.Drawing.Size(35, 13);
             this.PhoneLabel.TabIndex = 0;
             this.PhoneLabel.Text = "Mobil:";
             this.PhoneLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -904,11 +911,11 @@
             // 
             this.MobileMTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.MobileMTextBox.Location = new System.Drawing.Point(15, 46);
-            this.MobileMTextBox.Margin = new System.Windows.Forms.Padding(15, 8, 15, 17);
+            this.MobileMTextBox.Location = new System.Drawing.Point(10, 30);
+            this.MobileMTextBox.Margin = new System.Windows.Forms.Padding(10, 5, 10, 11);
             this.MobileMTextBox.Mask = "000 000 000";
             this.MobileMTextBox.Name = "MobileMTextBox";
-            this.MobileMTextBox.Size = new System.Drawing.Size(475, 26);
+            this.MobileMTextBox.Size = new System.Drawing.Size(315, 20);
             this.MobileMTextBox.TabIndex = 1;
             // 
             // EmailTLPanel
@@ -919,23 +926,23 @@
             this.EmailTLPanel.Controls.Add(this.EmailLabel, 0, 0);
             this.EmailTLPanel.Controls.Add(this.EmailTexBox, 0, 1);
             this.EmailTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EmailTLPanel.Location = new System.Drawing.Point(8, 8);
-            this.EmailTLPanel.Margin = new System.Windows.Forms.Padding(8, 8, 10, 8);
+            this.EmailTLPanel.Location = new System.Drawing.Point(5, 5);
+            this.EmailTLPanel.Margin = new System.Windows.Forms.Padding(5, 5, 7, 5);
             this.EmailTLPanel.Name = "EmailTLPanel";
             this.EmailTLPanel.RowCount = 2;
             this.EmailTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.EmailTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.EmailTLPanel.Size = new System.Drawing.Size(505, 97);
+            this.EmailTLPanel.Size = new System.Drawing.Size(335, 64);
             this.EmailTLPanel.TabIndex = 1;
             // 
             // EmailLabel
             // 
             this.EmailLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.EmailLabel.AutoSize = true;
-            this.EmailLabel.Location = new System.Drawing.Point(10, 17);
-            this.EmailLabel.Margin = new System.Windows.Forms.Padding(10, 17, 4, 0);
+            this.EmailLabel.Location = new System.Drawing.Point(7, 11);
+            this.EmailLabel.Margin = new System.Windows.Forms.Padding(7, 11, 3, 0);
             this.EmailLabel.Name = "EmailLabel";
-            this.EmailLabel.Size = new System.Drawing.Size(52, 20);
+            this.EmailLabel.Size = new System.Drawing.Size(35, 13);
             this.EmailLabel.TabIndex = 0;
             this.EmailLabel.Text = "Email:";
             this.EmailLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -945,11 +952,10 @@
             this.EmailTexBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.EmailTexBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.EmailTexBox.Location = new System.Drawing.Point(15, 46);
-            this.EmailTexBox.Margin = new System.Windows.Forms.Padding(15, 8, 15, 17);
-            this.EmailTexBox.Multiline = true;
+            this.EmailTexBox.Location = new System.Drawing.Point(10, 30);
+            this.EmailTexBox.Margin = new System.Windows.Forms.Padding(10, 5, 10, 11);
             this.EmailTexBox.Name = "EmailTexBox";
-            this.EmailTexBox.Size = new System.Drawing.Size(475, 27);
+            this.EmailTexBox.Size = new System.Drawing.Size(315, 20);
             this.EmailTexBox.TabIndex = 1;
             // 
             // AddressNumericsSplitTLPanel
@@ -961,12 +967,12 @@
             this.AddressNumericsSplitTLPanel.Controls.Add(this.PostalCodeTLPanel, 0, 0);
             this.AddressNumericsSplitTLPanel.Controls.Add(this.HouseNumberTLPanel, 0, 0);
             this.AddressNumericsSplitTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AddressNumericsSplitTLPanel.Location = new System.Drawing.Point(523, 339);
+            this.AddressNumericsSplitTLPanel.Location = new System.Drawing.Point(347, 222);
             this.AddressNumericsSplitTLPanel.Margin = new System.Windows.Forms.Padding(0);
             this.AddressNumericsSplitTLPanel.Name = "AddressNumericsSplitTLPanel";
             this.AddressNumericsSplitTLPanel.RowCount = 1;
             this.AddressNumericsSplitTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.AddressNumericsSplitTLPanel.Size = new System.Drawing.Size(523, 116);
+            this.AddressNumericsSplitTLPanel.Size = new System.Drawing.Size(347, 76);
             this.AddressNumericsSplitTLPanel.TabIndex = 8;
             // 
             // PostalCodeTLPanel
@@ -977,23 +983,23 @@
             this.PostalCodeTLPanel.Controls.Add(this.PostalCodeLabel, 0, 0);
             this.PostalCodeTLPanel.Controls.Add(this.PostalCodeMaskTextBox, 0, 1);
             this.PostalCodeTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PostalCodeTLPanel.Location = new System.Drawing.Point(271, 8);
-            this.PostalCodeTLPanel.Margin = new System.Windows.Forms.Padding(10, 8, 8, 8);
+            this.PostalCodeTLPanel.Location = new System.Drawing.Point(180, 5);
+            this.PostalCodeTLPanel.Margin = new System.Windows.Forms.Padding(7, 5, 5, 5);
             this.PostalCodeTLPanel.Name = "PostalCodeTLPanel";
             this.PostalCodeTLPanel.RowCount = 2;
             this.PostalCodeTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.PostalCodeTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.PostalCodeTLPanel.Size = new System.Drawing.Size(244, 100);
+            this.PostalCodeTLPanel.Size = new System.Drawing.Size(162, 66);
             this.PostalCodeTLPanel.TabIndex = 8;
             // 
             // PostalCodeLabel
             // 
             this.PostalCodeLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.PostalCodeLabel.AutoSize = true;
-            this.PostalCodeLabel.Location = new System.Drawing.Point(10, 18);
-            this.PostalCodeLabel.Margin = new System.Windows.Forms.Padding(10, 17, 4, 0);
+            this.PostalCodeLabel.Location = new System.Drawing.Point(7, 12);
+            this.PostalCodeLabel.Margin = new System.Windows.Forms.Padding(7, 11, 3, 0);
             this.PostalCodeLabel.Name = "PostalCodeLabel";
-            this.PostalCodeLabel.Size = new System.Drawing.Size(45, 20);
+            this.PostalCodeLabel.Size = new System.Drawing.Size(31, 13);
             this.PostalCodeLabel.TabIndex = 0;
             this.PostalCodeLabel.Text = "PSČ:";
             this.PostalCodeLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -1002,11 +1008,11 @@
             // 
             this.PostalCodeMaskTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.PostalCodeMaskTextBox.Location = new System.Drawing.Point(15, 48);
-            this.PostalCodeMaskTextBox.Margin = new System.Windows.Forms.Padding(15, 8, 15, 17);
+            this.PostalCodeMaskTextBox.Location = new System.Drawing.Point(10, 31);
+            this.PostalCodeMaskTextBox.Margin = new System.Windows.Forms.Padding(10, 5, 10, 11);
             this.PostalCodeMaskTextBox.Mask = "000 00";
             this.PostalCodeMaskTextBox.Name = "PostalCodeMaskTextBox";
-            this.PostalCodeMaskTextBox.Size = new System.Drawing.Size(214, 26);
+            this.PostalCodeMaskTextBox.Size = new System.Drawing.Size(142, 20);
             this.PostalCodeMaskTextBox.TabIndex = 9;
             // 
             // HouseNumberTLPanel
@@ -1017,13 +1023,13 @@
             this.HouseNumberTLPanel.Controls.Add(this.HouseNumberTextBox, 0, 1);
             this.HouseNumberTLPanel.Controls.Add(this.HouseNumber, 0, 0);
             this.HouseNumberTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.HouseNumberTLPanel.Location = new System.Drawing.Point(10, 8);
-            this.HouseNumberTLPanel.Margin = new System.Windows.Forms.Padding(10, 8, 10, 8);
+            this.HouseNumberTLPanel.Location = new System.Drawing.Point(7, 5);
+            this.HouseNumberTLPanel.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
             this.HouseNumberTLPanel.Name = "HouseNumberTLPanel";
             this.HouseNumberTLPanel.RowCount = 2;
             this.HouseNumberTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.HouseNumberTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.HouseNumberTLPanel.Size = new System.Drawing.Size(241, 100);
+            this.HouseNumberTLPanel.Size = new System.Drawing.Size(159, 66);
             this.HouseNumberTLPanel.TabIndex = 7;
             // 
             // HouseNumberTextBox
@@ -1031,20 +1037,20 @@
             this.HouseNumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.HouseNumberTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.HouseNumberTextBox.Location = new System.Drawing.Point(15, 48);
-            this.HouseNumberTextBox.Margin = new System.Windows.Forms.Padding(15, 8, 15, 17);
+            this.HouseNumberTextBox.Location = new System.Drawing.Point(10, 31);
+            this.HouseNumberTextBox.Margin = new System.Windows.Forms.Padding(10, 5, 10, 11);
             this.HouseNumberTextBox.Name = "HouseNumberTextBox";
-            this.HouseNumberTextBox.Size = new System.Drawing.Size(211, 26);
+            this.HouseNumberTextBox.Size = new System.Drawing.Size(139, 20);
             this.HouseNumberTextBox.TabIndex = 8;
             // 
             // HouseNumber
             // 
             this.HouseNumber.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.HouseNumber.AutoSize = true;
-            this.HouseNumber.Location = new System.Drawing.Point(10, 18);
-            this.HouseNumber.Margin = new System.Windows.Forms.Padding(10, 17, 4, 0);
+            this.HouseNumber.Location = new System.Drawing.Point(7, 12);
+            this.HouseNumber.Margin = new System.Windows.Forms.Padding(7, 11, 3, 0);
             this.HouseNumber.Name = "HouseNumber";
-            this.HouseNumber.Size = new System.Drawing.Size(98, 20);
+            this.HouseNumber.Size = new System.Drawing.Size(68, 13);
             this.HouseNumber.TabIndex = 0;
             this.HouseNumber.Text = "Číslo popisu:";
             this.HouseNumber.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -1052,10 +1058,10 @@
             // OrdersTab
             // 
             this.OrdersTab.Controls.Add(this.OrdersViewerTLPanel);
-            this.OrdersTab.Location = new System.Drawing.Point(4, 37);
+            this.OrdersTab.Location = new System.Drawing.Point(4, 30);
             this.OrdersTab.Margin = new System.Windows.Forms.Padding(0);
             this.OrdersTab.Name = "OrdersTab";
-            this.OrdersTab.Size = new System.Drawing.Size(1054, 703);
+            this.OrdersTab.Size = new System.Drawing.Size(700, 459);
             this.OrdersTab.TabIndex = 0;
             this.OrdersTab.Text = "Objednávky";
             this.OrdersTab.UseVisualStyleBackColor = true;
@@ -1074,10 +1080,10 @@
             this.OrdersViewerTLPanel.Margin = new System.Windows.Forms.Padding(0);
             this.OrdersViewerTLPanel.Name = "OrdersViewerTLPanel";
             this.OrdersViewerTLPanel.RowCount = 3;
-            this.OrdersViewerTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 89F));
+            this.OrdersViewerTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
             this.OrdersViewerTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.OrdersViewerTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 112F));
-            this.OrdersViewerTLPanel.Size = new System.Drawing.Size(1054, 703);
+            this.OrdersViewerTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
+            this.OrdersViewerTLPanel.Size = new System.Drawing.Size(700, 459);
             this.OrdersViewerTLPanel.TabIndex = 0;
             // 
             // MyOrdersLabel
@@ -1085,9 +1091,10 @@
             this.MyOrdersLabel.AutoSize = true;
             this.MyOrdersLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MyOrdersLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MyOrdersLabel.Location = new System.Drawing.Point(3, 0);
+            this.MyOrdersLabel.Location = new System.Drawing.Point(2, 0);
+            this.MyOrdersLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MyOrdersLabel.Name = "MyOrdersLabel";
-            this.MyOrdersLabel.Size = new System.Drawing.Size(1048, 89);
+            this.MyOrdersLabel.Size = new System.Drawing.Size(696, 58);
             this.MyOrdersLabel.TabIndex = 0;
             this.MyOrdersLabel.Text = "Moje objednávky";
             this.MyOrdersLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1097,11 +1104,11 @@
             this.CustomerOrdersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CustomerOrdersDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CustomerOrdersDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.CustomerOrdersDataGridView.Location = new System.Drawing.Point(10, 98);
-            this.CustomerOrdersDataGridView.Margin = new System.Windows.Forms.Padding(10, 9, 10, 42);
+            this.CustomerOrdersDataGridView.Location = new System.Drawing.Point(7, 64);
+            this.CustomerOrdersDataGridView.Margin = new System.Windows.Forms.Padding(7, 6, 7, 27);
             this.CustomerOrdersDataGridView.Name = "CustomerOrdersDataGridView";
             this.CustomerOrdersDataGridView.RowTemplate.Height = 28;
-            this.CustomerOrdersDataGridView.Size = new System.Drawing.Size(1034, 451);
+            this.CustomerOrdersDataGridView.Size = new System.Drawing.Size(686, 295);
             this.CustomerOrdersDataGridView.TabIndex = 0;
             this.CustomerOrdersDataGridView.TabStop = false;
             // 
@@ -1112,16 +1119,16 @@
             this.CustomerOrdersControlsTLPanel.ColumnCount = 2;
             this.CustomerOrdersControlsTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.CustomerOrdersControlsTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.CustomerOrdersControlsTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.CustomerOrdersControlsTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.CustomerOrdersControlsTLPanel.Controls.Add(this.CustomerOrderDetailButton, 0, 0);
             this.CustomerOrdersControlsTLPanel.Controls.Add(this.ReturnToStoreButton, 0, 0);
             this.CustomerOrdersControlsTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CustomerOrdersControlsTLPanel.Location = new System.Drawing.Point(0, 591);
+            this.CustomerOrdersControlsTLPanel.Location = new System.Drawing.Point(0, 386);
             this.CustomerOrdersControlsTLPanel.Margin = new System.Windows.Forms.Padding(0);
             this.CustomerOrdersControlsTLPanel.Name = "CustomerOrdersControlsTLPanel";
             this.CustomerOrdersControlsTLPanel.RowCount = 1;
             this.CustomerOrdersControlsTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.CustomerOrdersControlsTLPanel.Size = new System.Drawing.Size(1054, 112);
+            this.CustomerOrdersControlsTLPanel.Size = new System.Drawing.Size(700, 73);
             this.CustomerOrdersControlsTLPanel.TabIndex = 0;
             // 
             // CustomerOrderDetailButton
@@ -1130,10 +1137,10 @@
             this.CustomerOrderDetailButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.CustomerOrderDetailButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CustomerOrderDetailButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.CustomerOrderDetailButton.Location = new System.Drawing.Point(537, 32);
-            this.CustomerOrderDetailButton.Margin = new System.Windows.Forms.Padding(10, 32, 10, 29);
+            this.CustomerOrderDetailButton.Location = new System.Drawing.Point(357, 21);
+            this.CustomerOrderDetailButton.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
             this.CustomerOrderDetailButton.Name = "CustomerOrderDetailButton";
-            this.CustomerOrderDetailButton.Size = new System.Drawing.Size(507, 51);
+            this.CustomerOrderDetailButton.Size = new System.Drawing.Size(336, 33);
             this.CustomerOrderDetailButton.TabIndex = 1;
             this.CustomerOrderDetailButton.Text = "Detail objednávky";
             this.CustomerOrderDetailButton.UseVisualStyleBackColor = false;
@@ -1145,10 +1152,10 @@
             this.ReturnToStoreButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ReturnToStoreButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ReturnToStoreButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.ReturnToStoreButton.Location = new System.Drawing.Point(10, 32);
-            this.ReturnToStoreButton.Margin = new System.Windows.Forms.Padding(10, 32, 10, 29);
+            this.ReturnToStoreButton.Location = new System.Drawing.Point(7, 21);
+            this.ReturnToStoreButton.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
             this.ReturnToStoreButton.Name = "ReturnToStoreButton";
-            this.ReturnToStoreButton.Size = new System.Drawing.Size(507, 51);
+            this.ReturnToStoreButton.Size = new System.Drawing.Size(336, 33);
             this.ReturnToStoreButton.TabIndex = 0;
             this.ReturnToStoreButton.Text = "Návrat do obchodu";
             this.ReturnToStoreButton.UseVisualStyleBackColor = false;
@@ -1156,10 +1163,10 @@
             // AdminTabPage
             // 
             this.AdminTabPage.Controls.Add(this.ItemsManagerWindowTLPanel);
-            this.AdminTabPage.Location = new System.Drawing.Point(4, 39);
+            this.AdminTabPage.Location = new System.Drawing.Point(4, 32);
             this.AdminTabPage.Margin = new System.Windows.Forms.Padding(0);
             this.AdminTabPage.Name = "AdminTabPage";
-            this.AdminTabPage.Size = new System.Drawing.Size(1068, 785);
+            this.AdminTabPage.Size = new System.Drawing.Size(709, 525);
             this.AdminTabPage.TabIndex = 0;
             this.AdminTabPage.Text = "Administrátor";
             // 
@@ -1176,9 +1183,9 @@
             this.ItemsManagerWindowTLPanel.Margin = new System.Windows.Forms.Padding(0);
             this.ItemsManagerWindowTLPanel.Name = "ItemsManagerWindowTLPanel";
             this.ItemsManagerWindowTLPanel.RowCount = 2;
-            this.ItemsManagerWindowTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.ItemsManagerWindowTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.ItemsManagerWindowTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.ItemsManagerWindowTLPanel.Size = new System.Drawing.Size(1068, 785);
+            this.ItemsManagerWindowTLPanel.Size = new System.Drawing.Size(709, 525);
             this.ItemsManagerWindowTLPanel.TabIndex = 0;
             // 
             // ItemsManagerFramePanel
@@ -1189,7 +1196,7 @@
             this.ItemsManagerFramePanel.Location = new System.Drawing.Point(0, 0);
             this.ItemsManagerFramePanel.Margin = new System.Windows.Forms.Padding(0);
             this.ItemsManagerFramePanel.Name = "ItemsManagerFramePanel";
-            this.ItemsManagerFramePanel.Size = new System.Drawing.Size(1068, 35);
+            this.ItemsManagerFramePanel.Size = new System.Drawing.Size(709, 23);
             this.ItemsManagerFramePanel.TabIndex = 0;
             // 
             // ItemsWinFramePanel
@@ -1198,9 +1205,10 @@
             this.ItemsWinFramePanel.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ItemsWinFramePanel.Controls.Add(this.DatabaseTabControl);
             this.ItemsWinFramePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ItemsWinFramePanel.Location = new System.Drawing.Point(3, 38);
+            this.ItemsWinFramePanel.Location = new System.Drawing.Point(2, 25);
+            this.ItemsWinFramePanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ItemsWinFramePanel.Name = "ItemsWinFramePanel";
-            this.ItemsWinFramePanel.Size = new System.Drawing.Size(1062, 744);
+            this.ItemsWinFramePanel.Size = new System.Drawing.Size(705, 498);
             this.ItemsWinFramePanel.TabIndex = 1;
             // 
             // DatabaseTabControl
@@ -1213,17 +1221,17 @@
             this.DatabaseTabControl.Name = "DatabaseTabControl";
             this.DatabaseTabControl.Padding = new System.Drawing.Point(6, 7);
             this.DatabaseTabControl.SelectedIndex = 0;
-            this.DatabaseTabControl.Size = new System.Drawing.Size(1062, 744);
+            this.DatabaseTabControl.Size = new System.Drawing.Size(705, 498);
             this.DatabaseTabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.DatabaseTabControl.TabIndex = 0;
             // 
             // OrdersTabPage
             // 
             this.OrdersTabPage.Controls.Add(this.OrdersTableLayoutPanel);
-            this.OrdersTabPage.Location = new System.Drawing.Point(4, 37);
+            this.OrdersTabPage.Location = new System.Drawing.Point(4, 30);
             this.OrdersTabPage.Margin = new System.Windows.Forms.Padding(0);
             this.OrdersTabPage.Name = "OrdersTabPage";
-            this.OrdersTabPage.Size = new System.Drawing.Size(1054, 703);
+            this.OrdersTabPage.Size = new System.Drawing.Size(697, 370);
             this.OrdersTabPage.TabIndex = 0;
             this.OrdersTabPage.Text = "Objednávky";
             this.OrdersTabPage.UseVisualStyleBackColor = true;
@@ -1242,10 +1250,10 @@
             this.OrdersTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
             this.OrdersTableLayoutPanel.Name = "OrdersTableLayoutPanel";
             this.OrdersTableLayoutPanel.RowCount = 3;
-            this.OrdersTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 89F));
+            this.OrdersTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
             this.OrdersTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.OrdersTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 112F));
-            this.OrdersTableLayoutPanel.Size = new System.Drawing.Size(1054, 703);
+            this.OrdersTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
+            this.OrdersTableLayoutPanel.Size = new System.Drawing.Size(697, 370);
             this.OrdersTableLayoutPanel.TabIndex = 0;
             // 
             // OrdersControlsTLPanel
@@ -1261,22 +1269,22 @@
             this.OrdersControlsTLPanel.Controls.Add(this.AdminOrderDetailButton, 2, 0);
             this.OrdersControlsTLPanel.Controls.Add(this.ConfirmOrderButton, 0, 0);
             this.OrdersControlsTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.OrdersControlsTLPanel.Location = new System.Drawing.Point(0, 591);
+            this.OrdersControlsTLPanel.Location = new System.Drawing.Point(0, 297);
             this.OrdersControlsTLPanel.Margin = new System.Windows.Forms.Padding(0);
             this.OrdersControlsTLPanel.Name = "OrdersControlsTLPanel";
             this.OrdersControlsTLPanel.RowCount = 1;
             this.OrdersControlsTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.OrdersControlsTLPanel.Size = new System.Drawing.Size(1054, 112);
+            this.OrdersControlsTLPanel.Size = new System.Drawing.Size(697, 73);
             this.OrdersControlsTLPanel.TabIndex = 0;
             // 
             // button1
             // 
             this.button1.AutoSize = true;
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(273, 32);
-            this.button1.Margin = new System.Windows.Forms.Padding(10, 32, 10, 29);
+            this.button1.Location = new System.Drawing.Point(181, 21);
+            this.button1.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(243, 51);
+            this.button1.Size = new System.Drawing.Size(160, 33);
             this.button1.TabIndex = 1;
             this.button1.Text = "Zrušit";
             this.button1.UseVisualStyleBackColor = true;
@@ -1285,10 +1293,10 @@
             // 
             this.DeleteOrderButton.AutoSize = true;
             this.DeleteOrderButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DeleteOrderButton.Location = new System.Drawing.Point(536, 32);
-            this.DeleteOrderButton.Margin = new System.Windows.Forms.Padding(10, 32, 10, 29);
+            this.DeleteOrderButton.Location = new System.Drawing.Point(355, 21);
+            this.DeleteOrderButton.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
             this.DeleteOrderButton.Name = "DeleteOrderButton";
-            this.DeleteOrderButton.Size = new System.Drawing.Size(243, 51);
+            this.DeleteOrderButton.Size = new System.Drawing.Size(160, 33);
             this.DeleteOrderButton.TabIndex = 2;
             this.DeleteOrderButton.Text = "Odeslat";
             this.DeleteOrderButton.UseVisualStyleBackColor = true;
@@ -1297,10 +1305,10 @@
             // 
             this.AdminOrderDetailButton.AutoSize = true;
             this.AdminOrderDetailButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AdminOrderDetailButton.Location = new System.Drawing.Point(799, 32);
-            this.AdminOrderDetailButton.Margin = new System.Windows.Forms.Padding(10, 32, 10, 29);
+            this.AdminOrderDetailButton.Location = new System.Drawing.Point(529, 21);
+            this.AdminOrderDetailButton.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
             this.AdminOrderDetailButton.Name = "AdminOrderDetailButton";
-            this.AdminOrderDetailButton.Size = new System.Drawing.Size(245, 51);
+            this.AdminOrderDetailButton.Size = new System.Drawing.Size(161, 33);
             this.AdminOrderDetailButton.TabIndex = 3;
             this.AdminOrderDetailButton.Text = "Zobrazit detail";
             this.AdminOrderDetailButton.UseVisualStyleBackColor = true;
@@ -1310,10 +1318,10 @@
             // 
             this.ConfirmOrderButton.AutoSize = true;
             this.ConfirmOrderButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ConfirmOrderButton.Location = new System.Drawing.Point(10, 32);
-            this.ConfirmOrderButton.Margin = new System.Windows.Forms.Padding(10, 32, 10, 29);
+            this.ConfirmOrderButton.Location = new System.Drawing.Point(7, 21);
+            this.ConfirmOrderButton.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
             this.ConfirmOrderButton.Name = "ConfirmOrderButton";
-            this.ConfirmOrderButton.Size = new System.Drawing.Size(243, 51);
+            this.ConfirmOrderButton.Size = new System.Drawing.Size(160, 33);
             this.ConfirmOrderButton.TabIndex = 0;
             this.ConfirmOrderButton.Text = "Potvrdit";
             this.ConfirmOrderButton.UseVisualStyleBackColor = true;
@@ -1322,32 +1330,34 @@
             // 
             this.OrderListLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OrderListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OrderListLabel.Location = new System.Drawing.Point(3, 0);
+            this.OrderListLabel.Location = new System.Drawing.Point(2, 0);
+            this.OrderListLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.OrderListLabel.Name = "OrderListLabel";
-            this.OrderListLabel.Size = new System.Drawing.Size(1048, 89);
+            this.OrderListLabel.Size = new System.Drawing.Size(693, 58);
             this.OrderListLabel.TabIndex = 0;
             this.OrderListLabel.Text = "Seznam objednávek";
             this.OrderListLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // OrdersDataGridView
             // 
+            this.OrdersDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
             this.OrdersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.OrdersDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OrdersDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.OrdersDataGridView.Location = new System.Drawing.Point(10, 98);
-            this.OrdersDataGridView.Margin = new System.Windows.Forms.Padding(10, 9, 15, 42);
+            this.OrdersDataGridView.Location = new System.Drawing.Point(7, 64);
+            this.OrdersDataGridView.Margin = new System.Windows.Forms.Padding(7, 6, 10, 27);
             this.OrdersDataGridView.Name = "OrdersDataGridView";
             this.OrdersDataGridView.RowTemplate.Height = 28;
-            this.OrdersDataGridView.Size = new System.Drawing.Size(1029, 451);
+            this.OrdersDataGridView.Size = new System.Drawing.Size(680, 206);
             this.OrdersDataGridView.TabIndex = 0;
             // 
             // ProductsTabPage
             // 
             this.ProductsTabPage.Controls.Add(this.ProductsTableLayoutPanel);
-            this.ProductsTabPage.Location = new System.Drawing.Point(4, 37);
+            this.ProductsTabPage.Location = new System.Drawing.Point(4, 30);
             this.ProductsTabPage.Margin = new System.Windows.Forms.Padding(0);
             this.ProductsTabPage.Name = "ProductsTabPage";
-            this.ProductsTabPage.Size = new System.Drawing.Size(1054, 703);
+            this.ProductsTabPage.Size = new System.Drawing.Size(697, 464);
             this.ProductsTabPage.TabIndex = 1;
             this.ProductsTabPage.Text = "Produkty";
             this.ProductsTabPage.UseVisualStyleBackColor = true;
@@ -1359,17 +1369,17 @@
             this.ProductsTableLayoutPanel.ColumnCount = 1;
             this.ProductsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.ProductsTableLayoutPanel.Controls.Add(this.ProductListLabel, 0, 0);
-            this.ProductsTableLayoutPanel.Controls.Add(this.ProductsDataGridView, 0, 1);
+            this.ProductsTableLayoutPanel.Controls.Add(this.ProductsDataGridView, 4, 1);
             this.ProductsTableLayoutPanel.Controls.Add(this.ProductControlsTLPanel, 0, 2);
             this.ProductsTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProductsTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.ProductsTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
             this.ProductsTableLayoutPanel.Name = "ProductsTableLayoutPanel";
             this.ProductsTableLayoutPanel.RowCount = 3;
-            this.ProductsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 89F));
+            this.ProductsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
             this.ProductsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.ProductsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 112F));
-            this.ProductsTableLayoutPanel.Size = new System.Drawing.Size(1054, 703);
+            this.ProductsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
+            this.ProductsTableLayoutPanel.Size = new System.Drawing.Size(697, 464);
             this.ProductsTableLayoutPanel.TabIndex = 0;
             // 
             // ProductListLabel
@@ -1377,23 +1387,56 @@
             this.ProductListLabel.AutoSize = true;
             this.ProductListLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProductListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductListLabel.Location = new System.Drawing.Point(3, 0);
+            this.ProductListLabel.Location = new System.Drawing.Point(2, 0);
+            this.ProductListLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ProductListLabel.Name = "ProductListLabel";
-            this.ProductListLabel.Size = new System.Drawing.Size(1048, 89);
+            this.ProductListLabel.Size = new System.Drawing.Size(693, 58);
             this.ProductListLabel.TabIndex = 0;
             this.ProductListLabel.Text = "Seznam produktů";
             this.ProductListLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ProductsDataGridView
             // 
+            this.ProductsDataGridView.AllowUserToAddRows = false;
+            this.ProductsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ProductsDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.ProductsDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProductsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.ProductsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ProductsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ProductID,
+            this.NameColumn,
+            this.CathegoryColumn,
+            this.PriceColumn});
             this.ProductsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProductsDataGridView.EnableHeadersVisualStyles = false;
             this.ProductsDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.ProductsDataGridView.Location = new System.Drawing.Point(10, 98);
-            this.ProductsDataGridView.Margin = new System.Windows.Forms.Padding(10, 9, 10, 42);
+            this.ProductsDataGridView.Location = new System.Drawing.Point(7, 64);
+            this.ProductsDataGridView.Margin = new System.Windows.Forms.Padding(7, 6, 7, 27);
+            this.ProductsDataGridView.MultiSelect = false;
             this.ProductsDataGridView.Name = "ProductsDataGridView";
+            this.ProductsDataGridView.ReadOnly = true;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProductsDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.ProductsDataGridView.RowHeadersVisible = false;
             this.ProductsDataGridView.RowTemplate.Height = 28;
-            this.ProductsDataGridView.Size = new System.Drawing.Size(1034, 451);
+            this.ProductsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ProductsDataGridView.Size = new System.Drawing.Size(683, 300);
             this.ProductsDataGridView.TabIndex = 0;
             this.ProductsDataGridView.TabStop = false;
             // 
@@ -1411,22 +1454,22 @@
             this.ProductControlsTLPanel.Controls.Add(this.ProductDetailButton, 2, 0);
             this.ProductControlsTLPanel.Controls.Add(this.AddProductButton, 0, 0);
             this.ProductControlsTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProductControlsTLPanel.Location = new System.Drawing.Point(0, 591);
+            this.ProductControlsTLPanel.Location = new System.Drawing.Point(0, 391);
             this.ProductControlsTLPanel.Margin = new System.Windows.Forms.Padding(0);
             this.ProductControlsTLPanel.Name = "ProductControlsTLPanel";
             this.ProductControlsTLPanel.RowCount = 1;
             this.ProductControlsTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.ProductControlsTLPanel.Size = new System.Drawing.Size(1054, 112);
+            this.ProductControlsTLPanel.Size = new System.Drawing.Size(697, 73);
             this.ProductControlsTLPanel.TabIndex = 0;
             // 
             // UpdateProductButton
             // 
             this.UpdateProductButton.AutoSize = true;
             this.UpdateProductButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.UpdateProductButton.Location = new System.Drawing.Point(273, 32);
-            this.UpdateProductButton.Margin = new System.Windows.Forms.Padding(10, 32, 10, 29);
+            this.UpdateProductButton.Location = new System.Drawing.Point(181, 21);
+            this.UpdateProductButton.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
             this.UpdateProductButton.Name = "UpdateProductButton";
-            this.UpdateProductButton.Size = new System.Drawing.Size(243, 51);
+            this.UpdateProductButton.Size = new System.Drawing.Size(160, 33);
             this.UpdateProductButton.TabIndex = 1;
             this.UpdateProductButton.Text = "Upravit";
             this.UpdateProductButton.UseVisualStyleBackColor = true;
@@ -1436,10 +1479,10 @@
             // 
             this.DeleteProductButton.AutoSize = true;
             this.DeleteProductButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DeleteProductButton.Location = new System.Drawing.Point(536, 32);
-            this.DeleteProductButton.Margin = new System.Windows.Forms.Padding(10, 32, 10, 29);
+            this.DeleteProductButton.Location = new System.Drawing.Point(355, 21);
+            this.DeleteProductButton.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
             this.DeleteProductButton.Name = "DeleteProductButton";
-            this.DeleteProductButton.Size = new System.Drawing.Size(243, 51);
+            this.DeleteProductButton.Size = new System.Drawing.Size(160, 33);
             this.DeleteProductButton.TabIndex = 2;
             this.DeleteProductButton.Text = "Vymazat";
             this.DeleteProductButton.UseVisualStyleBackColor = true;
@@ -1449,10 +1492,10 @@
             // 
             this.ProductDetailButton.AutoSize = true;
             this.ProductDetailButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProductDetailButton.Location = new System.Drawing.Point(799, 32);
-            this.ProductDetailButton.Margin = new System.Windows.Forms.Padding(10, 32, 10, 29);
+            this.ProductDetailButton.Location = new System.Drawing.Point(529, 21);
+            this.ProductDetailButton.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
             this.ProductDetailButton.Name = "ProductDetailButton";
-            this.ProductDetailButton.Size = new System.Drawing.Size(245, 51);
+            this.ProductDetailButton.Size = new System.Drawing.Size(161, 33);
             this.ProductDetailButton.TabIndex = 3;
             this.ProductDetailButton.Text = "Zobrazit detail";
             this.ProductDetailButton.UseVisualStyleBackColor = true;
@@ -1462,25 +1505,67 @@
             // 
             this.AddProductButton.AutoSize = true;
             this.AddProductButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AddProductButton.Location = new System.Drawing.Point(10, 32);
-            this.AddProductButton.Margin = new System.Windows.Forms.Padding(10, 32, 10, 29);
+            this.AddProductButton.Location = new System.Drawing.Point(7, 21);
+            this.AddProductButton.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
             this.AddProductButton.Name = "AddProductButton";
-            this.AddProductButton.Size = new System.Drawing.Size(243, 51);
+            this.AddProductButton.Size = new System.Drawing.Size(160, 33);
             this.AddProductButton.TabIndex = 0;
             this.AddProductButton.Text = "Přidat";
             this.AddProductButton.UseVisualStyleBackColor = true;
             this.AddProductButton.Click += new System.EventHandler(this.AddProductButton_Click);
             // 
+            // ProductID
+            // 
+            this.ProductID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ProductID.HeaderText = "ID";
+            this.ProductID.Name = "ProductID";
+            this.ProductID.ReadOnly = true;
+            this.ProductID.Width = 53;
+            // 
+            // NameColumn
+            // 
+            this.NameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
+            this.NameColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.NameColumn.HeaderText = "Název";
+            this.NameColumn.Name = "NameColumn";
+            this.NameColumn.ReadOnly = true;
+            // 
+            // CathegoryColumn
+            // 
+            this.CathegoryColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5);
+            this.CathegoryColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.CathegoryColumn.HeaderText = "Kategorie";
+            this.CathegoryColumn.Name = "CathegoryColumn";
+            this.CathegoryColumn.ReadOnly = true;
+            this.CathegoryColumn.Width = 87;
+            // 
+            // PriceColumn
+            // 
+            this.PriceColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N0";
+            dataGridViewCellStyle4.NullValue = null;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
+            this.PriceColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.PriceColumn.HeaderText = "Cena (Kč)";
+            this.PriceColumn.Name = "PriceColumn";
+            this.PriceColumn.ReadOnly = true;
+            this.PriceColumn.Width = 89;
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1106, 858);
+            this.ClientSize = new System.Drawing.Size(737, 581);
             this.Controls.Add(this.TableLayoutPanel1);
+            this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "E-shop manager";
+            this.Text = "MobileShop";
             this.TableLayoutPanel1.ResumeLayout(false);
             this.UserViewsTabControl.ResumeLayout(false);
             this.CustomerTabPage.ResumeLayout(false);
@@ -1659,6 +1744,10 @@
         private System.Windows.Forms.Button CustomerOrderDetailButton;
         private System.Windows.Forms.Button ReturnToStoreButton;
         private System.Windows.Forms.ToolStripMenuItem LoginToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CathegoryColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PriceColumn;
     }
 }
 

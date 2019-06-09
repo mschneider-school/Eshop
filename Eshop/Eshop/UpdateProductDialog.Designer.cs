@@ -34,25 +34,22 @@
             this.DescriptionTLPanel = new System.Windows.Forms.TableLayoutPanel();
             this.DescriptionLabel = new System.Windows.Forms.Label();
             this.ProductDescriptionRTBox = new System.Windows.Forms.RichTextBox();
-            this.DetailsTLPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.ProductPriceTLPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.ProductPriceLabel = new System.Windows.Forms.Label();
-            this.ProductPriceTextBox = new System.Windows.Forms.TextBox();
-            this.ProductCathegoryTLPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.ProductCathegoryLabel = new System.Windows.Forms.Label();
-            this.ProductCathegoryCBox = new System.Windows.Forms.ComboBox();
-            this.ProductIDTLPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.ProductIDLabel = new System.Windows.Forms.Label();
-            this.ProductIDTextBox = new System.Windows.Forms.TextBox();
-            this.ProductNameTLPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.ProductNameLabel = new System.Windows.Forms.Label();
-            this.ProductNameTextBox = new System.Windows.Forms.TextBox();
             this.ProductPictureTLPanel = new System.Windows.Forms.TableLayoutPanel();
             this.LoadPhotoButton = new System.Windows.Forms.Button();
             this.ProductPictureBox = new System.Windows.Forms.PictureBox();
             this.AddPicButtonTLPanel = new System.Windows.Forms.TableLayoutPanel();
             this.SaveProductButton = new System.Windows.Forms.Button();
             this.UndoChangesButton = new System.Windows.Forms.Button();
+            this.ProductCathegoryTLPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.ProductCathegoryCBox = new System.Windows.Forms.ComboBox();
+            this.ProductCathegoryLabel = new System.Windows.Forms.Label();
+            this.ProductPriceTLPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.ProductPriceTextBox = new System.Windows.Forms.TextBox();
+            this.ProductPriceLabel = new System.Windows.Forms.Label();
+            this.DetailsTLPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.ProductNameLabel = new System.Windows.Forms.Label();
+            this.ProductNameTextBox = new System.Windows.Forms.TextBox();
+            this.ProductNameTLPanel = new System.Windows.Forms.TableLayoutPanel();
             this.AddProducttTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddProductSplitContainer)).BeginInit();
             this.AddProductSplitContainer.Panel1.SuspendLayout();
@@ -60,14 +57,13 @@
             this.AddProductSplitContainer.SuspendLayout();
             this.ProductDetailsTLPanel.SuspendLayout();
             this.DescriptionTLPanel.SuspendLayout();
-            this.DetailsTLPanel.SuspendLayout();
-            this.ProductPriceTLPanel.SuspendLayout();
-            this.ProductCathegoryTLPanel.SuspendLayout();
-            this.ProductIDTLPanel.SuspendLayout();
-            this.ProductNameTLPanel.SuspendLayout();
             this.ProductPictureTLPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductPictureBox)).BeginInit();
             this.AddPicButtonTLPanel.SuspendLayout();
+            this.ProductCathegoryTLPanel.SuspendLayout();
+            this.ProductPriceTLPanel.SuspendLayout();
+            this.DetailsTLPanel.SuspendLayout();
+            this.ProductNameTLPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // AddProducttTableLayoutPanel
@@ -125,6 +121,7 @@
             this.ProductDetailsTLPanel.RowCount = 2;
             this.ProductDetailsTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.ProductDetailsTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.ProductDetailsTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.ProductDetailsTLPanel.Size = new System.Drawing.Size(360, 305);
             this.ProductDetailsTLPanel.TabIndex = 0;
             // 
@@ -167,190 +164,6 @@
             this.ProductDescriptionRTBox.Size = new System.Drawing.Size(340, 75);
             this.ProductDescriptionRTBox.TabIndex = 1;
             this.ProductDescriptionRTBox.Text = "";
-            // 
-            // DetailsTLPanel
-            // 
-            this.DetailsTLPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DetailsTLPanel.ColumnCount = 2;
-            this.DetailsTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.DetailsTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.DetailsTLPanel.Controls.Add(this.ProductPriceTLPanel, 0, 1);
-            this.DetailsTLPanel.Controls.Add(this.ProductCathegoryTLPanel, 0, 1);
-            this.DetailsTLPanel.Controls.Add(this.ProductIDTLPanel, 0, 0);
-            this.DetailsTLPanel.Controls.Add(this.ProductNameTLPanel, 1, 0);
-            this.DetailsTLPanel.Location = new System.Drawing.Point(0, 0);
-            this.DetailsTLPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.DetailsTLPanel.Name = "DetailsTLPanel";
-            this.DetailsTLPanel.RowCount = 2;
-            this.DetailsTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.DetailsTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.DetailsTLPanel.Size = new System.Drawing.Size(360, 152);
-            this.DetailsTLPanel.TabIndex = 2;
-            // 
-            // ProductPriceTLPanel
-            // 
-            this.ProductPriceTLPanel.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ProductPriceTLPanel.ColumnCount = 1;
-            this.ProductPriceTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.ProductPriceTLPanel.Controls.Add(this.ProductPriceLabel, 0, 0);
-            this.ProductPriceTLPanel.Controls.Add(this.ProductPriceTextBox, 0, 1);
-            this.ProductPriceTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProductPriceTLPanel.Location = new System.Drawing.Point(0, 81);
-            this.ProductPriceTLPanel.Margin = new System.Windows.Forms.Padding(0, 5, 5, 10);
-            this.ProductPriceTLPanel.Name = "ProductPriceTLPanel";
-            this.ProductPriceTLPanel.RowCount = 2;
-            this.ProductPriceTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.ProductPriceTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.ProductPriceTLPanel.Size = new System.Drawing.Size(175, 61);
-            this.ProductPriceTLPanel.TabIndex = 6;
-            // 
-            // ProductPriceLabel
-            // 
-            this.ProductPriceLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.ProductPriceLabel.AutoSize = true;
-            this.ProductPriceLabel.Location = new System.Drawing.Point(7, 11);
-            this.ProductPriceLabel.Margin = new System.Windows.Forms.Padding(7, 11, 3, 0);
-            this.ProductPriceLabel.Name = "ProductPriceLabel";
-            this.ProductPriceLabel.Size = new System.Drawing.Size(35, 13);
-            this.ProductPriceLabel.TabIndex = 0;
-            this.ProductPriceLabel.Text = "Cena:";
-            // 
-            // ProductPriceTextBox
-            // 
-            this.ProductPriceTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProductPriceTextBox.Location = new System.Drawing.Point(10, 29);
-            this.ProductPriceTextBox.Margin = new System.Windows.Forms.Padding(10, 5, 10, 11);
-            this.ProductPriceTextBox.Name = "ProductPriceTextBox";
-            this.ProductPriceTextBox.Size = new System.Drawing.Size(155, 20);
-            this.ProductPriceTextBox.TabIndex = 3;
-            // 
-            // ProductCathegoryTLPanel
-            // 
-            this.ProductCathegoryTLPanel.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ProductCathegoryTLPanel.ColumnCount = 1;
-            this.ProductCathegoryTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.ProductCathegoryTLPanel.Controls.Add(this.ProductCathegoryLabel, 0, 0);
-            this.ProductCathegoryTLPanel.Controls.Add(this.ProductCathegoryCBox, 0, 1);
-            this.ProductCathegoryTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProductCathegoryTLPanel.Location = new System.Drawing.Point(185, 81);
-            this.ProductCathegoryTLPanel.Margin = new System.Windows.Forms.Padding(5, 5, 0, 10);
-            this.ProductCathegoryTLPanel.Name = "ProductCathegoryTLPanel";
-            this.ProductCathegoryTLPanel.RowCount = 2;
-            this.ProductCathegoryTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.ProductCathegoryTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.ProductCathegoryTLPanel.Size = new System.Drawing.Size(175, 61);
-            this.ProductCathegoryTLPanel.TabIndex = 5;
-            // 
-            // ProductCathegoryLabel
-            // 
-            this.ProductCathegoryLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.ProductCathegoryLabel.AutoSize = true;
-            this.ProductCathegoryLabel.Location = new System.Drawing.Point(7, 11);
-            this.ProductCathegoryLabel.Margin = new System.Windows.Forms.Padding(7, 11, 3, 0);
-            this.ProductCathegoryLabel.Name = "ProductCathegoryLabel";
-            this.ProductCathegoryLabel.Size = new System.Drawing.Size(55, 13);
-            this.ProductCathegoryLabel.TabIndex = 0;
-            this.ProductCathegoryLabel.Text = "Kategorie:";
-            // 
-            // ProductCathegoryCBox
-            // 
-            this.ProductCathegoryCBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ProductCathegoryCBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProductCathegoryCBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.ProductCathegoryCBox.FormattingEnabled = true;
-            this.ProductCathegoryCBox.Items.AddRange(new object[] {
-            "Chytré hodinky",
-            "Nabíječky a kabely",
-            "Pouzdra a kryty",
-            "Smartfóny",
-            "Tablety",
-            "Tlačítkové telefony",
-            "Tvrzená skla"});
-            this.ProductCathegoryCBox.Location = new System.Drawing.Point(10, 29);
-            this.ProductCathegoryCBox.Margin = new System.Windows.Forms.Padding(10, 5, 10, 11);
-            this.ProductCathegoryCBox.Name = "ProductCathegoryCBox";
-            this.ProductCathegoryCBox.Size = new System.Drawing.Size(155, 21);
-            this.ProductCathegoryCBox.Sorted = true;
-            this.ProductCathegoryCBox.TabIndex = 1;
-            // 
-            // ProductIDTLPanel
-            // 
-            this.ProductIDTLPanel.AutoSize = true;
-            this.ProductIDTLPanel.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ProductIDTLPanel.ColumnCount = 1;
-            this.ProductIDTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.ProductIDTLPanel.Controls.Add(this.ProductIDLabel, 0, 0);
-            this.ProductIDTLPanel.Controls.Add(this.ProductIDTextBox, 0, 1);
-            this.ProductIDTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProductIDTLPanel.Location = new System.Drawing.Point(0, 0);
-            this.ProductIDTLPanel.Margin = new System.Windows.Forms.Padding(0, 0, 5, 5);
-            this.ProductIDTLPanel.Name = "ProductIDTLPanel";
-            this.ProductIDTLPanel.RowCount = 2;
-            this.ProductIDTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.ProductIDTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.ProductIDTLPanel.Size = new System.Drawing.Size(175, 71);
-            this.ProductIDTLPanel.TabIndex = 1;
-            // 
-            // ProductIDLabel
-            // 
-            this.ProductIDLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.ProductIDLabel.AutoSize = true;
-            this.ProductIDLabel.Location = new System.Drawing.Point(7, 13);
-            this.ProductIDLabel.Margin = new System.Windows.Forms.Padding(7, 11, 3, 0);
-            this.ProductIDLabel.Name = "ProductIDLabel";
-            this.ProductIDLabel.Size = new System.Drawing.Size(20, 13);
-            this.ProductIDLabel.TabIndex = 0;
-            this.ProductIDLabel.Text = "lD:";
-            // 
-            // ProductIDTextBox
-            // 
-            this.ProductIDTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProductIDTextBox.Location = new System.Drawing.Point(10, 33);
-            this.ProductIDTextBox.Margin = new System.Windows.Forms.Padding(10, 5, 10, 11);
-            this.ProductIDTextBox.Name = "ProductIDTextBox";
-            this.ProductIDTextBox.ReadOnly = true;
-            this.ProductIDTextBox.Size = new System.Drawing.Size(155, 20);
-            this.ProductIDTextBox.TabIndex = 3;
-            // 
-            // ProductNameTLPanel
-            // 
-            this.ProductNameTLPanel.AutoSize = true;
-            this.ProductNameTLPanel.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ProductNameTLPanel.ColumnCount = 1;
-            this.ProductNameTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.ProductNameTLPanel.Controls.Add(this.ProductNameLabel, 0, 0);
-            this.ProductNameTLPanel.Controls.Add(this.ProductNameTextBox, 0, 1);
-            this.ProductNameTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProductNameTLPanel.Location = new System.Drawing.Point(185, 0);
-            this.ProductNameTLPanel.Margin = new System.Windows.Forms.Padding(5, 0, 0, 5);
-            this.ProductNameTLPanel.Name = "ProductNameTLPanel";
-            this.ProductNameTLPanel.RowCount = 2;
-            this.ProductNameTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.ProductNameTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.ProductNameTLPanel.Size = new System.Drawing.Size(175, 71);
-            this.ProductNameTLPanel.TabIndex = 4;
-            // 
-            // ProductNameLabel
-            // 
-            this.ProductNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.ProductNameLabel.AutoSize = true;
-            this.ProductNameLabel.Location = new System.Drawing.Point(7, 13);
-            this.ProductNameLabel.Margin = new System.Windows.Forms.Padding(7, 11, 3, 0);
-            this.ProductNameLabel.Name = "ProductNameLabel";
-            this.ProductNameLabel.Size = new System.Drawing.Size(41, 13);
-            this.ProductNameLabel.TabIndex = 0;
-            this.ProductNameLabel.Text = "Název:";
-            // 
-            // ProductNameTextBox
-            // 
-            this.ProductNameTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProductNameTextBox.Location = new System.Drawing.Point(10, 33);
-            this.ProductNameTextBox.Margin = new System.Windows.Forms.Padding(10, 5, 10, 11);
-            this.ProductNameTextBox.Name = "ProductNameTextBox";
-            this.ProductNameTextBox.Size = new System.Drawing.Size(155, 20);
-            this.ProductNameTextBox.TabIndex = 2;
             // 
             // ProductPictureTLPanel
             // 
@@ -440,6 +253,153 @@
             this.UndoChangesButton.Text = "Vrátit úpravy";
             this.UndoChangesButton.UseVisualStyleBackColor = true;
             // 
+            // ProductCathegoryTLPanel
+            // 
+            this.ProductCathegoryTLPanel.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ProductCathegoryTLPanel.ColumnCount = 1;
+            this.ProductCathegoryTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.ProductCathegoryTLPanel.Controls.Add(this.ProductCathegoryLabel, 0, 0);
+            this.ProductCathegoryTLPanel.Controls.Add(this.ProductCathegoryCBox, 0, 1);
+            this.ProductCathegoryTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProductCathegoryTLPanel.Location = new System.Drawing.Point(185, 81);
+            this.ProductCathegoryTLPanel.Margin = new System.Windows.Forms.Padding(5, 5, 0, 10);
+            this.ProductCathegoryTLPanel.Name = "ProductCathegoryTLPanel";
+            this.ProductCathegoryTLPanel.RowCount = 2;
+            this.ProductCathegoryTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.ProductCathegoryTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.ProductCathegoryTLPanel.Size = new System.Drawing.Size(175, 61);
+            this.ProductCathegoryTLPanel.TabIndex = 5;
+            // 
+            // ProductCathegoryCBox
+            // 
+            this.ProductCathegoryCBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ProductCathegoryCBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProductCathegoryCBox.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.ProductCathegoryCBox.FormattingEnabled = true;
+            this.ProductCathegoryCBox.Items.AddRange(new object[] {
+            "Chytré hodinky",
+            "Nabíječky a kabely",
+            "Pouzdra a kryty",
+            "Smartfóny",
+            "Tablety",
+            "Tlačítkové telefony",
+            "Tvrzená skla"});
+            this.ProductCathegoryCBox.Location = new System.Drawing.Point(10, 29);
+            this.ProductCathegoryCBox.Margin = new System.Windows.Forms.Padding(10, 5, 10, 11);
+            this.ProductCathegoryCBox.Name = "ProductCathegoryCBox";
+            this.ProductCathegoryCBox.Size = new System.Drawing.Size(155, 21);
+            this.ProductCathegoryCBox.Sorted = true;
+            this.ProductCathegoryCBox.TabIndex = 1;
+            this.ProductCathegoryCBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ProductCathegoryCBox_KeyPress);
+            // 
+            // ProductCathegoryLabel
+            // 
+            this.ProductCathegoryLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.ProductCathegoryLabel.AutoSize = true;
+            this.ProductCathegoryLabel.Location = new System.Drawing.Point(7, 11);
+            this.ProductCathegoryLabel.Margin = new System.Windows.Forms.Padding(7, 11, 3, 0);
+            this.ProductCathegoryLabel.Name = "ProductCathegoryLabel";
+            this.ProductCathegoryLabel.Size = new System.Drawing.Size(55, 13);
+            this.ProductCathegoryLabel.TabIndex = 0;
+            this.ProductCathegoryLabel.Text = "Kategorie:";
+            // 
+            // ProductPriceTLPanel
+            // 
+            this.ProductPriceTLPanel.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ProductPriceTLPanel.ColumnCount = 1;
+            this.ProductPriceTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.ProductPriceTLPanel.Controls.Add(this.ProductPriceLabel, 0, 0);
+            this.ProductPriceTLPanel.Controls.Add(this.ProductPriceTextBox, 0, 1);
+            this.ProductPriceTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProductPriceTLPanel.Location = new System.Drawing.Point(0, 81);
+            this.ProductPriceTLPanel.Margin = new System.Windows.Forms.Padding(0, 5, 5, 10);
+            this.ProductPriceTLPanel.Name = "ProductPriceTLPanel";
+            this.ProductPriceTLPanel.RowCount = 2;
+            this.ProductPriceTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.ProductPriceTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.ProductPriceTLPanel.Size = new System.Drawing.Size(175, 61);
+            this.ProductPriceTLPanel.TabIndex = 6;
+            // 
+            // ProductPriceTextBox
+            // 
+            this.ProductPriceTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProductPriceTextBox.Location = new System.Drawing.Point(10, 29);
+            this.ProductPriceTextBox.Margin = new System.Windows.Forms.Padding(10, 5, 10, 11);
+            this.ProductPriceTextBox.Name = "ProductPriceTextBox";
+            this.ProductPriceTextBox.Size = new System.Drawing.Size(155, 20);
+            this.ProductPriceTextBox.TabIndex = 3;
+            // 
+            // ProductPriceLabel
+            // 
+            this.ProductPriceLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.ProductPriceLabel.AutoSize = true;
+            this.ProductPriceLabel.Location = new System.Drawing.Point(7, 11);
+            this.ProductPriceLabel.Margin = new System.Windows.Forms.Padding(7, 11, 3, 0);
+            this.ProductPriceLabel.Name = "ProductPriceLabel";
+            this.ProductPriceLabel.Size = new System.Drawing.Size(35, 13);
+            this.ProductPriceLabel.TabIndex = 0;
+            this.ProductPriceLabel.Text = "Cena:";
+            // 
+            // DetailsTLPanel
+            // 
+            this.DetailsTLPanel.AutoSize = true;
+            this.DetailsTLPanel.ColumnCount = 2;
+            this.DetailsTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.DetailsTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.DetailsTLPanel.Controls.Add(this.ProductPriceTLPanel, 0, 1);
+            this.DetailsTLPanel.Controls.Add(this.ProductCathegoryTLPanel, 0, 1);
+            this.DetailsTLPanel.Controls.Add(this.ProductNameTLPanel, 0, 0);
+            this.DetailsTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DetailsTLPanel.Location = new System.Drawing.Point(0, 0);
+            this.DetailsTLPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.DetailsTLPanel.Name = "DetailsTLPanel";
+            this.DetailsTLPanel.RowCount = 2;
+            this.DetailsTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.DetailsTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.DetailsTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.DetailsTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.DetailsTLPanel.Size = new System.Drawing.Size(360, 152);
+            this.DetailsTLPanel.TabIndex = 2;
+            // 
+            // ProductNameLabel
+            // 
+            this.ProductNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.ProductNameLabel.AutoSize = true;
+            this.ProductNameLabel.Location = new System.Drawing.Point(7, 13);
+            this.ProductNameLabel.Margin = new System.Windows.Forms.Padding(7, 11, 3, 0);
+            this.ProductNameLabel.Name = "ProductNameLabel";
+            this.ProductNameLabel.Size = new System.Drawing.Size(41, 13);
+            this.ProductNameLabel.TabIndex = 0;
+            this.ProductNameLabel.Text = "Název:";
+            // 
+            // ProductNameTextBox
+            // 
+            this.ProductNameTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProductNameTextBox.Location = new System.Drawing.Point(10, 33);
+            this.ProductNameTextBox.Margin = new System.Windows.Forms.Padding(10, 5, 10, 11);
+            this.ProductNameTextBox.Name = "ProductNameTextBox";
+            this.ProductNameTextBox.Size = new System.Drawing.Size(340, 20);
+            this.ProductNameTextBox.TabIndex = 2;
+            // 
+            // ProductNameTLPanel
+            // 
+            this.ProductNameTLPanel.AutoSize = true;
+            this.ProductNameTLPanel.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ProductNameTLPanel.ColumnCount = 1;
+            this.DetailsTLPanel.SetColumnSpan(this.ProductNameTLPanel, 2);
+            this.ProductNameTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.ProductNameTLPanel.Controls.Add(this.ProductNameTextBox, 0, 1);
+            this.ProductNameTLPanel.Controls.Add(this.ProductNameLabel, 0, 0);
+            this.ProductNameTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProductNameTLPanel.Location = new System.Drawing.Point(0, 0);
+            this.ProductNameTLPanel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.ProductNameTLPanel.Name = "ProductNameTLPanel";
+            this.ProductNameTLPanel.RowCount = 2;
+            this.ProductNameTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.ProductNameTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.ProductNameTLPanel.Size = new System.Drawing.Size(360, 71);
+            this.ProductNameTLPanel.TabIndex = 4;
+            // 
             // UpdateProductDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -464,20 +424,18 @@
             this.ProductDetailsTLPanel.PerformLayout();
             this.DescriptionTLPanel.ResumeLayout(false);
             this.DescriptionTLPanel.PerformLayout();
-            this.DetailsTLPanel.ResumeLayout(false);
-            this.DetailsTLPanel.PerformLayout();
-            this.ProductPriceTLPanel.ResumeLayout(false);
-            this.ProductPriceTLPanel.PerformLayout();
-            this.ProductCathegoryTLPanel.ResumeLayout(false);
-            this.ProductCathegoryTLPanel.PerformLayout();
-            this.ProductIDTLPanel.ResumeLayout(false);
-            this.ProductIDTLPanel.PerformLayout();
-            this.ProductNameTLPanel.ResumeLayout(false);
-            this.ProductNameTLPanel.PerformLayout();
             this.ProductPictureTLPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ProductPictureBox)).EndInit();
             this.AddPicButtonTLPanel.ResumeLayout(false);
             this.AddPicButtonTLPanel.PerformLayout();
+            this.ProductCathegoryTLPanel.ResumeLayout(false);
+            this.ProductCathegoryTLPanel.PerformLayout();
+            this.ProductPriceTLPanel.ResumeLayout(false);
+            this.ProductPriceTLPanel.PerformLayout();
+            this.DetailsTLPanel.ResumeLayout(false);
+            this.DetailsTLPanel.PerformLayout();
+            this.ProductNameTLPanel.ResumeLayout(false);
+            this.ProductNameTLPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -498,17 +456,14 @@
         private System.Windows.Forms.Button SaveProductButton;
         private System.Windows.Forms.Button UndoChangesButton;
         private System.Windows.Forms.TableLayoutPanel DetailsTLPanel;
-        private System.Windows.Forms.TableLayoutPanel ProductIDTLPanel;
-        private System.Windows.Forms.Label ProductIDLabel;
-        private System.Windows.Forms.TextBox ProductIDTextBox;
-        private System.Windows.Forms.TableLayoutPanel ProductNameTLPanel;
-        private System.Windows.Forms.Label ProductNameLabel;
-        private System.Windows.Forms.TextBox ProductNameTextBox;
-        private System.Windows.Forms.TableLayoutPanel ProductCathegoryTLPanel;
-        private System.Windows.Forms.Label ProductCathegoryLabel;
-        private System.Windows.Forms.ComboBox ProductCathegoryCBox;
         private System.Windows.Forms.TableLayoutPanel ProductPriceTLPanel;
         private System.Windows.Forms.Label ProductPriceLabel;
         private System.Windows.Forms.TextBox ProductPriceTextBox;
+        private System.Windows.Forms.TableLayoutPanel ProductCathegoryTLPanel;
+        private System.Windows.Forms.Label ProductCathegoryLabel;
+        private System.Windows.Forms.ComboBox ProductCathegoryCBox;
+        private System.Windows.Forms.TableLayoutPanel ProductNameTLPanel;
+        private System.Windows.Forms.TextBox ProductNameTextBox;
+        private System.Windows.Forms.Label ProductNameLabel;
     }
 }

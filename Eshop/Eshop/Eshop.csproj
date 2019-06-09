@@ -71,12 +71,14 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddProductDialog.cs">
+    <Compile Include="ProcessProductDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddProductDialog.Designer.cs">
-      <DependentUpon>AddProductDialog.cs</DependentUpon>
+    <Compile Include="ProcessProductDialog.Designer.cs">
+      <DependentUpon>ProcessProductDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Administrator.cs" />
+    <Compile Include="Cathegory.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="DeleteProductDialog.cs">
@@ -85,6 +87,7 @@
     <Compile Include="DeleteProductDialog.Designer.cs">
       <DependentUpon>DeleteProductDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="ExtensionMethods.cs" />
     <Compile Include="LoginRegisterDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,14 +124,15 @@
     <Compile Include="Logger.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Session.cs" />
     <Compile Include="UpdateProductDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UpdateProductDialog.Designer.cs">
       <DependentUpon>UpdateProductDialog.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddProductDialog.resx">
-      <DependentUpon>AddProductDialog.cs</DependentUpon>
+    <EmbeddedResource Include="ProcessProductDialog.resx">
+      <DependentUpon>ProcessProductDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteProductDialog.resx">
       <DependentUpon>DeleteProductDialog.cs</DependentUpon>

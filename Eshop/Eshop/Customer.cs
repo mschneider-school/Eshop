@@ -8,6 +8,21 @@ namespace Eshop
 {
     class Customer
     {
+        /// <summary>
+        /// nazvy sloupcu v tabulce Customr
+        /// </summary>
+        public const string TableName = "Customer";
+        public const string IDColumn = "CustomerID";
+        public const string NameColumn = "Name";
+        public const string LastNameColumn = "LastName";
+        public const string PhoneColumn = "Phone";
+        public const string CityColumn = "City";
+        public const string StreetColumn = "Street";
+        public const string HouseNumberColumn = "HouseNumber";
+        public const string PostalCodeColumn = "PostalCode";
+        public const string EmailColumn = "Email";
+        public const string PasswordColumn = "Password";
+
         public string Name { get; }
         public string LastName { get; }
         public int MobilePhone { get; }

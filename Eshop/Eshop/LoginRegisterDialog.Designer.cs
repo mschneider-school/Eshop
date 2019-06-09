@@ -31,7 +31,7 @@
             this.ConfirmWrapperTLPanel = new System.Windows.Forms.TableLayoutPanel();
             this.ConfirmButtonsTLPanel = new System.Windows.Forms.TableLayoutPanel();
             this.RegisterCustomerButton = new System.Windows.Forms.Button();
-            this.LoginCustomerButton = new System.Windows.Forms.Button();
+            this.LoginUserButton = new System.Windows.Forms.Button();
             this.CredentialsWrapperTLPanel = new System.Windows.Forms.TableLayoutPanel();
             this.PasswordTLPanel = new System.Windows.Forms.TableLayoutPanel();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
@@ -57,12 +57,11 @@
             this.ConfirmWrapperTLPanel.Controls.Add(this.CredentialsWrapperTLPanel, 0, 0);
             this.ConfirmWrapperTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ConfirmWrapperTLPanel.Location = new System.Drawing.Point(0, 0);
-            this.ConfirmWrapperTLPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ConfirmWrapperTLPanel.Name = "ConfirmWrapperTLPanel";
             this.ConfirmWrapperTLPanel.RowCount = 2;
             this.ConfirmWrapperTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.ConfirmWrapperTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 89F));
-            this.ConfirmWrapperTLPanel.Size = new System.Drawing.Size(526, 357);
+            this.ConfirmWrapperTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+            this.ConfirmWrapperTLPanel.Size = new System.Drawing.Size(351, 232);
             this.ConfirmWrapperTLPanel.TabIndex = 0;
             // 
             // ConfirmButtonsTLPanel
@@ -72,42 +71,43 @@
             this.ConfirmButtonsTLPanel.ColumnCount = 2;
             this.ConfirmButtonsTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.ConfirmButtonsTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.ConfirmButtonsTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.ConfirmButtonsTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.ConfirmButtonsTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.ConfirmButtonsTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.ConfirmButtonsTLPanel.Controls.Add(this.RegisterCustomerButton, 1, 0);
-            this.ConfirmButtonsTLPanel.Controls.Add(this.LoginCustomerButton, 0, 0);
+            this.ConfirmButtonsTLPanel.Controls.Add(this.LoginUserButton, 0, 0);
             this.ConfirmButtonsTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ConfirmButtonsTLPanel.Location = new System.Drawing.Point(0, 268);
+            this.ConfirmButtonsTLPanel.Location = new System.Drawing.Point(0, 174);
             this.ConfirmButtonsTLPanel.Margin = new System.Windows.Forms.Padding(0);
             this.ConfirmButtonsTLPanel.Name = "ConfirmButtonsTLPanel";
             this.ConfirmButtonsTLPanel.RowCount = 1;
             this.ConfirmButtonsTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.ConfirmButtonsTLPanel.Size = new System.Drawing.Size(526, 89);
+            this.ConfirmButtonsTLPanel.Size = new System.Drawing.Size(351, 58);
             this.ConfirmButtonsTLPanel.TabIndex = 1;
             // 
             // RegisterCustomerButton
             // 
             this.RegisterCustomerButton.AutoSize = true;
             this.RegisterCustomerButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RegisterCustomerButton.Location = new System.Drawing.Point(273, 20);
-            this.RegisterCustomerButton.Margin = new System.Windows.Forms.Padding(10, 20, 15, 23);
+            this.RegisterCustomerButton.Location = new System.Drawing.Point(182, 13);
+            this.RegisterCustomerButton.Margin = new System.Windows.Forms.Padding(7, 13, 10, 15);
             this.RegisterCustomerButton.Name = "RegisterCustomerButton";
-            this.RegisterCustomerButton.Size = new System.Drawing.Size(238, 46);
+            this.RegisterCustomerButton.Size = new System.Drawing.Size(159, 30);
             this.RegisterCustomerButton.TabIndex = 4;
             this.RegisterCustomerButton.Text = "Nová registrace";
             this.RegisterCustomerButton.UseVisualStyleBackColor = true;
             // 
-            // LoginCustomerButton
+            // LoginUserButton
             // 
-            this.LoginCustomerButton.AutoSize = true;
-            this.LoginCustomerButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoginCustomerButton.Location = new System.Drawing.Point(15, 20);
-            this.LoginCustomerButton.Margin = new System.Windows.Forms.Padding(15, 20, 15, 23);
-            this.LoginCustomerButton.Name = "LoginCustomerButton";
-            this.LoginCustomerButton.Size = new System.Drawing.Size(233, 46);
-            this.LoginCustomerButton.TabIndex = 3;
-            this.LoginCustomerButton.Text = "Přihlásit se";
-            this.LoginCustomerButton.UseVisualStyleBackColor = true;
+            this.LoginUserButton.AutoSize = true;
+            this.LoginUserButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoginUserButton.Location = new System.Drawing.Point(10, 13);
+            this.LoginUserButton.Margin = new System.Windows.Forms.Padding(10, 13, 10, 15);
+            this.LoginUserButton.Name = "LoginUserButton";
+            this.LoginUserButton.Size = new System.Drawing.Size(155, 30);
+            this.LoginUserButton.TabIndex = 3;
+            this.LoginUserButton.Text = "Přihlásit se";
+            this.LoginUserButton.UseVisualStyleBackColor = true;
+            this.LoginUserButton.Click += new System.EventHandler(this.LoginUserButton_Click);
             // 
             // CredentialsWrapperTLPanel
             // 
@@ -118,13 +118,13 @@
             this.CredentialsWrapperTLPanel.Controls.Add(this.PasswordTLPanel, 0, 1);
             this.CredentialsWrapperTLPanel.Controls.Add(this.UserNameTLPanel, 0, 0);
             this.CredentialsWrapperTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CredentialsWrapperTLPanel.Location = new System.Drawing.Point(0, 15);
-            this.CredentialsWrapperTLPanel.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
+            this.CredentialsWrapperTLPanel.Location = new System.Drawing.Point(0, 10);
+            this.CredentialsWrapperTLPanel.Margin = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.CredentialsWrapperTLPanel.Name = "CredentialsWrapperTLPanel";
             this.CredentialsWrapperTLPanel.RowCount = 2;
             this.CredentialsWrapperTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.CredentialsWrapperTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.CredentialsWrapperTLPanel.Size = new System.Drawing.Size(526, 238);
+            this.CredentialsWrapperTLPanel.Size = new System.Drawing.Size(351, 154);
             this.CredentialsWrapperTLPanel.TabIndex = 0;
             this.CredentialsWrapperTLPanel.TabStop = true;
             // 
@@ -137,33 +137,33 @@
             this.PasswordTLPanel.Controls.Add(this.PasswordTextBox, 0, 1);
             this.PasswordTLPanel.Controls.Add(this.LoginPasswordLabel, 0, 0);
             this.PasswordTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PasswordTLPanel.Location = new System.Drawing.Point(16, 127);
-            this.PasswordTLPanel.Margin = new System.Windows.Forms.Padding(16, 8, 16, 17);
+            this.PasswordTLPanel.Location = new System.Drawing.Point(11, 82);
+            this.PasswordTLPanel.Margin = new System.Windows.Forms.Padding(11, 5, 11, 11);
             this.PasswordTLPanel.Name = "PasswordTLPanel";
             this.PasswordTLPanel.RowCount = 2;
             this.PasswordTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.PasswordTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.PasswordTLPanel.Size = new System.Drawing.Size(494, 94);
+            this.PasswordTLPanel.Size = new System.Drawing.Size(329, 61);
             this.PasswordTLPanel.TabIndex = 1;
             // 
             // PasswordTextBox
             // 
             this.PasswordTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PasswordTextBox.Location = new System.Drawing.Point(15, 45);
-            this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(15, 8, 15, 5);
+            this.PasswordTextBox.Location = new System.Drawing.Point(10, 29);
+            this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(10, 5, 10, 3);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.PasswordChar = '*';
-            this.PasswordTextBox.Size = new System.Drawing.Size(464, 26);
+            this.PasswordTextBox.Size = new System.Drawing.Size(309, 20);
             this.PasswordTextBox.TabIndex = 1;
             // 
             // LoginPasswordLabel
             // 
             this.LoginPasswordLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.LoginPasswordLabel.AutoSize = true;
-            this.LoginPasswordLabel.Location = new System.Drawing.Point(10, 17);
-            this.LoginPasswordLabel.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
+            this.LoginPasswordLabel.Location = new System.Drawing.Point(7, 11);
+            this.LoginPasswordLabel.Margin = new System.Windows.Forms.Padding(7, 0, 3, 0);
             this.LoginPasswordLabel.Name = "LoginPasswordLabel";
-            this.LoginPasswordLabel.Size = new System.Drawing.Size(82, 20);
+            this.LoginPasswordLabel.Size = new System.Drawing.Size(56, 13);
             this.LoginPasswordLabel.TabIndex = 0;
             this.LoginPasswordLabel.Text = "Password:";
             this.LoginPasswordLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -179,47 +179,47 @@
             this.UserNameTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.UserNameTLPanel.Controls.Add(this.UserNameTextBox, 0, 1);
             this.UserNameTLPanel.Controls.Add(this.EmailLabel, 0, 0);
-            this.UserNameTLPanel.Location = new System.Drawing.Point(16, 17);
-            this.UserNameTLPanel.Margin = new System.Windows.Forms.Padding(16, 17, 16, 8);
+            this.UserNameTLPanel.Location = new System.Drawing.Point(11, 11);
+            this.UserNameTLPanel.Margin = new System.Windows.Forms.Padding(11, 11, 11, 5);
             this.UserNameTLPanel.Name = "UserNameTLPanel";
             this.UserNameTLPanel.RowCount = 2;
             this.UserNameTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.UserNameTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.UserNameTLPanel.Size = new System.Drawing.Size(494, 94);
+            this.UserNameTLPanel.Size = new System.Drawing.Size(329, 61);
             this.UserNameTLPanel.TabIndex = 0;
             // 
             // UserNameTextBox
             // 
             this.UserNameTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.UserNameTextBox.Location = new System.Drawing.Point(15, 45);
-            this.UserNameTextBox.Margin = new System.Windows.Forms.Padding(15, 8, 15, 5);
+            this.UserNameTextBox.Location = new System.Drawing.Point(10, 29);
+            this.UserNameTextBox.Margin = new System.Windows.Forms.Padding(10, 5, 10, 3);
             this.UserNameTextBox.Name = "UserNameTextBox";
-            this.UserNameTextBox.Size = new System.Drawing.Size(464, 26);
+            this.UserNameTextBox.Size = new System.Drawing.Size(309, 20);
             this.UserNameTextBox.TabIndex = 1;
             // 
             // EmailLabel
             // 
             this.EmailLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.EmailLabel.AutoSize = true;
-            this.EmailLabel.Location = new System.Drawing.Point(10, 17);
-            this.EmailLabel.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
+            this.EmailLabel.Location = new System.Drawing.Point(7, 11);
+            this.EmailLabel.Margin = new System.Windows.Forms.Padding(7, 0, 3, 0);
             this.EmailLabel.Name = "EmailLabel";
-            this.EmailLabel.Size = new System.Drawing.Size(52, 20);
+            this.EmailLabel.Size = new System.Drawing.Size(35, 13);
             this.EmailLabel.TabIndex = 0;
             this.EmailLabel.Text = "Email:";
             this.EmailLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // LoginRegisterDialog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AcceptButton = this.LoginUserButton;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(526, 357);
+            this.ClientSize = new System.Drawing.Size(351, 232);
             this.Controls.Add(this.ConfirmWrapperTLPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "LoginRegisterDialog";
-            this.Text = "Přihlášení uživatele";
+            this.Text = "Přihlášení zákazníka";
             this.ConfirmWrapperTLPanel.ResumeLayout(false);
             this.ConfirmWrapperTLPanel.PerformLayout();
             this.ConfirmButtonsTLPanel.ResumeLayout(false);
@@ -240,7 +240,7 @@
         private System.Windows.Forms.TableLayoutPanel ConfirmWrapperTLPanel;
         private System.Windows.Forms.TableLayoutPanel ConfirmButtonsTLPanel;
         private System.Windows.Forms.Button RegisterCustomerButton;
-        private System.Windows.Forms.Button LoginCustomerButton;
+        private System.Windows.Forms.Button LoginUserButton;
         private System.Windows.Forms.TableLayoutPanel CredentialsWrapperTLPanel;
         private System.Windows.Forms.TableLayoutPanel UserNameTLPanel;
         private System.Windows.Forms.Label EmailLabel;

@@ -34,7 +34,12 @@ namespace Eshop
                     ProductPictureBox.ImageLocation = filePath;
                 }
             }
+        }
 
+        // zakaze editaci pole kategorii
+        private void ProductCathegoryCBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

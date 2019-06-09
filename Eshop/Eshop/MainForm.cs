@@ -12,8 +12,6 @@ namespace Eshop
 {
     public partial class MainForm : Form
     {
-        private bool adminLogged = false;
-
         public MainForm()
         {
             InitializeComponent();
@@ -23,7 +21,17 @@ namespace Eshop
 
         private void MainForm_Load(Object sender, EventArgs e)
         {
+            ProductsDataGridView.DoubleBuffered(true);
+            OrdersDataGridView.DoubleBuffered(true);
+
+            // nahraje produktova data z databaze do pameti
+            Database.ReadTableData(Database.loadProducts, Database.LoadProductsCommand);
+
+            // nahraje data kategorii z db do pameti
+            Database.ReadTableData(Database.loadCathegories, Database.LoadCathegoriesCommand);
             
+            // zobrazi data produktu z pameti v produktove table
+            Database.DisplayLoadedProducts(ProductsDataGridView);
         }
 
         private void MainForm_Shown(Object sender, EventArgs e)
@@ -49,7 +57,7 @@ namespace Eshop
 
         private void AddProductButton_Click(object sender, EventArgs e)
         {
-            AddProductDialog addProduct = new AddProductDialog
+            ProcessProductDialog addProduct = new ProcessProductDialog(this)
             {
                 StartPosition = StartPosition,
             };
@@ -58,11 +66,19 @@ namespace Eshop
 
         private void UpdateProductButton_Click(object sender, EventArgs e)
         {
-            UpdateProductDialog updateProduct = new UpdateProductDialog
+            ProcessProductDialog updateProduct = new ProcessProductDialog(this, GetSelectedProduct())
             {
                 StartPosition = StartPosition,
             };
-            updateProduct.ShowDialog();
+            DialogResult result = updateProduct.ShowDialog();
+            
+            // po uprave produktu v databazi i cache
+            // aktualizujeme datagridview
+            if (result == DialogResult.OK)
+            {
+                ProductsDataGridView.Rows.Clear();
+                Database.DisplayLoadedProducts(ProductsDataGridView);
+            }
         }
 
         private void DeleteProductButton_Click(object sender, EventArgs e)
@@ -71,12 +87,31 @@ namespace Eshop
             {
                 StartPosition = StartPosition,
             };
-            deleteProduct.ShowDialog();
+
+            // to store a result
+            DialogResult result = deleteProduct.ShowDialog();
+           
+            // when deleting is confirmed, remove the product from the gridview
+            if (result == DialogResult.Yes)
+            {
+                // remove product from cache
+                Product selectedProduct = GetSelectedProduct();
+                Database.CachedProducts.Remove(selectedProduct);
+
+                // remove product from datagridview
+                RemoveSelectedRow(ProductsDataGridView);
+
+                // delete product in database
+                Database.DeleteProduct(selectedProduct);
+            }
         }
 
+        // zobrazeni formulare s detailem produktu
         private void ProductDetailButton_Click(object sender, EventArgs e)
         {
-            ProductDetailsForm productDetails = new ProductDetailsForm
+            Product selectedProduct = GetSelectedProduct();
+
+            ProductDetailsForm productDetails = new ProductDetailsForm(selectedProduct)
             {
                 StartPosition = StartPosition,
             };
@@ -121,12 +156,39 @@ namespace Eshop
         private void UserViewsTabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (UserViewsTabControl.SelectedTab == UserViewsTabControl.TabPages["adminTabPage"]
-                && !adminLogged)
+                && !Session.AdminLoggedIn)
             {
                 LoginRegisterDialog adminLogin = new LoginRegisterDialog();
                 adminLogin.TransformToAdminLogin();
                 adminLogin.ShowDialog();
             }
+        }
+
+        /*** POMOCNE METODY HLAVNIHO FORMULARE K PROVEDENI UI UPRAV ***/
+
+        /// <summary>
+        /// Vybere a vrati objekt Produkt vybrany 
+        /// </summary>
+        /// <returns></returns>
+        private Product GetSelectedProduct()
+        {
+            long selectedProductID = Convert.ToInt64(ProductsDataGridView.SelectedRows[0].Cells[0].Value);
+            Product selectedProduct = Database.GetCachedProductByID(selectedProductID);
+
+            return selectedProduct;
+        }
+
+        // vymaze polozku z GridView
+        private void RemoveSelectedRow(DataGridView dataGridView)
+        {
+            dataGridView.Rows.Remove(dataGridView.SelectedRows[0]);
+        }
+
+        // zobrazi novy produkt
+        public void DisplayNewProduct(Product product)
+        {
+             ProductsDataGridView.Rows.Add(product.ID, product.Name, 
+                 product.Cathegory, product.Price);
         }
     }
 }

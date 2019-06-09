@@ -12,22 +12,17 @@ namespace Eshop
 {
     public partial class DeleteProductDialog : Form
     {
-        public DeleteProductDialog()
+        public DeleteProductDialog(Product selectedProduct = null)
         {
             InitializeComponent();
         }
 
-        private void DeleteConfirmDialog_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DeleteButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void CancelActionButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void ConfirmActionButton_Click(object sender, EventArgs e)
         {
             Close();
         }

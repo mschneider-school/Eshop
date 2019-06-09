@@ -100,7 +100,7 @@
             this.ProductDetailsSplitContainer.Panel2.Controls.Add(this.ParametersSectionTLPanel);
             this.ProductDetailsSplitContainer.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.ProductDetailsSplitContainer.Size = new System.Drawing.Size(636, 396);
-            this.ProductDetailsSplitContainer.SplitterDistance = 275;
+            this.ProductDetailsSplitContainer.SplitterDistance = 274;
             this.ProductDetailsSplitContainer.SplitterWidth = 15;
             this.ProductDetailsSplitContainer.TabIndex = 0;
             this.ProductDetailsSplitContainer.TabStop = false;
@@ -121,7 +121,7 @@
             this.ProductIntroTLPanel.RowCount = 2;
             this.ProductIntroTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
             this.ProductIntroTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.ProductIntroTLPanel.Size = new System.Drawing.Size(275, 396);
+            this.ProductIntroTLPanel.Size = new System.Drawing.Size(274, 396);
             this.ProductIntroTLPanel.TabIndex = 0;
             // 
             // ProductNameLabel
@@ -134,7 +134,7 @@
             this.ProductNameLabel.Margin = new System.Windows.Forms.Padding(0);
             this.ProductNameLabel.Name = "ProductNameLabel";
             this.ProductNameLabel.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ProductNameLabel.Size = new System.Drawing.Size(275, 58);
+            this.ProductNameLabel.Size = new System.Drawing.Size(274, 58);
             this.ProductNameLabel.TabIndex = 0;
             this.ProductNameLabel.Text = "Huawei P20 Lite 4GB/64GB Dual SIM QuadCore Octal 3 DUO sedy ";
             this.ProductNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -150,17 +150,19 @@
             this.PictureWrapperPanel.Location = new System.Drawing.Point(0, 68);
             this.PictureWrapperPanel.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.PictureWrapperPanel.Name = "PictureWrapperPanel";
-            this.PictureWrapperPanel.Size = new System.Drawing.Size(275, 328);
+            this.PictureWrapperPanel.Padding = new System.Windows.Forms.Padding(15);
+            this.PictureWrapperPanel.Size = new System.Drawing.Size(274, 328);
             this.PictureWrapperPanel.TabIndex = 1;
             // 
             // ProductPictureBox
             // 
-            this.ProductPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ProductPictureBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ProductPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProductPictureBox.Location = new System.Drawing.Point(0, 0);
+            this.ProductPictureBox.Location = new System.Drawing.Point(15, 15);
             this.ProductPictureBox.Margin = new System.Windows.Forms.Padding(0);
             this.ProductPictureBox.Name = "ProductPictureBox";
-            this.ProductPictureBox.Size = new System.Drawing.Size(275, 328);
+            this.ProductPictureBox.Size = new System.Drawing.Size(244, 298);
+            this.ProductPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ProductPictureBox.TabIndex = 0;
             this.ProductPictureBox.TabStop = false;
             // 
@@ -179,7 +181,7 @@
             this.ParametersSectionTLPanel.RowCount = 2;
             this.ParametersSectionTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.ParametersSectionTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.ParametersSectionTLPanel.Size = new System.Drawing.Size(346, 396);
+            this.ParametersSectionTLPanel.Size = new System.Drawing.Size(347, 396);
             this.ParametersSectionTLPanel.TabIndex = 0;
             // 
             // DescriptionWrapperTLPanel
@@ -197,7 +199,7 @@
             this.DescriptionWrapperTLPanel.RowCount = 2;
             this.DescriptionWrapperTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
             this.DescriptionWrapperTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.DescriptionWrapperTLPanel.Size = new System.Drawing.Size(346, 198);
+            this.DescriptionWrapperTLPanel.Size = new System.Drawing.Size(347, 198);
             this.DescriptionWrapperTLPanel.TabIndex = 1;
             // 
             // DescriptionLabel
@@ -210,7 +212,7 @@
             this.DescriptionLabel.Margin = new System.Windows.Forms.Padding(0);
             this.DescriptionLabel.Name = "DescriptionLabel";
             this.DescriptionLabel.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.DescriptionLabel.Size = new System.Drawing.Size(346, 58);
+            this.DescriptionLabel.Size = new System.Drawing.Size(347, 58);
             this.DescriptionLabel.TabIndex = 1;
             this.DescriptionLabel.Text = "Popis produktu";
             this.DescriptionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -226,23 +228,23 @@
             this.DescriptionBoxWrapperPanel.Location = new System.Drawing.Point(0, 73);
             this.DescriptionBoxWrapperPanel.Margin = new System.Windows.Forms.Padding(0, 15, 0, 0);
             this.DescriptionBoxWrapperPanel.Name = "DescriptionBoxWrapperPanel";
-            this.DescriptionBoxWrapperPanel.Size = new System.Drawing.Size(346, 125);
+            this.DescriptionBoxWrapperPanel.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.DescriptionBoxWrapperPanel.Size = new System.Drawing.Size(347, 125);
             this.DescriptionBoxWrapperPanel.TabIndex = 2;
             // 
             // DescriptionRTBox
             // 
-            this.DescriptionRTBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.DescriptionRTBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.DescriptionRTBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DescriptionRTBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.DescriptionRTBox.Location = new System.Drawing.Point(13, 14);
-            this.DescriptionRTBox.Margin = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.DescriptionRTBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DescriptionRTBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DescriptionRTBox.Location = new System.Drawing.Point(12, 0);
+            this.DescriptionRTBox.Margin = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.DescriptionRTBox.Name = "DescriptionRTBox";
             this.DescriptionRTBox.ReadOnly = true;
-            this.DescriptionRTBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.DescriptionRTBox.Size = new System.Drawing.Size(319, 98);
+            this.DescriptionRTBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.DescriptionRTBox.Size = new System.Drawing.Size(335, 125);
             this.DescriptionRTBox.TabIndex = 0;
             this.DescriptionRTBox.TabStop = false;
             this.DescriptionRTBox.Text = "";
@@ -262,7 +264,7 @@
             this.ParametersWrapperTLPanel.RowCount = 2;
             this.ParametersWrapperTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
             this.ParametersWrapperTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.ParametersWrapperTLPanel.Size = new System.Drawing.Size(346, 198);
+            this.ParametersWrapperTLPanel.Size = new System.Drawing.Size(347, 198);
             this.ParametersWrapperTLPanel.TabIndex = 0;
             // 
             // ParemetersLabel
@@ -277,7 +279,7 @@
             this.ParemetersLabel.Margin = new System.Windows.Forms.Padding(0);
             this.ParemetersLabel.Name = "ParemetersLabel";
             this.ParemetersLabel.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ParemetersLabel.Size = new System.Drawing.Size(346, 58);
+            this.ParemetersLabel.Size = new System.Drawing.Size(347, 58);
             this.ParemetersLabel.TabIndex = 1;
             this.ParemetersLabel.Text = "Parametry produktu";
             this.ParemetersLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -303,17 +305,18 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(346, 140);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(347, 140);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // ProductPriceValueLabel
             // 
             this.ProductPriceValueLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.ProductPriceValueLabel.AutoSize = true;
-            this.ProductPriceValueLabel.Location = new System.Drawing.Point(148, 109);
+            this.ProductPriceValueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductPriceValueLabel.Location = new System.Drawing.Point(148, 108);
             this.ProductPriceValueLabel.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.ProductPriceValueLabel.Name = "ProductPriceValueLabel";
-            this.ProductPriceValueLabel.Size = new System.Drawing.Size(33, 13);
+            this.ProductPriceValueLabel.Size = new System.Drawing.Size(36, 15);
             this.ProductPriceValueLabel.TabIndex = 9;
             this.ProductPriceValueLabel.Text = "value";
             // 
@@ -321,10 +324,11 @@
             // 
             this.ProductPriceLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.ProductPriceLabel.AutoSize = true;
-            this.ProductPriceLabel.Location = new System.Drawing.Point(10, 109);
+            this.ProductPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductPriceLabel.Location = new System.Drawing.Point(10, 108);
             this.ProductPriceLabel.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.ProductPriceLabel.Name = "ProductPriceLabel";
-            this.ProductPriceLabel.Size = new System.Drawing.Size(35, 13);
+            this.ProductPriceLabel.Size = new System.Drawing.Size(39, 15);
             this.ProductPriceLabel.TabIndex = 8;
             this.ProductPriceLabel.Text = "Cena:";
             // 
@@ -332,10 +336,11 @@
             // 
             this.ProductCathegoryValueLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.ProductCathegoryValueLabel.AutoSize = true;
-            this.ProductCathegoryValueLabel.Location = new System.Drawing.Point(148, 62);
+            this.ProductCathegoryValueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductCathegoryValueLabel.Location = new System.Drawing.Point(148, 61);
             this.ProductCathegoryValueLabel.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.ProductCathegoryValueLabel.Name = "ProductCathegoryValueLabel";
-            this.ProductCathegoryValueLabel.Size = new System.Drawing.Size(33, 13);
+            this.ProductCathegoryValueLabel.Size = new System.Drawing.Size(36, 15);
             this.ProductCathegoryValueLabel.TabIndex = 7;
             this.ProductCathegoryValueLabel.Text = "value";
             // 
@@ -343,10 +348,11 @@
             // 
             this.ProductCathegoryLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.ProductCathegoryLabel.AutoSize = true;
-            this.ProductCathegoryLabel.Location = new System.Drawing.Point(10, 62);
+            this.ProductCathegoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductCathegoryLabel.Location = new System.Drawing.Point(10, 61);
             this.ProductCathegoryLabel.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.ProductCathegoryLabel.Name = "ProductCathegoryLabel";
-            this.ProductCathegoryLabel.Size = new System.Drawing.Size(55, 13);
+            this.ProductCathegoryLabel.Size = new System.Drawing.Size(63, 15);
             this.ProductCathegoryLabel.TabIndex = 6;
             this.ProductCathegoryLabel.Text = "Kategorie:";
             // 
@@ -354,10 +360,11 @@
             // 
             this.ProductIDValueLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.ProductIDValueLabel.AutoSize = true;
-            this.ProductIDValueLabel.Location = new System.Drawing.Point(148, 16);
+            this.ProductIDValueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductIDValueLabel.Location = new System.Drawing.Point(148, 15);
             this.ProductIDValueLabel.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.ProductIDValueLabel.Name = "ProductIDValueLabel";
-            this.ProductIDValueLabel.Size = new System.Drawing.Size(33, 13);
+            this.ProductIDValueLabel.Size = new System.Drawing.Size(36, 15);
             this.ProductIDValueLabel.TabIndex = 5;
             this.ProductIDValueLabel.Text = "value";
             // 
@@ -365,10 +372,11 @@
             // 
             this.ProductIDLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.ProductIDLabel.AutoSize = true;
-            this.ProductIDLabel.Location = new System.Drawing.Point(10, 16);
+            this.ProductIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductIDLabel.Location = new System.Drawing.Point(10, 15);
             this.ProductIDLabel.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.ProductIDLabel.Name = "ProductIDLabel";
-            this.ProductIDLabel.Size = new System.Drawing.Size(21, 13);
+            this.ProductIDLabel.Size = new System.Drawing.Size(22, 15);
             this.ProductIDLabel.TabIndex = 3;
             this.ProductIDLabel.Text = "ID:";
             // 
@@ -379,6 +387,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(656, 436);
             this.Controls.Add(this.DetailsOuterWrapperTLPanel);
+            this.MaximizeBox = false;
             this.Name = "ProductDetailsForm";
             this.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.Text = "Detail produktu";
