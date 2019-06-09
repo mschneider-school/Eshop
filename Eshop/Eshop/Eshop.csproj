@@ -125,12 +125,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Session.cs" />
-    <Compile Include="UpdateProductDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UpdateProductDialog.Designer.cs">
-      <DependentUpon>UpdateProductDialog.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="ProcessProductDialog.resx">
       <DependentUpon>ProcessProductDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,9 +155,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UpdateProductDialog.resx">
-      <DependentUpon>UpdateProductDialog.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

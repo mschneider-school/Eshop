@@ -58,10 +58,10 @@ namespace Eshop
             while (reader.Read())
             {
                 // obrazek a popis neni povinny, nacte se jen kdyz je ulozen
-                Bitmap productImage = null;
+                System.Drawing.Image productImage = null;
                 if (reader[Product.PhotoColumn] != DBNull.Value)
                 {
-                    productImage = (Bitmap)((new ImageConverter()).ConvertFrom(reader[Product.PhotoColumn]));
+                    productImage = (Bitmap)new ImageConverter().ConvertFrom(reader[Product.PhotoColumn]);
                 }
 
                 string productDescription = string.Empty;
@@ -243,13 +243,20 @@ namespace Eshop
                 string commandText = $"INSERT INTO {Product.TableName} " +
                     $"({Product.NameColumn}, {Product.CathegoryColumn}, " +
                     $"{Product.PriceColumn}, {Product.PhotoColumn}, {Product.DescriptionColumn}) " +
-                    $"VALUES ('{product.Name}', " +
-                    $"'{cathegory.ID}'" +
-                    $", '{product.Price}', '{productPhoto}', " +
-                    $"'{product.Description}')";
+                    $"VALUES (@{Product.NameColumn}, " +
+                    $"@{Product.CathegoryColumn}, " +
+                    $"@{Product.PriceColumn}, " +
+                    $"@{Product.PhotoColumn}, " +
+                    $"@{Product.DescriptionColumn})";
 
                 using (SQLiteCommand command = new SQLiteCommand(commandText, connection))
                 {
+                    command.Parameters.AddWithValue($"@{Product.NameColumn}", product.Name);
+                    command.Parameters.AddWithValue($"@{Product.CathegoryColumn}", cathegory.ID);
+                    command.Parameters.AddWithValue($"@{Product.PriceColumn}", product.Price);
+                    command.Parameters.AddWithValue($"@{Product.PhotoColumn}", productPhoto);
+                    command.Parameters.AddWithValue($"@{Product.DescriptionColumn}", product.Description);
+                    command.Parameters.AddWithValue(Product.PhotoColumn, productPhoto);
                     command.ExecuteNonQuery();
                 }
 
@@ -273,15 +280,21 @@ namespace Eshop
                 connection.Open();
 
                 string commandText = $"UPDATE {Product.TableName} " +
-                    $"SET {Product.NameColumn} = '{product.Name}', " +
-                    $"{Product.CathegoryColumn} = '{cathegory.ID}', " +
-                    $"{Product.PriceColumn} = '{product.Price}', " +
-                    $"{Product.PhotoColumn} = '{productPhoto}', " +
-                    $"{Product.DescriptionColumn} = '{product.Description}' " +
-                    $"WHERE {Product.IDColumn} = {product.ID}"; 
+                    $"SET {Product.NameColumn} = @{Product.NameColumn}, " +
+                    $"{Product.CathegoryColumn} = @{Product.CathegoryColumn}, " +
+                    $"{Product.PriceColumn} = @{Product.PriceColumn}, " +
+                    $"{Product.PhotoColumn} = @{Product.PhotoColumn}, " +
+                    $"{Product.DescriptionColumn} = @{Product.DescriptionColumn} " +
+                    $"WHERE {Product.IDColumn} = @{Product.IDColumn}"; 
 
                 using (SQLiteCommand command = new SQLiteCommand(commandText, connection))
                 {
+                    command.Parameters.AddWithValue($"@{Product.NameColumn}", product.Name);
+                    command.Parameters.AddWithValue($"@{Product.CathegoryColumn}", cathegory.ID);
+                    command.Parameters.AddWithValue($"@{Product.PriceColumn}", product.Price);
+                    command.Parameters.AddWithValue($"@{Product.PhotoColumn}", productPhoto);
+                    command.Parameters.AddWithValue($"@{Product.DescriptionColumn}", product.Description);
+                    command.Parameters.AddWithValue($"@{Product.IDColumn}", product.ID);
                     command.ExecuteNonQuery();
                 }
 
