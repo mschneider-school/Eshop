@@ -21,6 +21,7 @@ namespace Eshop
 
         private void MainForm_Load(Object sender, EventArgs e)
         {
+            ShopItemsDataGridView.DoubleBuffered(true);
             ProductsDataGridView.DoubleBuffered(true);
             OrdersDataGridView.DoubleBuffered(true);
 
@@ -30,8 +31,9 @@ namespace Eshop
             // nahraje data kategorii z db do pameti
             Database.ReadTableData(Database.loadCathegories, Database.LoadCathegoriesCommand);
             
-            // zobrazi data produktu z pameti v produktove table
+            // zobrazi data produktu z cache do produktoveho prehladu v eshope a admin. sekcii
             Database.DisplayLoadedProducts(ProductsDataGridView);
+            Database.DisplayLoadedProducts(ShopItemsDataGridView);
         }
 
         private void MainForm_Shown(Object sender, EventArgs e)
@@ -76,7 +78,6 @@ namespace Eshop
             // aktualizujeme datagridview
             if (result == DialogResult.OK)
             {
-                ProductsDataGridView.Rows.Clear();
                 Database.DisplayLoadedProducts(ProductsDataGridView);
             }
         }
@@ -178,17 +179,92 @@ namespace Eshop
             return selectedProduct;
         }
 
-        // vymaze polozku z GridView
+        /// <summary>
+        /// vymaze polozku z GridView
+        /// </summary>
+        /// <param name="dataGridView">gridview pro vymazani polozky</param>
         private void RemoveSelectedRow(DataGridView dataGridView)
         {
             dataGridView.Rows.Remove(dataGridView.SelectedRows[0]);
         }
 
-        // zobrazi novy produkt
+        // oznaci radek jinou barvou po pridani do kosiku
+        private void MarkSelectedToBin(DataGridView dataGridView)
+        {
+            dataGridView.SelectedRows[0].
+                DefaultCellStyle.BackColor = SystemColors.GradientActiveCaption;
+        }
+
+        /// <summary>
+        /// zobrazi novy produkt
+        /// </summary>
+        /// <param name="product">produkt k zobrazeni</param>
         public void DisplayNewProduct(Product product)
         {
              ProductsDataGridView.Rows.Add(product.ID, product.Name, 
                  product.Cathegory, product.Price);
+        }
+
+        private void AddToBinButton_Click(object sender, EventArgs e)
+        {
+            MarkSelectedToBin(ShopItemsDataGridView);
+        }
+
+        /*** SEKCE PRO SORTOVACI POLOZKY SPLIT MENU ***/
+
+        // zobraz vsechny produkty
+        private void LoadEverythingTSMenuItem_Click(object sender, EventArgs e)
+        {
+            Database.DisplayLoadedProducts(ShopItemsDataGridView);
+        }
+
+        // zobraz jen chytre hodinky
+        private void SmartWatchesTSMenuItem_Click(object sender, EventArgs e)
+        {
+            string smWatches = SmartWatchesTSMenuItem.Text;
+            Database.DisplayLoadedProducts(ShopItemsDataGridView, smWatches);
+        }
+
+        // zobraz jen kryty a pouzdra
+        private void CoversTSMenuItem_Click(object sender, EventArgs e)
+        {
+            string covers = CoversTSMenuItem.Text;
+            Database.DisplayLoadedProducts(ShopItemsDataGridView, covers);
+        }
+
+        // zobraz jen smartfony
+        private void SmartphonesTSMenuItem_Click(object sender, EventArgs e)
+        {
+            string smphones = SmartphonesTSMenuItem.Text;
+            Database.DisplayLoadedProducts(ShopItemsDataGridView, smphones);
+        }
+
+        // zobraz jen tablety
+        private void TabletsTSMenuItem_Click(object sender, EventArgs e)
+        {
+            string tablets = TabletsTSMenuItem.Text;
+            Database.DisplayLoadedProducts(ShopItemsDataGridView, tablets);
+        }
+
+        // zobraz jen tlacitkove telefony
+        private void KeypadPhonesTSMenuItem_Click(object sender, EventArgs e)
+        {
+            string kphones = KeypadPhonesTSMenuItem.Text;
+            Database.DisplayLoadedProducts(ShopItemsDataGridView, kphones);
+        }
+
+        // zobraz jen ochranna skla
+        private void ScreenProtectorsTSMenuItem_Click(object sender, EventArgs e)
+        {
+            string scprotectors = ScreenProtectorsTSMenuItem.Text;
+            Database.DisplayLoadedProducts(ShopItemsDataGridView, scprotectors);
+        }
+
+        // zobraz jen kabely a nabijecky
+        private void ChargersCablesTSMenuItem_Click(object sender, EventArgs e)
+        {
+            string cables = ChargersCablesTSMenuItem.Text;
+            Database.DisplayLoadedProducts(ShopItemsDataGridView, cables);
         }
     }
 }

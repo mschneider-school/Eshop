@@ -131,16 +131,35 @@ namespace Eshop
         /// Zobrazi vsechny produkty z cache ve zvolenem dataGridView
         /// </summary>
         /// <param name="dataGridView">ovladaci prvek k zobrazeni nactenych produktu</param>
-        public static void DisplayLoadedProducts(DataGridView dataGridView)
+        /// <param name="cathegory">volitelny parameter k zobrazeni jen produktu jiste kategorie</param>
+        public static void DisplayLoadedProducts(DataGridView dataGridView, string cathegory = null)
         {
+            dataGridView.Rows.Clear();
+
             foreach(Product product in CachedProducts)
             {
-                dataGridView.Rows.Add(
-                    product.ID,
-                    product.Name,
-                    product.Cathegory,
-                    product.Price
-                );
+                // pokud chybi parameter kategorie zobraz vse
+                if (cathegory == null)
+                {
+                    dataGridView.Rows.Add(
+                        product.ID,
+                        product.Name,
+                        product.Cathegory,
+                        product.Price
+                    );
+                }
+                else // pokud nechybi parameter kategorie zobraz jen produkty kategorie
+                {
+                    if (product.Cathegory == cathegory)
+                    {
+                        dataGridView.Rows.Add(
+                            product.ID,
+                            product.Name,
+                            product.Cathegory,
+                            product.Price
+                        );
+                    }
+                }
             }
         }
 
@@ -246,6 +265,7 @@ namespace Eshop
                     $"VALUES (@{Product.NameColumn}, " +
                     $"@{Product.CathegoryColumn}, " +
                     $"@{Product.PriceColumn}, " +
+
                     $"@{Product.PhotoColumn}, " +
                     $"@{Product.DescriptionColumn})";
 
