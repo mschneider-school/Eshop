@@ -14,7 +14,7 @@ namespace Eshop
     {
         /*** Databazove specifikace ***/
 
-        public static string DatabaseFileName { get; private set; } = "mobileshop.db";
+        public static string DatabaseFileName { get; private set; } = "../../../AppData/mobileshop.db";
         public static string ConnectionString { get; } = $"Data Source={DatabaseFileName};Version=3;";
 
         /***  Cache produktu a objednavek ***/

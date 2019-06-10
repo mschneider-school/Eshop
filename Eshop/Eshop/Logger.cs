@@ -34,7 +34,7 @@ namespace Eshop
                     Encoding = Encoding.UTF8,
                     Indent = true,
                 };
-                XmlWriter = XmlWriter.Create("applog.xml", fileSettings);
+                XmlWriter = XmlWriter.Create("../../../AppData/log.xml", fileSettings);
             }
         }
 
