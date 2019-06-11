@@ -17,6 +17,7 @@ namespace Eshop
             InitializeComponent();
             ProductDetailsSplitContainer.SplitterWidth = 15;
             LoadProductDetails(product);
+            CenterToParent();
         }
 
         // pokud byl produkt predany pri konstrukci formulare

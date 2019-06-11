@@ -1,6 +1,6 @@
 ﻿namespace Eshop
 {
-    partial class DeleteProductDialog
+    partial class ConfirmDialog
     {
         /// <summary>
         /// Required designer variable.
@@ -74,33 +74,33 @@
             this.ConfirmButtonsTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.ConfirmButtonsTLPanel.Size = new System.Drawing.Size(351, 73);
             this.ConfirmButtonsTLPanel.TabIndex = 0;
+            this.ConfirmButtonsTLPanel.TabStop = true;
             // 
             // CancelActionButton
             // 
             this.CancelActionButton.AutoSize = true;
+            this.CancelActionButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CancelActionButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CancelActionButton.Location = new System.Drawing.Point(182, 21);
             this.CancelActionButton.Margin = new System.Windows.Forms.Padding(7, 21, 10, 19);
             this.CancelActionButton.Name = "CancelActionButton";
             this.CancelActionButton.Size = new System.Drawing.Size(159, 33);
-            this.CancelActionButton.TabIndex = 0;
-            this.CancelActionButton.Text = "Ne";
+            this.CancelActionButton.TabIndex = 1;
+            this.CancelActionButton.Text = "CancelText";
             this.CancelActionButton.UseVisualStyleBackColor = true;
-            this.CancelActionButton.Click += new System.EventHandler(this.CancelActionButton_Click);
             // 
             // ConfirmActionButton
             // 
             this.ConfirmActionButton.AutoSize = true;
-            this.ConfirmActionButton.DialogResult = System.Windows.Forms.DialogResult.Yes;
+            this.ConfirmActionButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.ConfirmActionButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ConfirmActionButton.Location = new System.Drawing.Point(10, 21);
             this.ConfirmActionButton.Margin = new System.Windows.Forms.Padding(10, 21, 7, 19);
             this.ConfirmActionButton.Name = "ConfirmActionButton";
             this.ConfirmActionButton.Size = new System.Drawing.Size(158, 33);
-            this.ConfirmActionButton.TabIndex = 1;
-            this.ConfirmActionButton.Text = "Ano";
+            this.ConfirmActionButton.TabIndex = 0;
+            this.ConfirmActionButton.Text = "ConfirmText";
             this.ConfirmActionButton.UseVisualStyleBackColor = true;
-            this.ConfirmActionButton.Click += new System.EventHandler(this.ConfirmActionButton_Click);
             // 
             // ConfirmationLabel
             // 
@@ -111,19 +111,21 @@
             this.ConfirmationLabel.Name = "ConfirmationLabel";
             this.ConfirmationLabel.Size = new System.Drawing.Size(351, 112);
             this.ConfirmationLabel.TabIndex = 0;
-            this.ConfirmationLabel.Text = "Opravdu si přejete vymazat produkt: ";
+            this.ConfirmationLabel.Text = "Confirmation message goes here";
             this.ConfirmationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // DeleteProductDialog
+            // ConfirmDialog
             // 
+            this.AcceptButton = this.ConfirmActionButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.CancelActionButton;
             this.ClientSize = new System.Drawing.Size(351, 185);
             this.Controls.Add(this.ConfirmWrapperTLPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "DeleteProductDialog";
-            this.Text = "Vymazání produktu";
+            this.Name = "ConfirmDialog";
+            this.Text = "Confirm action";
             this.ConfirmWrapperTLPanel.ResumeLayout(false);
             this.ConfirmWrapperTLPanel.PerformLayout();
             this.ConfirmButtonsTLPanel.ResumeLayout(false);

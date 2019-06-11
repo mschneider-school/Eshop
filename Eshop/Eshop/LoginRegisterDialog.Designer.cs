@@ -155,6 +155,7 @@
             this.PasswordTextBox.PasswordChar = '*';
             this.PasswordTextBox.Size = new System.Drawing.Size(309, 20);
             this.PasswordTextBox.TabIndex = 1;
+            this.PasswordTextBox.Enter += new System.EventHandler(this.PasswordTextBox_Enter);
             // 
             // LoginPasswordLabel
             // 
@@ -196,6 +197,7 @@
             this.UserNameTextBox.Name = "UserNameTextBox";
             this.UserNameTextBox.Size = new System.Drawing.Size(309, 20);
             this.UserNameTextBox.TabIndex = 1;
+            this.UserNameTextBox.Enter += new System.EventHandler(this.UserNameTextBox_Enter);
             // 
             // EmailLabel
             // 

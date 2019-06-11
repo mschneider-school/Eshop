@@ -71,13 +71,13 @@ namespace Eshop
                 }
                 else
                 {
+                    UserNameTextBox.Clear();
+                    PasswordTextBox.Clear();
                     UserNameTLPanel.BackColor = Color.MistyRose;
                     PasswordTLPanel.BackColor = Color.MistyRose;
                     MessageBox.Show("Zadali jste špatný email nebo heslo, zkuste to prosím znovu.", "Nesprávné údaje",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Exclamation);
-                    UserNameTextBox.Clear();
-                    PasswordTextBox.Clear();
                 }
             }
         }

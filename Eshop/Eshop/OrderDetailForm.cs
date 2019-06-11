@@ -15,6 +15,7 @@ namespace Eshop
         public OrderDetailForm()
         {
             InitializeComponent();
+            CenterToParent();
         }
     }
 }

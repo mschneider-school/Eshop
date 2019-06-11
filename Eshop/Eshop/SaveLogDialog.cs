@@ -16,6 +16,7 @@ namespace Eshop
         public SaveLogDialog()
         {
             InitializeComponent();
+            CenterToParent();
         }
 
         private void FileOptionButton_Click(object sender, EventArgs e)

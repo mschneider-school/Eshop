@@ -24,6 +24,7 @@ namespace Eshop
             Load += ProcessProductDialog_Load;
             InitializeComponent();
             AddProductSplitContainer.SplitterWidth = 15;
+            CenterToParent();
         }
 
         private void ProcessProductDialog_Load(object sender, EventArgs e)
@@ -128,7 +129,10 @@ namespace Eshop
         // oznacit spatny vstup do pole ceny barevne
         private void ProductPriceTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (!int.TryParse(ProductPriceTextBox.Text, out int price) && ProductPriceTextBox.Text.Length > 0)
+            string priceString = ProductPriceTextBox.Text;
+
+            if (!int.TryParse(priceString, out int price) 
+                && priceString.Length > 0)
             {
                 ProductPriceTLPanel.BackColor = Color.MistyRose;
                 MessageBox.Show("Prosím opravte obsah pole 'Cena' na celé číslo.", "Chyba formátu",

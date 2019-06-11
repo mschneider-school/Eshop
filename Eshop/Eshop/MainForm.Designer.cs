@@ -28,16 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.UserViewsTabControl = new System.Windows.Forms.TabControl();
             this.CustomerTabPage = new System.Windows.Forms.TabPage();
@@ -48,16 +56,16 @@
             this.StoreTab = new System.Windows.Forms.TabPage();
             this.ProductPickerTLPanel = new System.Windows.Forms.TableLayoutPanel();
             this.ShopItemsTLPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.ShopItemsDataGridView = new System.Windows.Forms.DataGridView();
+            this.ShopDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.RemoveFromBin = new System.Windows.Forms.Button();
+            this.RemoveFromBasketButton = new System.Windows.Forms.Button();
             this.ShowItemDetailButton = new System.Windows.Forms.Button();
-            this.MoveToBinButton = new System.Windows.Forms.Button();
-            this.AddToBinButton = new System.Windows.Forms.Button();
+            this.MoveToBasketButton = new System.Windows.Forms.Button();
+            this.AddToBasketButton = new System.Windows.Forms.Button();
             this.ProductMenuStrip = new System.Windows.Forms.MenuStrip();
             this.LoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ChooseCathegoryStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,15 +77,23 @@
             this.TabletsTSMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.KeypadPhonesTSMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ScreenProtectorsTSMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.BinTab = new System.Windows.Forms.TabPage();
+            this.seřaditPodleCenyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AscendingSortTSMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DescendingSortTSMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BasketTab = new System.Windows.Forms.TabPage();
             this.BinViewerTLPanel = new System.Windows.Forms.TableLayoutPanel();
             this.BinItemsLabel = new System.Windows.Forms.Label();
-            this.BinItemsDataGridView = new System.Windows.Forms.DataGridView();
+            this.BasketDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BinControlsTLPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.ShowDetailButton = new System.Windows.Forms.Button();
-            this.ClearBinButton = new System.Windows.Forms.Button();
+            this.ShowDetailBasketItemButton = new System.Windows.Forms.Button();
+            this.EmptyBasketButton = new System.Windows.Forms.Button();
             this.LoginToOrderButton = new System.Windows.Forms.Button();
-            this.RemoveFromBinButton = new System.Windows.Forms.Button();
+            this.RemoveBasketItemButton = new System.Windows.Forms.Button();
             this.AccountTab = new System.Windows.Forms.TabPage();
             this.RegistrationTLPanel = new System.Windows.Forms.TableLayoutPanel();
             this.RegistrationControlsTLPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -156,12 +172,12 @@
             this.StoreTab.SuspendLayout();
             this.ProductPickerTLPanel.SuspendLayout();
             this.ShopItemsTLPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ShopItemsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ShopDataGridView)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             this.ProductMenuStrip.SuspendLayout();
-            this.BinTab.SuspendLayout();
+            this.BasketTab.SuspendLayout();
             this.BinViewerTLPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BinItemsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BasketDataGridView)).BeginInit();
             this.BinControlsTLPanel.SuspendLayout();
             this.AccountTab.SuspendLayout();
             this.RegistrationTLPanel.SuspendLayout();
@@ -281,7 +297,7 @@
             // StoreTabControl
             // 
             this.StoreTabControl.Controls.Add(this.StoreTab);
-            this.StoreTabControl.Controls.Add(this.BinTab);
+            this.StoreTabControl.Controls.Add(this.BasketTab);
             this.StoreTabControl.Controls.Add(this.AccountTab);
             this.StoreTabControl.Controls.Add(this.OrdersTab);
             this.StoreTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -329,7 +345,7 @@
             this.ShopItemsTLPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ShopItemsTLPanel.ColumnCount = 1;
             this.ShopItemsTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.ShopItemsTLPanel.Controls.Add(this.ShopItemsDataGridView, 4, 0);
+            this.ShopItemsTLPanel.Controls.Add(this.ShopDataGridView, 4, 0);
             this.ShopItemsTLPanel.Controls.Add(this.tableLayoutPanel4, 0, 1);
             this.ShopItemsTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ShopItemsTLPanel.Location = new System.Drawing.Point(0, 30);
@@ -341,64 +357,67 @@
             this.ShopItemsTLPanel.Size = new System.Drawing.Size(697, 434);
             this.ShopItemsTLPanel.TabIndex = 2;
             // 
-            // ShopItemsDataGridView
+            // ShopDataGridView
             // 
-            this.ShopItemsDataGridView.AllowUserToAddRows = false;
-            this.ShopItemsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.ShopItemsDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.ShopItemsDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ShopItemsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.ShopItemsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ShopItemsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ShopDataGridView.AllowUserToAddRows = false;
+            this.ShopDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ShopDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.ShopDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ShopDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            this.ShopDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ShopDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            this.ShopItemsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ShopItemsDataGridView.EnableHeadersVisualStyles = false;
-            this.ShopItemsDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.ShopItemsDataGridView.Location = new System.Drawing.Point(7, 6);
-            this.ShopItemsDataGridView.Margin = new System.Windows.Forms.Padding(7, 6, 7, 27);
-            this.ShopItemsDataGridView.MultiSelect = false;
-            this.ShopItemsDataGridView.Name = "ShopItemsDataGridView";
-            this.ShopItemsDataGridView.ReadOnly = true;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ShopItemsDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.ShopItemsDataGridView.RowHeadersVisible = false;
-            this.ShopItemsDataGridView.RowTemplate.Height = 28;
-            this.ShopItemsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ShopItemsDataGridView.Size = new System.Drawing.Size(683, 328);
-            this.ShopItemsDataGridView.TabIndex = 0;
-            this.ShopItemsDataGridView.TabStop = false;
+            this.ShopDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ShopDataGridView.EnableHeadersVisualStyles = false;
+            this.ShopDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.ShopDataGridView.Location = new System.Drawing.Point(7, 6);
+            this.ShopDataGridView.Margin = new System.Windows.Forms.Padding(7, 6, 7, 27);
+            this.ShopDataGridView.MultiSelect = false;
+            this.ShopDataGridView.Name = "ShopDataGridView";
+            this.ShopDataGridView.ReadOnly = true;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle24.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ShopDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            this.ShopDataGridView.RowHeadersVisible = false;
+            this.ShopDataGridView.RowTemplate.Height = 28;
+            this.ShopDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ShopDataGridView.Size = new System.Drawing.Size(683, 328);
+            this.ShopDataGridView.TabIndex = 0;
+            this.ShopDataGridView.TabStop = false;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle20;
             this.dataGridViewTextBoxColumn1.HeaderText = "ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 53;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn1.Width = 34;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle21.Padding = new System.Windows.Forms.Padding(5);
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle21;
             this.dataGridViewTextBoxColumn2.HeaderText = "Název";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
@@ -406,8 +425,8 @@
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5);
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle22.Padding = new System.Windows.Forms.Padding(5);
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle22;
             this.dataGridViewTextBoxColumn3.HeaderText = "Kategorie";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
@@ -416,29 +435,31 @@
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "N0";
-            dataGridViewCellStyle4.NullValue = null;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Cena (Kč)";
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle23.Format = "N0";
+            dataGridViewCellStyle23.NullValue = null;
+            dataGridViewCellStyle23.Padding = new System.Windows.Forms.Padding(5);
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle23;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Cena Kč/ks";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 89;
+            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn4.Width = 80;
             // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.AutoSize = true;
+            this.tableLayoutPanel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel4.BackColor = System.Drawing.SystemColors.Control;
             this.tableLayoutPanel4.ColumnCount = 4;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel4.Controls.Add(this.RemoveFromBin, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.RemoveFromBasketButton, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.ShowItemDetailButton, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.MoveToBinButton, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.AddToBinButton, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.MoveToBasketButton, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.AddToBasketButton, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 361);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
@@ -448,17 +469,17 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(697, 73);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
-            // RemoveFromBin
+            // RemoveFromBasketButton
             // 
-            this.RemoveFromBin.AutoSize = true;
-            this.RemoveFromBin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RemoveFromBin.Location = new System.Drawing.Point(181, 21);
-            this.RemoveFromBin.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
-            this.RemoveFromBin.Name = "RemoveFromBin";
-            this.RemoveFromBin.Size = new System.Drawing.Size(160, 33);
-            this.RemoveFromBin.TabIndex = 1;
-            this.RemoveFromBin.Text = "Odebrat z košíka";
-            this.RemoveFromBin.UseVisualStyleBackColor = true;
+            this.RemoveFromBasketButton.AutoSize = true;
+            this.RemoveFromBasketButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RemoveFromBasketButton.Location = new System.Drawing.Point(181, 21);
+            this.RemoveFromBasketButton.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
+            this.RemoveFromBasketButton.Name = "RemoveFromBasketButton";
+            this.RemoveFromBasketButton.Size = new System.Drawing.Size(160, 33);
+            this.RemoveFromBasketButton.TabIndex = 1;
+            this.RemoveFromBasketButton.Text = "Odebrat z košíku";
+            this.RemoveFromBasketButton.UseVisualStyleBackColor = true;
             // 
             // ShowItemDetailButton
             // 
@@ -471,31 +492,33 @@
             this.ShowItemDetailButton.TabIndex = 2;
             this.ShowItemDetailButton.Text = "Zobrazit detail";
             this.ShowItemDetailButton.UseVisualStyleBackColor = true;
+            this.ShowItemDetailButton.Click += new System.EventHandler(this.ShowItemDetailButton_Click);
             // 
-            // MoveToBinButton
+            // MoveToBasketButton
             // 
-            this.MoveToBinButton.AutoSize = true;
-            this.MoveToBinButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MoveToBinButton.Location = new System.Drawing.Point(529, 21);
-            this.MoveToBinButton.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
-            this.MoveToBinButton.Name = "MoveToBinButton";
-            this.MoveToBinButton.Size = new System.Drawing.Size(161, 33);
-            this.MoveToBinButton.TabIndex = 3;
-            this.MoveToBinButton.Text = "Přejít do košíka";
-            this.MoveToBinButton.UseVisualStyleBackColor = true;
+            this.MoveToBasketButton.AutoSize = true;
+            this.MoveToBasketButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MoveToBasketButton.Location = new System.Drawing.Point(529, 21);
+            this.MoveToBasketButton.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
+            this.MoveToBasketButton.Name = "MoveToBasketButton";
+            this.MoveToBasketButton.Size = new System.Drawing.Size(161, 33);
+            this.MoveToBasketButton.TabIndex = 3;
+            this.MoveToBasketButton.Text = "Přejít do košíku";
+            this.MoveToBasketButton.UseVisualStyleBackColor = true;
+            this.MoveToBasketButton.Click += new System.EventHandler(this.MoveToBasketButton_Click);
             // 
-            // AddToBinButton
+            // AddToBasketButton
             // 
-            this.AddToBinButton.AutoSize = true;
-            this.AddToBinButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AddToBinButton.Location = new System.Drawing.Point(7, 21);
-            this.AddToBinButton.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
-            this.AddToBinButton.Name = "AddToBinButton";
-            this.AddToBinButton.Size = new System.Drawing.Size(160, 33);
-            this.AddToBinButton.TabIndex = 0;
-            this.AddToBinButton.Text = "Přidat do košíka";
-            this.AddToBinButton.UseVisualStyleBackColor = true;
-            this.AddToBinButton.Click += new System.EventHandler(this.AddToBinButton_Click);
+            this.AddToBasketButton.AutoSize = true;
+            this.AddToBasketButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AddToBasketButton.Location = new System.Drawing.Point(7, 21);
+            this.AddToBasketButton.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
+            this.AddToBasketButton.Name = "AddToBasketButton";
+            this.AddToBasketButton.Size = new System.Drawing.Size(160, 33);
+            this.AddToBasketButton.TabIndex = 0;
+            this.AddToBasketButton.Text = "Přidat do košíku";
+            this.AddToBasketButton.UseVisualStyleBackColor = true;
+            this.AddToBasketButton.Click += new System.EventHandler(this.AddToBasketButton_Click);
             // 
             // ProductMenuStrip
             // 
@@ -504,7 +527,8 @@
             this.ProductMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.ProductMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.LoginToolStripMenuItem,
-            this.ChooseCathegoryStripMenuItem});
+            this.ChooseCathegoryStripMenuItem,
+            this.seřaditPodleCenyToolStripMenuItem});
             this.ProductMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.ProductMenuStrip.Name = "ProductMenuStrip";
             this.ProductMenuStrip.Padding = new System.Windows.Forms.Padding(6, 6, 0, 2);
@@ -539,69 +563,92 @@
             // LoadEverythingTSMenuItem
             // 
             this.LoadEverythingTSMenuItem.Name = "LoadEverythingTSMenuItem";
-            this.LoadEverythingTSMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.LoadEverythingTSMenuItem.Size = new System.Drawing.Size(169, 22);
             this.LoadEverythingTSMenuItem.Text = "Všechny kategorie";
             this.LoadEverythingTSMenuItem.Click += new System.EventHandler(this.LoadEverythingTSMenuItem_Click);
             // 
             // SmartWatchesTSMenuItem
             // 
             this.SmartWatchesTSMenuItem.Name = "SmartWatchesTSMenuItem";
-            this.SmartWatchesTSMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SmartWatchesTSMenuItem.Size = new System.Drawing.Size(169, 22);
             this.SmartWatchesTSMenuItem.Text = "Chytré hodinky";
             this.SmartWatchesTSMenuItem.Click += new System.EventHandler(this.SmartWatchesTSMenuItem_Click);
             // 
             // ChargersCablesTSMenuItem
             // 
             this.ChargersCablesTSMenuItem.Name = "ChargersCablesTSMenuItem";
-            this.ChargersCablesTSMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ChargersCablesTSMenuItem.Size = new System.Drawing.Size(169, 22);
             this.ChargersCablesTSMenuItem.Text = "Nabíječky a kabely";
             this.ChargersCablesTSMenuItem.Click += new System.EventHandler(this.ChargersCablesTSMenuItem_Click);
             // 
             // CoversTSMenuItem
             // 
             this.CoversTSMenuItem.Name = "CoversTSMenuItem";
-            this.CoversTSMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.CoversTSMenuItem.Size = new System.Drawing.Size(169, 22);
             this.CoversTSMenuItem.Text = "Pouzdra a kryty";
             this.CoversTSMenuItem.Click += new System.EventHandler(this.CoversTSMenuItem_Click);
             // 
             // SmartphonesTSMenuItem
             // 
             this.SmartphonesTSMenuItem.Name = "SmartphonesTSMenuItem";
-            this.SmartphonesTSMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SmartphonesTSMenuItem.Size = new System.Drawing.Size(169, 22);
             this.SmartphonesTSMenuItem.Text = "Smartfóny";
             this.SmartphonesTSMenuItem.Click += new System.EventHandler(this.SmartphonesTSMenuItem_Click);
             // 
             // TabletsTSMenuItem
             // 
             this.TabletsTSMenuItem.Name = "TabletsTSMenuItem";
-            this.TabletsTSMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.TabletsTSMenuItem.Size = new System.Drawing.Size(169, 22);
             this.TabletsTSMenuItem.Text = "Tablety";
             this.TabletsTSMenuItem.Click += new System.EventHandler(this.TabletsTSMenuItem_Click);
             // 
             // KeypadPhonesTSMenuItem
             // 
             this.KeypadPhonesTSMenuItem.Name = "KeypadPhonesTSMenuItem";
-            this.KeypadPhonesTSMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.KeypadPhonesTSMenuItem.Size = new System.Drawing.Size(169, 22);
             this.KeypadPhonesTSMenuItem.Text = "Tlačítkové telefony";
             this.KeypadPhonesTSMenuItem.Click += new System.EventHandler(this.KeypadPhonesTSMenuItem_Click);
             // 
             // ScreenProtectorsTSMenuItem
             // 
             this.ScreenProtectorsTSMenuItem.Name = "ScreenProtectorsTSMenuItem";
-            this.ScreenProtectorsTSMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ScreenProtectorsTSMenuItem.Size = new System.Drawing.Size(169, 22);
             this.ScreenProtectorsTSMenuItem.Text = "Tvrzená skla";
             this.ScreenProtectorsTSMenuItem.Click += new System.EventHandler(this.ScreenProtectorsTSMenuItem_Click);
             // 
-            // BinTab
+            // seřaditPodleCenyToolStripMenuItem
             // 
-            this.BinTab.Controls.Add(this.BinViewerTLPanel);
-            this.BinTab.Location = new System.Drawing.Point(4, 30);
-            this.BinTab.Margin = new System.Windows.Forms.Padding(0);
-            this.BinTab.Name = "BinTab";
-            this.BinTab.Size = new System.Drawing.Size(697, 464);
-            this.BinTab.TabIndex = 1;
-            this.BinTab.Text = "Košík";
-            this.BinTab.UseVisualStyleBackColor = true;
+            this.seřaditPodleCenyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AscendingSortTSMenuItem,
+            this.DescendingSortTSMenuItem});
+            this.seřaditPodleCenyToolStripMenuItem.Name = "seřaditPodleCenyToolStripMenuItem";
+            this.seřaditPodleCenyToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.seřaditPodleCenyToolStripMenuItem.Text = "Seřadit podle ceny";
+            // 
+            // AscendingSortTSMenuItem
+            // 
+            this.AscendingSortTSMenuItem.Name = "AscendingSortTSMenuItem";
+            this.AscendingSortTSMenuItem.Size = new System.Drawing.Size(269, 22);
+            this.AscendingSortTSMenuItem.Text = "Vzestupně od nejlevnějšího produktu";
+            this.AscendingSortTSMenuItem.Click += new System.EventHandler(this.AscendingSortTSMenuItem_Click);
+            // 
+            // DescendingSortTSMenuItem
+            // 
+            this.DescendingSortTSMenuItem.Name = "DescendingSortTSMenuItem";
+            this.DescendingSortTSMenuItem.Size = new System.Drawing.Size(269, 22);
+            this.DescendingSortTSMenuItem.Text = "Sestupně od nejdražšího produktu";
+            this.DescendingSortTSMenuItem.Click += new System.EventHandler(this.DescendingSortTSMenuItem_Click);
+            // 
+            // BasketTab
+            // 
+            this.BasketTab.Controls.Add(this.BinViewerTLPanel);
+            this.BasketTab.Location = new System.Drawing.Point(4, 30);
+            this.BasketTab.Margin = new System.Windows.Forms.Padding(0);
+            this.BasketTab.Name = "BasketTab";
+            this.BasketTab.Size = new System.Drawing.Size(697, 464);
+            this.BasketTab.TabIndex = 1;
+            this.BasketTab.Text = "Košík";
+            this.BasketTab.UseVisualStyleBackColor = true;
             // 
             // BinViewerTLPanel
             // 
@@ -610,7 +657,7 @@
             this.BinViewerTLPanel.ColumnCount = 1;
             this.BinViewerTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.BinViewerTLPanel.Controls.Add(this.BinItemsLabel, 0, 0);
-            this.BinViewerTLPanel.Controls.Add(this.BinItemsDataGridView, 0, 1);
+            this.BinViewerTLPanel.Controls.Add(this.BasketDataGridView, 0, 1);
             this.BinViewerTLPanel.Controls.Add(this.BinControlsTLPanel, 0, 2);
             this.BinViewerTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BinViewerTLPanel.Location = new System.Drawing.Point(0, 0);
@@ -620,6 +667,7 @@
             this.BinViewerTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
             this.BinViewerTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.BinViewerTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
+            this.BinViewerTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.BinViewerTLPanel.Size = new System.Drawing.Size(697, 464);
             this.BinViewerTLPanel.TabIndex = 0;
             // 
@@ -636,18 +684,107 @@
             this.BinItemsLabel.Text = "Seznam produktů";
             this.BinItemsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // BinItemsDataGridView
+            // BasketDataGridView
             // 
-            this.BinItemsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.BinItemsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BinItemsDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.BinItemsDataGridView.Location = new System.Drawing.Point(7, 64);
-            this.BinItemsDataGridView.Margin = new System.Windows.Forms.Padding(7, 6, 7, 27);
-            this.BinItemsDataGridView.Name = "BinItemsDataGridView";
-            this.BinItemsDataGridView.RowTemplate.Height = 28;
-            this.BinItemsDataGridView.Size = new System.Drawing.Size(683, 300);
-            this.BinItemsDataGridView.TabIndex = 0;
-            this.BinItemsDataGridView.TabStop = false;
+            this.BasketDataGridView.AllowUserToAddRows = false;
+            this.BasketDataGridView.AllowUserToDeleteRows = false;
+            this.BasketDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.BasketDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.BasketDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle25.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.BasketDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            this.BasketDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.BasketDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.Quantity});
+            this.BasketDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BasketDataGridView.EnableHeadersVisualStyles = false;
+            this.BasketDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.BasketDataGridView.Location = new System.Drawing.Point(7, 64);
+            this.BasketDataGridView.Margin = new System.Windows.Forms.Padding(7, 6, 7, 27);
+            this.BasketDataGridView.MultiSelect = false;
+            this.BasketDataGridView.Name = "BasketDataGridView";
+            this.BasketDataGridView.ReadOnly = true;
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle31.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.BasketDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle31;
+            this.BasketDataGridView.RowHeadersVisible = false;
+            this.BasketDataGridView.RowTemplate.Height = 28;
+            this.BasketDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.BasketDataGridView.Size = new System.Drawing.Size(683, 300);
+            this.BasketDataGridView.TabIndex = 1;
+            this.BasketDataGridView.TabStop = false;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle26;
+            this.dataGridViewTextBoxColumn5.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn5.Width = 34;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle27.Padding = new System.Windows.Forms.Padding(5);
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle27;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Název";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle28.Padding = new System.Windows.Forms.Padding(5);
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle28;
+            this.dataGridViewTextBoxColumn7.HeaderText = "Kategorie";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 87;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle29.Format = "N0";
+            dataGridViewCellStyle29.NullValue = null;
+            dataGridViewCellStyle29.Padding = new System.Windows.Forms.Padding(5);
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle29;
+            this.dataGridViewTextBoxColumn8.HeaderText = "Cena Kč/ks";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn8.Width = 80;
+            // 
+            // Quantity
+            // 
+            this.Quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Quantity.DefaultCellStyle = dataGridViewCellStyle30;
+            this.Quantity.HeaderText = "Množství";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            this.Quantity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Quantity.Width = 67;
             // 
             // BinControlsTLPanel
             // 
@@ -658,10 +795,10 @@
             this.BinControlsTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.BinControlsTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.BinControlsTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.BinControlsTLPanel.Controls.Add(this.ShowDetailButton, 0, 0);
-            this.BinControlsTLPanel.Controls.Add(this.ClearBinButton, 1, 0);
+            this.BinControlsTLPanel.Controls.Add(this.ShowDetailBasketItemButton, 0, 0);
+            this.BinControlsTLPanel.Controls.Add(this.EmptyBasketButton, 1, 0);
             this.BinControlsTLPanel.Controls.Add(this.LoginToOrderButton, 2, 0);
-            this.BinControlsTLPanel.Controls.Add(this.RemoveFromBinButton, 0, 0);
+            this.BinControlsTLPanel.Controls.Add(this.RemoveBasketItemButton, 0, 0);
             this.BinControlsTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BinControlsTLPanel.Location = new System.Drawing.Point(0, 391);
             this.BinControlsTLPanel.Margin = new System.Windows.Forms.Padding(0);
@@ -671,31 +808,33 @@
             this.BinControlsTLPanel.Size = new System.Drawing.Size(697, 73);
             this.BinControlsTLPanel.TabIndex = 0;
             // 
-            // ShowDetailButton
+            // ShowDetailBasketItemButton
             // 
-            this.ShowDetailButton.AutoSize = true;
-            this.ShowDetailButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ShowDetailButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.ShowDetailButton.Location = new System.Drawing.Point(181, 21);
-            this.ShowDetailButton.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
-            this.ShowDetailButton.Name = "ShowDetailButton";
-            this.ShowDetailButton.Size = new System.Drawing.Size(160, 33);
-            this.ShowDetailButton.TabIndex = 1;
-            this.ShowDetailButton.Text = "Zobrazit detail";
-            this.ShowDetailButton.UseVisualStyleBackColor = true;
+            this.ShowDetailBasketItemButton.AutoSize = true;
+            this.ShowDetailBasketItemButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ShowDetailBasketItemButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.ShowDetailBasketItemButton.Location = new System.Drawing.Point(181, 21);
+            this.ShowDetailBasketItemButton.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
+            this.ShowDetailBasketItemButton.Name = "ShowDetailBasketItemButton";
+            this.ShowDetailBasketItemButton.Size = new System.Drawing.Size(160, 33);
+            this.ShowDetailBasketItemButton.TabIndex = 1;
+            this.ShowDetailBasketItemButton.Text = "Zobrazit detail";
+            this.ShowDetailBasketItemButton.UseVisualStyleBackColor = true;
+            this.ShowDetailBasketItemButton.Click += new System.EventHandler(this.ShowDetailBasketItemButton_Click);
             // 
-            // ClearBinButton
+            // EmptyBasketButton
             // 
-            this.ClearBinButton.AutoSize = true;
-            this.ClearBinButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ClearBinButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.ClearBinButton.Location = new System.Drawing.Point(355, 21);
-            this.ClearBinButton.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
-            this.ClearBinButton.Name = "ClearBinButton";
-            this.ClearBinButton.Size = new System.Drawing.Size(160, 33);
-            this.ClearBinButton.TabIndex = 2;
-            this.ClearBinButton.Text = "Vyprázdnit košík";
-            this.ClearBinButton.UseVisualStyleBackColor = true;
+            this.EmptyBasketButton.AutoSize = true;
+            this.EmptyBasketButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EmptyBasketButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.EmptyBasketButton.Location = new System.Drawing.Point(355, 21);
+            this.EmptyBasketButton.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
+            this.EmptyBasketButton.Name = "EmptyBasketButton";
+            this.EmptyBasketButton.Size = new System.Drawing.Size(160, 33);
+            this.EmptyBasketButton.TabIndex = 2;
+            this.EmptyBasketButton.Text = "Vyprázdnit košík";
+            this.EmptyBasketButton.UseVisualStyleBackColor = true;
+            this.EmptyBasketButton.Click += new System.EventHandler(this.EmptyBasketButton_Click);
             // 
             // LoginToOrderButton
             // 
@@ -715,19 +854,20 @@
             this.LoginToOrderButton.UseVisualStyleBackColor = false;
             this.LoginToOrderButton.Click += new System.EventHandler(this.LoginToOrderButton_Click);
             // 
-            // RemoveFromBinButton
+            // RemoveBasketItemButton
             // 
-            this.RemoveFromBinButton.AutoSize = true;
-            this.RemoveFromBinButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.RemoveFromBinButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RemoveFromBinButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.RemoveFromBinButton.Location = new System.Drawing.Point(7, 21);
-            this.RemoveFromBinButton.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
-            this.RemoveFromBinButton.Name = "RemoveFromBinButton";
-            this.RemoveFromBinButton.Size = new System.Drawing.Size(160, 33);
-            this.RemoveFromBinButton.TabIndex = 0;
-            this.RemoveFromBinButton.Text = "Odebrat produkt";
-            this.RemoveFromBinButton.UseVisualStyleBackColor = false;
+            this.RemoveBasketItemButton.AutoSize = true;
+            this.RemoveBasketItemButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RemoveBasketItemButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RemoveBasketItemButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.RemoveBasketItemButton.Location = new System.Drawing.Point(7, 21);
+            this.RemoveBasketItemButton.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
+            this.RemoveBasketItemButton.Name = "RemoveBasketItemButton";
+            this.RemoveBasketItemButton.Size = new System.Drawing.Size(160, 33);
+            this.RemoveBasketItemButton.TabIndex = 0;
+            this.RemoveBasketItemButton.Text = "Odebrat položku";
+            this.RemoveBasketItemButton.UseVisualStyleBackColor = false;
+            this.RemoveBasketItemButton.Click += new System.EventHandler(this.RemoveBasketItemButton_Click);
             // 
             // AccountTab
             // 
@@ -822,6 +962,7 @@
             // 
             // PersonalDetailsTLPanel
             // 
+            this.PersonalDetailsTLPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.PersonalDetailsTLPanel.AutoSize = true;
             this.PersonalDetailsTLPanel.ColumnCount = 2;
             this.PersonalDetailsTLPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -834,9 +975,9 @@
             this.PersonalDetailsTLPanel.Controls.Add(this.PhoneTLPanel, 1, 0);
             this.PersonalDetailsTLPanel.Controls.Add(this.EmailTLPanel, 0, 0);
             this.PersonalDetailsTLPanel.Controls.Add(this.AddressNumericsSplitTLPanel, 1, 3);
-            this.PersonalDetailsTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PersonalDetailsTLPanel.Location = new System.Drawing.Point(3, 61);
             this.PersonalDetailsTLPanel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 27);
+            this.PersonalDetailsTLPanel.MaximumSize = new System.Drawing.Size(1000, 1000);
             this.PersonalDetailsTLPanel.Name = "PersonalDetailsTLPanel";
             this.PersonalDetailsTLPanel.RowCount = 4;
             this.PersonalDetailsTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -1569,15 +1710,15 @@
             this.ProductsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ProductsDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.ProductsDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProductsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle32.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProductsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle32;
             this.ProductsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ProductsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ProductID,
@@ -1592,15 +1733,15 @@
             this.ProductsDataGridView.MultiSelect = false;
             this.ProductsDataGridView.Name = "ProductsDataGridView";
             this.ProductsDataGridView.ReadOnly = true;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProductsDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle36.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProductsDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle36;
             this.ProductsDataGridView.RowHeadersVisible = false;
             this.ProductsDataGridView.RowTemplate.Height = 28;
             this.ProductsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -1619,8 +1760,8 @@
             // NameColumn
             // 
             this.NameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(5);
-            this.NameColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle33.Padding = new System.Windows.Forms.Padding(5);
+            this.NameColumn.DefaultCellStyle = dataGridViewCellStyle33;
             this.NameColumn.HeaderText = "Název";
             this.NameColumn.Name = "NameColumn";
             this.NameColumn.ReadOnly = true;
@@ -1628,8 +1769,8 @@
             // CathegoryColumn
             // 
             this.CathegoryColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(5);
-            this.CathegoryColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle34.Padding = new System.Windows.Forms.Padding(5);
+            this.CathegoryColumn.DefaultCellStyle = dataGridViewCellStyle34;
             this.CathegoryColumn.HeaderText = "Kategorie";
             this.CathegoryColumn.Name = "CathegoryColumn";
             this.CathegoryColumn.ReadOnly = true;
@@ -1638,11 +1779,11 @@
             // PriceColumn
             // 
             this.PriceColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.Format = "N0";
-            dataGridViewCellStyle9.NullValue = null;
-            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(5);
-            this.PriceColumn.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle35.Format = "N0";
+            dataGridViewCellStyle35.NullValue = null;
+            dataGridViewCellStyle35.Padding = new System.Windows.Forms.Padding(5);
+            this.PriceColumn.DefaultCellStyle = dataGridViewCellStyle35;
             this.PriceColumn.HeaderText = "Cena (Kč)";
             this.PriceColumn.Name = "PriceColumn";
             this.PriceColumn.ReadOnly = true;
@@ -1748,16 +1889,16 @@
             this.ProductPickerTLPanel.PerformLayout();
             this.ShopItemsTLPanel.ResumeLayout(false);
             this.ShopItemsTLPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ShopItemsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ShopDataGridView)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.ProductMenuStrip.ResumeLayout(false);
             this.ProductMenuStrip.PerformLayout();
-            this.BinTab.ResumeLayout(false);
-            this.BinTab.PerformLayout();
+            this.BasketTab.ResumeLayout(false);
+            this.BasketTab.PerformLayout();
             this.BinViewerTLPanel.ResumeLayout(false);
             this.BinViewerTLPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BinItemsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BasketDataGridView)).EndInit();
             this.BinControlsTLPanel.ResumeLayout(false);
             this.BinControlsTLPanel.PerformLayout();
             this.AccountTab.ResumeLayout(false);
@@ -1861,15 +2002,14 @@
         private System.Windows.Forms.ToolStripMenuItem TabletsTSMenuItem;
         private System.Windows.Forms.ToolStripMenuItem KeypadPhonesTSMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ScreenProtectorsTSMenuItem;
-        private System.Windows.Forms.TabPage BinTab;
+        private System.Windows.Forms.TabPage BasketTab;
         private System.Windows.Forms.TableLayoutPanel BinViewerTLPanel;
         private System.Windows.Forms.Label BinItemsLabel;
-        private System.Windows.Forms.DataGridView BinItemsDataGridView;
         private System.Windows.Forms.TableLayoutPanel BinControlsTLPanel;
-        private System.Windows.Forms.Button ShowDetailButton;
-        private System.Windows.Forms.Button ClearBinButton;
+        private System.Windows.Forms.Button ShowDetailBasketItemButton;
+        private System.Windows.Forms.Button EmptyBasketButton;
         private System.Windows.Forms.Button LoginToOrderButton;
-        private System.Windows.Forms.Button RemoveFromBinButton;
+        private System.Windows.Forms.Button RemoveBasketItemButton;
         private System.Windows.Forms.TabPage AccountTab;
         private System.Windows.Forms.TableLayoutPanel RegistrationTLPanel;
         private System.Windows.Forms.Label RegisterLabel;
@@ -1918,17 +2058,26 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CathegoryColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn PriceColumn;
         private System.Windows.Forms.TableLayoutPanel ShopItemsTLPanel;
-        private System.Windows.Forms.DataGridView ShopItemsDataGridView;
+        private System.Windows.Forms.DataGridView ShopDataGridView;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Button RemoveFromBasketButton;
+        private System.Windows.Forms.Button ShowItemDetailButton;
+        private System.Windows.Forms.Button MoveToBasketButton;
+        private System.Windows.Forms.Button AddToBasketButton;
+        private System.Windows.Forms.ToolStripMenuItem LoadEverythingTSMenuItem;
+        private System.Windows.Forms.DataGridView BasketDataGridView;
+        private System.Windows.Forms.ToolStripMenuItem seřaditPodleCenyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AscendingSortTSMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem DescendingSortTSMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Button RemoveFromBin;
-        private System.Windows.Forms.Button ShowItemDetailButton;
-        private System.Windows.Forms.Button MoveToBinButton;
-        private System.Windows.Forms.Button AddToBinButton;
-        private System.Windows.Forms.ToolStripMenuItem LoadEverythingTSMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
     }
 }
 
