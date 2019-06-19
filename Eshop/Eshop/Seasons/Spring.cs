@@ -18,6 +18,7 @@ namespace Eshop
                 OrderItem newOrderItem = new OrderItem(basketItem.Key, basketItem.Value);
                 newOrderItem.SetFixedDiscount(0);
                 newOrderItem.SetPercentualDiscount(0);
+                newOrderItem.SetStrategy(9); // bez slevove strategie
                 orderItemSplit.Add(new OrderItem(basketItem.Key, basketItem.Value));
             }
             // pro tri a vice kusu jsou aplikovany slevy na 3 a dalsi kus podle poctu ks:
@@ -55,10 +56,24 @@ namespace Eshop
 
             nondiscountedItem.SetFixedDiscount(0);
             nondiscountedItem.SetPercentualDiscount(0);
+            nondiscountedItem.SetStrategy(9); // zadna strategie pro neslevnenou cast
 
             discountedItem.SetFixedDiscount(0);
             discountedItem.SetPercentualDiscount(percentualDiscount);
 
+            // nastaveni slevove strategie polozky podle zadane slevy
+            switch(percentualDiscount)
+            {
+                case 20:
+                    discountedItem.SetStrategy(1);
+                    break;
+                case 30:
+                    discountedItem.SetStrategy(2);
+                    break;
+                case 40:
+                    discountedItem.SetStrategy(3);
+                    break;
+            }
             return new List<OrderItem> { nondiscountedItem, discountedItem };
         }
 

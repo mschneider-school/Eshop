@@ -48,8 +48,14 @@ namespace Eshop
             // nahraje data kategorii z db do pameti
             Database.ReadTableData(Database.loadCathegories, Database.LoadCathegoriesCommand);
 
+            // nahraje data objednavek z db do pameti
+            Database.ReadTableData(Database.loadOrders, Database.LoadOrdersCommand);
+
             // nahraje data specialni nabidky do pameti
             Database.ReadTableData(Database.loadSpecialOffers, Database.LoadSpecialOffersCommand);
+
+            // nahraje data strategii do pameti
+            Database.ReadTableData(Database.loadStrategies, Database.LoadStrategiesCommand);
             
             // zobrazi data produktu z cache do produktoveho prehladu v eshope a admin. sekcii
             Database.DisplayLoadedProducts(ProductsDataGridView);
@@ -150,22 +156,25 @@ namespace Eshop
                 ShowLoggedCustomer();
                 Validation.LoginSuccessInfo(Session.CustomerLoggedIn);
             }
-            else // pokud jiz zakaznik je prihlasen sestavi a zobrazi objednavku
+            else // pokud jiz zakaznik je prihlasen sestavi a zobrazi jeho objednavku
             {
-
+                List<OrderItem> orderItems = OrderItem.GetOrderItemsFromBasket(Basket.Items);
+                Order builtOrder = Order.BuildOrder(orderItems);
+                OrderDetailForm builtOrderDetail = new OrderDetailForm(builtOrder);
+                builtOrderDetail.ShowDialog();
             }
         }
 
         private void CustomerOrderDetailButton_Click(object sender, EventArgs e)
         {
-            OrderDetailForm customerOrderDetail = new OrderDetailForm();
-            customerOrderDetail.ShowDialog();
+            // OrderDetailForm customerOrderDetail = new OrderDetailForm();
+            // customerOrderDetail.ShowDialog();
         }
 
         private void AdminOrderDetailButton_Click(object sender, EventArgs e)
         {
-            OrderDetailForm adminOrderDetail = new OrderDetailForm();
-            adminOrderDetail.ShowDialog();
+            // OrderDetailForm adminOrderDetail = new OrderDetailForm();
+            // adminOrderDetail.ShowDialog();
         }
 
         private void LoginToolStripMenuItem_Click(object sender, EventArgs e)
@@ -268,7 +277,6 @@ namespace Eshop
             RemoveTabWhenViewEmpty(StoreTabControl, BasketDataGridView, BasketTab);
         }
 
-
         // zobraz detail vybraneho produktu z view košíka
         private void ShowDetailBasketItemButton_Click(object sender, EventArgs e)
         {
@@ -356,7 +364,7 @@ namespace Eshop
         /// <summary>
         /// Zobrazi detaily produktu vybraneho v danem dataGridView
         /// </summary>
-        private void ShowSelectedProductDetails(DataGridView dataGridView)
+        public static void ShowSelectedProductDetails(DataGridView dataGridView)
         {
             Product selectedProduct = GetSelectedProduct(dataGridView);
             ProductDetailsForm productDetails = new ProductDetailsForm(selectedProduct);
@@ -367,7 +375,7 @@ namespace Eshop
         /// Vybere a vrati objekt Produkt vybrany 
         /// </summary>
         /// <returns></returns>
-        private Product GetSelectedProduct(DataGridView dataGridView)
+        public static Product GetSelectedProduct(DataGridView dataGridView)
         {
             long selectedProductID = Convert.ToInt64(dataGridView.SelectedRows[0].Cells[0].Value);
             Product selectedProduct = Database.GetCachedProductByID(selectedProductID);

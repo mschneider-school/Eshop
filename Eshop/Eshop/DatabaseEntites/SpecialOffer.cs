@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Eshop.DatabaseEntites
 {
-    class SpecialOffer
+    public class SpecialOffer
     {
         public const string TableName = "SpecialOffer";
         public const string ProductIDColumn = "ProductID";

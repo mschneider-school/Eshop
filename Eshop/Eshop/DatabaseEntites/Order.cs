@@ -6,35 +6,109 @@ using System.Threading.Tasks;
 
 namespace Eshop
 {
-    class Order
+    public class Order
     {
-        public const string TableName = "Order";
+        public const string TableName = "Objednavka";
         public const string OrderIDColumn = "OrderID";
         public const string CustomerColumn = "CustomerID";
         public const string FixedDiscountColumn = "FixedDiscount";
         public const string PercentualDiscountColumn = "PercentualDiscount";
         public const string StateIDColumn = "StateID";
-            
-        public int OrderID { get; }
-        public Customer Customer { get; }
+
+        // stavy
+        public const int BuiltState = 0;
+        public const int CreatedState = 1;
+        public const int ConfirmedState = 2;
+        public const int CanceledState = 3;
+        public const int SentState = 4;
+        
+        public int ID { get; private set; }
+        public int CustomerID { get; }
         public List<OrderItem> OrderItems { get; }
         public int FixedDiscount { get; private set; }
         public int PercentualDiscount { get; private set; }
-        public string State { get; private set; }
+        public int State { get; private set; }
 
-        public Order(Customer customer, List<OrderItem> orderItems, int fixedDiscount, 
-            int percentualDiscount, string state)
+        // statisticke cenove polozky objednavky kalkulovane
+        public int TotalOrderBeforeDiscountPrice { get; private set; }
+        public int TotalOrderDiscount { get; private set; }
+        public int FinalOrderPrice { get; private set; }
+
+        public Order(int customerID, List<OrderItem> orderItems, int fixedDiscount, 
+            int percentualDiscount, int state)
         {
-            Customer = customer;
+            CustomerID = customerID;
             OrderItems = orderItems;
             FixedDiscount = fixedDiscount;
             PercentualDiscount = percentualDiscount;
             State = state;
+
+            // spocti a uloz statisticke cenove polozky objednavky
+            TotalOrderBeforeDiscountPrice = GetTotalOrderBeforeDiscountPrice();
+            TotalOrderDiscount = GetTotalOrderDiscount();
+            FinalOrderPrice = GetFinalOrderPrice();
         }
 
         // metody pro zmenu detailu objednavky
+        public void ChangeID(int id) => ID = id;
         public void ChangeFixedDiscount(int fixedDiscount) => FixedDiscount = fixedDiscount;
         public void ChangePercentualDiscount(int percentualDiscount) => PercentualDiscount = percentualDiscount;
-        public string ChangeState(string state) => State = state;
+        public void ChangeState(int state) => State = state;
+
+        // sestav a vrat objednavku podle zadanych parametru
+        public static Order BuildOrder(List<OrderItem> orderItems)
+        {
+            Customer customer = Session.CustomerLoggedIn;
+            Season currentSeason = Season.GetCurrentSeason();
+            Order builtOrder = new Order
+            (
+                customer.ID,
+                orderItems,
+                currentSeason.GetFixedOrderDiscount(),
+                currentSeason.GetPercentualOrderDiscount(),
+                BuiltState
+            );
+            return builtOrder;
+        }
+
+        // spocti a vrat celkovou cenu polozek objednavky pred slevnenim
+        private int GetTotalOrderBeforeDiscountPrice()
+        {
+            int totalPrice = 0;
+            foreach (OrderItem item in OrderItems)
+            {
+                totalPrice += item.GetTotalOrderItemPrice(); 
+            }
+            return totalPrice;
+        }
+
+        // spocte a vrati celkovou slevu polozek objednavky (fixni a perc. slevu polozek a objednavky)
+        private int GetTotalOrderDiscount()
+        {
+            // nejdrive spocteme celkove slevy u vsech polozek
+            double itemDiscounts = 0;
+            foreach (OrderItem item in OrderItems)
+            {
+                itemDiscounts += item.GetTotalOrderItemDiscount();
+            }
+
+            // pak spocteme celkovou slevu objednavky
+            double percentualOrderDiscount = (TotalOrderBeforeDiscountPrice / 100) * PercentualDiscount;
+            int fixedOrderDiscount = FixedDiscount;
+
+            double orderDiscount = percentualOrderDiscount + fixedOrderDiscount;
+
+            // pak secteme celkove slevy polozek a celkovou slevu objednavky a zaokrouhlime na desitky
+            int totalOrderDiscount = (int)Math.Round(itemDiscounts + orderDiscount, MidpointRounding.AwayFromZero);
+
+            // vratime celkovou slevu objednavky
+            return totalOrderDiscount;
+        }
+
+        // vrati konecnou cenu objednavky po aplikovani vsech slev (fixnich i percentualnich)
+        private int GetFinalOrderPrice()
+        {
+            return TotalOrderBeforeDiscountPrice - TotalOrderDiscount;
+        }
     }
 }

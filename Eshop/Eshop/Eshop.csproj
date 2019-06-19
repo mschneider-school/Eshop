@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseEntites\SpecialOffer.cs" />
+    <Compile Include="DatabaseEntites\Strategy.cs" />
     <Compile Include="FormWindows\AddToBasketDialog.cs">
       <SubType>Form</SubType>
     </Compile>

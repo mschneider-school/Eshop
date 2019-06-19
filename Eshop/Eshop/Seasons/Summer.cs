@@ -16,6 +16,7 @@ namespace Eshop
             OrderItem newOrderItem = new OrderItem(basketItem.Key, basketItem.Value);
             newOrderItem.SetFixedDiscount(0);
             newOrderItem.SetPercentualDiscount(0);
+            newOrderItem.SetStrategy(9);
 
             orderItemSplit.Add(new OrderItem(basketItem.Key, basketItem.Value));
 
@@ -33,8 +34,7 @@ namespace Eshop
             // predvolene je sleva na objednavku nulova
             int percentualDiscount = 0;
 
-            Customer customerLoggedIn = Session.CustomerLoggedIn;
-            int customersOrders = Database.GetCustomersOrderCount(customerLoggedIn);
+            int customersOrders = Database.GetLoggedCustomerOrdersCount();
             
             // pro zakazniky s 5 a vice exist. objednavkami plati sleva z objednavky 10%
             if (customersOrders >= 5)

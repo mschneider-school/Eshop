@@ -25,12 +25,25 @@ namespace Eshop
         public static List<Order> CachedOrders { get; private set; } = new List<Order>();
         public static List<Cathegory> CachedCathegories { get; private set; } = new List<Cathegory>();
         public static List<SpecialOffer> CachedSpecialOffers { get; private set; } = new List<SpecialOffer>();
- 
+        public static List<Strategy> CachedStrategies { get; private set; } = new List<Strategy>();
+
         /*** Manipulace s cached daty ***/
 
         public static Product GetCachedProductByID(long id)
         {
             return CachedProducts.Find(product => product.ID == id);
+        }
+
+        public static Strategy GetCachedStrategyByID(int id)
+        {
+            return CachedStrategies.Find(strategy => strategy.StrategyID == id);
+        }
+
+        public static int GetLoggedCustomerOrdersCount()
+        {
+            int ordersCount = CachedOrders.Where
+                (order => order.CustomerID == Session.CustomerLoggedIn.ID).Count();
+            return ordersCount;
         }
 
         /*** Prikazy k selekci dat ***/
@@ -45,16 +58,25 @@ namespace Eshop
         public static string LoadCathegoriesCommand { get; } =
             $"SELECT * FROM {Cathegory.TableName}";
 
+        public static string LoadOrdersCommand { get; } =
+            $"SELECT * FROM {Order.TableName}";
+
         public static string LoadSpecialOffersCommand { get; } =
             $"SELECT * FROM {SpecialOffer.TableName}";
+
+        public static string LoadStrategiesCommand { get; } =
+            $"SELECT * FROM {Strategy.TableName}";
+
 
         /*** Delegaty pro reference nacitavacich funkci ***/
 
         public static Action<SQLiteDataReader> loadProducts = LoadProducts;
         public static Action<SQLiteDataReader> loadCathegories = LoadCathegories;
+        public static Action<SQLiteDataReader> loadOrders = LoadOrders;
         public static Action<SQLiteDataReader> loadSpecialOffers = LoadSpecialOffers;
+        public static Action<SQLiteDataReader> loadStrategies = LoadStrategies;
 
-        /*** Metody k nacteni  ***/
+        /*** Metody k nacteni dat ***/
 
         /// <summary>
         /// Pomocna funkce nacte produkty z databaze do pameti
@@ -112,6 +134,28 @@ namespace Eshop
         }
 
         /// <summary>
+        /// Pomocna metoda nacte objednavky z databaze do pameti
+        /// </summary>
+        /// <param name="reader">precteny sqlite zaznamy k zpracovani</param>
+        public static void LoadOrders(SQLiteDataReader reader)
+        {
+            while (reader.Read())
+            {
+                // nacteni objednavky z db
+                Order loadedOrder = new Order
+                (
+                    Convert.ToInt32(reader[Order.CustomerColumn]),
+                    null,
+                    Convert.ToInt32(reader[Order.FixedDiscountColumn]),
+                    Convert.ToInt32(reader[Order.PercentualDiscountColumn]),
+                    Convert.ToInt32(reader[Order.StateIDColumn])
+                );
+                // pridani objektu objednavky do cached objednavek
+                CachedOrders.Add(loadedOrder);
+            }
+        }
+
+        /// <summary>
         /// Pomocna metoda nacte specialni polozky z databaze do pameti
         /// </summary>
         /// <param name="reader">precteny sqlite zaznamy k zpracovani</param>
@@ -125,6 +169,23 @@ namespace Eshop
                     Convert.ToInt32(reader[SpecialOffer.FixedDiscountColumn])
                 );
                 CachedSpecialOffers.Add(loadedSpecialOffer);
+            }
+        }
+
+        /// <summary>
+        /// Pomocna metoda nacte strategie z databaze do pameti
+        /// </summary>
+        /// <param name="reader">precteny sqlite zaznamy k zpracovani</param>
+        public static void LoadStrategies(SQLiteDataReader reader)
+        {
+            while (reader.Read())
+            {
+                Strategy loadedStrategy = new Strategy
+                (
+                    Convert.ToInt32(reader[Strategy.StrategyIDCOlumn]),
+                    reader[Strategy.DescriptionColumn].ToString()
+                );
+                CachedStrategies.Add(loadedStrategy);
             }
         }
 
@@ -448,36 +509,114 @@ namespace Eshop
         }
 
         /// <summary>
-        /// Vraci pocet objednavek daneho zakaznika pro vypocitani letni slevy na objednavku
+        /// Vraci zakaznika z databaze podle zadaneho ID
         /// </summary>
-        /// <param name="customer">zakaznik jehoz pocet objednavek se zjistuje</param>
+        /// <param name="id">id hledaneho zakaznika</param>
         /// <returns></returns>
-        public static int GetCustomersOrderCount(Customer customer)
+        public static Customer GetCustomerByID(int id)
         {
-            int orderCount = -1;
+            Customer customerFound = null;
             using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
             {
                 connection.Open();
-                string commandText = $"SELECT COUNT(*) AS COUNT FROM {Order.TableName} AS o " +
-                    $"JOIN {Customer.TableName} AS c " +
-                    $"WHERE o.{Customer.IDColumn} = c.@{Customer.IDColumn}";
+                string commandText = $"SELECT * FROM {Customer.TableName} WHERE " +
+                    $"{Customer.IDColumn} = @{Customer.IDColumn}";
 
                 using (SQLiteCommand command = new SQLiteCommand(commandText, connection))
                 {
-                    command.Parameters.AddWithValue($"{Customer.IDColumn}", customer.ID);
-
+                    command.Parameters.AddWithValue($"@{Customer.IDColumn}", id);
                     using (SQLiteDataReader reader = command.ExecuteReader())
                     {
-                        // pokud byly zaznamy s emailem nalezeny, neni unikatni vrat false
                         if (reader.Read())
                         {
-                            orderCount = Convert.ToInt32(reader["COUNT"]);
+                            customerFound = new Customer
+                            (
+                                reader[Customer.NameColumn].ToString(),
+                                reader[Customer.LastNameColumn].ToString(),
+                                Convert.ToInt32(reader[Customer.PhoneColumn]),
+                                reader[Customer.CityColumn].ToString(),
+                                reader[Customer.StreetColumn].ToString(),
+                                reader[Customer.HouseNumberColumn].ToString(),
+                                Convert.ToInt32(reader[Customer.PostalCodeColumn]),
+                                reader[Customer.EmailColumn].ToString(),
+                                reader[Customer.PasswordColumn].ToString()
+                            );
+                            customerFound.LoadThisCustomerID();
                         }
                     }
                 }
                 connection.Close();
             }
-            return orderCount;
+            return customerFound;
+        }
+
+        /// <summary>
+        /// Vytvori objednavku a ulozi ji do databaze, rovnez ulozi i polozky objednavky
+        /// </summary>
+        public static void CreateOrder(Order order)
+        {
+            int lastInsertedID = -1;
+            using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+                string commandText = $"INSERT INTO {Order.TableName} " +
+                    $"({Order.CustomerColumn}, {Order.FixedDiscountColumn}, " +
+                    $"{Order.PercentualDiscountColumn}, {Order.StateIDColumn}) " +
+                    $"VALUES (@{Order.CustomerColumn}, @{Order.FixedDiscountColumn}, " +
+                    $"@{Order.PercentualDiscountColumn}, @{Order.StateIDColumn})";
+
+                using (SQLiteCommand command = new SQLiteCommand(commandText, connection))
+                {
+                    command.Parameters.AddWithValue($"@{Order.CustomerColumn}", order.CustomerID);
+                    command.Parameters.AddWithValue($"@{Order.FixedDiscountColumn}", order.FixedDiscount);
+                    command.Parameters.AddWithValue($"@{Order.PercentualDiscountColumn}", order.PercentualDiscount);
+                    command.Parameters.AddWithValue($"@{Order.StateIDColumn}", order.State);
+                    command.ExecuteNonQuery();
+                }
+
+                // posledne pridane ID objednavky
+                lastInsertedID = Convert.ToInt32(connection.LastInsertRowId);
+                connection.Close();
+            }
+            // posledne pridane ID se prideli objednavce aby se mohli k nemu priradit polozky objednavky
+            order.ChangeID(lastInsertedID);
+            // po ulozeni objednavky zavolame metodu k ulozeni vsech polozek objednavky
+            CreateOrderItems(order);
+        }
+
+        /// <summary>
+        /// Ulozi polozek dane objednavky do databaze
+        /// </summary>
+        /// <param name="order">objednavka jejiz polozky se ukladaji</param>
+        private static void CreateOrderItems(Order order)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+
+                string commandText = $"INSERT INTO {OrderItem.TableName} " +
+                $"({OrderItem.ProductIDColumn}, {OrderItem.QuantityColumn}, " +
+                $"{OrderItem.FixedDiscountColumn}, {OrderItem.PercentualDiscountColumn}, " +
+                $"{OrderItem.StrategyIDColumn}, {OrderItem.OrderIDColumn}) " +
+                $"VALUES (@{OrderItem.ProductIDColumn}, @{OrderItem.QuantityColumn}, " +
+                $"@{OrderItem.FixedDiscountColumn}, @{OrderItem.PercentualDiscountColumn}, " +
+                $"@{OrderItem.StrategyIDColumn}, @{OrderItem.OrderIDColumn})";
+
+                using (SQLiteCommand command = new SQLiteCommand(commandText, connection))
+                {
+                    foreach (OrderItem orderItem in order.OrderItems)
+                    {
+                        command.Parameters.AddWithValue($"@{OrderItem.ProductIDColumn}", orderItem.Item.ID);
+                        command.Parameters.AddWithValue($"@{OrderItem.QuantityColumn}", orderItem.Quantity);
+                        command.Parameters.AddWithValue($"@{OrderItem.FixedDiscountColumn}", orderItem.FixedDiscount);
+                        command.Parameters.AddWithValue($"@{OrderItem.PercentualDiscountColumn}", orderItem.PercentualDiscount);
+                        command.Parameters.AddWithValue($"@{OrderItem.StrategyIDColumn}", orderItem.StrategyID);
+                        command.Parameters.AddWithValue($"@{OrderItem.OrderIDColumn}", order.ID);
+                        command.ExecuteNonQuery();
+                    }
+                }
+                connection.Close();
+            }
         }
     }
 }

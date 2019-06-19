@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Eshop
 {
-    class Customer
+    public class Customer
     {
         /// <summary>
         /// nazvy sloupcu v tabulce Customer

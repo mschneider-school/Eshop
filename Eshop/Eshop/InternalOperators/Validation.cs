@@ -58,6 +58,12 @@ namespace Eshop
                 "Úspěšné přihlášení", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        public static void CreatedOrderSuccesInfo()
+        {
+            MessageBox.Show($"Děkujeme, Vaše objednávka byla úspěšně vytvořena!",
+                "Vytvoření objednávky", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         public static DialogResult LoginNewCustomerQuestion()
         {
             return MessageBox.Show("Přejete si přihlásit se pod jiným zákazníckým účtem?", 
