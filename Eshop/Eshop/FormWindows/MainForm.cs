@@ -40,11 +40,12 @@ namespace Eshop
             // skryt administratorskou cast pred prihlasenim
             DatabaseTabControl.Visible = false;
 
-            // double buffering povoleno pro datagridview
+            // double buffering povoleno pro datagridviews
             ShopDataGridView.DoubleBuffered(true);
             BasketDataGridView.DoubleBuffered(true);
             ProductsDataGridView.DoubleBuffered(true);
             OrdersDataGridView.DoubleBuffered(true);
+            MyOrdersDataGridView.DoubleBuffered(true);
 
             // nahraje produktova data z databaze do pameti
             Database.ReadTableData(Database.loadProducts, Database.LoadProductsCommand);
@@ -150,14 +151,15 @@ namespace Eshop
                     StoreTabControl.SelectTab(AccountTab);
                 }
 
-                // pokud byl zakaznik prihlasen, ma historii objednavek a tabla jeste neni viditelna
-                // zobrazi se tabla objednavek
-                if (Session.CustomerLoggedIn != null
-                    && !StoreTabControl.TabPages.Contains(OrdersTab)
-                    && CustomerOrdersDataGridView.RowCount > 0)
+                // pokud byl zakaznik prihlasen nacteme jeho objednavky ak nejake ma
+                Customer loggedIn = Session.CustomerLoggedIn;
+                int customerOrdersCount = Database.GetCustomerOrders(loggedIn).Count();
+
+                if (loggedIn != null && customerOrdersCount != 0)
                 {
-                    StoreTabControl.TabPages.Insert(3, OrdersTab);
+                    LoadCustomerOrders(loggedIn);
                 }
+
                 // pokud byl zakaznik prihlasen zobraz jeho jmeno v titulku okna a informaci o prihlaseni
                 // pak klikni programaticky znovu na tlacitko pro zobrazeni detailu objednavky
                 if (Session.CustomerLoggedIn != null)
@@ -171,7 +173,7 @@ namespace Eshop
             {
                 List<OrderItem> orderItems = OrderItem.GetOrderItemsFromBasket(Basket.Items);
                 Order builtOrder = Order.BuildOrder(orderItems);
-                OrderDetailForm builtOrderDetail = new OrderDetailForm(builtOrder);
+                OrderDetailForm builtOrderDetail = new OrderDetailForm(builtOrder, true);
                 DialogResult result = builtOrderDetail.ShowDialog();
                 
                 // pri potvrzeni objednavky ze strany zakaznika
@@ -184,26 +186,76 @@ namespace Eshop
                     {
                         ShowNewOrderToAdmin(builtOrder);
                     }
-                    Message.CreatedOrderSuccesInfo();
+
+                    // vlozi se novy zaznam do prehledu objednavky
+                    AddOrderToMyOrders(builtOrder);
+
+                    // focus se presune na tablu objednavek
+                    StoreTabControl.SelectedTab = OrdersTab;
+
+                    // vymaze obsah kosiku ( spusti event RowRemoved), tym odstrani tablu kosiku
+                    EmptyBasketView();
                 }
-                // VLOZI NOVY ZAZNAM DO PREHLEDU OBJEDNAVEK (InsertOrderToMyOrders(Order order))
-                AddOrderToMyOrders(builtOrder);
-                
             }
         }
 
         // pomocna metoda vlozi zaznam objednavky do prehledu objednavek
+        // a vy
         private void AddOrderToMyOrders(Order order)
         {
+            DataGridView view = MyOrdersDataGridView;
+            view.Rows.Add
+            (
+                order.ID,
+                order.CreationDateTime.ToShortDateString(),
+                order.CreationDateTime.ToShortTimeString(),
+                order.OrderItems.Sum(item => item.Quantity),
+                order.PercentualDiscount,
+                order.TotalOrderDiscount,
+                order.FinalOrderPrice,
+                Database.GetStateNameByID(order.State)
+            );
+            SortViewByDateTime(view);
+            SelectRecordInView(order.ID, view);
+        }
 
+        // vysortuje prehled objednavek podle datumu
+        private void SortViewByDateTime(DataGridView dataGridView)
+        {
+
+        }
+
+        /// <summary>
+        /// Prida objednavky prihlaseneho zakaznika do prehledu Moje objednavky
+        /// </summary>
+        /// <param name="customer">prihlaseny zakaznik</param>
+        public void LoadCustomerOrders(Customer customer)
+        {
+            List<Order> customerOrders = Database.GetCustomerOrders(customer);
+            DataGridView ordersView = MyOrdersDataGridView;
+
+            ordersView.Rows.Clear();
+            foreach(Order order in customerOrders)
+            {
+                Database.LoadOrderItemsToOrder(order);
+                AddOrderToMyOrders(order);
+            }
+            SortViewByDateTime(ordersView);
         }
 
         private void CustomerOrderDetailButton_Click(object sender, EventArgs e)
         {
-            // OrderDetailForm customerOrderDetail = new OrderDetailForm();
-            // customerOrderDetail.ShowDialog();
+            Order orderToShow = GetSelectedOrder(MyOrdersDataGridView);
+            OrderDetailForm customerOrderDetail = new OrderDetailForm(orderToShow);
+            customerOrderDetail.ShowDialog();
         }
-        
+
+        private void ReturnToStoreButton_Click(object sender, EventArgs e)
+        {
+            StoreTabControl.SelectTab(StoreTab);
+        }
+
+
         private void LoginToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoginRegisterDialog customerLogin = new LoginRegisterDialog();
@@ -223,7 +275,7 @@ namespace Eshop
             {
                 DisplayItemsInBasketView();
                 // polozka posledne pridana do kosiku bude zvyraznena
-                FocusOnProductInView(selectedProduct, BasketDataGridView);
+                SelectRecordInView(selectedProduct.ID, BasketDataGridView);
             }
         }
 
@@ -267,11 +319,13 @@ namespace Eshop
                 {
                     if (loggedInBefore.ID != loggedInAfter.ID)
                     {
+                        LoadCustomerOrders(loggedInAfter);
                         Message.LoginSuccessInfo(loggedInAfter);
                     }
                 }
                 else
                 {
+                    LoadCustomerOrders(loggedInAfter);
                     Message.LoginSuccessInfo(loggedInAfter);
                 }
             }
@@ -322,7 +376,6 @@ namespace Eshop
                 DisplayItemsInBasketView();
                 StoreTabControl.SelectTab(BasketTab);
             }
-            RemoveTabWhenViewEmpty(StoreTabControl, BasketDataGridView, BasketTab);
         }
 
         // zobraz detail vybraneho produktu z view košíka
@@ -344,10 +397,15 @@ namespace Eshop
             // a refreshne view
             if (result == DialogResult.OK)
             {
-                Basket.Empty();
-                DisplayItemsInBasketView();
+                EmptyBasketView();
             }
-            RemoveTabWhenViewEmpty(StoreTabControl, BasketDataGridView, BasketTab);
+        }
+
+        // vymaze polozky kosiku z pameti i nahledu
+        public void EmptyBasketView()
+        {
+            Basket.Empty();
+            DisplayItemsInBasketView();
         }
 
         // Administratorske prihlaseni
@@ -370,6 +428,10 @@ namespace Eshop
                     // nacte se obsah produktoveho a objednavkoveho prehledu
                     ShowLoadedProducts(ProductsDataGridView);
                     ShowLoadedOrdersToAdmin();
+                }
+                else
+                {   // jinak se presune spatky na zakaznickou cast
+                    UserViewsTabControl.SelectTab(CustomerTabPage);
                 }
             }
         }
@@ -473,21 +535,6 @@ namespace Eshop
         }
 
         /// <summary>
-        /// Skryje tab kdyz je datagridview prazdny 
-        /// </summary>
-        /// <param name="tabControl">tabla na ktere se provadi operace</param>
-        /// <param name="dataGridView">kontrolovane view</param>
-        /// <param name="tabPage">stranka ktera se vymaze pokud je gridview prazdny</param>
-        private void RemoveTabWhenViewEmpty(TabControl tabControl, 
-            DataGridView dataGridView, TabPage tabPage)
-        {
-            if (dataGridView.Rows.Count < 1)
-            {
-                tabControl.TabPages.Remove(tabPage);
-            }
-        }
-
-        /// <summary>
         /// zjistuje jestli je dany datagridview prazdny nebo ne (pripad mazani z prazdneho)
         /// </summary>
         /// <param name="dataGridView"></param>
@@ -525,12 +572,12 @@ namespace Eshop
         /// <summary>
         /// Oznaci zaznam s udaji zvoleneho produktu v zvolenem datagridview
         /// </summary>
-        /// <param name="product"></param>
-        public static void FocusOnProductInView(Product product, DataGridView dataGridView)
+        /// <param name="id">id zvyrazneneho radku</param>
+        public static void SelectRecordInView(int id, DataGridView dataGridView)
         {
             foreach(DataGridViewRow row in dataGridView.Rows)
             {
-                if ((int)row.Cells[0].Value == product.ID)
+                if ((int)row.Cells[0].Value == id)
                 {
                     row.Selected = true;
                     dataGridView.FirstDisplayedScrollingRowIndex = row.Index;
@@ -572,7 +619,7 @@ namespace Eshop
         public void ShowNewProduct(Product product)
         {
              ProductsDataGridView.Rows.Add(product.ID, product.Name, product.Cathegory, product.Price);
-             FocusOnProductInView(product, ProductsDataGridView);
+             SelectRecordInView(product.ID, ProductsDataGridView);
         }
 
         /// <summary>
@@ -728,13 +775,15 @@ namespace Eshop
 
         private void OrdersDataGridView_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
-            bool availability = OrdersDataGridView.Rows.Count > 0;
+            DataGridView thisView = sender as DataGridView;
+            bool availability = thisView.Rows.Count > 0;
             List<Button> buttons = new List<Button>()
             {
                 ConfirmOrderButton, CancelOrderButton,
                 SendOrderButton, AdminOrderDetailButton
             };
             SetAvailableButtons(sender, buttons, availability);
+            SortViewByDateTime(thisView);
         }
 
         private void ProductsDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -783,12 +832,22 @@ namespace Eshop
                StoreTabControl.TabPages.Insert(1, BasketTab);
             }
         }
-  
+
+        private void BasketDataGridView_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            var thisView = sender as DataGridView;
+            if (thisView.Rows.Count == 0)
+            {
+                StoreTabControl.TabPages.Remove(BasketTab);
+                MoveToBasketButton.Enabled = false;
+            }
+        }
 
         // po pridani objednavky do zakaznickeho prehledu objednavky se focus presune na tablu objednavek
         private void CustomerOrdersDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            StoreTabControl.SelectedTab = OrdersTab;
+            if (!StoreTabControl.TabPages.Contains(OrdersTab))
+                StoreTabControl.TabPages.Add(OrdersTab);
         }
 
         private void RegisterAndOrderButton_Click(object sender, EventArgs e)

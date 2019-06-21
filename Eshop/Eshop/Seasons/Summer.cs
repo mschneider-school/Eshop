@@ -37,12 +37,13 @@ namespace Eshop
             int customersOrders = Database.GetLoggedCustomerOrdersCount();
             
             // pro zakazniky s 5 a vice exist. objednavkami plati sleva z objednavky 10%
-            if (customersOrders >= 5)
+            if (customersOrders >= 5 && customersOrders < 10)
             {
                 percentualDiscount = 10;
             }
+
             // pro zakazniky s 10 a vice exist. objednavkami plati sleva z objednavky 20%
-            else if (customersOrders >= 10)
+            if (customersOrders >= 10)
             {
                 percentualDiscount = 20;
             }

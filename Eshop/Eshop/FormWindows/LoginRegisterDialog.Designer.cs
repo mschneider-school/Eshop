@@ -100,7 +100,6 @@
             // LoginUserButton
             // 
             this.LoginUserButton.AutoSize = true;
-            this.LoginUserButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.LoginUserButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LoginUserButton.Location = new System.Drawing.Point(10, 13);
             this.LoginUserButton.Margin = new System.Windows.Forms.Padding(10, 13, 10, 15);
@@ -221,9 +220,11 @@
             this.ClientSize = new System.Drawing.Size(351, 232);
             this.Controls.Add(this.ConfirmWrapperTLPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "LoginRegisterDialog";
             this.Text = "Přihlášení zákazníka";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LoginRegisterDialog_KeyDown);
             this.ConfirmWrapperTLPanel.ResumeLayout(false);
             this.ConfirmWrapperTLPanel.PerformLayout();
             this.ConfirmButtonsTLPanel.ResumeLayout(false);

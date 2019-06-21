@@ -79,11 +79,12 @@ namespace Eshop
         }
 
         // vypocte totalni slevu polozky v korunach
-        public double GetTotalOrderItemDiscount()
+        public decimal GetTotalOrderItemDiscount()
         {
             int totalItemPrice = Item.Price * Quantity;
-            double percentualToFixDiscount = (totalItemPrice / 100) * PercentualDiscount;
-            double totalItemDiscount = FixedDiscount + percentualToFixDiscount;
+            decimal percentageOfPrice = totalItemPrice / 100m;
+            decimal percentualToFixDiscount = percentageOfPrice * PercentualDiscount;
+            decimal totalItemDiscount = FixedDiscount + percentualToFixDiscount;
 
             return totalItemDiscount;
         }

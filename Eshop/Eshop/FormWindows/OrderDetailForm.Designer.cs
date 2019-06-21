@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.WrapperTLPanel = new System.Windows.Forms.TableLayoutPanel();
             this.OrdersControlsTLPanel = new System.Windows.Forms.TableLayoutPanel();
             this.CustomerConfirmOrderButton = new System.Windows.Forms.Button();
@@ -140,8 +140,9 @@
             this.CustomerConfirmOrderButton.Name = "CustomerConfirmOrderButton";
             this.CustomerConfirmOrderButton.Size = new System.Drawing.Size(361, 33);
             this.CustomerConfirmOrderButton.TabIndex = 1;
-            this.CustomerConfirmOrderButton.Text = "Potvrdit objednávku";
+            this.CustomerConfirmOrderButton.Text = "&Potvrdit objednávku";
             this.CustomerConfirmOrderButton.UseVisualStyleBackColor = true;
+            this.CustomerConfirmOrderButton.Click += new System.EventHandler(this.CustomerConfirmOrderButton_Click);
             // 
             // ShowProductDetailButton
             // 
@@ -152,7 +153,7 @@
             this.ShowProductDetailButton.Name = "ShowProductDetailButton";
             this.ShowProductDetailButton.Size = new System.Drawing.Size(360, 33);
             this.ShowProductDetailButton.TabIndex = 0;
-            this.ShowProductDetailButton.Text = "Detail produktu";
+            this.ShowProductDetailButton.Text = "&Detail produktu";
             this.ShowProductDetailButton.UseVisualStyleBackColor = true;
             this.ShowProductDetailButton.Click += new System.EventHandler(this.ShowProductDetailButton_Click);
             // 
@@ -184,15 +185,15 @@
             this.OrderItemsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.OrderItemsDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.OrderItemsDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.OrderItemsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.OrderItemsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.OrderItemsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.OrderItemsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.OrderItemID,
@@ -213,10 +214,10 @@
             // OrderItemID
             // 
             this.OrderItemID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.OrderItemID.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.OrderItemID.DefaultCellStyle = dataGridViewCellStyle9;
             this.OrderItemID.HeaderText = "ID";
             this.OrderItemID.Name = "OrderItemID";
             this.OrderItemID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -226,9 +227,9 @@
             // ProductName
             // 
             this.ProductName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
-            this.ProductName.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.ProductName.DefaultCellStyle = dataGridViewCellStyle10;
             this.ProductName.HeaderText = "Název produktu";
             this.ProductName.Name = "ProductName";
             this.ProductName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -237,9 +238,9 @@
             // ProductQuantity
             // 
             this.ProductQuantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
-            this.ProductQuantity.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.ProductQuantity.DefaultCellStyle = dataGridViewCellStyle11;
             this.ProductQuantity.HeaderText = "Množství";
             this.ProductQuantity.Name = "ProductQuantity";
             this.ProductQuantity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -249,11 +250,11 @@
             // Price
             // 
             this.Price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "N0";
-            dataGridViewCellStyle5.NullValue = null;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
-            this.Price.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle12.Format = "N0";
+            dataGridViewCellStyle12.NullValue = null;
+            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.Price.DefaultCellStyle = dataGridViewCellStyle12;
             this.Price.HeaderText = "Cena (Kč)";
             this.Price.Name = "Price";
             this.Price.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -263,11 +264,11 @@
             // FixedDiscount
             // 
             this.FixedDiscount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.Format = "N0";
-            dataGridViewCellStyle6.NullValue = null;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
-            this.FixedDiscount.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle13.Format = "N0";
+            dataGridViewCellStyle13.NullValue = null;
+            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.FixedDiscount.DefaultCellStyle = dataGridViewCellStyle13;
             this.FixedDiscount.HeaderText = "Sleva (Kč)";
             this.FixedDiscount.Name = "FixedDiscount";
             this.FixedDiscount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -277,9 +278,9 @@
             // PercentualDiscount
             // 
             this.PercentualDiscount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
-            this.PercentualDiscount.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.PercentualDiscount.DefaultCellStyle = dataGridViewCellStyle14;
             this.PercentualDiscount.HeaderText = "Sleva (%)";
             this.PercentualDiscount.Name = "PercentualDiscount";
             this.PercentualDiscount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -770,11 +771,13 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(749, 663);
             this.Controls.Add(this.WrapperTLPanel);
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "OrderDetailForm";
             this.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.Text = "Detail objednávky";
             this.Load += new System.EventHandler(this.OrderDetailForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OrderDetailForm_KeyDown);
             this.WrapperTLPanel.ResumeLayout(false);
             this.WrapperTLPanel.PerformLayout();
             this.OrdersControlsTLPanel.ResumeLayout(false);

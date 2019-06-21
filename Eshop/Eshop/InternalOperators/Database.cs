@@ -57,6 +57,12 @@ namespace Eshop
             return ordersCount;
         }
 
+        // nalezne a vrati vsechny objednavky zakaznika
+        public static List<Order> GetCustomerOrders(Customer customer)
+        {
+            return CachedOrders.FindAll(order => order.Customer.ID == customer.ID);
+        }
+
         private static void ChangeCachedOrderState(Order changedOrder, int state)
         {
             GetCachedOrderByID(changedOrder.ID).ChangeState(state);

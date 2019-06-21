@@ -95,23 +95,23 @@ namespace Eshop
         private int GetTotalOrderDiscount()
         {
             // nejdrive spocteme celkove slevy u vsech polozek
-            double itemDiscounts = 0;
+            decimal itemDiscounts = 0;
             foreach (OrderItem item in OrderItems)
             {
                 itemDiscounts += item.GetTotalOrderItemDiscount();
             }
 
             // pak spocteme celkovou slevu objednavky
-            double percentualOrderDiscount = (TotalOrderBeforeDiscountPrice / 100) * PercentualDiscount;
-            int fixedOrderDiscount = FixedDiscount;
+            decimal percentageOfOrderPrice = TotalOrderBeforeDiscountPrice / 100m;
+            decimal percentualOrderDiscount = percentageOfOrderPrice * PercentualDiscount;
+            decimal fixedOrderDiscount = FixedDiscount;
 
-            double orderDiscount = percentualOrderDiscount + fixedOrderDiscount;
+            decimal orderDiscount = percentualOrderDiscount + fixedOrderDiscount;
 
-            // pak secteme celkove slevy polozek a celkovou slevu objednavky a zaokrouhlime na desitky
-            int totalOrderDiscount = (int)Math.Round(itemDiscounts + orderDiscount, MidpointRounding.AwayFromZero);
+            decimal totalDiscount = itemDiscounts + orderDiscount;
 
-            // vratime celkovou slevu objednavky
-            return totalOrderDiscount;
+            // vratime celkovou slevu objednavky jako ceele cislo
+            return (int)Math.Truncate(totalDiscount);
         }
 
         // vrati konecnou cenu objednavky po aplikovani vsech slev (fixnich i percentualnich)

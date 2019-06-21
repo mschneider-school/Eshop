@@ -90,5 +90,12 @@ namespace Eshop
             PasswordTLPanel.BackColor = SystemColors.GradientInactiveCaption;
         }
 
+        private void LoginRegisterDialog_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                Close();
+            }
+        }
     }
 }
