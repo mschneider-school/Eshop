@@ -95,7 +95,7 @@ namespace Eshop
             {
                 QuantityTextBox.Clear();
                 QuantityFieldTLPanel.BackColor = Color.MistyRose;
-                Validation.QuantityFormatWarning();
+                Message.QuantityFormatWarning();
                 return false;
             }
             else // pokud je cislo zadano spravne
@@ -104,7 +104,7 @@ namespace Eshop
                 {
                     QuantityTextBox.Clear();
                     QuantityFieldTLPanel.BackColor = Color.MistyRose;
-                    Validation.NullQuantityWarning();
+                    Message.NullQuantityWarning();
                     return false;
                 }
                 else

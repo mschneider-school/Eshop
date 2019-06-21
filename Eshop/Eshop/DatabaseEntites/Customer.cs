@@ -36,7 +36,7 @@ namespace Eshop
 
         public Customer(string name, string lastName, int mobilePhone,
             string city, string street, string houseNumber,
-            int postalCode, string email, string password)
+            int postalCode, string email, string password, int id = -1)
         {
             Name = name;
             LastName = lastName;
@@ -47,6 +47,7 @@ namespace Eshop
             PostalCode = postalCode;
             Email = email;
             Password = password;
+            ID = id;
         }
 
         /// <summary>

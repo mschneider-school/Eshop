@@ -50,7 +50,7 @@ namespace Eshop
                 else
                 {
                     PasswordTLPanel.BackColor = Color.MistyRose;
-                    Validation.InvalidPasswordWarning();
+                    Message.InvalidPasswordWarning();
                     PasswordTextBox.Clear();
                 }
             }
@@ -73,7 +73,7 @@ namespace Eshop
                     PasswordTextBox.Clear();
                     UserNameTLPanel.BackColor = Color.MistyRose;
                     PasswordTLPanel.BackColor = Color.MistyRose;
-                    Validation.InvalidCredentialsWarning();
+                    Message.InvalidCredentialsWarning();
                 }
             }
         }

@@ -29,8 +29,17 @@ namespace Eshop
                 ProductPictureBox.Image = product.Photo;
                 ProductIDValueLabel.Text = product.ID.ToString();
                 ProductCathegoryValueLabel.Text = product.Cathegory;
-                ProductPriceValueLabel.Text = product.Price.ToString();
+                ProductPriceValueLabel.Text = product.Price.ToString("N0");
                 DescriptionRTBox.Text = product.Description;
+            }
+        }
+
+        // po zmacknuti Escape se Detail produktu zavre
+        private void ProductDetailsForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                Close();
             }
         }
     }

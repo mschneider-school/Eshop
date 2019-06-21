@@ -18,7 +18,7 @@ namespace Eshop
         public const string StrategyIDColumn = "StrategyID";
         public const string OrderIDColumn = "OrderID";
 
-
+        public int ID { get; private set; }
         public Product Item { get; private set; }
         public int Quantity { get; private set; }
         public int FixedDiscount { get; private set; }
@@ -29,6 +29,17 @@ namespace Eshop
         {
             Item = item;
             Quantity = quantity;
+        }
+
+        public OrderItem(int id, Product item, int quantity, 
+            int fixedDiscount, int percentualDiscount, int strategyID)
+        {
+            ID = id;
+            Item = item;
+            Quantity = quantity;
+            FixedDiscount = fixedDiscount;
+            PercentualDiscount = percentualDiscount;
+            StrategyID = strategyID;
         }
 
         /// <summary>

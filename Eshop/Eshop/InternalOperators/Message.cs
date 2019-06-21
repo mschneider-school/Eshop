@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Eshop
 {
-    class Validation
+    class Message
     {
         public static void InvalidPasswordWarning()
         {
@@ -68,6 +68,12 @@ namespace Eshop
         {
             return MessageBox.Show("Přejete si přihlásit se pod jiným zákazníckým účtem?", 
                 "Přihlášení zákazníka", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        }
+
+        public static void OrderStateChangeInfo(string state)
+        {
+            MessageBox.Show($"Objednávka byla {state}!",
+                "Akce objednávky", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public static bool InvalidEntriesCheck(List<Control> entryControls, Color color)

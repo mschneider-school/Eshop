@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Eshop.DatabaseEntites;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,45 +9,40 @@ namespace Eshop
 {
     public class Order
     {
-        public const string TableName = "Objednavka";
+        public const string TableName = "OrderDetail";
         public const string OrderIDColumn = "OrderID";
         public const string CustomerColumn = "CustomerID";
         public const string FixedDiscountColumn = "FixedDiscount";
         public const string PercentualDiscountColumn = "PercentualDiscount";
         public const string StateIDColumn = "StateID";
-
-        // stavy
-        public const int BuiltState = 0;
-        public const int CreatedState = 1;
-        public const int ConfirmedState = 2;
-        public const int CanceledState = 3;
-        public const int SentState = 4;
+        public const string DateTimeColumn = "DateTime";
         
         public int ID { get; private set; }
-        public int CustomerID { get; }
-        public List<OrderItem> OrderItems { get; }
+        public Customer Customer { get; }
+        public List<OrderItem> OrderItems { get; private set; }
         public int FixedDiscount { get; private set; }
         public int PercentualDiscount { get; private set; }
         public int State { get; private set; }
+        public DateTime CreationDateTime { get; private set; }
 
         // statisticke cenove polozky objednavky kalkulovane
         public int TotalOrderBeforeDiscountPrice { get; private set; }
         public int TotalOrderDiscount { get; private set; }
         public int FinalOrderPrice { get; private set; }
 
-        public Order(int customerID, List<OrderItem> orderItems, int fixedDiscount, 
-            int percentualDiscount, int state)
+        public Order(Customer customer, List<OrderItem> orderItems, int fixedDiscount, 
+            int percentualDiscount, int state, DateTime creationDateTime, int id = -1)
         {
-            CustomerID = customerID;
+            ID = id;
+            Customer = customer;
             OrderItems = orderItems;
             FixedDiscount = fixedDiscount;
             PercentualDiscount = percentualDiscount;
             State = state;
+            CreationDateTime = creationDateTime;
 
             // spocti a uloz statisticke cenove polozky objednavky
-            TotalOrderBeforeDiscountPrice = GetTotalOrderBeforeDiscountPrice();
-            TotalOrderDiscount = GetTotalOrderDiscount();
-            FinalOrderPrice = GetFinalOrderPrice();
+            CalculateOrderPricing();
         }
 
         // metody pro zmenu detailu objednavky
@@ -62,13 +58,26 @@ namespace Eshop
             Season currentSeason = Season.GetCurrentSeason();
             Order builtOrder = new Order
             (
-                customer.ID,
+                customer,
                 orderItems,
                 currentSeason.GetFixedOrderDiscount(),
                 currentSeason.GetPercentualOrderDiscount(),
-                BuiltState
+                OrderState.Built,
+                DateTime.Now
             );
+
             return builtOrder;
+        }
+
+        /*** SPOCTI CENOVOU KALKULACI OBJEDNAVKY ***/
+        public void CalculateOrderPricing()
+        {
+            if (OrderItems.Count != 0)
+            {
+                TotalOrderBeforeDiscountPrice = GetTotalOrderBeforeDiscountPrice();
+                TotalOrderDiscount = GetTotalOrderDiscount();
+                FinalOrderPrice = GetFinalOrderPrice();
+            }
         }
 
         // spocti a vrat celkovou cenu polozek objednavky pred slevnenim

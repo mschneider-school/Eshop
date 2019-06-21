@@ -28,19 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.WrapperTLPanel = new System.Windows.Forms.TableLayoutPanel();
             this.OrdersControlsTLPanel = new System.Windows.Forms.TableLayoutPanel();
             this.CustomerConfirmOrderButton = new System.Windows.Forms.Button();
             this.ShowProductDetailButton = new System.Windows.Forms.Button();
             this.OrderItemsSeparator = new System.Windows.Forms.TableLayoutPanel();
             this.OrderItemsDataGridView = new System.Windows.Forms.DataGridView();
+            this.OrderItemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FixedDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PercentualDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalSumTLPanel = new System.Windows.Forms.TableLayoutPanel();
             this.TotalOrderDiscountsLabel = new System.Windows.Forms.Label();
             this.TotalOrderDiscountsValueLabel = new System.Windows.Forms.Label();
@@ -50,6 +56,7 @@
             this.FixedOrderDiscountValueLabel = new System.Windows.Forms.Label();
             this.FixedOrderDiscountLabel = new System.Windows.Forms.Label();
             this.PercentualOrderDiscountLabel = new System.Windows.Forms.Label();
+            this.OrderItemsLabel = new System.Windows.Forms.Label();
             this.CustomerDetailsPartTLPanel = new System.Windows.Forms.TableLayoutPanel();
             this.DeliverySeparator = new System.Windows.Forms.TableLayoutPanel();
             this.DeliveryAddressDetailsTableTLPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -73,13 +80,6 @@
             this.LastNameLabel = new System.Windows.Forms.Label();
             this.FirstNameValueLabel = new System.Windows.Forms.Label();
             this.FirstNameLabel = new System.Windows.Forms.Label();
-            this.OrderItemsLabel = new System.Windows.Forms.Label();
-            this.OrderItemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FixedDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PercentualDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.WrapperTLPanel.SuspendLayout();
             this.OrdersControlsTLPanel.SuspendLayout();
             this.OrderItemsSeparator.SuspendLayout();
@@ -133,6 +133,7 @@
             // CustomerConfirmOrderButton
             // 
             this.CustomerConfirmOrderButton.AutoSize = true;
+            this.CustomerConfirmOrderButton.DialogResult = System.Windows.Forms.DialogResult.Yes;
             this.CustomerConfirmOrderButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CustomerConfirmOrderButton.Location = new System.Drawing.Point(381, 21);
             this.CustomerConfirmOrderButton.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
@@ -141,7 +142,6 @@
             this.CustomerConfirmOrderButton.TabIndex = 1;
             this.CustomerConfirmOrderButton.Text = "Potvrdit objednávku";
             this.CustomerConfirmOrderButton.UseVisualStyleBackColor = true;
-            this.CustomerConfirmOrderButton.Click += new System.EventHandler(this.CustomerConfirmOrderButton_Click);
             // 
             // ShowProductDetailButton
             // 
@@ -184,15 +184,15 @@
             this.OrderItemsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.OrderItemsDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.OrderItemsDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.OrderItemsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.OrderItemsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.OrderItemsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.OrderItemsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.OrderItemID,
@@ -209,6 +209,82 @@
             this.OrderItemsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.OrderItemsDataGridView.Size = new System.Drawing.Size(729, 211);
             this.OrderItemsDataGridView.TabIndex = 2;
+            // 
+            // OrderItemID
+            // 
+            this.OrderItemID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.OrderItemID.DefaultCellStyle = dataGridViewCellStyle2;
+            this.OrderItemID.HeaderText = "ID";
+            this.OrderItemID.Name = "OrderItemID";
+            this.OrderItemID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.OrderItemID.ToolTipText = "Identifikační číslo produktu";
+            this.OrderItemID.Width = 34;
+            // 
+            // ProductName
+            // 
+            this.ProductName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.ProductName.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ProductName.HeaderText = "Název produktu";
+            this.ProductName.Name = "ProductName";
+            this.ProductName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ProductName.ToolTipText = "Prodejný název produktové položky objednávky";
+            // 
+            // ProductQuantity
+            // 
+            this.ProductQuantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.ProductQuantity.DefaultCellStyle = dataGridViewCellStyle4;
+            this.ProductQuantity.HeaderText = "Množství";
+            this.ProductQuantity.Name = "ProductQuantity";
+            this.ProductQuantity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ProductQuantity.ToolTipText = "Množství položky je zadané v kusech.";
+            this.ProductQuantity.Width = 67;
+            // 
+            // Price
+            // 
+            this.Price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "N0";
+            dataGridViewCellStyle5.NullValue = null;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.Price.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Price.HeaderText = "Cena (Kč)";
+            this.Price.Name = "Price";
+            this.Price.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Price.ToolTipText = "Cena platí pro všechny kusy položky.";
+            this.Price.Width = 70;
+            // 
+            // FixedDiscount
+            // 
+            this.FixedDiscount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Format = "N0";
+            dataGridViewCellStyle6.NullValue = null;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.FixedDiscount.DefaultCellStyle = dataGridViewCellStyle6;
+            this.FixedDiscount.HeaderText = "Sleva (Kč)";
+            this.FixedDiscount.Name = "FixedDiscount";
+            this.FixedDiscount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.FixedDiscount.ToolTipText = "Pevně daná sleva na položku se odečítá nezávisle na ostatních slevách.";
+            this.FixedDiscount.Width = 72;
+            // 
+            // PercentualDiscount
+            // 
+            this.PercentualDiscount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.PercentualDiscount.DefaultCellStyle = dataGridViewCellStyle7;
+            this.PercentualDiscount.HeaderText = "Sleva (%)";
+            this.PercentualDiscount.Name = "PercentualDiscount";
+            this.PercentualDiscount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.PercentualDiscount.ToolTipText = "Procentuálně daná sleva na položku se odečítá nezávisle na ostatních slevách.";
+            this.PercentualDiscount.Width = 67;
             // 
             // TotalSumTLPanel
             // 
@@ -356,6 +432,23 @@
             this.PercentualOrderDiscountLabel.TabIndex = 2;
             this.PercentualOrderDiscountLabel.Text = "Sleva objednávky (%):";
             this.PercentualOrderDiscountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // OrderItemsLabel
+            // 
+            this.OrderItemsLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.OrderItemsLabel.AutoSize = true;
+            this.OrderItemsLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.OrderItemsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OrderItemsLabel.Location = new System.Drawing.Point(10, 0);
+            this.OrderItemsLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.OrderItemsLabel.Name = "OrderItemsLabel";
+            this.OrderItemsLabel.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.OrderItemsLabel.Size = new System.Drawing.Size(729, 57);
+            this.OrderItemsLabel.TabIndex = 4;
+            this.OrderItemsLabel.Text = "Detail objednávky";
+            this.OrderItemsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // CustomerDetailsPartTLPanel
             // 
@@ -669,99 +762,6 @@
             this.FirstNameLabel.Size = new System.Drawing.Size(41, 13);
             this.FirstNameLabel.TabIndex = 0;
             this.FirstNameLabel.Text = "Jméno:";
-            // 
-            // OrderItemsLabel
-            // 
-            this.OrderItemsLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.OrderItemsLabel.AutoSize = true;
-            this.OrderItemsLabel.BackColor = System.Drawing.SystemColors.Control;
-            this.OrderItemsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OrderItemsLabel.Location = new System.Drawing.Point(10, 0);
-            this.OrderItemsLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.OrderItemsLabel.Name = "OrderItemsLabel";
-            this.OrderItemsLabel.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.OrderItemsLabel.Size = new System.Drawing.Size(729, 57);
-            this.OrderItemsLabel.TabIndex = 4;
-            this.OrderItemsLabel.Text = "Detail objednávky";
-            this.OrderItemsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // OrderItemID
-            // 
-            this.OrderItemID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.OrderItemID.DefaultCellStyle = dataGridViewCellStyle9;
-            this.OrderItemID.HeaderText = "ID";
-            this.OrderItemID.Name = "OrderItemID";
-            this.OrderItemID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.OrderItemID.ToolTipText = "Identifikační číslo produktu";
-            this.OrderItemID.Width = 34;
-            // 
-            // ProductName
-            // 
-            this.ProductName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
-            this.ProductName.DefaultCellStyle = dataGridViewCellStyle10;
-            this.ProductName.HeaderText = "Název produktu";
-            this.ProductName.Name = "ProductName";
-            this.ProductName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ProductName.ToolTipText = "Prodejný název produktové položky objednávky";
-            // 
-            // ProductQuantity
-            // 
-            this.ProductQuantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
-            this.ProductQuantity.DefaultCellStyle = dataGridViewCellStyle11;
-            this.ProductQuantity.HeaderText = "Množství";
-            this.ProductQuantity.Name = "ProductQuantity";
-            this.ProductQuantity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ProductQuantity.ToolTipText = "Množství položky je zadané v kusech.";
-            this.ProductQuantity.Width = 67;
-            // 
-            // Price
-            // 
-            this.Price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle12.Format = "N0";
-            dataGridViewCellStyle12.NullValue = null;
-            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
-            this.Price.DefaultCellStyle = dataGridViewCellStyle12;
-            this.Price.HeaderText = "Cena (Kč)";
-            this.Price.Name = "Price";
-            this.Price.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Price.ToolTipText = "Cena platí pro všechny kusy položky.";
-            this.Price.Width = 70;
-            // 
-            // FixedDiscount
-            // 
-            this.FixedDiscount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle13.Format = "N0";
-            dataGridViewCellStyle13.NullValue = null;
-            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
-            this.FixedDiscount.DefaultCellStyle = dataGridViewCellStyle13;
-            this.FixedDiscount.HeaderText = "Sleva (Kč)";
-            this.FixedDiscount.Name = "FixedDiscount";
-            this.FixedDiscount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.FixedDiscount.ToolTipText = "Pevně daná sleva na položku se odečítá nezávisle na ostatních slevách.";
-            this.FixedDiscount.Width = 72;
-            // 
-            // PercentualDiscount
-            // 
-            this.PercentualDiscount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
-            this.PercentualDiscount.DefaultCellStyle = dataGridViewCellStyle14;
-            this.PercentualDiscount.HeaderText = "Sleva (%)";
-            this.PercentualDiscount.Name = "PercentualDiscount";
-            this.PercentualDiscount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.PercentualDiscount.ToolTipText = "Procentuálně daná sleva na položku se odečítá nezávisle na ostatních slevách.";
-            this.PercentualDiscount.Width = 67;
             // 
             // OrderDetailForm
             // 

@@ -30,23 +30,34 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.UserViewsTabControl = new System.Windows.Forms.TabControl();
             this.CustomerTabPage = new System.Windows.Forms.TabPage();
@@ -58,6 +69,10 @@
             this.ProductPickerTLPanel = new System.Windows.Forms.TableLayoutPanel();
             this.ShopItemsTLPanel = new System.Windows.Forms.TableLayoutPanel();
             this.ShopDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.LoginAsCustomerButton = new System.Windows.Forms.Button();
             this.ShowItemDetailButton = new System.Windows.Forms.Button();
@@ -80,6 +95,11 @@
             this.BinViewerTLPanel = new System.Windows.Forms.TableLayoutPanel();
             this.BinItemsLabel = new System.Windows.Forms.Label();
             this.BasketDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BinControlsTLPanel = new System.Windows.Forms.TableLayoutPanel();
             this.ShowDetailBasketItemButton = new System.Windows.Forms.Button();
             this.EmptyBasketButton = new System.Windows.Forms.Button();
@@ -141,28 +161,34 @@
             this.ConfirmOrderButton = new System.Windows.Forms.Button();
             this.OrderListLabel = new System.Windows.Forms.Label();
             this.OrdersDataGridView = new System.Windows.Forms.DataGridView();
+            this.OrderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InsertDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InsertTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.State = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductsTabPage = new System.Windows.Forms.TabPage();
             this.ProductsTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.ProductListLabel = new System.Windows.Forms.Label();
             this.ProductsDataGridView = new System.Windows.Forms.DataGridView();
+            this.ProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CathegoryColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PriceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductControlsTLPanel = new System.Windows.Forms.TableLayoutPanel();
             this.UpdateProductButton = new System.Windows.Forms.Button();
             this.DeleteProductButton = new System.Windows.Forms.Button();
             this.ProductDetailButton = new System.Windows.Forms.Button();
             this.AddProductButton = new System.Windows.Forms.Button();
-            this.ProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CathegoryColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PriceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MyOrderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MyOrderQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MyOrderDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MyOrderState = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TableLayoutPanel1.SuspendLayout();
             this.UserViewsTabControl.SuspendLayout();
             this.CustomerTabPage.SuspendLayout();
@@ -219,7 +245,7 @@
             this.TableLayoutPanel1.Controls.Add(this.UserViewsTabControl, 0, 0);
             this.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.TableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.TableLayoutPanel1.Name = "TableLayoutPanel1";
             this.TableLayoutPanel1.RowCount = 1;
             this.TableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -233,7 +259,7 @@
             this.UserViewsTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UserViewsTabControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.UserViewsTabControl.Location = new System.Drawing.Point(10, 10);
-            this.UserViewsTabControl.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.UserViewsTabControl.Margin = new System.Windows.Forms.Padding(10);
             this.UserViewsTabControl.Name = "UserViewsTabControl";
             this.UserViewsTabControl.Padding = new System.Drawing.Point(15, 8);
             this.UserViewsTabControl.SelectedIndex = 0;
@@ -289,7 +315,7 @@
             this.BackgroundTabPanel.Controls.Add(this.StoreTabControl);
             this.BackgroundTabPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BackgroundTabPanel.Location = new System.Drawing.Point(2, 25);
-            this.BackgroundTabPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BackgroundTabPanel.Margin = new System.Windows.Forms.Padding(2);
             this.BackgroundTabPanel.Name = "BackgroundTabPanel";
             this.BackgroundTabPanel.Size = new System.Drawing.Size(705, 505);
             this.BackgroundTabPanel.TabIndex = 1;
@@ -403,6 +429,51 @@
             this.ShopDataGridView.TabStop = false;
             this.ShopDataGridView.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.ShopDataGridView_RowsAdded);
             this.ShopDataGridView.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.ShopDataGridView_RowsRemoved);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn1.Width = 34;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Název";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Kategorie";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 87;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "N0";
+            dataGridViewCellStyle5.NullValue = null;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Cena Kč/ks";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn4.Width = 80;
             // 
             // tableLayoutPanel4
             // 
@@ -685,7 +756,63 @@
             this.BasketDataGridView.TabIndex = 1;
             this.BasketDataGridView.TabStop = false;
             this.BasketDataGridView.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.BasketDataGridView_RowsAdded);
-            this.BasketDataGridView.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.BasketDataGridView_RowsRemoved);
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridViewTextBoxColumn5.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn5.Width = 34;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Název";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle10;
+            this.dataGridViewTextBoxColumn7.HeaderText = "Kategorie";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 87;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle11.Format = "N0";
+            dataGridViewCellStyle11.NullValue = null;
+            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dataGridViewTextBoxColumn8.HeaderText = "Cena Kč/ks";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn8.Width = 80;
+            // 
+            // Quantity
+            // 
+            this.Quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.Quantity.DefaultCellStyle = dataGridViewCellStyle12;
+            this.Quantity.HeaderText = "Množství";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            this.Quantity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Quantity.Width = 67;
             // 
             // BinControlsTLPanel
             // 
@@ -779,7 +906,7 @@
             this.AccountTab.Controls.Add(this.RegistrationTLPanel);
             this.AccountTab.Location = new System.Drawing.Point(4, 30);
             this.AccountTab.Name = "AccountTab";
-            this.AccountTab.Size = new System.Drawing.Size(697, 431);
+            this.AccountTab.Size = new System.Drawing.Size(697, 471);
             this.AccountTab.TabIndex = 3;
             this.AccountTab.Text = "Registrace";
             this.AccountTab.UseVisualStyleBackColor = true;
@@ -799,7 +926,7 @@
             this.RegistrationTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
             this.RegistrationTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.RegistrationTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
-            this.RegistrationTLPanel.Size = new System.Drawing.Size(697, 431);
+            this.RegistrationTLPanel.Size = new System.Drawing.Size(697, 471);
             this.RegistrationTLPanel.TabIndex = 0;
             // 
             // RegistrationControlsTLPanel
@@ -814,7 +941,7 @@
             this.RegistrationControlsTLPanel.Controls.Add(this.RegisterAndOrderButton, 1, 0);
             this.RegistrationControlsTLPanel.Controls.Add(this.BackToBasketButton, 0, 0);
             this.RegistrationControlsTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RegistrationControlsTLPanel.Location = new System.Drawing.Point(0, 358);
+            this.RegistrationControlsTLPanel.Location = new System.Drawing.Point(0, 398);
             this.RegistrationControlsTLPanel.Margin = new System.Windows.Forms.Padding(0);
             this.RegistrationControlsTLPanel.Name = "RegistrationControlsTLPanel";
             this.RegistrationControlsTLPanel.RowCount = 1;
@@ -891,7 +1018,7 @@
             this.PersonalDetailsTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.PersonalDetailsTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.PersonalDetailsTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.PersonalDetailsTLPanel.Size = new System.Drawing.Size(691, 270);
+            this.PersonalDetailsTLPanel.Size = new System.Drawing.Size(691, 310);
             this.PersonalDetailsTLPanel.TabIndex = 1;
             // 
             // LastNameTLPanel
@@ -902,13 +1029,13 @@
             this.LastNameTLPanel.Controls.Add(this.LastNameTextBox, 0, 1);
             this.LastNameTLPanel.Controls.Add(this.LastNameLabel, 0, 0);
             this.LastNameTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LastNameTLPanel.Location = new System.Drawing.Point(5, 206);
+            this.LastNameTLPanel.Location = new System.Drawing.Point(5, 236);
             this.LastNameTLPanel.Margin = new System.Windows.Forms.Padding(5, 5, 7, 5);
             this.LastNameTLPanel.Name = "LastNameTLPanel";
             this.LastNameTLPanel.RowCount = 2;
             this.LastNameTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.LastNameTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.LastNameTLPanel.Size = new System.Drawing.Size(333, 59);
+            this.LastNameTLPanel.Size = new System.Drawing.Size(333, 69);
             this.LastNameTLPanel.TabIndex = 4;
             // 
             // LastNameTextBox
@@ -916,7 +1043,7 @@
             this.LastNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LastNameTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.LastNameTextBox.Location = new System.Drawing.Point(10, 28);
+            this.LastNameTextBox.Location = new System.Drawing.Point(10, 32);
             this.LastNameTextBox.Margin = new System.Windows.Forms.Padding(10, 5, 10, 11);
             this.LastNameTextBox.Name = "LastNameTextBox";
             this.LastNameTextBox.Size = new System.Drawing.Size(313, 20);
@@ -927,10 +1054,10 @@
             // 
             this.LastNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.LastNameLabel.AutoSize = true;
-            this.LastNameLabel.Location = new System.Drawing.Point(7, 11);
+            this.LastNameLabel.Location = new System.Drawing.Point(7, 12);
             this.LastNameLabel.Margin = new System.Windows.Forms.Padding(7, 11, 3, 0);
             this.LastNameLabel.Name = "LastNameLabel";
-            this.LastNameLabel.Size = new System.Drawing.Size(51, 12);
+            this.LastNameLabel.Size = new System.Drawing.Size(51, 13);
             this.LastNameLabel.TabIndex = 0;
             this.LastNameLabel.Text = "Příjmení:";
             this.LastNameLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -943,13 +1070,13 @@
             this.StreetTLPanel.Controls.Add(this.StreetTextBox, 0, 1);
             this.StreetTLPanel.Controls.Add(this.StreetLabel, 0, 0);
             this.StreetTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.StreetTLPanel.Location = new System.Drawing.Point(352, 139);
+            this.StreetTLPanel.Location = new System.Drawing.Point(352, 159);
             this.StreetTLPanel.Margin = new System.Windows.Forms.Padding(7, 5, 5, 5);
             this.StreetTLPanel.Name = "StreetTLPanel";
             this.StreetTLPanel.RowCount = 2;
             this.StreetTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.StreetTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.StreetTLPanel.Size = new System.Drawing.Size(334, 57);
+            this.StreetTLPanel.Size = new System.Drawing.Size(334, 67);
             this.StreetTLPanel.TabIndex = 7;
             // 
             // StreetTextBox
@@ -957,7 +1084,7 @@
             this.StreetTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.StreetTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.StreetTextBox.Location = new System.Drawing.Point(10, 27);
+            this.StreetTextBox.Location = new System.Drawing.Point(10, 31);
             this.StreetTextBox.Margin = new System.Windows.Forms.Padding(10, 5, 10, 11);
             this.StreetTextBox.Name = "StreetTextBox";
             this.StreetTextBox.Size = new System.Drawing.Size(314, 20);
@@ -968,10 +1095,10 @@
             // 
             this.StreetLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.StreetLabel.AutoSize = true;
-            this.StreetLabel.Location = new System.Drawing.Point(7, 11);
+            this.StreetLabel.Location = new System.Drawing.Point(7, 12);
             this.StreetLabel.Margin = new System.Windows.Forms.Padding(7, 11, 3, 0);
             this.StreetLabel.Name = "StreetLabel";
-            this.StreetLabel.Size = new System.Drawing.Size(34, 11);
+            this.StreetLabel.Size = new System.Drawing.Size(34, 13);
             this.StreetLabel.TabIndex = 0;
             this.StreetLabel.Text = "Ulice:";
             this.StreetLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -984,13 +1111,13 @@
             this.FirstNameTLPanel.Controls.Add(this.FirstNameTextBox, 0, 1);
             this.FirstNameTLPanel.Controls.Add(this.FirstNameLabel, 0, 0);
             this.FirstNameTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FirstNameTLPanel.Location = new System.Drawing.Point(5, 139);
+            this.FirstNameTLPanel.Location = new System.Drawing.Point(5, 159);
             this.FirstNameTLPanel.Margin = new System.Windows.Forms.Padding(5, 5, 7, 5);
             this.FirstNameTLPanel.Name = "FirstNameTLPanel";
             this.FirstNameTLPanel.RowCount = 2;
             this.FirstNameTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.FirstNameTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.FirstNameTLPanel.Size = new System.Drawing.Size(333, 57);
+            this.FirstNameTLPanel.Size = new System.Drawing.Size(333, 67);
             this.FirstNameTLPanel.TabIndex = 3;
             // 
             // FirstNameTextBox
@@ -998,7 +1125,7 @@
             this.FirstNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FirstNameTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.FirstNameTextBox.Location = new System.Drawing.Point(10, 27);
+            this.FirstNameTextBox.Location = new System.Drawing.Point(10, 31);
             this.FirstNameTextBox.Margin = new System.Windows.Forms.Padding(10, 5, 10, 11);
             this.FirstNameTextBox.Name = "FirstNameTextBox";
             this.FirstNameTextBox.Size = new System.Drawing.Size(313, 20);
@@ -1009,10 +1136,10 @@
             // 
             this.FirstNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.FirstNameLabel.AutoSize = true;
-            this.FirstNameLabel.Location = new System.Drawing.Point(7, 11);
+            this.FirstNameLabel.Location = new System.Drawing.Point(7, 12);
             this.FirstNameLabel.Margin = new System.Windows.Forms.Padding(7, 11, 3, 0);
             this.FirstNameLabel.Name = "FirstNameLabel";
-            this.FirstNameLabel.Size = new System.Drawing.Size(41, 11);
+            this.FirstNameLabel.Size = new System.Drawing.Size(41, 13);
             this.FirstNameLabel.TabIndex = 0;
             this.FirstNameLabel.Text = "Jméno:";
             this.FirstNameLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -1025,13 +1152,13 @@
             this.CityTLPanel.Controls.Add(this.CityTextBox, 0, 1);
             this.CityTLPanel.Controls.Add(this.CityLabel, 0, 0);
             this.CityTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CityTLPanel.Location = new System.Drawing.Point(352, 72);
+            this.CityTLPanel.Location = new System.Drawing.Point(352, 82);
             this.CityTLPanel.Margin = new System.Windows.Forms.Padding(7, 5, 5, 5);
             this.CityTLPanel.Name = "CityTLPanel";
             this.CityTLPanel.RowCount = 2;
             this.CityTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.CityTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.CityTLPanel.Size = new System.Drawing.Size(334, 57);
+            this.CityTLPanel.Size = new System.Drawing.Size(334, 67);
             this.CityTLPanel.TabIndex = 6;
             // 
             // CityTextBox
@@ -1039,7 +1166,7 @@
             this.CityTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CityTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.CityTextBox.Location = new System.Drawing.Point(10, 27);
+            this.CityTextBox.Location = new System.Drawing.Point(10, 31);
             this.CityTextBox.Margin = new System.Windows.Forms.Padding(10, 5, 10, 11);
             this.CityTextBox.Name = "CityTextBox";
             this.CityTextBox.Size = new System.Drawing.Size(314, 20);
@@ -1050,10 +1177,10 @@
             // 
             this.CityLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.CityLabel.AutoSize = true;
-            this.CityLabel.Location = new System.Drawing.Point(7, 11);
+            this.CityLabel.Location = new System.Drawing.Point(7, 12);
             this.CityLabel.Margin = new System.Windows.Forms.Padding(7, 11, 3, 0);
             this.CityLabel.Name = "CityLabel";
-            this.CityLabel.Size = new System.Drawing.Size(36, 11);
+            this.CityLabel.Size = new System.Drawing.Size(36, 13);
             this.CityLabel.TabIndex = 0;
             this.CityLabel.Text = "Obec:";
             this.CityLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -1066,13 +1193,13 @@
             this.PasswordTLPanel.Controls.Add(this.PasswordTextBox, 0, 1);
             this.PasswordTLPanel.Controls.Add(this.PasswordLabel, 0, 0);
             this.PasswordTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PasswordTLPanel.Location = new System.Drawing.Point(5, 72);
+            this.PasswordTLPanel.Location = new System.Drawing.Point(5, 82);
             this.PasswordTLPanel.Margin = new System.Windows.Forms.Padding(5, 5, 7, 5);
             this.PasswordTLPanel.Name = "PasswordTLPanel";
             this.PasswordTLPanel.RowCount = 2;
             this.PasswordTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.PasswordTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.PasswordTLPanel.Size = new System.Drawing.Size(333, 57);
+            this.PasswordTLPanel.Size = new System.Drawing.Size(333, 67);
             this.PasswordTLPanel.TabIndex = 2;
             // 
             // PasswordTextBox
@@ -1080,7 +1207,7 @@
             this.PasswordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PasswordTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.PasswordTextBox.Location = new System.Drawing.Point(10, 27);
+            this.PasswordTextBox.Location = new System.Drawing.Point(10, 31);
             this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(10, 5, 10, 11);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.PasswordChar = '*';
@@ -1092,10 +1219,10 @@
             // 
             this.PasswordLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.PasswordLabel.AutoSize = true;
-            this.PasswordLabel.Location = new System.Drawing.Point(7, 11);
+            this.PasswordLabel.Location = new System.Drawing.Point(7, 12);
             this.PasswordLabel.Margin = new System.Windows.Forms.Padding(7, 11, 3, 0);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(37, 11);
+            this.PasswordLabel.Size = new System.Drawing.Size(37, 13);
             this.PasswordLabel.TabIndex = 0;
             this.PasswordLabel.Text = "Heslo:";
             // 
@@ -1113,17 +1240,17 @@
             this.MobileTLPanel.RowCount = 2;
             this.MobileTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.MobileTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.MobileTLPanel.Size = new System.Drawing.Size(334, 57);
+            this.MobileTLPanel.Size = new System.Drawing.Size(334, 67);
             this.MobileTLPanel.TabIndex = 5;
             // 
             // PhoneLabel
             // 
             this.PhoneLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.PhoneLabel.AutoSize = true;
-            this.PhoneLabel.Location = new System.Drawing.Point(7, 11);
+            this.PhoneLabel.Location = new System.Drawing.Point(7, 12);
             this.PhoneLabel.Margin = new System.Windows.Forms.Padding(7, 11, 3, 0);
             this.PhoneLabel.Name = "PhoneLabel";
-            this.PhoneLabel.Size = new System.Drawing.Size(35, 11);
+            this.PhoneLabel.Size = new System.Drawing.Size(35, 13);
             this.PhoneLabel.TabIndex = 0;
             this.PhoneLabel.Text = "Mobil:";
             this.PhoneLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -1132,7 +1259,7 @@
             // 
             this.MobileMaskTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.MobileMaskTextBox.Location = new System.Drawing.Point(10, 27);
+            this.MobileMaskTextBox.Location = new System.Drawing.Point(10, 31);
             this.MobileMaskTextBox.Margin = new System.Windows.Forms.Padding(10, 5, 10, 11);
             this.MobileMaskTextBox.Mask = "000 000 000";
             this.MobileMaskTextBox.Name = "MobileMaskTextBox";
@@ -1154,17 +1281,17 @@
             this.EmailTLPanel.RowCount = 2;
             this.EmailTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.EmailTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.EmailTLPanel.Size = new System.Drawing.Size(333, 57);
+            this.EmailTLPanel.Size = new System.Drawing.Size(333, 67);
             this.EmailTLPanel.TabIndex = 1;
             // 
             // EmailLabel
             // 
             this.EmailLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.EmailLabel.AutoSize = true;
-            this.EmailLabel.Location = new System.Drawing.Point(7, 11);
+            this.EmailLabel.Location = new System.Drawing.Point(7, 12);
             this.EmailLabel.Margin = new System.Windows.Forms.Padding(7, 11, 3, 0);
             this.EmailLabel.Name = "EmailLabel";
-            this.EmailLabel.Size = new System.Drawing.Size(35, 11);
+            this.EmailLabel.Size = new System.Drawing.Size(35, 13);
             this.EmailLabel.TabIndex = 0;
             this.EmailLabel.Text = "Email:";
             this.EmailLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -1174,7 +1301,7 @@
             this.EmailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.EmailTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.EmailTextBox.Location = new System.Drawing.Point(10, 27);
+            this.EmailTextBox.Location = new System.Drawing.Point(10, 31);
             this.EmailTextBox.Margin = new System.Windows.Forms.Padding(10, 5, 10, 11);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(313, 20);
@@ -1190,12 +1317,12 @@
             this.AddressNumericsSplitTLPanel.Controls.Add(this.PostalCodeTLPanel, 0, 0);
             this.AddressNumericsSplitTLPanel.Controls.Add(this.HouseNumberTLPanel, 0, 0);
             this.AddressNumericsSplitTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AddressNumericsSplitTLPanel.Location = new System.Drawing.Point(345, 201);
+            this.AddressNumericsSplitTLPanel.Location = new System.Drawing.Point(345, 231);
             this.AddressNumericsSplitTLPanel.Margin = new System.Windows.Forms.Padding(0);
             this.AddressNumericsSplitTLPanel.Name = "AddressNumericsSplitTLPanel";
             this.AddressNumericsSplitTLPanel.RowCount = 1;
             this.AddressNumericsSplitTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.AddressNumericsSplitTLPanel.Size = new System.Drawing.Size(346, 69);
+            this.AddressNumericsSplitTLPanel.Size = new System.Drawing.Size(346, 79);
             this.AddressNumericsSplitTLPanel.TabIndex = 8;
             // 
             // PostalCodeTLPanel
@@ -1212,17 +1339,17 @@
             this.PostalCodeTLPanel.RowCount = 2;
             this.PostalCodeTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.PostalCodeTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.PostalCodeTLPanel.Size = new System.Drawing.Size(161, 59);
+            this.PostalCodeTLPanel.Size = new System.Drawing.Size(161, 69);
             this.PostalCodeTLPanel.TabIndex = 8;
             // 
             // PostalCodeLabel
             // 
             this.PostalCodeLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.PostalCodeLabel.AutoSize = true;
-            this.PostalCodeLabel.Location = new System.Drawing.Point(7, 11);
+            this.PostalCodeLabel.Location = new System.Drawing.Point(7, 12);
             this.PostalCodeLabel.Margin = new System.Windows.Forms.Padding(7, 11, 3, 0);
             this.PostalCodeLabel.Name = "PostalCodeLabel";
-            this.PostalCodeLabel.Size = new System.Drawing.Size(31, 12);
+            this.PostalCodeLabel.Size = new System.Drawing.Size(31, 13);
             this.PostalCodeLabel.TabIndex = 0;
             this.PostalCodeLabel.Text = "PSČ:";
             this.PostalCodeLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -1231,7 +1358,7 @@
             // 
             this.PostalCodeMaskTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.PostalCodeMaskTextBox.Location = new System.Drawing.Point(10, 28);
+            this.PostalCodeMaskTextBox.Location = new System.Drawing.Point(10, 32);
             this.PostalCodeMaskTextBox.Margin = new System.Windows.Forms.Padding(10, 5, 10, 11);
             this.PostalCodeMaskTextBox.Mask = "000 00";
             this.PostalCodeMaskTextBox.Name = "PostalCodeMaskTextBox";
@@ -1253,7 +1380,7 @@
             this.HouseNumberTLPanel.RowCount = 2;
             this.HouseNumberTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.HouseNumberTLPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.HouseNumberTLPanel.Size = new System.Drawing.Size(159, 59);
+            this.HouseNumberTLPanel.Size = new System.Drawing.Size(159, 69);
             this.HouseNumberTLPanel.TabIndex = 7;
             // 
             // HouseNumberTextBox
@@ -1261,7 +1388,7 @@
             this.HouseNumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.HouseNumberTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.HouseNumberTextBox.Location = new System.Drawing.Point(10, 28);
+            this.HouseNumberTextBox.Location = new System.Drawing.Point(10, 32);
             this.HouseNumberTextBox.Margin = new System.Windows.Forms.Padding(10, 5, 10, 11);
             this.HouseNumberTextBox.Name = "HouseNumberTextBox";
             this.HouseNumberTextBox.Size = new System.Drawing.Size(139, 20);
@@ -1272,10 +1399,10 @@
             // 
             this.HouseNumber.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.HouseNumber.AutoSize = true;
-            this.HouseNumber.Location = new System.Drawing.Point(7, 11);
+            this.HouseNumber.Location = new System.Drawing.Point(7, 12);
             this.HouseNumber.Margin = new System.Windows.Forms.Padding(7, 11, 3, 0);
             this.HouseNumber.Name = "HouseNumber";
-            this.HouseNumber.Size = new System.Drawing.Size(68, 12);
+            this.HouseNumber.Size = new System.Drawing.Size(68, 13);
             this.HouseNumber.TabIndex = 0;
             this.HouseNumber.Text = "Číslo popisu:";
             this.HouseNumber.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -1288,7 +1415,7 @@
             this.OrdersTab.Name = "OrdersTab";
             this.OrdersTab.Size = new System.Drawing.Size(697, 471);
             this.OrdersTab.TabIndex = 0;
-            this.OrdersTab.Text = "Objednávky";
+            this.OrdersTab.Text = "Moje objednávky";
             this.OrdersTab.UseVisualStyleBackColor = true;
             // 
             // OrdersViewerTLPanel
@@ -1326,13 +1453,38 @@
             // 
             // CustomerOrdersDataGridView
             // 
+            this.CustomerOrdersDataGridView.AllowUserToAddRows = false;
+            this.CustomerOrdersDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.CustomerOrdersDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.CustomerOrdersDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.CustomerOrdersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CustomerOrdersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MyOrderID,
+            this.MyOrderQuantity,
+            this.MyOrderDiscount,
+            this.Price,
+            this.Date,
+            this.Time,
+            this.MyOrderState});
             this.CustomerOrdersDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CustomerOrdersDataGridView.EnableHeadersVisualStyles = false;
             this.CustomerOrdersDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
             this.CustomerOrdersDataGridView.Location = new System.Drawing.Point(7, 64);
             this.CustomerOrdersDataGridView.Margin = new System.Windows.Forms.Padding(7, 6, 7, 27);
+            this.CustomerOrdersDataGridView.MultiSelect = false;
             this.CustomerOrdersDataGridView.Name = "CustomerOrdersDataGridView";
+            this.CustomerOrdersDataGridView.ReadOnly = true;
+            this.CustomerOrdersDataGridView.RowHeadersVisible = false;
             this.CustomerOrdersDataGridView.RowTemplate.Height = 28;
+            this.CustomerOrdersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CustomerOrdersDataGridView.Size = new System.Drawing.Size(683, 307);
             this.CustomerOrdersDataGridView.TabIndex = 0;
             this.CustomerOrdersDataGridView.TabStop = false;
@@ -1433,7 +1585,7 @@
             this.ItemsWinFramePanel.Controls.Add(this.DatabaseTabControl);
             this.ItemsWinFramePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ItemsWinFramePanel.Location = new System.Drawing.Point(2, 25);
-            this.ItemsWinFramePanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ItemsWinFramePanel.Margin = new System.Windows.Forms.Padding(2);
             this.ItemsWinFramePanel.Name = "ItemsWinFramePanel";
             this.ItemsWinFramePanel.Size = new System.Drawing.Size(705, 505);
             this.ItemsWinFramePanel.TabIndex = 1;
@@ -1458,7 +1610,7 @@
             this.OrdersTabPage.Location = new System.Drawing.Point(4, 30);
             this.OrdersTabPage.Margin = new System.Windows.Forms.Padding(0);
             this.OrdersTabPage.Name = "OrdersTabPage";
-            this.OrdersTabPage.Size = new System.Drawing.Size(697, 431);
+            this.OrdersTabPage.Size = new System.Drawing.Size(697, 471);
             this.OrdersTabPage.TabIndex = 0;
             this.OrdersTabPage.Text = "Objednávky";
             this.OrdersTabPage.UseVisualStyleBackColor = true;
@@ -1480,7 +1632,7 @@
             this.OrdersTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
             this.OrdersTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.OrdersTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
-            this.OrdersTableLayoutPanel.Size = new System.Drawing.Size(697, 431);
+            this.OrdersTableLayoutPanel.Size = new System.Drawing.Size(697, 471);
             this.OrdersTableLayoutPanel.TabIndex = 0;
             // 
             // OrdersControlsTLPanel
@@ -1496,7 +1648,7 @@
             this.OrdersControlsTLPanel.Controls.Add(this.AdminOrderDetailButton, 2, 0);
             this.OrdersControlsTLPanel.Controls.Add(this.ConfirmOrderButton, 0, 0);
             this.OrdersControlsTLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.OrdersControlsTLPanel.Location = new System.Drawing.Point(0, 358);
+            this.OrdersControlsTLPanel.Location = new System.Drawing.Point(0, 398);
             this.OrdersControlsTLPanel.Margin = new System.Windows.Forms.Padding(0);
             this.OrdersControlsTLPanel.Name = "OrdersControlsTLPanel";
             this.OrdersControlsTLPanel.RowCount = 1;
@@ -1514,8 +1666,9 @@
             this.CancelOrderButton.Name = "CancelOrderButton";
             this.CancelOrderButton.Size = new System.Drawing.Size(160, 33);
             this.CancelOrderButton.TabIndex = 1;
-            this.CancelOrderButton.Text = "Zrušit";
+            this.CancelOrderButton.Text = "&Zrušit";
             this.CancelOrderButton.UseVisualStyleBackColor = true;
+            this.CancelOrderButton.Click += new System.EventHandler(this.CancelOrderButton_Click);
             // 
             // SendOrderButton
             // 
@@ -1527,8 +1680,9 @@
             this.SendOrderButton.Name = "SendOrderButton";
             this.SendOrderButton.Size = new System.Drawing.Size(160, 33);
             this.SendOrderButton.TabIndex = 2;
-            this.SendOrderButton.Text = "Odeslat";
+            this.SendOrderButton.Text = "&Odeslat";
             this.SendOrderButton.UseVisualStyleBackColor = true;
+            this.SendOrderButton.Click += new System.EventHandler(this.SendOrderButton_Click);
             // 
             // AdminOrderDetailButton
             // 
@@ -1540,7 +1694,7 @@
             this.AdminOrderDetailButton.Name = "AdminOrderDetailButton";
             this.AdminOrderDetailButton.Size = new System.Drawing.Size(161, 33);
             this.AdminOrderDetailButton.TabIndex = 3;
-            this.AdminOrderDetailButton.Text = "Zobrazit detail";
+            this.AdminOrderDetailButton.Text = "Zobrazit &detail";
             this.AdminOrderDetailButton.UseVisualStyleBackColor = true;
             this.AdminOrderDetailButton.Click += new System.EventHandler(this.AdminOrderDetailButton_Click);
             // 
@@ -1554,8 +1708,9 @@
             this.ConfirmOrderButton.Name = "ConfirmOrderButton";
             this.ConfirmOrderButton.Size = new System.Drawing.Size(160, 33);
             this.ConfirmOrderButton.TabIndex = 0;
-            this.ConfirmOrderButton.Text = "Potvrdit";
+            this.ConfirmOrderButton.Text = "&Potvrdit";
             this.ConfirmOrderButton.UseVisualStyleBackColor = true;
+            this.ConfirmOrderButton.Click += new System.EventHandler(this.ConfirmOrderButton_Click);
             // 
             // OrderListLabel
             // 
@@ -1571,18 +1726,134 @@
             // 
             // OrdersDataGridView
             // 
+            this.OrdersDataGridView.AllowUserToAddRows = false;
+            this.OrdersDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.OrdersDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.OrdersDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.OrdersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.OrdersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.OrderID,
+            this.CustomerName,
+            this.CustomerLastName,
+            this.OrderDiscount,
+            this.Sum,
+            this.InsertDate,
+            this.InsertTime,
+            this.State});
             this.OrdersDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OrdersDataGridView.EnableHeadersVisualStyles = false;
             this.OrdersDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
             this.OrdersDataGridView.Location = new System.Drawing.Point(7, 64);
             this.OrdersDataGridView.Margin = new System.Windows.Forms.Padding(7, 6, 10, 27);
+            this.OrdersDataGridView.MultiSelect = false;
             this.OrdersDataGridView.Name = "OrdersDataGridView";
+            this.OrdersDataGridView.ReadOnly = true;
+            this.OrdersDataGridView.RowHeadersVisible = false;
             this.OrdersDataGridView.RowTemplate.Height = 28;
-            this.OrdersDataGridView.Size = new System.Drawing.Size(680, 267);
+            this.OrdersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.OrdersDataGridView.Size = new System.Drawing.Size(680, 307);
             this.OrdersDataGridView.TabIndex = 0;
             this.OrdersDataGridView.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.OrdersDataGridView_RowsAdded);
             this.OrdersDataGridView.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.OrdersDataGridView_RowsRemoved);
+            // 
+            // OrderID
+            // 
+            this.OrderID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.OrderID.DefaultCellStyle = dataGridViewCellStyle17;
+            this.OrderID.HeaderText = "ID";
+            this.OrderID.Name = "OrderID";
+            this.OrderID.ReadOnly = true;
+            this.OrderID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.OrderID.Width = 34;
+            // 
+            // CustomerName
+            // 
+            this.CustomerName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle18.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.CustomerName.DefaultCellStyle = dataGridViewCellStyle18;
+            this.CustomerName.HeaderText = "Jméno";
+            this.CustomerName.Name = "CustomerName";
+            this.CustomerName.ReadOnly = true;
+            // 
+            // CustomerLastName
+            // 
+            this.CustomerLastName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle19.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.CustomerLastName.DefaultCellStyle = dataGridViewCellStyle19;
+            this.CustomerLastName.HeaderText = "Příjmení";
+            this.CustomerLastName.Name = "CustomerLastName";
+            this.CustomerLastName.ReadOnly = true;
+            // 
+            // OrderDiscount
+            // 
+            this.OrderDiscount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle20.Format = "N0";
+            dataGridViewCellStyle20.NullValue = null;
+            dataGridViewCellStyle20.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.OrderDiscount.DefaultCellStyle = dataGridViewCellStyle20;
+            this.OrderDiscount.HeaderText = "Sleva (Kč)";
+            this.OrderDiscount.Name = "OrderDiscount";
+            this.OrderDiscount.ReadOnly = true;
+            this.OrderDiscount.Width = 91;
+            // 
+            // Sum
+            // 
+            this.Sum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle21.Format = "N0";
+            dataGridViewCellStyle21.NullValue = null;
+            dataGridViewCellStyle21.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.Sum.DefaultCellStyle = dataGridViewCellStyle21;
+            this.Sum.HeaderText = "Suma (Kč)";
+            this.Sum.Name = "Sum";
+            this.Sum.ReadOnly = true;
+            this.Sum.Width = 91;
+            // 
+            // InsertDate
+            // 
+            this.InsertDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle22.Format = "d";
+            dataGridViewCellStyle22.NullValue = null;
+            dataGridViewCellStyle22.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.InsertDate.DefaultCellStyle = dataGridViewCellStyle22;
+            this.InsertDate.HeaderText = "Datum";
+            this.InsertDate.Name = "InsertDate";
+            this.InsertDate.ReadOnly = true;
+            this.InsertDate.Width = 73;
+            // 
+            // InsertTime
+            // 
+            this.InsertTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle23.Format = "T";
+            dataGridViewCellStyle23.NullValue = null;
+            dataGridViewCellStyle23.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.InsertTime.DefaultCellStyle = dataGridViewCellStyle23;
+            this.InsertTime.HeaderText = "Čas";
+            this.InsertTime.Name = "InsertTime";
+            this.InsertTime.ReadOnly = true;
+            this.InsertTime.Width = 60;
+            // 
+            // State
+            // 
+            this.State.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle24.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.State.DefaultCellStyle = dataGridViewCellStyle24;
+            this.State.HeaderText = "Stav";
+            this.State.Name = "State";
+            this.State.ReadOnly = true;
+            this.State.Width = 64;
             // 
             // ProductsTabPage
             // 
@@ -1634,15 +1905,15 @@
             this.ProductsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ProductsDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.ProductsDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ProductsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle25.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ProductsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
             this.ProductsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ProductsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ProductID,
@@ -1657,15 +1928,15 @@
             this.ProductsDataGridView.MultiSelect = false;
             this.ProductsDataGridView.Name = "ProductsDataGridView";
             this.ProductsDataGridView.ReadOnly = true;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProductsDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle30.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProductsDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle30;
             this.ProductsDataGridView.RowHeadersVisible = false;
             this.ProductsDataGridView.RowTemplate.Height = 28;
             this.ProductsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -1674,6 +1945,49 @@
             this.ProductsDataGridView.TabStop = false;
             this.ProductsDataGridView.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.ProductsDataGridView_RowsAdded);
             this.ProductsDataGridView.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.ProductsDataGridView_RowsRemoved);
+            // 
+            // ProductID
+            // 
+            this.ProductID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle26.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.ProductID.DefaultCellStyle = dataGridViewCellStyle26;
+            this.ProductID.HeaderText = "ID";
+            this.ProductID.Name = "ProductID";
+            this.ProductID.ReadOnly = true;
+            this.ProductID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ProductID.Width = 34;
+            // 
+            // NameColumn
+            // 
+            this.NameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle27.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.NameColumn.DefaultCellStyle = dataGridViewCellStyle27;
+            this.NameColumn.HeaderText = "Název";
+            this.NameColumn.Name = "NameColumn";
+            this.NameColumn.ReadOnly = true;
+            // 
+            // CathegoryColumn
+            // 
+            this.CathegoryColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle28.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.CathegoryColumn.DefaultCellStyle = dataGridViewCellStyle28;
+            this.CathegoryColumn.HeaderText = "Kategorie";
+            this.CathegoryColumn.Name = "CathegoryColumn";
+            this.CathegoryColumn.ReadOnly = true;
+            this.CathegoryColumn.Width = 87;
+            // 
+            // PriceColumn
+            // 
+            this.PriceColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle29.Format = "N0";
+            dataGridViewCellStyle29.NullValue = null;
+            dataGridViewCellStyle29.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.PriceColumn.DefaultCellStyle = dataGridViewCellStyle29;
+            this.PriceColumn.HeaderText = "Cena (Kč)";
+            this.PriceColumn.Name = "PriceColumn";
+            this.PriceColumn.ReadOnly = true;
+            this.PriceColumn.Width = 89;
             // 
             // ProductControlsTLPanel
             // 
@@ -1707,7 +2021,7 @@
             this.UpdateProductButton.Name = "UpdateProductButton";
             this.UpdateProductButton.Size = new System.Drawing.Size(160, 33);
             this.UpdateProductButton.TabIndex = 1;
-            this.UpdateProductButton.Text = "Upravit";
+            this.UpdateProductButton.Text = "&Upravit";
             this.UpdateProductButton.UseVisualStyleBackColor = true;
             this.UpdateProductButton.Click += new System.EventHandler(this.UpdateProductButton_Click);
             // 
@@ -1721,7 +2035,7 @@
             this.DeleteProductButton.Name = "DeleteProductButton";
             this.DeleteProductButton.Size = new System.Drawing.Size(160, 33);
             this.DeleteProductButton.TabIndex = 2;
-            this.DeleteProductButton.Text = "Vymazat";
+            this.DeleteProductButton.Text = "&Vymazat";
             this.DeleteProductButton.UseVisualStyleBackColor = true;
             this.DeleteProductButton.Click += new System.EventHandler(this.DeleteProductButton_Click);
             // 
@@ -1735,7 +2049,7 @@
             this.ProductDetailButton.Name = "ProductDetailButton";
             this.ProductDetailButton.Size = new System.Drawing.Size(161, 33);
             this.ProductDetailButton.TabIndex = 3;
-            this.ProductDetailButton.Text = "Zobrazit detail";
+            this.ProductDetailButton.Text = "Zobrazit &detail";
             this.ProductDetailButton.UseVisualStyleBackColor = true;
             this.ProductDetailButton.Click += new System.EventHandler(this.ProductDetailButton_Click);
             // 
@@ -1748,153 +2062,62 @@
             this.AddProductButton.Name = "AddProductButton";
             this.AddProductButton.Size = new System.Drawing.Size(160, 33);
             this.AddProductButton.TabIndex = 0;
-            this.AddProductButton.Text = "Přidat";
+            this.AddProductButton.Text = "&Přidat";
             this.AddProductButton.UseVisualStyleBackColor = true;
             this.AddProductButton.Click += new System.EventHandler(this.AddProductButton_Click);
             // 
-            // ProductID
+            // MyOrderID
             // 
-            this.ProductID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.MyOrderID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
-            this.ProductID.DefaultCellStyle = dataGridViewCellStyle15;
-            this.ProductID.HeaderText = "ID";
-            this.ProductID.Name = "ProductID";
-            this.ProductID.ReadOnly = true;
-            this.ProductID.Width = 53;
+            this.MyOrderID.DefaultCellStyle = dataGridViewCellStyle15;
+            this.MyOrderID.HeaderText = "ID";
+            this.MyOrderID.Name = "MyOrderID";
+            this.MyOrderID.ReadOnly = true;
+            this.MyOrderID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.MyOrderID.Width = 34;
             // 
-            // NameColumn
+            // MyOrderQuantity
             // 
-            this.NameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle16.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
-            this.NameColumn.DefaultCellStyle = dataGridViewCellStyle16;
-            this.NameColumn.HeaderText = "Název";
-            this.NameColumn.Name = "NameColumn";
-            this.NameColumn.ReadOnly = true;
+            this.MyOrderQuantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MyOrderQuantity.HeaderText = "Množství (ks)";
+            this.MyOrderQuantity.Name = "MyOrderQuantity";
+            this.MyOrderQuantity.ReadOnly = true;
             // 
-            // CathegoryColumn
+            // MyOrderDiscount
             // 
-            this.CathegoryColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle17.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
-            this.CathegoryColumn.DefaultCellStyle = dataGridViewCellStyle17;
-            this.CathegoryColumn.HeaderText = "Kategorie";
-            this.CathegoryColumn.Name = "CathegoryColumn";
-            this.CathegoryColumn.ReadOnly = true;
-            this.CathegoryColumn.Width = 87;
+            this.MyOrderDiscount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MyOrderDiscount.HeaderText = "Sleva (Kč)";
+            this.MyOrderDiscount.Name = "MyOrderDiscount";
+            this.MyOrderDiscount.ReadOnly = true;
             // 
-            // PriceColumn
+            // Price
             // 
-            this.PriceColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle18.Format = "N0";
-            dataGridViewCellStyle18.NullValue = null;
-            dataGridViewCellStyle18.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
-            this.PriceColumn.DefaultCellStyle = dataGridViewCellStyle18;
-            this.PriceColumn.HeaderText = "Cena (Kč)";
-            this.PriceColumn.Name = "PriceColumn";
-            this.PriceColumn.ReadOnly = true;
-            this.PriceColumn.Width = 89;
+            this.Price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Price.HeaderText = "Suma (Kč)";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn1
+            // Date
             // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn1.Width = 34;
+            this.Date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Date.HeaderText = "Datum";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn2
+            // Time
             // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Název";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.Time.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Time.HeaderText = "Čas";
+            this.Time.Name = "Time";
+            this.Time.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn3
+            // MyOrderState
             // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Kategorie";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 87;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "N0";
-            dataGridViewCellStyle5.NullValue = null;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Cena Kč/ks";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn4.Width = 80;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridViewTextBoxColumn5.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn5.Width = 34;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridViewTextBoxColumn6.HeaderText = "Název";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle10;
-            this.dataGridViewTextBoxColumn7.HeaderText = "Kategorie";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 87;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle11.Format = "N0";
-            dataGridViewCellStyle11.NullValue = null;
-            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
-            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle11;
-            this.dataGridViewTextBoxColumn8.HeaderText = "Cena Kč/ks";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn8.Width = 80;
-            // 
-            // Quantity
-            // 
-            this.Quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
-            this.Quantity.DefaultCellStyle = dataGridViewCellStyle12;
-            this.Quantity.HeaderText = "Množství";
-            this.Quantity.Name = "Quantity";
-            this.Quantity.ReadOnly = true;
-            this.Quantity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Quantity.Width = 67;
+            this.MyOrderState.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MyOrderState.HeaderText = "Stav";
+            this.MyOrderState.Name = "MyOrderState";
+            this.MyOrderState.ReadOnly = true;
             // 
             // MainForm
             // 
@@ -1904,7 +2127,7 @@
             this.ClientSize = new System.Drawing.Size(737, 588);
             this.Controls.Add(this.TableLayoutPanel1);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MobileShop";
@@ -2110,6 +2333,21 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn CathegoryColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn PriceColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrderID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CustomerName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CustomerLastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrderDiscount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn InsertDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn InsertTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn State;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MyOrderID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MyOrderQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MyOrderDiscount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Time;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MyOrderState;
     }
 }
 

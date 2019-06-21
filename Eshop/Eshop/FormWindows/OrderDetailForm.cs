@@ -24,18 +24,17 @@ namespace Eshop
         // nacti informace z objednavky do formularoveho okna
         private void OrderDetailForm_Load(object sender, EventArgs e)
         {
-            Customer orderCustomer = Database.GetCustomerByID(Order.CustomerID);
             // nacti informace o zakaznikovi
-            FirstNameValueLabel.Text = orderCustomer.Name;
-            LastNameValueLabel.Text = orderCustomer.LastName;
-            EmailValueLabel.Text = orderCustomer.Email;
-            PhoneValueLabel.Text = orderCustomer.MobilePhone.ToString();
+            FirstNameValueLabel.Text = Order.Customer.Name;
+            LastNameValueLabel.Text = Order.Customer.LastName;
+            EmailValueLabel.Text = Order.Customer.Email;
+            PhoneValueLabel.Text = Order.Customer.MobilePhone.ToString();
             
             // nacti fakturacni adresu
-            CityValueLabel.Text = orderCustomer.City;
-            StreetValueLabel.Text = orderCustomer.Street;
-            HouseNumberValueLabel.Text = orderCustomer.HouseNumber;
-            PostalCodeValueLabel.Text = orderCustomer.PostalCode.ToString();
+            CityValueLabel.Text = Order.Customer.City;
+            StreetValueLabel.Text = Order.Customer.Street;
+            HouseNumberValueLabel.Text = Order.Customer.HouseNumber;
+            PostalCodeValueLabel.Text = Order.Customer.PostalCode.ToString();
 
             //// nacti kazdou polozku objednavky do nahledu dat
             foreach (var orderItem in Order.OrderItems)
@@ -66,14 +65,6 @@ namespace Eshop
         private void ShowProductDetailButton_Click(object sender, EventArgs e)
         {
             MainForm.ShowSelectedProductDetails(OrderItemsDataGridView);
-        }
-
-        // po kliknuti na potvrzeni objednavky se objednavka a jeji detaily ulozi do databaze
-        private void CustomerConfirmOrderButton_Click(object sender, EventArgs e)
-        {
-            Database.CreateOrder(Order);
-            Validation.CreatedOrderSuccesInfo();
-            Close();
         }
     }
 }

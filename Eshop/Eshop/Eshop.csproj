@@ -71,6 +71,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatabaseEntites\OrderState.cs" />
     <Compile Include="DatabaseEntites\SpecialOffer.cs" />
     <Compile Include="DatabaseEntites\Strategy.cs" />
     <Compile Include="FormWindows\AddToBasketDialog.cs">
@@ -84,7 +85,7 @@
     <Compile Include="Seasons\Season.cs" />
     <Compile Include="Seasons\Spring.cs" />
     <Compile Include="Seasons\Summer.cs" />
-    <Compile Include="InternalOperators\Validation.cs" />
+    <Compile Include="InternalOperators\Message.cs" />
     <Compile Include="FormWindows\ProcessProductDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,7 +95,7 @@
     <Compile Include="InternalOperators\Administrator.cs" />
     <Compile Include="DatabaseEntites\Cathegory.cs" />
     <Compile Include="DatabaseEntites\Customer.cs" />
-    <Compile Include="DatabaseEntites\Database.cs" />
+    <Compile Include="InternalOperators\Database.cs" />
     <Compile Include="FormWindows\ConfirmDialog.cs">
       <SubType>Form</SubType>
     </Compile>

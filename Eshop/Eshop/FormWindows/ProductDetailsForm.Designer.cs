@@ -387,10 +387,12 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(656, 436);
             this.Controls.Add(this.DetailsOuterWrapperTLPanel);
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "ProductDetailsForm";
             this.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.Text = "Detail produktu";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ProductDetailsForm_KeyDown);
             this.DetailsOuterWrapperTLPanel.ResumeLayout(false);
             this.ProductDetailsSplitContainer.Panel1.ResumeLayout(false);
             this.ProductDetailsSplitContainer.Panel1.PerformLayout();

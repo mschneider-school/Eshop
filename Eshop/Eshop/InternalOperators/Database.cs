@@ -26,12 +26,18 @@ namespace Eshop
         public static List<Cathegory> CachedCathegories { get; private set; } = new List<Cathegory>();
         public static List<SpecialOffer> CachedSpecialOffers { get; private set; } = new List<SpecialOffer>();
         public static List<Strategy> CachedStrategies { get; private set; } = new List<Strategy>();
+        public static List<OrderState> CachedOrderStates { get; private set; } = new List<OrderState>();
 
         /*** Manipulace s cached daty ***/
 
-        public static Product GetCachedProductByID(long id)
+        public static Product GetCachedProductByID(int id)
         {
             return CachedProducts.Find(product => product.ID == id);
+        }
+
+        public static Order GetCachedOrderByID(int id)
+        {
+            return CachedOrders.Find(order => order.ID == id);
         }
 
         public static Strategy GetCachedStrategyByID(int id)
@@ -39,11 +45,21 @@ namespace Eshop
             return CachedStrategies.Find(strategy => strategy.StrategyID == id);
         }
 
+        public static string GetStateNameByID(int id)
+        {
+            return CachedOrderStates.Find(state => state.ID == id).Description;
+        }
+
         public static int GetLoggedCustomerOrdersCount()
         {
             int ordersCount = CachedOrders.Where
-                (order => order.CustomerID == Session.CustomerLoggedIn.ID).Count();
+                (order => order.Customer.ID == Session.CustomerLoggedIn.ID).Count();
             return ordersCount;
+        }
+
+        private static void ChangeCachedOrderState(Order changedOrder, int state)
+        {
+            GetCachedOrderByID(changedOrder.ID).ChangeState(state);
         }
 
         /*** Prikazy k selekci dat ***/
@@ -67,6 +83,8 @@ namespace Eshop
         public static string LoadStrategiesCommand { get; } =
             $"SELECT * FROM {Strategy.TableName}";
 
+        public static string LoadOrderStatesCommand { get; } =
+            $"SELECT * FROM {OrderState.TableName}";
 
         /*** Delegaty pro reference nacitavacich funkci ***/
 
@@ -75,6 +93,7 @@ namespace Eshop
         public static Action<SQLiteDataReader> loadOrders = LoadOrders;
         public static Action<SQLiteDataReader> loadSpecialOffers = LoadSpecialOffers;
         public static Action<SQLiteDataReader> loadStrategies = LoadStrategies;
+        public static Action<SQLiteDataReader> loadOrderStates = LoadOrderStates;
 
         /*** Metody k nacteni dat ***/
 
@@ -102,12 +121,12 @@ namespace Eshop
                 // nacteni produktu do objektu
                 Product loadedProduct = new Product
                 (
-                    Convert.ToInt64(reader[Product.IDColumn]),
                     Convert.ToString(reader[Product.NameColumn]),
                     Convert.ToString(reader[Product.CathegoryColumn]),
                     Convert.ToInt32(reader[Product.PriceColumn]),
                     productImage,
-                    Convert.ToString(reader[Product.DescriptionColumn])
+                    Convert.ToString(reader[Product.DescriptionColumn]),
+                    Convert.ToInt32(reader[Product.IDColumn])
                 );
                 // pridani produktu do cached produktu
                 CachedProducts.Add(loadedProduct);
@@ -125,7 +144,7 @@ namespace Eshop
                 //  nacteni kategorie do objektu
                 Cathegory loadedCathegory = new Cathegory
                 (
-                    Convert.ToInt64(reader[Cathegory.IDColumn]),
+                    Convert.ToInt32(reader[Cathegory.IDColumn]),
                     Convert.ToString(reader[Cathegory.DescriptionColumn])
                 );
                 // pridani objektu kategorie do cached kategorii
@@ -144,11 +163,13 @@ namespace Eshop
                 // nacteni objednavky z db
                 Order loadedOrder = new Order
                 (
-                    Convert.ToInt32(reader[Order.CustomerColumn]),
-                    null,
+                    GetCustomerByID(Convert.ToInt32(reader[Order.CustomerColumn])),
+                    new List<OrderItem>(),
                     Convert.ToInt32(reader[Order.FixedDiscountColumn]),
                     Convert.ToInt32(reader[Order.PercentualDiscountColumn]),
-                    Convert.ToInt32(reader[Order.StateIDColumn])
+                    Convert.ToInt32(reader[Order.StateIDColumn]),
+                    Convert.ToDateTime(reader[Order.DateTimeColumn]),
+                    Convert.ToInt32(reader[Order.OrderIDColumn])
                 );
                 // pridani objektu objednavky do cached objednavek
                 CachedOrders.Add(loadedOrder);
@@ -190,6 +211,23 @@ namespace Eshop
         }
 
         /// <summary>
+        /// Pomocna metoda nacte stavy objednavky z databaze do pameti
+        /// </summary>
+        /// <param name="reader">precteny sqlite zaznamy k zpracovani</param>
+        public static void LoadOrderStates(SQLiteDataReader reader)
+        {
+            while (reader.Read())
+            {
+                OrderState loadedState = new OrderState
+                (
+                    Convert.ToInt32(reader[OrderState.StateIDColumn]),
+                    reader[OrderState.DescriptionColumn].ToString()
+                );
+                CachedOrderStates.Add(loadedState);
+            }
+        }
+
+        /// <summary>
         /// Metoda nacte data z databaze a spusti funkci k jejich ulozeni do pameti
         /// </summary>
         /// <param name="loadRecords">reference na funkci ukladajici prectene zaznamy</param>
@@ -210,43 +248,7 @@ namespace Eshop
             }
         }
 
-        /*** Metody k zobrazeni dat v DataGridView ***/
-
-        /// <summary>
-        /// Zobrazi vsechny produkty z cache ve zvolenem dataGridView
-        /// </summary>
-        /// <param name="dataGridView">ovladaci prvek k zobrazeni nactenych produktu</param>
-        /// <param name="cathegory">volitelny parameter k zobrazeni jen produktu jiste kategorie</param>
-        public static void DisplayLoadedProducts(DataGridView dataGridView, string cathegory = null)
-        {
-            dataGridView.Rows.Clear();
-
-            foreach (Product product in CachedProducts)
-            {
-                // pokud chybi parameter kategorie zobraz vse
-                if (cathegory == null)
-                {
-                    dataGridView.Rows.Add(
-                        product.ID,
-                        product.Name,
-                        product.Cathegory,
-                        product.Price
-                    );
-                }
-                else // pokud nechybi parameter kategorie zobraz jen produkty kategorie
-                {
-                    if (product.Cathegory == cathegory)
-                    {
-                        dataGridView.Rows.Add(
-                            product.ID,
-                            product.Name,
-                            product.Cathegory,
-                            product.Price
-                        );
-                    }
-                }
-            }
-        }
+        /*** METODY MANIPULACE S DOTAZY ***/
 
         /// <summary>
         /// Vrati zakaznika se zadanymi prihlasovacimi udaji, pokud neexistuje vrati null
@@ -335,9 +337,9 @@ namespace Eshop
         /// Uklada novy produkt do databaze
         /// </summary>
         /// <param name="product"></param>
-        public static long CreateProduct(Product product)
+        public static void CreateProduct(Product product)
         {
-            long lastInsertedID = -1;
+            int lastInsertedID = -1;
             using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
             {
                 Cathegory cathegory = CachedCathegories.Find(c => c.Description == product.Cathegory);
@@ -365,10 +367,14 @@ namespace Eshop
                     command.ExecuteNonQuery();
                 }
 
-                lastInsertedID = connection.LastInsertRowId;
+                lastInsertedID = Convert.ToInt32(connection.LastInsertRowId);
                 connection.Close();
             }
-            return lastInsertedID;
+            // passed produktu priradi ID
+            product.ChangeID(lastInsertedID);
+
+            // vytvoreny produkt se priradi ku CachedProducts
+            CachedProducts.Add(product);
         }
 
         /// <summary>
@@ -405,6 +411,32 @@ namespace Eshop
 
                 connection.Close();
             }
+        }
+
+        /// <summary>
+        /// Zmeni stav objednavky na zvoleny stav a nahraje zmenu do pameti
+        /// </summary>
+        /// <param name="order">objednavka</param>
+        /// <param name="state">novy stav</param>
+        public static void ChangeOrderState(Order order, int state)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+                string commandText = $"UPDATE {Order.TableName} " +
+                    $"SET {Order.StateIDColumn} = @{Order.StateIDColumn} " +
+                    $"WHERE {Order.OrderIDColumn} = @{Order.OrderIDColumn}";
+
+                using (SQLiteCommand command = new SQLiteCommand(commandText, connection))
+                {
+                    command.Parameters.AddWithValue($"@{Order.StateIDColumn}", state);
+                    command.Parameters.AddWithValue($"@{Order.OrderIDColumn}", order.ID);
+                    command.ExecuteNonQuery();
+                }
+                connection.Close();
+            }
+            // zapis zmeny do CachedOrders
+            ChangeCachedOrderState(order, state);
         }
 
         /// <summary>
@@ -561,16 +593,17 @@ namespace Eshop
                 connection.Open();
                 string commandText = $"INSERT INTO {Order.TableName} " +
                     $"({Order.CustomerColumn}, {Order.FixedDiscountColumn}, " +
-                    $"{Order.PercentualDiscountColumn}, {Order.StateIDColumn}) " +
+                    $"{Order.PercentualDiscountColumn}, {Order.StateIDColumn}, {Order.DateTimeColumn}) " +
                     $"VALUES (@{Order.CustomerColumn}, @{Order.FixedDiscountColumn}, " +
-                    $"@{Order.PercentualDiscountColumn}, @{Order.StateIDColumn})";
+                    $"@{Order.PercentualDiscountColumn}, @{Order.StateIDColumn}, @{Order.DateTimeColumn})";
 
                 using (SQLiteCommand command = new SQLiteCommand(commandText, connection))
                 {
-                    command.Parameters.AddWithValue($"@{Order.CustomerColumn}", order.CustomerID);
+                    command.Parameters.AddWithValue($"@{Order.CustomerColumn}", order.Customer.ID);
                     command.Parameters.AddWithValue($"@{Order.FixedDiscountColumn}", order.FixedDiscount);
                     command.Parameters.AddWithValue($"@{Order.PercentualDiscountColumn}", order.PercentualDiscount);
                     command.Parameters.AddWithValue($"@{Order.StateIDColumn}", order.State);
+                    command.Parameters.AddWithValue($"@{Order.DateTimeColumn}", order.CreationDateTime);
                     command.ExecuteNonQuery();
                 }
 
@@ -580,6 +613,10 @@ namespace Eshop
             }
             // posledne pridane ID se prideli objednavce aby se mohli k nemu priradit polozky objednavky
             order.ChangeID(lastInsertedID);
+
+            // vytvorena objednavka se prida ke CachedOrders
+            CachedOrders.Add(order);
+
             // po ulozeni objednavky zavolame metodu k ulozeni vsech polozek objednavky
             CreateOrderItems(order);
         }
@@ -617,6 +654,50 @@ namespace Eshop
                 }
                 connection.Close();
             }
+        }
+
+        /// <summary>
+        /// Vytahne z databaze polozky objednavky a priradi je dane objednavce 
+        /// k zobrazeni detailu objednavky
+        /// </summary>
+        /// <param name="order">objednavka ke ktere se prirazuji jeji polozky</param>
+        public static void LoadOrderItemsToOrder(Order order)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+
+                string commandText = $"SELECT * FROM {OrderItem.TableName} " +
+                    $"WHERE {OrderItem.OrderIDColumn} = @{OrderItem.OrderIDColumn}";
+
+                using (SQLiteCommand command = new SQLiteCommand(commandText, connection))
+                {
+                    command.Parameters.AddWithValue($"@{OrderItem.OrderIDColumn}", order.ID);
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        while(reader.Read())
+                        {
+                            int orderItemPID = Convert.ToInt32(reader[OrderItem.ProductIDColumn]);
+                            Product orderItemProduct = GetCachedProductByID(orderItemPID);
+
+                            OrderItem loadedOrderItem = new OrderItem
+                            (
+                                Convert.ToInt32(reader[OrderItem.OrderIDColumn]),
+                                orderItemProduct,
+                                Convert.ToInt32(reader[OrderItem.QuantityColumn]),
+                                Convert.ToInt32(reader[OrderItem.FixedDiscountColumn]),
+                                Convert.ToInt32(reader[OrderItem.PercentualDiscountColumn]),
+                                Convert.ToInt32(reader[OrderItem.StrategyIDColumn])
+                            );
+
+                            order.OrderItems.Add(loadedOrderItem);
+                        }
+                    }
+                }
+                connection.Close();
+            }
+            // po pridani vsech polozek spocti cenovou kalkulaci pro danou objednavku
+            order.CalculateOrderPricing();
         }
     }
 }

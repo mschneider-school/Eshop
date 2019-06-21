@@ -28,7 +28,7 @@ namespace Eshop
         /// <summary>
         /// vlastnosti produktu
         /// </summary>
-        public long ID { get; private set; }
+        public int ID { get; private set; }
         public string Name { get; private set; }
         public string Cathegory { get; private set; }
         public int Price { get; private set; }
@@ -43,7 +43,7 @@ namespace Eshop
         /// <param name="cathegory">kategorie produktu</param>
         /// <param name="price">cena produktu</param>
         /// <param name="description">popis produktu</param>
-        public Product(long id, string name, string cathegory, int price, Image photo, string description)
+        public Product(string name, string cathegory, int price, Image photo, string description, int id = -1)
         {
             ID = id;
             Name = name;
@@ -53,7 +53,7 @@ namespace Eshop
             Description = description;
         }
 
-        public void ChangeID(long id) => ID = id;
+        public void ChangeID(int id) => ID = id;
         public void ChangeName(string name) => Name = name;
         public void ChangeCathegory(string cathegory) => Cathegory = cathegory;
         public void ChangePrice(int price) => Price = price;

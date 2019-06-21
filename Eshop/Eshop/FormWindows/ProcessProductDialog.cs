@@ -21,11 +21,6 @@ namespace Eshop
         {
             MainForm = mainForm;
             UpdateProduct = updateProduct;
-            EntriesToValidate = new List<Control>()
-            {
-                ProductNameTextBox, ProductPriceTextBox, ProductCathegoryCBox
-            };
-
             Load += ProcessProductDialog_Load;
             InitializeComponent();
             AddProductSplitContainer.SplitterWidth = 15;
@@ -34,6 +29,11 @@ namespace Eshop
 
         private void ProcessProductDialog_Load(object sender, EventArgs e)
         {
+            EntriesToValidate = new List<Control>()
+            {
+                ProductNameTextBox, ProductPriceTextBox, ProductCathegoryCBox
+            };
+
             // pokud byl form spusten s produktem uprav charakteristiky
             if (UpdateProduct != null)
             {
@@ -140,7 +140,7 @@ namespace Eshop
                 && priceString.Length > 0)
             {
                 ProductPriceTLPanel.BackColor = Color.MistyRose;
-                Validation.QuantityFormatWarning();
+                Message.QuantityFormatWarning();
             }
             else
             {
@@ -164,12 +164,12 @@ namespace Eshop
         {
             
             // zaznamena jestli byli vsechny povinne polozky vyplneny
-            bool allValid = Validation.InvalidEntriesCheck(EntriesToValidate, Color.MistyRose);
+            bool allValid = Message.InvalidEntriesCheck(EntriesToValidate, Color.MistyRose);
 
             // pokud nejsou detaily v poradku zobrazi se upozorneni
             if (!allValid || !IsPriceValid())
             {
-                Validation.InvalidEntriesWarning();
+                Message.InvalidEntriesWarning();
             }
             //  jinak se provede ulozeni produktu do databaze
             else
@@ -177,33 +177,24 @@ namespace Eshop
                 // sestav produkt z vlozenych parametru
                 Product builtProduct = BuildProductFromDetails();
 
-                // vytvor produkt v databazi a ziskej jeho ID
-                long newProductID = Database.CreateProduct(builtProduct);
+                // vytvor produkt v databazi
+                Database.CreateProduct(builtProduct);
 
-                if (newProductID != -1)
-                {
-                    // pridame produktu jeho nove ID z databaze
-                    builtProduct.ChangeID(newProductID);
-
-                    // novy produkt se priradi ke cached produktum
-                    Database.CachedProducts.Add(builtProduct);
-
-                    // prida novy produkt do zobrazeni produktu 
-                    MainForm.DisplayNewProduct(builtProduct);
-                }
-                Close(); // po skonceni pridavani se zavre formular
+                // zobrazi produkt v productdgview a zavre form 
+                MainForm.ShowNewProduct(builtProduct);
+                Close();
             }
         }
 
         private void UpdateExistingProduct()
         {
             // zaznamena jestli byli vsechny povinne polozky vyplneny
-            bool allValid = Validation.InvalidEntriesCheck(EntriesToValidate, Color.MistyRose);
+            bool allValid = Message.InvalidEntriesCheck(EntriesToValidate, Color.MistyRose);
 
             // pokud nejsou detaily v poradku zobrazi se upozorneni
             if (!allValid || !IsPriceValid())
             {
-                Validation.InvalidEntriesWarning();
+                Message.InvalidEntriesWarning();
             }
             else // jinak se produkt aktualizuje
             {
@@ -223,8 +214,7 @@ namespace Eshop
                 {
                     Database.CachedProducts[indexOfUpdated] = builtProduct;
                 }
-                // zavreme formular, o nacteni aktualizovaneho produktu
-                // do datagridview se postara MainForm
+
                 Close();
             }
         }
@@ -232,9 +222,7 @@ namespace Eshop
         // sestroj produkt podle udaju z formulare
         private Product BuildProductFromDetails()
         {
-            //  pro novy produkt se nacte id placeholder -1
-            long id = -1;
-
+            int id = -1;
             //  pro aktualizaci produktu se nacte ID soucasneho produktu
             if (UpdateProduct != null)
                 id = UpdateProduct.ID;
@@ -250,12 +238,12 @@ namespace Eshop
 
             Product builtProduct = new Product
             (
-                id,
                 name,
                 cathegory,
                 price,
                 photo,
-                description
+                description,
+                id
             );
 
             return builtProduct;

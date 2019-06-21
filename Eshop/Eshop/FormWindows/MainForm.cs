@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Eshop.DatabaseEntites;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,6 +37,9 @@ namespace Eshop
             StoreTabControl.TabPages.Remove(AccountTab);
             StoreTabControl.TabPages.Remove(OrdersTab);
 
+            // skryt administratorskou cast pred prihlasenim
+            DatabaseTabControl.Visible = false;
+
             // double buffering povoleno pro datagridview
             ShopDataGridView.DoubleBuffered(true);
             BasketDataGridView.DoubleBuffered(true);
@@ -56,10 +60,12 @@ namespace Eshop
 
             // nahraje data strategii do pameti
             Database.ReadTableData(Database.loadStrategies, Database.LoadStrategiesCommand);
+
+            // nahraje data stavu objednavek do pameti
+            Database.ReadTableData(Database.LoadOrderStates, Database.LoadOrderStatesCommand);
             
-            // zobrazi data produktu z cache do produktoveho prehladu v eshope a admin. sekcii
-            Database.DisplayLoadedProducts(ProductsDataGridView);
-            Database.DisplayLoadedProducts(ShopDataGridView);
+            // zobrazi data produktu z cache do produktoveho prehladu v eshope
+            ShowLoadedProducts(ShopDataGridView);
         }
 
         private void MainForm_Shown(object sender, EventArgs e)
@@ -95,7 +101,7 @@ namespace Eshop
             // aktualizujeme datagridview
             if (result == DialogResult.OK)
             {
-                Database.DisplayLoadedProducts(ProductsDataGridView);
+                ShowLoadedProducts(ProductsDataGridView);
             }
         }
 
@@ -152,17 +158,44 @@ namespace Eshop
                 {
                     StoreTabControl.TabPages.Insert(3, OrdersTab);
                 }
-
-                ShowLoggedCustomer();
-                Validation.LoginSuccessInfo(Session.CustomerLoggedIn);
+                // pokud byl zakaznik prihlasen zobraz jeho jmeno v titulku okna a informaci o prihlaseni
+                // pak klikni programaticky znovu na tlacitko pro zobrazeni detailu objednavky
+                if (Session.CustomerLoggedIn != null)
+                {
+                    ShowLoggedCustomer();
+                    Message.LoginSuccessInfo(Session.CustomerLoggedIn);
+                    LoginToOrderButton.PerformClick();
+                }
             }
             else // pokud jiz zakaznik je prihlasen sestavi a zobrazi jeho objednavku
             {
                 List<OrderItem> orderItems = OrderItem.GetOrderItemsFromBasket(Basket.Items);
                 Order builtOrder = Order.BuildOrder(orderItems);
                 OrderDetailForm builtOrderDetail = new OrderDetailForm(builtOrder);
-                builtOrderDetail.ShowDialog();
+                DialogResult result = builtOrderDetail.ShowDialog();
+                
+                // pri potvrzeni objednavky ze strany zakaznika
+                if (result == DialogResult.Yes)
+                {
+                    Database.CreateOrder(builtOrder);
+
+                    // pokud je administrator prihlasen, prida objednavku
+                    if (Session.AdminLoggedIn)
+                    {
+                        ShowNewOrderToAdmin(builtOrder);
+                    }
+                    Message.CreatedOrderSuccesInfo();
+                }
+                // VLOZI NOVY ZAZNAM DO PREHLEDU OBJEDNAVEK (InsertOrderToMyOrders(Order order))
+                AddOrderToMyOrders(builtOrder);
+                
             }
+        }
+
+        // pomocna metoda vlozi zaznam objednavky do prehledu objednavek
+        private void AddOrderToMyOrders(Order order)
+        {
+
         }
 
         private void CustomerOrderDetailButton_Click(object sender, EventArgs e)
@@ -170,13 +203,7 @@ namespace Eshop
             // OrderDetailForm customerOrderDetail = new OrderDetailForm();
             // customerOrderDetail.ShowDialog();
         }
-
-        private void AdminOrderDetailButton_Click(object sender, EventArgs e)
-        {
-            // OrderDetailForm adminOrderDetail = new OrderDetailForm();
-            // adminOrderDetail.ShowDialog();
-        }
-
+        
         private void LoginToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoginRegisterDialog customerLogin = new LoginRegisterDialog();
@@ -186,8 +213,8 @@ namespace Eshop
         // pridej polozku do kosiku
         private void AddToBasketButton_Click(object sender, EventArgs e)
         {
-            AddToBasketDialog addToBasket =
-                new AddToBasketDialog(GetSelectedProduct(ShopDataGridView));
+            Product selectedProduct = GetSelectedProduct(ShopDataGridView);
+            AddToBasketDialog addToBasket = new AddToBasketDialog(selectedProduct);
             DialogResult result = addToBasket.ShowDialog();
 
             // pokud se polozka uspesne pridala do kosiku
@@ -195,14 +222,9 @@ namespace Eshop
             if (result == DialogResult.OK)
             {
                 DisplayItemsInBasketView();
+                // polozka posledne pridana do kosiku bude zvyraznena
+                FocusOnProductInView(selectedProduct, BasketDataGridView);
             }
-        }
-
-        private void ShowCustomerLoginForm()
-        {
-            LoginRegisterDialog customerLogin = new LoginRegisterDialog();
-            customerLogin.Text = "Přihlášení zákazníka";
-            customerLogin.ShowDialog();
         }
 
         // prihlasit se jako zakaznik
@@ -212,20 +234,46 @@ namespace Eshop
             // odhlasit stavajiciho zakaznika prihlasit se jako novy
             if (Session.CustomerLoggedIn != null)
             {
-                DialogResult result = Validation.LoginNewCustomerQuestion();
+                DialogResult result = Message.LoginNewCustomerQuestion();
                 // prihlasit se jako novy zakaznik
                 if (result == DialogResult.Yes)
                 {
-                    ShowCustomerLoginForm();
-                    ShowLoggedCustomer();
-                    Validation.LoginSuccessInfo(Session.CustomerLoggedIn);
+                    LoginCustomer();
                 }
             }
             else // jinak zobrazi prihlaseni zakaznika
             {
-                ShowCustomerLoginForm();
+                LoginCustomer();
+            }
+        }
+
+        // privatni metoda verifikuje prihlaseni uzivatele a upravi titulek formulare
+        private void LoginCustomer()
+        {
+            Customer loggedInBefore = Session.CustomerLoggedIn;
+
+            LoginRegisterDialog customerLogin = new LoginRegisterDialog();
+            customerLogin.Text = "Přihlášení zákazníka";
+            customerLogin.ShowDialog();
+
+            Customer loggedInAfter = Session.CustomerLoggedIn;
+
+            // hlaska o prihlaseni se zobrazi jen kdyz se prihlasi uzivatel prvykrat
+            // nebo se prihlasi uplne novy uzivatel
+            if (loggedInAfter != null)
+            {
                 ShowLoggedCustomer();
-                Validation.LoginSuccessInfo(Session.CustomerLoggedIn);
+                if (loggedInBefore != null)
+                {
+                    if (loggedInBefore.ID != loggedInAfter.ID)
+                    {
+                        Message.LoginSuccessInfo(loggedInAfter);
+                    }
+                }
+                else
+                {
+                    Message.LoginSuccessInfo(loggedInAfter);
+                }
             }
         }
 
@@ -302,6 +350,7 @@ namespace Eshop
             RemoveTabWhenViewEmpty(StoreTabControl, BasketDataGridView, BasketTab);
         }
 
+        // Administratorske prihlaseni
         private void UserViewsTabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (UserViewsTabControl.SelectedTab == UserViewsTabControl.TabPages["adminTabPage"]
@@ -310,11 +359,102 @@ namespace Eshop
                 LoginRegisterDialog adminLogin = new LoginRegisterDialog();
                 adminLogin.TransformToAdminLogin();
                 adminLogin.ShowDialog();
+                
+                // pokud byl administrator uspesne prihlasen nactou se produkty a objednavky
+                // do views v sekci administratora
+                if (Session.AdminLoggedIn)
+                {
+                    // zobrazi se tably produktu a objednavek
+                    DatabaseTabControl.Visible = true;
+
+                    // nacte se obsah produktoveho a objednavkoveho prehledu
+                    ShowLoadedProducts(ProductsDataGridView);
+                    ShowLoadedOrdersToAdmin();
+                }
             }
         }
 
         /*** POMOCNE METODY HLAVNIHO FORMULARE K PROVEDENI UI UPRAV ***/
-        
+
+        /// <summary>
+        /// Zobrazi vsechny produkty z cache v administratorske casti
+        /// </summary>
+        /// <param name="cathegory">volitelny parameter k zobrazeni jen produktu jiste kategorie</param>
+        public void ShowLoadedProducts(DataGridView dataGridView, string cathegory = null)
+        {
+            dataGridView.Rows.Clear();
+
+            foreach (Product product in Database.CachedProducts)
+            {
+                // pokud chybi parameter kategorie zobraz vse
+                if (cathegory == null)
+                {
+                    dataGridView.Rows.Add(
+                        product.ID,
+                        product.Name,
+                        product.Cathegory,
+                        product.Price
+                    );
+                }
+                else // pokud nechybi parameter kategorie zobraz jen produkty kategorie
+                {
+                    if (product.Cathegory == cathegory)
+                    {
+                        dataGridView.Rows.Add(
+                            product.ID,
+                            product.Name,
+                            product.Cathegory,
+                            product.Price
+                        );
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Zobrazi nacteny objednavky v administratorskem okne
+        /// </summary>
+        public void ShowLoadedOrdersToAdmin()
+        {
+            OrdersDataGridView.Rows.Clear();
+
+            // zobrazi kazdou objedavku v pameti
+            foreach (Order order in Database.CachedOrders)
+            {
+                // objednavce se priradi jeji polozky a zaroven spocita jeji kalkulace
+                Database.LoadOrderItemsToOrder(order);
+                
+                // vlozi zaznam objednavky do view
+                AddNewOrderRecordToAdminView(order);
+            }
+        }
+
+        /// <summary>
+        /// Zobrazi nove pridanou skalkulovanou objednavku v administratorskem prehledu objednavek
+        /// </summary>
+        /// <param name="order">nove pridana objednavka</param>
+        public void ShowNewOrderToAdmin(Order order)
+        {
+            AddNewOrderRecordToAdminView(order);
+        }
+
+        // pomocna metoda k vlozeni zaznamu objednavky do administratorskeho view
+        private void AddNewOrderRecordToAdminView(Order order)
+        {
+            // prida se zaznam s udaji objednavky do prehledu
+            OrdersDataGridView.Rows.Add
+            (
+                order.ID,
+                order.Customer.Name,
+                order.Customer.LastName,
+                order.TotalOrderDiscount,
+                order.FinalOrderPrice,
+                order.CreationDateTime.ToShortDateString(),
+                order.CreationDateTime.ToShortTimeString(),
+                Database.GetStateNameByID(order.State)
+            );
+        }
+
         /// <summary>
         /// Vycisti registracni formular po uspesne registraci
         /// </summary>
@@ -377,10 +517,37 @@ namespace Eshop
         /// <returns></returns>
         public static Product GetSelectedProduct(DataGridView dataGridView)
         {
-            long selectedProductID = Convert.ToInt64(dataGridView.SelectedRows[0].Cells[0].Value);
+            int selectedProductID = Convert.ToInt32(dataGridView.SelectedRows[0].Cells[0].Value);
             Product selectedProduct = Database.GetCachedProductByID(selectedProductID);
-
             return selectedProduct;
+        }
+
+        /// <summary>
+        /// Oznaci zaznam s udaji zvoleneho produktu v zvolenem datagridview
+        /// </summary>
+        /// <param name="product"></param>
+        public static void FocusOnProductInView(Product product, DataGridView dataGridView)
+        {
+            foreach(DataGridViewRow row in dataGridView.Rows)
+            {
+                if ((int)row.Cells[0].Value == product.ID)
+                {
+                    row.Selected = true;
+                    dataGridView.FirstDisplayedScrollingRowIndex = row.Index;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Vraci oznacenou objednavku z prehledu objednavek jako objekt
+        /// </summary>
+        /// <param name="dataGridView">prehled objednavek</param>
+        /// <returns>objednavka</returns>
+        public static Order GetSelectedOrder(DataGridView dataGridView)
+        {
+            int selectedOrderID = Convert.ToInt32(dataGridView.SelectedRows[0].Cells[0].Value);
+            Order selectedOrder = Database.GetCachedOrderByID(selectedOrderID);
+            return selectedOrder;
         }
 
         /// <summary>
@@ -399,12 +566,13 @@ namespace Eshop
         }
 
         /// <summary>
-        /// zobrazi novy produkt
+        /// zobrazi novy produkt v productsDataGridView
         /// </summary>
         /// <param name="product">produkt k zobrazeni</param>
-        public void DisplayNewProduct(Product product)
+        public void ShowNewProduct(Product product)
         {
              ProductsDataGridView.Rows.Add(product.ID, product.Name, product.Cathegory, product.Price);
+             FocusOnProductInView(product, ProductsDataGridView);
         }
 
         /// <summary>
@@ -428,56 +596,56 @@ namespace Eshop
         // zobraz vsechny produkty
         private void LoadEverythingTSMenuItem_Click(object sender, EventArgs e)
         {
-            Database.DisplayLoadedProducts(ShopDataGridView);
+            ShowLoadedProducts(ShopDataGridView);
         }
 
         // zobraz jen chytre hodinky
         private void SmartWatchesTSMenuItem_Click(object sender, EventArgs e)
         {
             string smWatches = SmartWatchesTSMenuItem.Text;
-            Database.DisplayLoadedProducts(ShopDataGridView, smWatches);
+            ShowLoadedProducts(ShopDataGridView, smWatches);
         }
 
         // zobraz jen kryty a pouzdra
         private void CoversTSMenuItem_Click(object sender, EventArgs e)
         {
             string covers = CoversTSMenuItem.Text;
-            Database.DisplayLoadedProducts(ShopDataGridView, covers);
+            ShowLoadedProducts(ShopDataGridView, covers);
         }
 
         // zobraz jen smartfony
         private void SmartphonesTSMenuItem_Click(object sender, EventArgs e)
         {
             string smphones = SmartphonesTSMenuItem.Text;
-            Database.DisplayLoadedProducts(ShopDataGridView, smphones);
+            ShowLoadedProducts(ShopDataGridView, smphones);
         }
 
         // zobraz jen tablety
         private void TabletsTSMenuItem_Click(object sender, EventArgs e)
         {
             string tablets = TabletsTSMenuItem.Text;
-            Database.DisplayLoadedProducts(ShopDataGridView, tablets);
+            ShowLoadedProducts(ShopDataGridView, tablets);
         }
 
         // zobraz jen tlacitkove telefony
         private void KeypadPhonesTSMenuItem_Click(object sender, EventArgs e)
         {
             string kphones = KeypadPhonesTSMenuItem.Text;
-            Database.DisplayLoadedProducts(ShopDataGridView, kphones);
+            ShowLoadedProducts(ShopDataGridView, kphones);
         }
 
         // zobraz jen ochranna skla
         private void ScreenProtectorsTSMenuItem_Click(object sender, EventArgs e)
         {
             string scprotectors = ScreenProtectorsTSMenuItem.Text;
-            Database.DisplayLoadedProducts(ShopDataGridView, scprotectors);
+            ShowLoadedProducts(ShopDataGridView, scprotectors);
         }
 
         // zobraz jen kabely a nabijecky
         private void ChargersCablesTSMenuItem_Click(object sender, EventArgs e)
         {
             string cables = ChargersCablesTSMenuItem.Text;
-            Database.DisplayLoadedProducts(ShopDataGridView, cables);
+            ShowLoadedProducts(ShopDataGridView, cables);
         }
 
         private void BackToBasketButton_Click(object sender, EventArgs e)
@@ -615,27 +783,17 @@ namespace Eshop
                StoreTabControl.TabPages.Insert(1, BasketTab);
             }
         }
-        
-        private void BasketDataGridView_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
-        {
-            bool availability = BasketDataGridView.Rows.Count > 0;
-            List<Button> buttons = new List<Button>()
-            {
-                RemoveBasketItemButton, ShowDetailBasketItemButton,
-                EmptyBasketButton, LoginToOrderButton, MoveToBasketButton
-            };
-            SetAvailableButtons(sender, buttons, availability);
-        }
+  
 
+        // po pridani objednavky do zakaznickeho prehledu objednavky se focus presune na tablu objednavek
         private void CustomerOrdersDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            List<Button> buttons = new List<Button>() { CustomerOrderDetailButton };
-            SetAvailableButtons(sender, buttons, true);
+            StoreTabControl.SelectedTab = OrdersTab;
         }
 
         private void RegisterAndOrderButton_Click(object sender, EventArgs e)
         {
-            bool allValid = Validation.InvalidEntriesCheck(RegDetailsToValidate, Color.MistyRose);
+            bool allValid = Message.InvalidEntriesCheck(RegDetailsToValidate, Color.MistyRose);
             bool phoneValid = IsPhoneValid();
             bool postalCodeValid = IsPostalCodeValid();
             bool emailValid = IsEmailValid();
@@ -648,7 +806,7 @@ namespace Eshop
             // vytvori novy zakaznik, jeho udaje se ulozi do databaze a zustane prihlaseny
             if (invalidInputDetected)
             {
-                Validation.InvalidEntriesWarning();
+                Message.InvalidEntriesWarning();
             }
             else
             {
@@ -658,7 +816,7 @@ namespace Eshop
                 if (!Database.IsEmailUnique(email))
                 {
                     EmailTLPanel.BackColor = Color.MistyRose;
-                    Validation.EmailRegisteredWarning();
+                    Message.EmailRegisteredWarning();
                 }
                 else
                 {
@@ -687,15 +845,59 @@ namespace Eshop
                     // po uspesne registraci zobrazi informace o registraci
                     // vycisti reg. formular a zavre tabla registrace
                     // uzivatel se presmeruje do kosiku
-                    Validation.RegistrationSuccessInfo();
+                    Message.RegistrationSuccessInfo();
                     ClearRegistrationForm();
                     StoreTabControl.TabPages.Remove(AccountTab);
                     StoreTabControl.SelectedTab = BasketTab;
 
-                    // sestavit objednavku z polozek v kosiku
-
+                    // automaticky se prejde k objednavce
+                    // novemu prihlasenemu uzivateli se zobrazi objednavka k potvrzeni
+                    LoginToOrderButton.PerformClick();
                 }
             }
+        }
+
+        /*** Akce prehledu objednavek ***/
+
+        // pomocna metoda zmeny stavu
+        private void ChangeOrdersState(int state)
+        {
+            int stateID = state;
+            string stateName = Database.GetStateNameByID(stateID);
+
+            // vybrana objednavka jako objekt, novy stav ulozen v db aj cache 
+            Order selectedOrder = GetSelectedOrder(OrdersDataGridView);
+            Database.ChangeOrderState(selectedOrder, stateID);
+
+            // zmen stav vybrane objednavky v prehledu objedavek
+            OrdersDataGridView.SelectedRows[0].Cells[7].Value = stateName;
+
+            // zobrazi spravu o proběhle zmene
+            Message.OrderStateChangeInfo(stateName.ToLower());
+        }
+
+        /*** Zmeny stavu objednavky (potvrzena, zrusena, odeslana) a zobrazeni detailu ***/
+
+        private void ConfirmOrderButton_Click(object sender, EventArgs e)
+        {
+            ChangeOrdersState(OrderState.Confirmed);
+        }
+
+        private void CancelOrderButton_Click(object sender, EventArgs e)
+        {
+            ChangeOrdersState(OrderState.Canceled);
+        }
+
+        private void SendOrderButton_Click(object sender, EventArgs e)
+        {
+            ChangeOrdersState(OrderState.Sent);
+        }
+
+        private void AdminOrderDetailButton_Click(object sender, EventArgs e)
+        {
+            Order selectedOrder = GetSelectedOrder(OrdersDataGridView);
+            OrderDetailForm adminOrderDetail = new OrderDetailForm(selectedOrder);
+            adminOrderDetail.ShowDialog();
         }
 
         /// <summary>
@@ -762,6 +964,5 @@ namespace Eshop
             return !invalidPassword;
         }
 
-        
     }
 }
