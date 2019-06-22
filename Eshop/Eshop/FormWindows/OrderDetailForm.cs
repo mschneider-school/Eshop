@@ -35,13 +35,18 @@ namespace Eshop
             FirstNameValueLabel.Text = Order.Customer.Name;
             LastNameValueLabel.Text = Order.Customer.LastName;
             EmailValueLabel.Text = Order.Customer.Email;
-            PhoneValueLabel.Text = Order.Customer.MobilePhone.ToString();
+
+            string phone = Order.Customer.MobilePhone.ToString();
+            PhoneValueLabel.Text = 
+                $"{phone.Substring(0,3)} {phone.Substring(3,3)} {phone.Substring(6,3)}";
             
             // nacti fakturacni adresu
             CityValueLabel.Text = Order.Customer.City;
             StreetValueLabel.Text = Order.Customer.Street;
             HouseNumberValueLabel.Text = Order.Customer.HouseNumber;
-            PostalCodeValueLabel.Text = Order.Customer.PostalCode.ToString();
+
+            string psc = Order.Customer.PostalCode.ToString();
+            PostalCodeValueLabel.Text = $"{psc.Substring(0,3)} {psc.Substring(3)}";
 
             //// nacti kazdou polozku objednavky do nahledu dat
             foreach (var orderItem in Order.OrderItems)
@@ -62,10 +67,10 @@ namespace Eshop
 
             /*** ZOBRAZENI CENOVYCH KALKULACI OBJEDNAVKY ***/
 
-            FixedOrderDiscountValueLabel.Text = Order.FixedDiscount.ToString();
-            PercentualOrderDiscountValueLabel.Text = Order.PercentualDiscount.ToString();
-            TotalOrderDiscountsValueLabel.Text = Order.TotalOrderDiscount.ToString();
-            FinalOrderSumValueLabel.Text = Order.FinalOrderPrice.ToString();
+            FixedOrderDiscountValueLabel.Text = Order.FixedDiscount.ToString("N0");
+            PercentualOrderDiscountValueLabel.Text = Order.PercentualDiscount.ToString("N0");
+            TotalOrderDiscountsValueLabel.Text = Order.TotalOrderDiscount.ToString("N0");
+            FinalOrderSumValueLabel.Text = Order.FinalOrderPrice.ToString("N0");
         }
 
         // po kliknuti zobrazi detail produktove polozky

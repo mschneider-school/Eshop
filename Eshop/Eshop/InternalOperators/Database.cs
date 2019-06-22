@@ -288,9 +288,7 @@ namespace Eshop
                                 reader[Customer.CityColumn].ToString(),
                                 reader[Customer.StreetColumn].ToString(),
                                 reader[Customer.HouseNumberColumn].ToString(),
-
-                                Convert.ToInt32(reader[Customer.PostalCodeColumn]),
-
+                                reader[Customer.PostalCodeColumn].ToString(),
                                 reader[Customer.EmailColumn].ToString(),
                                 reader[Customer.PasswordColumn].ToString()
                             );
@@ -575,7 +573,7 @@ namespace Eshop
                                 reader[Customer.CityColumn].ToString(),
                                 reader[Customer.StreetColumn].ToString(),
                                 reader[Customer.HouseNumberColumn].ToString(),
-                                Convert.ToInt32(reader[Customer.PostalCodeColumn]),
+                                reader[Customer.PostalCodeColumn].ToString(),
                                 reader[Customer.EmailColumn].ToString(),
                                 reader[Customer.PasswordColumn].ToString()
                             );

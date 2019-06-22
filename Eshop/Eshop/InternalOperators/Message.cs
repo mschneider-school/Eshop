@@ -48,6 +48,12 @@ namespace Eshop
 
         public static void RegistrationSuccessInfo()
         {
+            MessageBox.Show("Gratulujeme! Registrace proběhla úspěšně, teď můžete pokračovat v nákupu.",
+                "Úspěšná registrace", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public static void RegistrationToOrderSuccessInfo()
+        {
             MessageBox.Show("Registrace proběhla úspěšně, teď se Vám zobrazí Vaše objednávka.",
                 "Úspěšná registrace", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

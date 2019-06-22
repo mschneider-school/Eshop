@@ -30,13 +30,13 @@ namespace Eshop
         public string City { get; }
         public string Street { get; }
         public string HouseNumber { get; }
-        public int PostalCode { get; }
+        public string PostalCode { get; }
         public string Email { get; }
         public string Password { get; }
 
         public Customer(string name, string lastName, int mobilePhone,
             string city, string street, string houseNumber,
-            int postalCode, string email, string password, int id = -1)
+            string postalCode, string email, string password, int id = -1)
         {
             Name = name;
             LastName = lastName;
