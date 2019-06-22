@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Eshop
 {
     class Autumn : Season
-    {
+    { 
         // zjistuje se individualni sleva pro polozku, jestli je produkt v tabulce specialu
         public override List<OrderItem> AssignDiscountsToItem(KeyValuePair<Product, int> basketItem)
         {
@@ -20,9 +20,9 @@ namespace Eshop
             // sleva je nulova pokud neni produkt v tabulce specialu, jinak se nacte fixni sleva z tabulky
             OrderItem newOrderItem = new OrderItem(basketItem.Key, basketItem.Value);
             newOrderItem.SetFixedDiscount(fixedDiscount);
-            newOrderItem.SetPercentualDiscount(0);
+            newOrderItem.SetPercentualDiscount(NoDiscount);
 
-            orderItemSplit.Add(new OrderItem(basketItem.Key, basketItem.Value));
+            orderItemSplit.Add(newOrderItem);
 
             return orderItemSplit;
         }
@@ -34,7 +34,7 @@ namespace Eshop
         /// <returns></returns>
         private int GetSpecialDiscount(Product product)
         {
-            int discount = 0;
+            int discount = NoDiscount;
             int productID = (int)product.ID;
             SpecialOffer offer = Database.CachedSpecialOffers.Find(spo => spo.ProductID == productID);
             
@@ -48,13 +48,13 @@ namespace Eshop
         // pevna sleva neni na podzim na objednavku aplikovana
         public override int GetFixedOrderDiscount()
         {
-            return 0;
+            return NoDiscount;
         }
 
         // procentualni sleva neni na podzim na objednavku aplikovana
         public override int GetPercentualOrderDiscount()
         {
-            return 0;
+            return NoDiscount;
         }
     }
 }

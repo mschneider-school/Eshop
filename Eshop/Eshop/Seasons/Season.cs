@@ -8,6 +8,8 @@ namespace Eshop
 {
     abstract class Season
     {
+        public int NoDiscount { get; } = 0;
+
         public abstract List<OrderItem> AssignDiscountsToItem(KeyValuePair<Product,int> basketItem);
         public abstract int GetFixedOrderDiscount();
         public abstract int GetPercentualOrderDiscount();
@@ -43,6 +45,21 @@ namespace Eshop
             {
                 return new Winter();
             }
+        }
+
+        // v pripade polozky bez aplikaci slev
+        public List<OrderItem> BasketToOrderItemNoChange(KeyValuePair<Product, int> basketItem)
+        {
+            List<OrderItem> orderItemSplit = new List<OrderItem>();
+
+            OrderItem newOrderItem = new OrderItem(basketItem.Key, basketItem.Value);
+            newOrderItem.SetFixedDiscount(0);
+            newOrderItem.SetPercentualDiscount(0);
+            newOrderItem.SetStrategy(10);
+
+            orderItemSplit.Add(newOrderItem);
+
+            return orderItemSplit;
         }
     }
 }

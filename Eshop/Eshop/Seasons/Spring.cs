@@ -8,35 +8,41 @@ namespace Eshop
 {
     class Spring : Season
     {
+        const int littleItemQuantity = 3;
+        const int middleItemQuantity = 8;
+        const int highItemQuantity = 12;
+
+        const int noDiscount = 0;
+
+        const int lowItemPercentualDiscount = 20;
+        const int middleItemPercentualDiscount = 30;
+        const int highItemPercentualDiscount = 40;
+
         public override List<OrderItem> AssignDiscountsToItem(KeyValuePair<Product,int> basketItem)
         {
             List<OrderItem> orderItemSplit = new List<OrderItem>();
 
             // sleva neni pokud je pocet kusu polozky mensi nez tri, nenastane split polozky na dve casti
-            if (basketItem.Value < 3)
+            if (basketItem.Value < littleItemQuantity)
             {
-                OrderItem newOrderItem = new OrderItem(basketItem.Key, basketItem.Value);
-                newOrderItem.SetFixedDiscount(0);
-                newOrderItem.SetPercentualDiscount(0);
-                newOrderItem.SetStrategy(9); // bez slevove strategie
-                orderItemSplit.Add(new OrderItem(basketItem.Key, basketItem.Value));
+                orderItemSplit.AddRange(BasketToOrderItemNoChange(basketItem));
             }
             // pro tri a vice kusu jsou aplikovany slevy na 3 a dalsi kus podle poctu ks:
             // nastane split polozky na 2 casti
-            else if (basketItem.Value < 8)
+            else if (basketItem.Value < middleItemQuantity)
             {
                 // prvni dve polozky jsou beze slevy, dalsi jsou se slevou 20%
-                orderItemSplit.AddRange(GetOrderItemSplitRange(basketItem, 20));
+                orderItemSplit.AddRange(GetOrderItemSplitRange(basketItem, lowItemPercentualDiscount));
             }
-            else if (basketItem.Value < 12) 
+            else if (basketItem.Value < highItemQuantity) 
             {
                 // nad 8 ks do max 11 ks sleva na treti a dalsi 30%
-                orderItemSplit.AddRange(GetOrderItemSplitRange(basketItem, 30));
+                orderItemSplit.AddRange(GetOrderItemSplitRange(basketItem, middleItemPercentualDiscount));
             }
             else 
             {
                 // pokud je polozek 12 a vice, sleva na treti a dalsi je az 40%
-                orderItemSplit.AddRange(GetOrderItemSplitRange(basketItem, 40));
+                orderItemSplit.AddRange(GetOrderItemSplitRange(basketItem, highItemPercentualDiscount));
             }
 
             return orderItemSplit;
@@ -54,23 +60,23 @@ namespace Eshop
             OrderItem nondiscountedItem = new OrderItem(basketItem.Key, 2);
             OrderItem discountedItem = new OrderItem(basketItem.Key, basketItem.Value - 2);
 
-            nondiscountedItem.SetFixedDiscount(0);
-            nondiscountedItem.SetPercentualDiscount(0);
-            nondiscountedItem.SetStrategy(9); // zadna strategie pro neslevnenou cast
+            nondiscountedItem.SetFixedDiscount(noDiscount);
+            nondiscountedItem.SetPercentualDiscount(noDiscount);
+            nondiscountedItem.SetStrategy(10);
 
-            discountedItem.SetFixedDiscount(0);
+            discountedItem.SetFixedDiscount(noDiscount);
             discountedItem.SetPercentualDiscount(percentualDiscount);
 
             // nastaveni slevove strategie polozky podle zadane slevy
             switch(percentualDiscount)
             {
-                case 20:
+                case lowItemPercentualDiscount:
                     discountedItem.SetStrategy(1);
                     break;
-                case 30:
+                case middleItemPercentualDiscount:
                     discountedItem.SetStrategy(2);
                     break;
-                case 40:
+                case highItemPercentualDiscount:
                     discountedItem.SetStrategy(3);
                     break;
             }
@@ -80,12 +86,12 @@ namespace Eshop
         // pro jaro neplati pevna sleva z objednavky
         public override int GetFixedOrderDiscount()
         {
-            return 0;
+            return noDiscount;
         }
         // pro jaro neplati percentualni sleva z objednavky
         public override int GetPercentualOrderDiscount()
         {
-            return 0;
+            return noDiscount;
         }
     }
 }
