@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace Eshop
 {
@@ -27,6 +19,7 @@ namespace Eshop
             if (product != null)
             {
                 ProductPictureBox.Image = product.Photo;
+                ProductNameLabel.Text = product.Name;
                 ProductIDValueLabel.Text = product.ID.ToString();
                 ProductCathegoryValueLabel.Text = product.Cathegory;
                 ProductPriceValueLabel.Text = product.Price.ToString("N0");

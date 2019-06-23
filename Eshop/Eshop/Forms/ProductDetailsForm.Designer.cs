@@ -137,7 +137,7 @@
             this.ProductNameLabel.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.ProductNameLabel.Size = new System.Drawing.Size(274, 58);
             this.ProductNameLabel.TabIndex = 0;
-            this.ProductNameLabel.Text = "Huawei P20 Lite 4GB/64GB Dual SIM QuadCore Octal 3 DUO sedy ";
+            this.ProductNameLabel.Text = "product name value";
             this.ProductNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // PictureWrapperPanel
@@ -393,7 +393,6 @@
             this.MaximizeBox = false;
             this.Name = "ProductDetailsForm";
             this.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.ShowIcon = false;
             this.Text = "Detail produktu";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ProductDetailsForm_KeyDown);
             this.DetailsOuterWrapperTLPanel.ResumeLayout(false);

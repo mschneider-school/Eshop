@@ -418,7 +418,6 @@
             this.MaximizeBox = false;
             this.Name = "ProcessProductDialog";
             this.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.ShowIcon = false;
             this.Text = "Nový produkt";
             this.Load += new System.EventHandler(this.ProcessProductDialog_Load);
             this.AddProducttTableLayoutPanel.ResumeLayout(false);

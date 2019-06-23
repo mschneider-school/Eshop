@@ -182,7 +182,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddToBasketDialog";
-            this.ShowIcon = false;
             this.Text = "Přidat do košíku";
             this.ConfirmWrapperTLPanel.ResumeLayout(false);
             this.ConfirmWrapperTLPanel.PerformLayout();

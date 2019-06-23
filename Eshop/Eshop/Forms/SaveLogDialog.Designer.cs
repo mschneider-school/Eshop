@@ -131,7 +131,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SaveLogDialog";
-            this.ShowIcon = false;
             this.Text = "Vítejte!";
             this.ConfirmWrapperTLPanel.ResumeLayout(false);
             this.ConfirmWrapperTLPanel.PerformLayout();

@@ -225,7 +225,6 @@
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "LoginRegisterDialog";
-            this.ShowIcon = false;
             this.Text = "Přihlášení zákazníka";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LoginRegisterDialog_KeyDown);
             this.ConfirmWrapperTLPanel.ResumeLayout(false);

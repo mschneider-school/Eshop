@@ -43,7 +43,7 @@
             this.OrderItemsSeparator = new System.Windows.Forms.TableLayoutPanel();
             this.OrderItemsDataGridView = new System.Windows.Forms.DataGridView();
             this.OrderItemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FixedDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -198,7 +198,7 @@
             this.OrderItemsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.OrderItemsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.OrderItemID,
-            this.ProductName,
+            this.ItemProductName,
             this.ProductQuantity,
             this.Price,
             this.FixedDiscount,
@@ -225,16 +225,16 @@
             this.OrderItemID.ToolTipText = "Identifikační číslo produktu";
             this.OrderItemID.Width = 34;
             // 
-            // ProductName
+            // ItemProductName
             // 
-            this.ProductName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ItemProductName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
-            this.ProductName.DefaultCellStyle = dataGridViewCellStyle3;
-            this.ProductName.HeaderText = "Název produktu";
-            this.ProductName.Name = "ProductName";
-            this.ProductName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ProductName.ToolTipText = "Prodejný název produktové položky objednávky";
+            this.ItemProductName.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ItemProductName.HeaderText = "Název produktu";
+            this.ItemProductName.Name = "ItemProductName";
+            this.ItemProductName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ItemProductName.ToolTipText = "Prodejný název produktové položky objednávky";
             // 
             // ProductQuantity
             // 
@@ -777,7 +777,6 @@
             this.MaximizeBox = false;
             this.Name = "OrderDetailForm";
             this.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.ShowIcon = false;
             this.Text = "Detail objednávky";
             this.Load += new System.EventHandler(this.OrderDetailForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OrderDetailForm_KeyDown);
@@ -846,7 +845,7 @@
         private System.Windows.Forms.Label FinalOrderSumValueLabel;
         private System.Windows.Forms.Label OrderItemsLabel;
         private System.Windows.Forms.DataGridViewTextBoxColumn OrderItemID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemProductName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductQuantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn FixedDiscount;
