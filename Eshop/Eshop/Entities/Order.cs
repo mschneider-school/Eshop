@@ -1,9 +1,6 @@
 ﻿using Eshop.DatabaseEntites;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Eshop
 {
@@ -16,7 +13,7 @@ namespace Eshop
         public const string PercentualDiscountColumn = "PercentualDiscount";
         public const string StateIDColumn = "StateID";
         public const string DateTimeColumn = "DateTime";
-        
+
         public int ID { get; private set; }
         public Customer Customer { get; }
         public List<OrderItem> OrderItems { get; private set; }
@@ -27,7 +24,7 @@ namespace Eshop
 
         // statisticke cenove polozky objednavky kalkulovane
         public int TotalOrderBeforeDiscountPrice { get; private set; }
-        public int TotalOrderDiscount { get; private set; }
+        public decimal TotalOrderDiscount { get; private set; }
         public int FinalOrderPrice { get; private set; }
 
         public Order(Customer customer, List<OrderItem> orderItems, int fixedDiscount, 
@@ -63,7 +60,10 @@ namespace Eshop
                 currentSeason.GetFixedOrderDiscount(),
                 currentSeason.GetPercentualOrderDiscount(),
                 OrderState.Built,
-                DateTime.Now
+                // pro testovani napr. jarni slevy 
+                // vloz "DateTime.Parse(Season.springDate) misto 'DateTime.Now' "
+                // + jdi do tridy Season a proved zmeny podle instrukci 
+                DateTime.Parse(Season.winterDate)
             );
 
             return builtOrder;
@@ -92,7 +92,7 @@ namespace Eshop
         }
 
         // spocte a vrati celkovou slevu polozek objednavky (fixni a perc. slevu polozek a objednavky)
-        private int GetTotalOrderDiscount()
+        private decimal GetTotalOrderDiscount()
         {
             // nejdrive spocteme celkove slevy u vsech polozek
             decimal itemDiscounts = 0;
@@ -111,13 +111,14 @@ namespace Eshop
             decimal totalDiscount = itemDiscounts + orderDiscount;
 
             // vratime celkovou slevu objednavky jako ceele cislo
-            return (int)Math.Truncate(totalDiscount);
+            return totalDiscount;
         }
 
         // vrati konecnou cenu objednavky po aplikovani vsech slev (fixnich i percentualnich)
         private int GetFinalOrderPrice()
         {
-            return TotalOrderBeforeDiscountPrice - TotalOrderDiscount;
+            decimal finalOrderPrice = TotalOrderBeforeDiscountPrice - TotalOrderDiscount;
+            return (int)finalOrderPrice;
         }
     }
 }

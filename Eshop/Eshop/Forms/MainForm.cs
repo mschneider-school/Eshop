@@ -63,7 +63,9 @@ namespace Eshop
             Database.ReadTableData(Database.LoadOrderStates, Database.LoadOrderStatesCommand);
             
             // zobrazi data produktu z cache do produktoveho prehladu v eshope
+            // a vybere ho k manipulaci
             LoadProductsToAdminView(ShopDataGridView);
+            SelectActualViewInUserSection();
         }
 
         private void MainForm_Shown(object sender, EventArgs e)
@@ -181,7 +183,10 @@ namespace Eshop
                     InsertOrderToMyOrders(builtOrder);
 
                     if (Session.AdminLoggedIn)
+                    {
                         InsertOrderToAdminView(builtOrder);
+                        SelectActualViewInAdminSection();
+                    }
 
                     // focus se presune na tablu objednavek
                     StoreTabControl.SelectedTab = OrdersTab;
@@ -331,12 +336,19 @@ namespace Eshop
         // nacte zakaznikovy objednavky, vymaze registracni tablu, zobrazi info o prihlaseni
         private void PrepareCustomerViewAfterLogin(Customer customer)
         {
-            LoadCustomerOrders(customer);
             // zavre otevrenou registraci po prihlaseni
             if (StoreTabControl.TabPages.Contains(AccountTab))
             {
                 CloseRegistration();
             }
+            // zavre a vymaze tablu objednavek z predesleho prihlaseni pokud je pritomna
+            if (StoreTabControl.TabPages.Contains(OrdersTab))
+            {
+                MyOrdersDataGridView.Rows.Clear();
+                StoreTabControl.TabPages.Remove(OrdersTab);
+            }
+
+            LoadCustomerOrders(customer);
             Message.LoginSuccessInfo(customer);
         }
 
@@ -436,10 +448,23 @@ namespace Eshop
                     // nacte se obsah produktoveho a objednavkoveho prehledu
                     LoadOrdersToAdminView(OrdersDataGridView);
                     LoadProductsToAdminView(ProductsDataGridView);
+                    SelectActualViewInAdminSection();
                 }
                 else
                 {   // jinak se presune spatky na zakaznickou cast
                     UserViewsTabControl.SelectTab(CustomerTabPage);
+                }
+            }
+            else
+            {
+                TabPage selectedTab = UserViewsTabControl.SelectedTab;
+                if (selectedTab == AdminTabPage)
+                {
+                    SelectActualViewInAdminSection();
+                }
+                else
+                {
+                    SelectActualViewInUserSection();
                 }
             }
         }
@@ -836,10 +861,13 @@ namespace Eshop
         // a take se aktualne pridana objednavka vlozi do administratorskeho view pokud je prihlasen
         private void MyOrdersDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
+            var thisView = sender as DataGridView;
             if (!StoreTabControl.TabPages.Contains(OrdersTab))
             {
                 StoreTabControl.TabPages.Add(OrdersTab);
             }
+            // pridavany radek je vzdy zvyraznen
+            thisView.Rows[e.RowIndex].Selected = true;
         }
 
         private void RegisterAndOrderButton_Click(object sender, EventArgs e)
@@ -877,7 +905,7 @@ namespace Eshop
                     string city = CityTextBox.Text.Trim();
                     string street = StreetTextBox.Text.Trim();
                     string houseNumber = HouseNumberTextBox.Text.Trim();
-                    string postalCode = PostalCodeMaskTextBox.Text.Trim();
+                    string postalCode = PostalCodeMaskTextBox.Text.Replace(" ", "");
                     string password = PasswordTextBox.Text;
 
                     Customer registered = new Customer
@@ -892,6 +920,13 @@ namespace Eshop
                     // prihlasi nove zaregistrovaneho zakaznika
                     Session.LoginCustomer(registered);
                     ShowLoggedCustomer();
+
+                    // vycisti a zavre zbylou tablu po predeslem zakaznikovi
+                    if (StoreTabControl.Contains(OrdersTab))
+                    {
+                        MyOrdersDataGridView.Rows.Clear();
+                        StoreTabControl.TabPages.Remove(OrdersTab);
+                    }
 
                     // pro registraci z kosiku
                     if (StoreTabControl.TabPages.Contains(BasketTab))
@@ -1006,7 +1041,7 @@ namespace Eshop
             {
                 string loggedName = Session.CustomerLoggedIn.Name;
                 string loggedLastName = Session.CustomerLoggedIn.LastName;
-                Text = $"MobileShop - Přihlášen: {loggedName} {loggedLastName}";
+                Text = $"MobileShop - přihlášen: {loggedName} {loggedLastName}";
             }
         }
        
@@ -1065,6 +1100,51 @@ namespace Eshop
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Logger.StopLoggingSession();
+        }
+
+        // fokus na view po zmene tably v zakaznicke sekci
+        private void StoreTabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SelectActualViewInUserSection();
+        }
+        // fokus na aktualni view po zmene tably v administrativni sekci
+        private void DatabaseTabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SelectActualViewInAdminSection();
+        }
+
+        /***  privatni metody pro selekci aktualne zobrazeneho nahledu ***/
+
+        private void SelectActualViewInAdminSection()
+        {
+            var selectedTab = DatabaseTabControl.SelectedTab;
+
+            if (selectedTab == OrdersTabPage)
+            {
+                ActiveControl = OrdersDataGridView;
+            }
+            else if (selectedTab == ProductsTabPage)
+            {
+                ActiveControl = ProductsDataGridView;
+            }
+        }
+
+        private void SelectActualViewInUserSection()
+        {
+            var selectedTab = StoreTabControl.SelectedTab;
+
+            if (selectedTab == StoreTab)
+            {
+                ActiveControl = ShopDataGridView;
+            }
+            else if (selectedTab == BasketTab)
+            {
+                ActiveControl = BasketDataGridView;
+            }
+            else if (selectedTab == OrdersTab)
+            {
+                ActiveControl = MyOrdersDataGridView;
+            }
         }
     }
 }

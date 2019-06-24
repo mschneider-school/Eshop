@@ -1,9 +1,4 @@
-﻿using Eshop.DatabaseEntites;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Eshop
 {
@@ -81,7 +76,7 @@ namespace Eshop
         // vypocte totalni slevu polozky v korunach
         public decimal GetTotalOrderItemDiscount()
         {
-            int totalItemPrice = Item.Price * Quantity;
+            int totalItemPrice = GetTotalOrderItemPrice();
             decimal percentageOfPrice = totalItemPrice / 100m;
             decimal percentualToFixDiscount = percentageOfPrice * PercentualDiscount;
             decimal totalItemDiscount = FixedDiscount + percentualToFixDiscount;

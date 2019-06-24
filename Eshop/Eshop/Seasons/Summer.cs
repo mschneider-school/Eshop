@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Eshop
 {
@@ -14,10 +10,17 @@ namespace Eshop
         const int lowerPercentualDiscount = 10;
         const int higherPercentualDiscount = 20;
 
+        public int AssignedStrategyID { get; private set; }
+
+        public Summer()
+        {
+            AssignedStrategyID = GetItemStrategy();
+        }
+
         // pro leto se polozka se vraci bez individualnich slevovych uprav
         public override List<OrderItem> AssignDiscountsToItem(KeyValuePair<Product, int> basketItem)
         {
-            return BasketToOrderItemNoChange(basketItem);
+            return BasketToOrderItemNoChange(basketItem, AssignedStrategyID);
         }
 
         // pevna sleva neni v lete na objednavku aplikovana
@@ -31,21 +34,34 @@ namespace Eshop
             // predvolene je sleva na objednavku nulova
             int percentualDiscount = NoDiscount;
 
-            int customersOrders = Database.GetLoggedCustomerOrdersCount();
-            
-            // pro zakazniky s 5 a vice exist. objednavkami plati sleva z objednavky 10%
-            if (customersOrders >= smallerOrdersCount && customersOrders < biggerOrdersCount)
+            switch (AssignedStrategyID)
             {
-                percentualDiscount = lowerPercentualDiscount;
-            }
-
-            // pro zakazniky s 10 a vice exist. objednavkami plati sleva z objednavky 20%
-            if (customersOrders >= 10)
-            {
-                percentualDiscount = higherPercentualDiscount;
+                case 4:
+                    percentualDiscount = lowerPercentualDiscount;
+                    break;
+                case 5:
+                    percentualDiscount = higherPercentualDiscount;
+                    break;
             }
 
             return percentualDiscount;
+        }
+
+        public int GetItemStrategy()
+        {
+            int customerOrders = Database.GetLoggedCustomerOrdersCount();
+
+            if (customerOrders >= smallerOrdersCount && customerOrders < biggerOrdersCount)
+            {
+                return 4;
+            }
+            
+            if (customerOrders >= 10)
+            {
+                return 5;
+            }
+
+            return 10;
         }
     }
 }

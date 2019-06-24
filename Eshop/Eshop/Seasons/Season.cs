@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Eshop
 {
     abstract class Season
     {
+        // JEN PRO TESTOVACI UCELY - datumy 4 rocnich obdobi 
+        public const string springDate = "2019-04-01 20:55:24.5344018";
+        public const string autumnDate = "2019-10-01 20:55:24.5344018";
+        public const string winterDate = "2020-02-01 20:55:24.5344018";
+
         public int NoDiscount { get; } = 0;
 
         public abstract List<OrderItem> AssignDiscountsToItem(KeyValuePair<Product,int> basketItem);
@@ -26,9 +28,9 @@ namespace Eshop
             DateTime autumnStart = new DateTime(thisYear, 8, 23);
             DateTime winterStart = new DateTime(thisYear, 11, 21);
 
-            DateTime date = DateTime.Now;
+            // pro testovani jarni slevy zmen: DateTime date = "DateTime.Parse(Order.springDate); misto 'DateTime.Now'"
+            DateTime date = DateTime.Parse(winterDate); 
 
-            // od jari do zacatku leta
             if (date >= springStart && date < summerStart)
             {
                 return new Spring();
@@ -48,14 +50,14 @@ namespace Eshop
         }
 
         // v pripade polozky bez aplikaci slev
-        public List<OrderItem> BasketToOrderItemNoChange(KeyValuePair<Product, int> basketItem)
+        public List<OrderItem> BasketToOrderItemNoChange(KeyValuePair<Product, int> basketItem, int strategyID)
         {
             List<OrderItem> orderItemSplit = new List<OrderItem>();
 
             OrderItem newOrderItem = new OrderItem(basketItem.Key, basketItem.Value);
             newOrderItem.SetFixedDiscount(0);
             newOrderItem.SetPercentualDiscount(0);
-            newOrderItem.SetStrategy(10);
+            newOrderItem.SetStrategy(strategyID);
 
             orderItemSplit.Add(newOrderItem);
 

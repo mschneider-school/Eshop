@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Eshop
 {
@@ -25,7 +21,7 @@ namespace Eshop
             // sleva neni pokud je pocet kusu polozky mensi nez tri, nenastane split polozky na dve casti
             if (basketItem.Value < littleItemQuantity)
             {
-                orderItemSplit.AddRange(BasketToOrderItemNoChange(basketItem));
+                orderItemSplit.AddRange(BasketToOrderItemNoChange(basketItem, 10));
             }
             // pro tri a vice kusu jsou aplikovany slevy na 3 a dalsi kus podle poctu ks:
             // nastane split polozky na 2 casti

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Eshop
@@ -41,11 +42,16 @@ namespace Eshop
             string psc = Order.Customer.PostalCode.ToString();
             PostalCodeValueLabel.Text = $"{psc.Substring(0,3)} {psc.Substring(3)}";
 
+            OrderItemsDataGridView.Columns[6].HeaderCell.Style.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold);
+
             //// nacti kazdou polozku objednavky do nahledu dat
             foreach (var orderItem in Order.OrderItems)
             {
                 // celkova cena polozky (pocet kusu * cena za ks)
-                int itemPrice = orderItem.Quantity * orderItem.Item.Price;
+                int itemPrice = orderItem.GetTotalOrderItemPrice();
+                decimal totalItemDiscount = orderItem.GetTotalOrderItemDiscount();
+
+                decimal finalItemPrice = itemPrice - totalItemDiscount;
 
                 OrderItemsDataGridView.Rows.Add
                 (
@@ -54,7 +60,9 @@ namespace Eshop
                     orderItem.Quantity,
                     itemPrice,
                     orderItem.FixedDiscount,
-                    orderItem.PercentualDiscount
+                    orderItem.PercentualDiscount,
+                    finalItemPrice,
+                    orderItem.StrategyID
                 );
             }
 
@@ -62,7 +70,9 @@ namespace Eshop
 
             FixedOrderDiscountValueLabel.Text = Order.FixedDiscount.ToString("N0");
             PercentualOrderDiscountValueLabel.Text = Order.PercentualDiscount.ToString("N0");
-            TotalOrderDiscountsValueLabel.Text = Order.TotalOrderDiscount.ToString("N0");
+            TotalOrderDiscountsValueLabel.Text = 
+                Order.TotalOrderDiscount == 0 ? 
+                Order.TotalOrderDiscount.ToString("N0") : Order.TotalOrderDiscount.ToString("N2");
             FinalOrderSumValueLabel.Text = Order.FinalOrderPrice.ToString("N0");
         }
 
@@ -88,6 +98,20 @@ namespace Eshop
             {
                 MainForm.EmptyBasketView();
             }
+        }
+
+        // pri pridani radku se nastavi tooltip slevovym bunkam (pro popis slevy)
+        private void OrderItemsDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            int addedRowIndex = e.RowIndex;
+            DataGridView thisView = sender as DataGridView;
+
+            int strategyID = (int)thisView.Rows[addedRowIndex].Cells[7].Value;
+            string strategyDescription = Database.GetCachedStrategyByID(strategyID).Description;
+
+            // nastav tooltipy pro slevove bunky 
+            thisView.Rows[addedRowIndex].Cells[4].ToolTipText = strategyDescription;
+            thisView.Rows[addedRowIndex].Cells[5].ToolTipText = strategyDescription;
         }
     }
 }

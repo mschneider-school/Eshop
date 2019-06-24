@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 
 namespace Eshop
@@ -70,19 +67,20 @@ namespace Eshop
         private void ParseLogInput(string message)
         {    
             // message example:
-            // 08/15/2019 12:28:13 user created order 256 in total 2500 CZK    
+            // 08/15/2019 12:28:13 Name Surname created order 256 in total 2500 CZK    
             string[] logValues = message.Split(' ');
 
             string date = logValues[0];
             string time = logValues[1];
-            string author = logValues[2];
-            string state = logValues[3];
-            string orderID = logValues[5];
-            string total = logValues[8];
+            string author = $"{logValues[2]} {logValues[3]}";
+
+            string state = logValues[4];
+            string orderID = logValues[6];
+            string sum = logValues[9];
 
             XmlWriter.WriteStartElement("order");
             XmlWriter.WriteAttributeString("id", orderID);
-            XmlWriter.WriteAttributeString("sum", total);
+            XmlWriter.WriteAttributeString("sum", sum);
             XmlWriter.WriteAttributeString("state", state);
             XmlWriter.WriteAttributeString("author", author);
 
@@ -156,7 +154,7 @@ namespace Eshop
             log.WriteLog($"" +
                 $"{actualDateTime.ToShortDateString()} " +
                 $"{actualDateTime.ToShortTimeString()} " +
-                $"user created order " +
+                $"{order.Customer.Name} {order.Customer.LastName} created order " +
                 $"{order.ID} in total " +
                 $"{order.FinalOrderPrice} CZK");
         }
@@ -169,7 +167,7 @@ namespace Eshop
             log.WriteLog($"" +
                 $"{actualDateTime.ToShortDateString()} " +
                 $"{actualDateTime.ToShortTimeString()} " +
-                $"admin confirmed order " +
+                $"eshop admin confirmed order " +
                 $"{order.ID} in total " +
                 $"{order.FinalOrderPrice} CZK");
         }
@@ -182,7 +180,7 @@ namespace Eshop
             log.WriteLog($"" +
                 $"{actualDateTime.ToShortDateString()} " +
                 $"{actualDateTime.ToShortTimeString()} " +
-                $"admin canceled order " +
+                $"eshop admin canceled order " +
                 $"{order.ID} in total " +
                 $"{order.FinalOrderPrice} CZK");
         }

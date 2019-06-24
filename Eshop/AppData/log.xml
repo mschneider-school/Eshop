@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<session>
+  <start date="24.06.2019" time="02:25:12" />
+  <orders>
+    <order id="65" sum="1049" state="confirmed" author="eshop admin">
+      <date>24.06.2019</date>
+      <time>02:25:21</time>
+    </order>
+    <order id="81" sum="47295" state="confirmed" author="eshop admin">
+      <date>24.06.2019</date>
+      <time>02:25:23</time>
+    </order>
+    <order id="71" sum="117" state="confirmed" author="eshop admin">
+      <date>24.06.2019</date>
+      <time>02:25:26</time>
+    </order>
+    <order id="86" sum="15838" state="canceled" author="eshop admin">
+      <date>24.06.2019</date>
+      <time>02:25:30</time>
+    </order>
+    <order id="66" sum="3358" state="canceled" author="eshop admin">
+      <date>24.06.2019</date>
+      <time>02:25:37</time>
+    </order>
+    <order id="83" sum="40890" state="canceled" author="eshop admin">
+      <date>24.06.2019</date>
+      <time>02:25:40</time>
+    </order>
+  </orders>
+  <end date="24.06.2019" time="02:25:45" />
+</session>

@@ -80,6 +80,7 @@
             // ConsoleOptionButton
             // 
             this.ConsoleOptionButton.AutoSize = true;
+            this.ConsoleOptionButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.ConsoleOptionButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ConsoleOptionButton.Location = new System.Drawing.Point(182, 21);
             this.ConsoleOptionButton.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
@@ -89,12 +90,11 @@
             this.ConsoleOptionButton.TabStop = false;
             this.ConsoleOptionButton.Text = "Konzole";
             this.ConsoleOptionButton.UseVisualStyleBackColor = true;
-            this.ConsoleOptionButton.Click += new System.EventHandler(this.ConsoleOptionButton_Click);
             // 
             // FileOptionButton
             // 
             this.FileOptionButton.AutoSize = true;
-            this.FileOptionButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.FileOptionButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.FileOptionButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FileOptionButton.Location = new System.Drawing.Point(7, 21);
             this.FileOptionButton.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
@@ -104,7 +104,6 @@
             this.FileOptionButton.TabStop = false;
             this.FileOptionButton.Text = "Soubor";
             this.FileOptionButton.UseVisualStyleBackColor = true;
-            this.FileOptionButton.Click += new System.EventHandler(this.FileOptionButton_Click);
             // 
             // ConfirmationLabel
             // 
@@ -123,7 +122,7 @@
             this.AcceptButton = this.FileOptionButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.FileOptionButton;
+            this.CancelButton = this.ConsoleOptionButton;
             this.ClientSize = new System.Drawing.Size(351, 192);
             this.Controls.Add(this.ConfirmWrapperTLPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

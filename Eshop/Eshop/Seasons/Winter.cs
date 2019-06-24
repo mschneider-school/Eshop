@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Eshop
 {
@@ -20,6 +16,7 @@ namespace Eshop
         const int middlePercentualDiscount = 20;
         const int highPercentualDiscount = 30;
 
+        public int AssignedStrategyID { get; private set; }
         public int BasketItemsTotalPrice { get; private set; }
 
         /*** Slevy objednavky ***/
@@ -31,40 +28,44 @@ namespace Eshop
         public Winter()
         {
             BasketItemsTotalPrice = GetBasketItemsTotalPrice();
+            AssignedStrategyID = GetItemStrategy();
         }
 
         // pro zimu se polozka se vraci bez individualnich slevovych uprav
         public override List<OrderItem> AssignDiscountsToItem(KeyValuePair<Product, int> basketItem)
         {
-            return BasketToOrderItemNoChange(basketItem);
+            return BasketToOrderItemNoChange(basketItem, AssignedStrategyID);
         }
 
         public override int GetFixedOrderDiscount()
         {
-            if (BasketItemsTotalPrice > lowOrderPrice)
-                return lowFixDiscount;
-
-            if (BasketItemsTotalPrice > middleOrderPrice)
-                return middleFixDiscount;
-
-            if (BasketItemsTotalPrice > highOrderPrice)
-                return highFixDiscount;
-
-            return NoDiscount;
+            int fixedOrderDiscount = NoDiscount;
+            switch (AssignedStrategyID)
+            {
+                case 7:
+                    return lowFixDiscount;
+                case 8:
+                    return middleFixDiscount;
+                case 9:
+                    return highFixDiscount;
+                default:
+                    return NoDiscount;
+            }
         }
 
         public override int GetPercentualOrderDiscount()
         {
-            if (BasketItemsTotalPrice > lowOrderPrice)
-                return lowPercentualDiscount;
-
-            if (BasketItemsTotalPrice > middleOrderPrice)
-                return middlePercentualDiscount;
-
-            if (BasketItemsTotalPrice > highOrderPrice)
-                return highPercentualDiscount;
-
-            return NoDiscount;
+            switch (AssignedStrategyID)
+            {
+                case 7:
+                    return lowPercentualDiscount;
+                case 8:
+                    return middlePercentualDiscount;
+                case 9:
+                    return highPercentualDiscount;
+                default:
+                    return NoDiscount;
+            }
         }
 
         // pomocna metoda k secteni cen vsech polozek v kosiku
@@ -73,9 +74,29 @@ namespace Eshop
             int totalPrice = 0; 
             foreach (var item in Basket.Items)
             {
-                totalPrice += item.Key.Price * item.Value;
+                int itemPrice = item.Key.Price * item.Value;
+                totalPrice += itemPrice;
             }
             return totalPrice;
+        }
+
+        public int GetItemStrategy()
+        {
+            if (BasketItemsTotalPrice > highOrderPrice)
+            {
+                return 9;
+            }
+
+            if (BasketItemsTotalPrice > middleOrderPrice)
+            {
+                return 8;
+            }
+
+            if (BasketItemsTotalPrice > lowOrderPrice)
+            {
+                return 7;
+            }
+            return 10;
         }
     }
 }

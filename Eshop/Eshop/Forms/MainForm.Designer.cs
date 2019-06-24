@@ -344,6 +344,7 @@
             this.StoreTabControl.Size = new System.Drawing.Size(705, 505);
             this.StoreTabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.StoreTabControl.TabIndex = 0;
+            this.StoreTabControl.SelectedIndexChanged += new System.EventHandler(this.StoreTabControl_SelectedIndexChanged);
             // 
             // StoreTab
             // 
@@ -395,6 +396,7 @@
             // ShopDataGridView
             // 
             this.ShopDataGridView.AllowUserToAddRows = false;
+            this.ShopDataGridView.AllowUserToDeleteRows = false;
             this.ShopDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ShopDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.ShopDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
@@ -1473,7 +1475,9 @@
             // MyOrdersDataGridView
             // 
             this.MyOrdersDataGridView.AllowUserToAddRows = false;
-            this.MyOrdersDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.MyOrdersDataGridView.AllowUserToDeleteRows = false;
+            this.MyOrdersDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.MyOrdersDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.MyOrdersDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
@@ -1722,6 +1726,7 @@
             this.DatabaseTabControl.Size = new System.Drawing.Size(705, 505);
             this.DatabaseTabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.DatabaseTabControl.TabIndex = 0;
+            this.DatabaseTabControl.SelectedIndexChanged += new System.EventHandler(this.DatabaseTabControl_SelectedIndexChanged);
             // 
             // OrdersTabPage
             // 
@@ -1846,6 +1851,8 @@
             // OrdersDataGridView
             // 
             this.OrdersDataGridView.AllowUserToAddRows = false;
+            this.OrdersDataGridView.AllowUserToDeleteRows = false;
+            this.OrdersDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.OrdersDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.OrdersDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -2028,6 +2035,7 @@
             // ProductsDataGridView
             // 
             this.ProductsDataGridView.AllowUserToAddRows = false;
+            this.ProductsDataGridView.AllowUserToDeleteRows = false;
             this.ProductsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ProductsDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.ProductsDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
