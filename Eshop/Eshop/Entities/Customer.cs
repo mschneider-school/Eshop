@@ -47,9 +47,6 @@
         /// <summary>
         /// Priradi zakaznikovi jeho ID hodnotu z databaze
         /// </summary>
-        public void LoadThisCustomerID()
-        {
-            ID = Database.GetCustomerID(this);
-        }
+        public void LoadThisCustomerID() => ID = Database.GetCustomerID(this);
     }
 }

@@ -32,12 +32,6 @@ namespace Eshop
             }
         }
 
-        // po kliknuti na zruseni zavreme dialog pridavani polozky
-        private void CancelButton_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         // pokud byl zmacknuty enter pri zadavani mnozstvi, verifikujeme vystup
         // kdyz je vystup platny vyvolame event zmacnknuti tlacitka Pridat
         private void QuantityTextBox_KeyDown(object sender, KeyEventArgs e)

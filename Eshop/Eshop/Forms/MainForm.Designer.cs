@@ -439,7 +439,6 @@
             this.ShopDataGridView.TabIndex = 0;
             this.ShopDataGridView.TabStop = false;
             this.ShopDataGridView.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.ShopDataGridView_RowsAdded);
-            this.ShopDataGridView.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.ShopDataGridView_RowsRemoved);
             // 
             // dataGridViewTextBoxColumn1
             // 

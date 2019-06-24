@@ -240,7 +240,6 @@ namespace Eshop
                 description,
                 id
             );
-
             return builtProduct;
         }
     }

@@ -54,11 +54,11 @@ namespace Eshop
                 string userEmail = UserNameTextBox.Text;
                 string userPassword = PasswordTextBox.Text;
 
-                Customer foundCustomer = Database.GetVerifiedCustomer(userEmail, userPassword);
+                Customer customer = Database.GetVerifiedCustomer(userEmail, userPassword);
 
-                if (foundCustomer != null)
+                if (customer != null)
                 {
-                    Session.LoginCustomer(foundCustomer);
+                    Session.LoginCustomer(customer);
                     Close();
                 }
                 else

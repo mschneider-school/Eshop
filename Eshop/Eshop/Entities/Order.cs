@@ -44,8 +44,6 @@ namespace Eshop
 
         // metody pro zmenu detailu objednavky
         public void ChangeID(int id) => ID = id;
-        public void ChangeFixedDiscount(int fixedDiscount) => FixedDiscount = fixedDiscount;
-        public void ChangePercentualDiscount(int percentualDiscount) => PercentualDiscount = percentualDiscount;
         public void ChangeState(int state) => State = state;
 
         // sestav a vrat objednavku podle zadanych parametru
@@ -74,14 +72,14 @@ namespace Eshop
         {
             if (OrderItems.Count != 0)
             {
-                TotalOrderBeforeDiscountPrice = GetTotalOrderBeforeDiscountPrice();
+                TotalOrderBeforeDiscountPrice = GetOrderPricePriorDiscount();
                 TotalOrderDiscount = GetTotalOrderDiscount();
                 FinalOrderPrice = GetFinalOrderPrice();
             }
         }
 
         // spocti a vrat celkovou cenu polozek objednavky pred slevnenim
-        private int GetTotalOrderBeforeDiscountPrice()
+        private int GetOrderPricePriorDiscount()
         {
             int totalPrice = 0;
             foreach (OrderItem item in OrderItems)

@@ -47,7 +47,7 @@ namespace Eshop
             return percentualDiscount;
         }
 
-        public int GetItemStrategy()
+        private int GetItemStrategy()
         {
             int customerOrders = Database.GetLoggedCustomerOrdersCount();
 

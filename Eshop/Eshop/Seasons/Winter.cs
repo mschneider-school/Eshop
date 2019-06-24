@@ -80,7 +80,7 @@ namespace Eshop
             return totalPrice;
         }
 
-        public int GetItemStrategy()
+        private int GetItemStrategy()
         {
             if (BasketItemsTotalPrice > highOrderPrice)
             {

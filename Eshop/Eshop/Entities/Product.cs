@@ -47,11 +47,10 @@ namespace Eshop
             Photo = photo;
             Description = description;
         }
-
+        /// <summary>
+        /// Zmen identifikacni cislo produktu
+        /// </summary>
+        /// <param name="id">nove cislo produktu</param>
         public void ChangeID(int id) => ID = id;
-        public void ChangeName(string name) => Name = name;
-        public void ChangeCathegory(string cathegory) => Cathegory = cathegory;
-        public void ChangePrice(int price) => Price = price;
-        public void ChangeDescription(string description) => Description = description;
     }
 }

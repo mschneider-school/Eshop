@@ -204,7 +204,6 @@ namespace Eshop
             {
                 StoreTabControl.TabPages.Add(AccountTab);
             }
-
             StoreTabControl.SelectTab(AccountTab);
         }
 
@@ -230,7 +229,7 @@ namespace Eshop
         /// Prida objednavky prihlaseneho zakaznika do prehledu Moje objednavky
         /// </summary>
         /// <param name="customer">prihlaseny zakaznik</param>
-        public void LoadCustomerOrders(Customer customer)
+        private void LoadCustomerOrders(Customer customer)
         {
             List<Order> customerOrders = Database.GetCustomerOrders(customer);
             DataGridView ordersView = MyOrdersDataGridView;
@@ -323,18 +322,18 @@ namespace Eshop
                 {
                     if (loggedInBefore.ID != loggedInAfter.ID)
                     {
-                        PrepareCustomerViewAfterLogin(loggedInAfter);
+                        PrepareViewToCustomer(loggedInAfter);
                     }
                 }
                 else
                 {
-                    PrepareCustomerViewAfterLogin(loggedInAfter);
+                    PrepareViewToCustomer(loggedInAfter);
                 }
             }
         }
 
         // nacte zakaznikovy objednavky, vymaze registracni tablu, zobrazi info o prihlaseni
-        private void PrepareCustomerViewAfterLogin(Customer customer)
+        private void PrepareViewToCustomer(Customer customer)
         {
             // zavre otevrenou registraci po prihlaseni
             if (StoreTabControl.TabPages.Contains(AccountTab))
@@ -475,7 +474,7 @@ namespace Eshop
         /// Zobrazi vsechny produkty z cache v administratorske casti
         /// </summary>
         /// <param name="cathegory">volitelny parameter k zobrazeni jen produktu jiste kategorie</param>
-        public void LoadProductsToAdminView(DataGridView dataGridView, string cathegory = null)
+        private void LoadProductsToAdminView(DataGridView dataGridView, string cathegory = null)
         {
             dataGridView.Rows.Clear();
 
@@ -509,7 +508,7 @@ namespace Eshop
         /// <summary>
         /// Zobrazi nacteny objednavky v administratorskem okne
         /// </summary>
-        public void LoadOrdersToAdminView(DataGridView dataGridView)
+        private void LoadOrdersToAdminView(DataGridView dataGridView)
         {
             dataGridView.Rows.Clear();
 
@@ -585,7 +584,7 @@ namespace Eshop
         /// Vybere a vrati objekt Produkt vybrany 
         /// </summary>
         /// <returns></returns>
-        public static Product GetSelectedProduct(DataGridView dataGridView)
+        private static Product GetSelectedProduct(DataGridView dataGridView)
         {
             int selectedProductID = Convert.ToInt32(dataGridView.SelectedRows[0].Cells[0].Value);
             Product selectedProduct = Database.GetCachedProductByID(selectedProductID);
@@ -596,7 +595,7 @@ namespace Eshop
         /// Oznaci zaznam s udaji zvoleneho produktu ve zvolenem datagridview
         /// </summary>
         /// <param name="id">id zvyrazneneho radku</param>
-        public static void SelectRecordInView(int id, DataGridView dataGridView)
+        private static void SelectRecordInView(int id, DataGridView dataGridView)
         {
             foreach (DataGridViewRow row in dataGridView.Rows)
             {
@@ -613,7 +612,7 @@ namespace Eshop
         /// </summary>
         /// <param name="dataGridView">prehled objednavek</param>
         /// <returns>objednavka</returns>
-        public static Order GetSelectedOrder(DataGridView dataGridView)
+        private static Order GetSelectedOrder(DataGridView dataGridView)
         {
             int selectedOrderID = Convert.ToInt32(dataGridView.SelectedRows[0].Cells[0].Value);
 
@@ -822,16 +821,6 @@ namespace Eshop
             SetAvailableButtons(sender, buttons, true);
         }
 
-        private void ShopDataGridView_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
-        {
-            bool availability = ShopDataGridView.Rows.Count > 0;
-            List<Button> buttons = new List<Button>()
-            {
-                LoginAsCustomerButton, ShowItemDetailButton, MoveToBasketButton
-            };
-            SetAvailableButtons(sender, buttons, availability);
-        }
-
         private void BasketDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             List<Button> buttons = new List<Button>()
@@ -850,7 +839,7 @@ namespace Eshop
         private void BasketDataGridView_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             var thisView = sender as DataGridView;
-            if (thisView.Rows.Count == 0)
+            if (IsDataGridViewEmpty(thisView))
             {
                 StoreTabControl.TabPages.Remove(BasketTab);
                 MoveToBasketButton.Enabled = false;

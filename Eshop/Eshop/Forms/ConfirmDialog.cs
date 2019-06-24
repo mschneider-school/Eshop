@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace Eshop
 {
@@ -16,13 +8,13 @@ namespace Eshop
             string confirmButtonText = "Ano", string cancelButtonText = "Ne")
         {
             InitializeComponent();
+            CenterToParent();
             
             // osobitne nastavene udaje potvrzujiciho dialogu
             Name = formName;
             ConfirmationLabel.Text = message;
             ConfirmActionButton.Text = confirmButtonText;
             CancelActionButton.Text = cancelButtonText;
-            CenterToParent();
         }
     }
 }

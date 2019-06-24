@@ -174,7 +174,7 @@ namespace Eshop
                     Convert.ToInt32(reader[Order.OrderIDColumn])
                 );
                 // vyhleda priradi k objednavce jeji polozky
-                LoadOrderItemsToOrder(loadedOrder);
+                AttachOrderItemsToOrder(loadedOrder);
 
                 // pridani objektu objednavky do cached objednavek
                 CachedOrders.Add(loadedOrder);
@@ -660,7 +660,7 @@ namespace Eshop
         /// interni metoda k nacteni polozek objednavky k objednavce do CachedOrders
         /// </summary>
         /// <param name="order">objednavka ke ktere se prirazuji jeji polozky</param>
-        private static void LoadOrderItemsToOrder(Order order)
+        private static void AttachOrderItemsToOrder(Order order)
         {
             using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
             {

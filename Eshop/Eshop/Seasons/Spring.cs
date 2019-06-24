@@ -40,7 +40,6 @@ namespace Eshop
                 // pokud je polozek 12 a vice, sleva na treti a dalsi je az 40%
                 orderItemSplit.AddRange(GetOrderItemSplitRange(basketItem, highItemPercentualDiscount));
             }
-
             return orderItemSplit;
         }
 

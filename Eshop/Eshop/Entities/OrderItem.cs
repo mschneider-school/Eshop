@@ -61,17 +61,10 @@ namespace Eshop
         // metody ke zmene cenovych parametru polozky objednavky
         public void SetFixedDiscount(int fixedDiscount) => FixedDiscount = fixedDiscount;
         public void SetPercentualDiscount(int percentDiscount) => PercentualDiscount = percentDiscount;
-
-        public void SetStrategy(int strategyID)
-        {
-            StrategyID = strategyID;
-        }
+        public void SetStrategy(int strategyID) => StrategyID = strategyID;
 
         // spocte celkovou cenu polozky (mnozstvi * cena produktu)
-        public int GetTotalOrderItemPrice()
-        {
-            return Quantity * Item.Price;
-        }
+        public int GetTotalOrderItemPrice() => Quantity * Item.Price;
 
         // vypocte totalni slevu polozky v korunach
         public decimal GetTotalOrderItemDiscount()

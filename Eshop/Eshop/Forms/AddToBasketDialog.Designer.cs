@@ -95,7 +95,6 @@
             this.CancelActionButton.TabIndex = 1;
             this.CancelActionButton.Text = "Zrušit";
             this.CancelActionButton.UseVisualStyleBackColor = true;
-            this.CancelActionButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // AddItemButton
             // 
@@ -172,6 +171,7 @@
             // 
             // AddToBasketDialog
             // 
+            this.AcceptButton = this.AddItemButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CancelActionButton;
