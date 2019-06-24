@@ -3,9 +3,18 @@ using System.Collections.Generic;
 
 namespace Eshop
 {
+    /// <summary>
+    /// Trida dedi od abstraktni tridy metody k aplikaci slev na objednavku a jeji polozky
+    /// Individualni sleva polozky se aplikuje pokud se produkt nachazi v tabulce specialnich produktu v db
+    /// Pozn.: slevy objednavky nejsou na podzim aplikovany
+    /// </summary>
     class Autumn : Season
     {
-        // zjistuje se individualni sleva pro polozku, jestli je produkt v tabulce specialu
+        /// <summary>
+        /// Aplikace pevne slevy na polozku, pokud se polozka nachazi v tabulce specialnich produktu
+        /// </summary>
+        /// <param name="basketItem">polozka kosiku transformovana na polozku objednavky</param>
+        /// <returns>kolekce s polozkou s pridelenou slevou</returns>
         public override List<OrderItem> AssignDiscountsToItem(KeyValuePair<Product, int> basketItem)
         {
             List<OrderItem> orderItemSplit = new List<OrderItem>();
@@ -42,20 +51,29 @@ namespace Eshop
             return discount;
         }
 
-        // pevna sleva neni na podzim na objednavku aplikovana
+        /// <summary>
+        /// Vraci pevnou slevu objednavky
+        /// </summary>
+        /// <returns>nula</returns>
         public override int GetFixedOrderDiscount()
         {
             return NoDiscount;
         }
 
-        // procentualni sleva neni na podzim na objednavku aplikovana
+        /// <summary>
+        /// Vraci procentualni slevu objednavky
+        /// </summary>
+        /// <returns>nula</returns>
         public override int GetPercentualOrderDiscount()
         {
             return NoDiscount;
         }
 
-        // vyber strategii na zaklade pevne dane slevy polozky
-        // pokud neni 0, jde o specialni nabidku, strategie je c. 6
+        /// <summary>
+        /// Prideleni strategie polozce na zaklade pridelene pevne slevy
+        /// Pozn.: pri pridelene nulove sleve je pridelena strategie 10, jinak 6
+        /// </summary>
+        /// <param name="orderItem"></param>
         private void AssignItemStrategy(OrderItem orderItem)
         {
             if (orderItem.FixedDiscount != 0)

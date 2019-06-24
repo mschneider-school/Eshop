@@ -2,6 +2,10 @@
 
 namespace Eshop
 {
+    /// <summary>
+    /// Trida objednavkove polozky slouzi k nacteni kolekce polozek k objednavce a
+    /// spocteni pevnych a procentualnich slev polozek.
+    /// </summary>
     public class OrderItem
     {
         public const string TableName = "OrderItem";
@@ -20,12 +24,26 @@ namespace Eshop
         public int PercentualDiscount { get; private set; }
         public int StrategyID { get; private set; }
 
+        /// <summary>
+        /// Jednoduchy konstruktor objednávkové položky
+        /// </summary>
+        /// <param name="item">produkt položky</param>
+        /// <param name="quantity">mnozstvi produktu</param>
         public OrderItem(Product item, int quantity)
         {
             Item = item;
             Quantity = quantity;
         }
 
+        /// <summary>
+        /// Plny konstruktor objednavkove polozky
+        /// </summary>
+        /// <param name="id">identifikacni cislo</param>
+        /// <param name="item">produkt polozky</param>
+        /// <param name="quantity">mnozstvi produktu</param>
+        /// <param name="fixedDiscount">pevna sleva položky</param>
+        /// <param name="percentualDiscount">procentualni sleva polozky</param>
+        /// <param name="strategyID">identifikacni cislo slevove strategie</param>
         public OrderItem(int id, Product item, int quantity, 
             int fixedDiscount, int percentualDiscount, int strategyID)
         {
@@ -58,15 +76,39 @@ namespace Eshop
             return orderItems;
         }
 
-        // metody ke zmene cenovych parametru polozky objednavky
+        /*** zmena cenovych parametru polozky objednavky ***/
+
+        /// <summary>
+        /// Nastaveni nove pevne slevy polozky
+        /// </summary>
+        /// <param name="fixedDiscount">nova pevna sleva polozky</param>
         public void SetFixedDiscount(int fixedDiscount) => FixedDiscount = fixedDiscount;
+
+        /// <summary>
+        /// Nastaveni nove procentualni slevy polozky
+        /// </summary>
+        /// <param name="percentDiscount">nova procentualni sleva polozky</param>
         public void SetPercentualDiscount(int percentDiscount) => PercentualDiscount = percentDiscount;
+
+        /// <summary>
+        /// Nastaveni identifikatoru slevove strategie polozky
+        /// </summary>
+        /// <param name="strategyID">identifikacni cislo slevove strategie polozky</param>
         public void SetStrategy(int strategyID) => StrategyID = strategyID;
 
-        // spocte celkovou cenu polozky (mnozstvi * cena produktu)
+        /// <summary>
+        /// Vypocet celkove cenu polozky (mnozstvi * cena produktu)
+        /// </summary>
+        /// <returns></returns>
         public int GetTotalOrderItemPrice() => Quantity * Item.Price;
 
         // vypocte totalni slevu polozky v korunach
+
+        /// <summary>
+        /// Vypocet celkove slevy polozky polozky,
+        /// prevod procentualni slevy na pevnou a secteni s pevnou slevou polozky
+        /// </summary>
+        /// <returns>celkova sleva polozky v korunach</returns>
         public decimal GetTotalOrderItemDiscount()
         {
             int totalItemPrice = GetTotalOrderItemPrice();

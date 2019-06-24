@@ -2,6 +2,10 @@
 
 namespace Eshop
 {
+    /// <summary>
+    /// Univerzalni formular slouzi k potvrzeni akce (napr. vymazani produktu)
+    /// Text tlacitek "Ano" a "Ne", spravu a titulek okna lze nastavit konstruktorem
+    /// </summary>
     public partial class ConfirmDialog : Form
     {
         public ConfirmDialog(string message, string formName = null,

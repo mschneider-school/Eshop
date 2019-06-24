@@ -2,6 +2,9 @@
 
 namespace Eshop
 {
+    /// <summary>
+    /// Formular detailu produktu
+    /// </summary>
     public partial class ProductDetailsForm : Form
     {
         public ProductDetailsForm(Product product = null)
@@ -12,8 +15,10 @@ namespace Eshop
             CenterToParent();
         }
 
-        // pokud byl produkt predany pri konstrukci formulare
-        // nactou se detaily produktu do odp. casti formulare
+        /// <summary>
+        /// Nacteni detailu produktu do formulare
+        /// </summary>
+        /// <param name="product"></param>
         private void LoadProductDetails(Product product)
         {
             if (product != null)
@@ -27,7 +32,9 @@ namespace Eshop
             }
         }
 
-        // po zmacknuti Escape se Detail produktu zavre
+        /// <summary>
+        /// Udalost zmacknuti klavesy: zmacnknuti Escape klavesy zavre formular detailu produktu
+        /// </summary>
         private void ProductDetailsForm_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)

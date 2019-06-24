@@ -9,9 +9,6 @@ namespace Eshop
     /// </summary>
     public class Product
     {
-        /// <summary>
-        /// nazvy sloupcu v tabulce Product
-        /// </summary>
         public const string TableName = "Product";
         public const string IDColumn = "ProductID";
         public const string NameColumn = "Name";
@@ -20,9 +17,6 @@ namespace Eshop
         public const string PhotoColumn = "Photo";
         public const string DescriptionColumn = "Description";
 
-        /// <summary>
-        /// vlastnosti produktu
-        /// </summary>
         public int ID { get; private set; }
         public string Name { get; private set; }
         public string Cathegory { get; private set; }
@@ -31,7 +25,7 @@ namespace Eshop
         public string Description { get; private set; }
 
         /// <summary>
-        /// konstruktor objektu Product
+        /// Konstruktor produktu
         /// </summary>
         /// <param name="ID">identifikacni cislo produktu</param>
         /// <param name="name">nazev produktu</param>

@@ -4,6 +4,10 @@ using System.Collections.Generic;
 
 namespace Eshop
 {
+    /// <summary>
+    /// Trida slouzi k sestaveni objednavky a nacteni objednavek z databaze. 
+    /// Mezi parametry tridy patri instance zakaznika a kolekce polozek objednavky 
+    /// </summary>
     public class Order
     {
         public const string TableName = "OrderDetail";
@@ -27,6 +31,16 @@ namespace Eshop
         public decimal TotalOrderDiscount { get; private set; }
         public int FinalOrderPrice { get; private set; }
 
+        /// <summary>
+        /// Konstruktor objednavky
+        /// </summary>
+        /// <param name="customer">zakaznik</param>
+        /// <param name="orderItems">polozky objednavky</param>
+        /// <param name="fixedDiscount">pevna sleva objednavky</param>
+        /// <param name="percentualDiscount">percentualni sleva objednavky</param>
+        /// <param name="state">stav</param>
+        /// <param name="creationDateTime">datum a cas vytvoreni</param>
+        /// <param name="id">identifikacni cislo objednavky</param>
         public Order(Customer customer, List<OrderItem> orderItems, int fixedDiscount, 
             int percentualDiscount, int state, DateTime creationDateTime, int id = -1)
         {
@@ -42,11 +56,25 @@ namespace Eshop
             CalculateOrderPricing();
         }
 
-        // metody pro zmenu detailu objednavky
+        /*** Zmena parametru objednavky ***/
+        /// <summary>
+        /// Zmen identifikacni cislo objednavky
+        /// </summary>
+        /// <param name="id">nove identifikacni cislo</param>
         public void ChangeID(int id) => ID = id;
+
+        /// <summary>
+        /// Zmen stav objednavky
+        /// </summary>
+        /// <param name="state">novy stav objednavky</param>
         public void ChangeState(int state) => State = state;
 
-        // sestav a vrat objednavku podle zadanych parametru
+        // 
+        /// <summary>
+        /// Sestaveni objednavky z pridelenych polozek
+        /// </summary>
+        /// <param name="orderItems">pridelene polozky objednavky</param>
+        /// <returns>objednavka</returns>
         public static Order BuildOrder(List<OrderItem> orderItems)
         {
             Customer customer = Session.CustomerLoggedIn;
@@ -61,13 +89,17 @@ namespace Eshop
                 // pro testovani napr. jarni slevy 
                 // vloz "DateTime.Parse(Season.springDate) misto 'DateTime.Now' "
                 // + jdi do tridy Season a proved zmeny podle instrukci 
-                DateTime.Parse(Season.winterDate)
+                DateTime.Now
             );
 
             return builtOrder;
         }
 
-        /*** SPOCTI CENOVOU KALKULACI OBJEDNAVKY ***/
+        /*** CENOVA KALKULACE OBJEDNAVKY ***/
+
+        /// <summary>
+        /// Spocti ceny: celkova suma pred slevnenim, celkova sleva objednavky, konecna suma objednavky
+        /// </summary>
         public void CalculateOrderPricing()
         {
             if (OrderItems.Count != 0)
@@ -78,7 +110,10 @@ namespace Eshop
             }
         }
 
-        // spocti a vrat celkovou cenu polozek objednavky pred slevnenim
+        /// <summary>
+        /// Spocti a vrat celkovou cenu polozek objednavky pred slevnenim
+        /// </summary>
+        /// <returns>celkova cela polozek objednavky pred slevnenim</returns>
         private int GetOrderPricePriorDiscount()
         {
             int totalPrice = 0;
@@ -89,7 +124,10 @@ namespace Eshop
             return totalPrice;
         }
 
-        // spocte a vrati celkovou slevu polozek objednavky (fixni a perc. slevu polozek a objednavky)
+        /// <summary>
+        /// Vraci souces slev vsech polozek a slev objednavky (pevnych i procentualnich)
+        /// </summary>
+        /// <returns>celkova sleva objednavky</returns>
         private decimal GetTotalOrderDiscount()
         {
             // nejdrive spocteme celkove slevy u vsech polozek
@@ -104,15 +142,20 @@ namespace Eshop
             decimal percentualOrderDiscount = percentageOfOrderPrice * PercentualDiscount;
             decimal fixedOrderDiscount = FixedDiscount;
 
+            // objednavkova sleva je souctem procentualni a pevne slevy objednavky
             decimal orderDiscount = percentualOrderDiscount + fixedOrderDiscount;
 
+            // celkova cena objednavky je souctem slev polozek a slev objednavky
             decimal totalDiscount = itemDiscounts + orderDiscount;
 
-            // vratime celkovou slevu objednavky jako ceele cislo
+            // vratime celkovou slevu objednavky
             return totalDiscount;
         }
 
-        // vrati konecnou cenu objednavky po aplikovani vsech slev (fixnich i percentualnich)
+        /// <summary>
+        /// Vraci konecnou sumu objednavky po aplikaci vsech slev
+        /// </summary>
+        /// <returns>konecna suma objednavky</returns>
         private int GetFinalOrderPrice()
         {
             decimal finalOrderPrice = TotalOrderBeforeDiscountPrice - TotalOrderDiscount;

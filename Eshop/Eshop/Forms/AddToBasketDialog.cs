@@ -4,11 +4,18 @@ using System.Windows.Forms;
 
 namespace Eshop
 {
+    /// <summary>
+    /// Formular slouzi k pridani produktu ve zvolenem mnozstvi do kosiku
+    /// </summary>
     public partial class AddToBasketDialog : Form
     {
         // ulozen produkt oznacen pro vlozeni do kosiku 
         public static Product SelectedProduct { get; private set; }
 
+        /// <summary>
+        /// Konstruktor zobrazi formular s udaji produktu
+        /// </summary>
+        /// <param name="selectedProduct">vybrany produkt</param>
         public AddToBasketDialog(Product selectedProduct)
         {
             SelectedProduct = selectedProduct;
@@ -16,7 +23,9 @@ namespace Eshop
             CenterToParent();
         }
 
-        // po kliknuti na pridani tlacitka
+        /// <summary>
+        /// Udalost kliknuti na tlacitko Pridat overi vstup a prida polozku do kosiku
+        /// </summary>
         private void AddItemButton_Click(object sender, EventArgs e)
         {
             // jestli byl vstup zadan nacte polozka do kolekce tridy Basket
@@ -32,8 +41,9 @@ namespace Eshop
             }
         }
 
-        // pokud byl zmacknuty enter pri zadavani mnozstvi, verifikujeme vystup
-        // kdyz je vystup platny vyvolame event zmacnknuti tlacitka Pridat
+        /// <summary>
+        /// Udalost zmacknuti klavesy: Enter aktivuje pridavani polozky
+        /// </summary>
         private void QuantityTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Enter)
@@ -42,13 +52,17 @@ namespace Eshop
             }
         }
 
-        // kdyz piseme do textboxu verifikujeme jestli barva naznacuje validitu vstupu
+        /// <summary>
+        /// Udalost zmeny textu v poli mnozstvi polozky: vstup se overi pro chybovost
+        /// </summary>
         private void QuantityTextBox_TextChanged(object sender, EventArgs e)
         {
             MarkQuantityInput();
         }
 
-        // vraci puvodni barvu fieldu po verifikaci, kdyz je prazdny
+        /// <summary>
+        /// Udalost vstupu do pole mnozstvi polozky: reset barvy na puvodni
+        /// </summary>
         private void QuantityTextBox_Enter(object sender, EventArgs e)
         {
             if (QuantityTextBox.Text.Length == 0)
@@ -57,9 +71,11 @@ namespace Eshop
             }
         }
 
-        /*** Pomocne metody ***/
+        /*** Pomocne metody overeni vstupnich udaju ***/
 
-        // oznac nekorektni vstup
+        /// <summary>
+        /// Zvyrazni nekorektne zadany udaj mnozstvi pridavane polozky
+        /// </summary>
         public void MarkQuantityInput()
         {
             string quantityString = QuantityTextBox.Text;
@@ -75,6 +91,11 @@ namespace Eshop
             }
         }
 
+        /// <summary>
+        /// Overi spravnost udaju mnozstvi pridavane polozky.
+        /// Vstup musi byt ciselny, nesmi byt prazdny ani 0.
+        /// </summary>
+        /// <returns></returns>
         public bool VerifyQuantityInput()
         {
             string quantityString = QuantityTextBox.Text;

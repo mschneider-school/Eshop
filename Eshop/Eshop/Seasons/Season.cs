@@ -3,6 +3,13 @@ using System.Collections.Generic;
 
 namespace Eshop
 {
+    /// <summary>
+    /// Abstraktni trida ktera je podkladem pro tridy rocnich sezon: Spring, Summer, Autumn, Winter
+    /// Podkladem jsou metody:
+    /// <see cref="AssignDiscountsToItem"/>, 
+    /// <see cref="GetFixedOrderDiscount"/>, 
+    /// <see cref="GetPercentualOrderDiscount"/>
+    /// </summary>
     abstract class Season
     {
         // JEN PRO TESTOVACI UCELY - datumy 4 rocnich obdobi 
@@ -17,7 +24,7 @@ namespace Eshop
         public abstract int GetPercentualOrderDiscount();
 
         /// <summary>
-        /// Metoda vraci aktualni sezonu podle aktualniho casu
+        /// Vraci aktualni sezonu podle aktualniho casu
         /// </summary>
         /// <returns>aktualni objekt sezony</returns>
         public static Season GetCurrentSeason()
@@ -29,7 +36,7 @@ namespace Eshop
             DateTime winterStart = new DateTime(thisYear, 11, 21);
 
             // pro testovani jarni slevy zmen: DateTime date = "DateTime.Parse(Order.springDate); misto 'DateTime.Now'"
-            DateTime date = DateTime.Parse(winterDate); 
+            DateTime date = DateTime.Now;
 
             if (date >= springStart && date < summerStart)
             {
@@ -49,12 +56,18 @@ namespace Eshop
             }
         }
 
-        // v pripade polozky bez aplikaci slev
+        /// <summary>
+        /// Vraci kolekci s polozkou objednavky na kterou se neaplikuji zadne polozkove slevy
+        /// </summary>
+        /// <param name="basketItem">polozka kosiku</param>
+        /// <param name="strategyID">identifikacni cislo strategie objednavky</param>
+        /// <returns>kolekce s polozkou bez slev k dalsimu zpracovani</returns>
         public List<OrderItem> BasketToOrderItemNoChange(KeyValuePair<Product, int> basketItem, int strategyID)
         {
             List<OrderItem> orderItemSplit = new List<OrderItem>();
 
             OrderItem newOrderItem = new OrderItem(basketItem.Key, basketItem.Value);
+
             newOrderItem.SetFixedDiscount(0);
             newOrderItem.SetPercentualDiscount(0);
             newOrderItem.SetStrategy(strategyID);

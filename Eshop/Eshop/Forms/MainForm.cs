@@ -9,6 +9,11 @@ using System.Windows.Forms;
 
 namespace Eshop
 {
+    /// <summary>
+    /// Hlavni formular aplikace ktery se zobrazi jako prvni. Obsahuje sekci Zakaznika a Administratora.
+    /// V sekci Administrator se nachazi podsekce Objednavky a Produkty. V sekci Zakaznik se nachazi podsekce
+    /// Obchod, Kosik, Registrace, Moje objednavky, ktere jsou zobrazeny nebo skryty podle aktualni aktivity zakaznika.
+    /// </summary>
     public partial class MainForm : Form
     {
         public List<Control> RegDetailsToValidate { get; private set; }
@@ -20,6 +25,12 @@ namespace Eshop
             Load += MainForm_Load;
         }
 
+        /// <summary>
+        /// Udalost nacitani hlavniho formulare: upravy komponentu UI
+        /// Probehne nacteni dat produktu, kategorii, objednavek, 
+        /// specialnich nabidek, strategii a stavu objednavek do pameti.
+        /// Produkty se nactou do nahledu Obchod v sekci Zakaznik.
+        /// </summary>
         private void MainForm_Load(object sender, EventArgs e)
         {
             RegDetailsToValidate = new List<Control>()
@@ -68,6 +79,11 @@ namespace Eshop
             SelectActualViewInUserSection();
         }
 
+        /// <summary>
+        /// Udalost zobrazeni hlavniho formulare: nastaveni loggeru,
+        /// vyvolani dialogoveho okna s otazkou logovani, nastaveni
+        /// zpusobu logovani podle vyberu uzivatele (soubor, konzole)
+        /// </summary>
         private void MainForm_Shown(object sender, EventArgs e)
         {
             // nastavime logger
@@ -90,12 +106,22 @@ namespace Eshop
             Logger.StartLoggingSession();
         }
 
+        /// <summary>
+        /// Udalost kliknuti na tlacitko Pridat v sekci Administrator, podsekci Produkty:
+        /// Zobrazeni formulare pridavani produktu
+        /// </summary>
         private void AddProductButton_Click(object sender, EventArgs e)
         {
             ProcessProductDialog addProduct = new ProcessProductDialog(this);
             addProduct.ShowDialog();
         }
 
+        /// <summary>
+        /// Udalost kliknuti na tlacitko Upravit v sekci Administrator, podsekci Produkty:
+        /// Zobrazeni formulare s detaily produktu a moznosti uprav, nebo vraceni uprav
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UpdateProductButton_Click(object sender, EventArgs e)
         {
             ProcessProductDialog updateProduct = new ProcessProductDialog(this, GetSelectedProduct(ProductsDataGridView));
@@ -109,6 +135,10 @@ namespace Eshop
             }
         }
 
+        /// <summary>
+        /// Udalost kliknuti na tlacitko Vymazat v sekci Administrator, podsekci Produkty:
+        /// Zobrazeni potvrzujiciho dialogu se spravou o vymazani produktu
+        /// </summary>
         private void DeleteProductButton_Click(object sender, EventArgs e)
         {
             string deletedProduct = GetSelectedProduct(ProductsDataGridView).Name;
@@ -133,12 +163,20 @@ namespace Eshop
             }
         }
 
-        // zobrazeni detail vybraneho produktu z produkt view v admin casti
+        /// <summary>
+        /// Udalost kliknuti na tlacitko Zobrazit detail v sekci Administrator, podsekci Produkty:
+        /// Zobrazeni detailu vybraneho produktu z nahledu
+        /// </summary>
         private void ProductDetailButton_Click(object sender, EventArgs e)
         {
             ShowSelectedProductDetails(ProductsDataGridView);
         }
 
+        /// <summary>
+        /// Udalost kliknuti na tlacitko Prejit k objednavce v sekci Zakaznik, podsekci Kosik:
+        /// Spusteni prihlasovaciho formulare pro neprihlaseneho zakaznika,
+        /// nebo zobrazeni formulare detailu objednavky prihlasenemu zakaznikovi
+        /// </summary>
         private void LoginToOrderButton_Click(object sender, EventArgs e)
         {
             // pokud jeste neni zakaznik prihlasen zobrazi okno prihlaseni nebo registrace
@@ -197,7 +235,9 @@ namespace Eshop
             }
         }
 
-        // pote co uzivatel vybral novou registraci ho presmeruj na tablu s registraci
+        /// <summary>
+        /// Pote co uzivatel zvolil v prihlasovacim formulari novou registraci bude presmerovan na tablu Registrace
+        /// </summary>
         private void GoToRegistrationTab()
         {
             if (!StoreTabControl.TabPages.Contains(AccountTab))
@@ -207,7 +247,10 @@ namespace Eshop
             StoreTabControl.SelectTab(AccountTab);
         }
 
-        // vlozi novou objednavku do prehledu zakaznikovych obj. na 1 misto
+        /// <summary>
+        /// Nova objednavka vlozena na 1. misto do prehledu objednavek v sekci Zakaznik, podsekci Moje objednávky
+        /// </summary>
+        /// <param name="order">objednavka k vlozeni do prehledu</param>
         private void InsertOrderToMyOrders(Order order)
         {
             DataGridView view = MyOrdersDataGridView;
@@ -241,6 +284,10 @@ namespace Eshop
             }
         }
 
+        /// <summary>
+        /// Udalost kliknuti na tlacitko "Detail objednávky" v sekci Zakaznik, podsekci Moje objednavky:
+        /// Zobrazi formular detailu objednavky zvyraznene v prehledu objednavek 
+        /// </summary>
         private void CustomerOrderDetailButton_Click(object sender, EventArgs e)
         {
             Order orderToShow = GetSelectedOrder(MyOrdersDataGridView);
@@ -248,18 +295,19 @@ namespace Eshop
             customerOrderDetail.ShowDialog();
         }
 
+        /// <summary>
+        /// Udalost kliknuti na tlacitko Navrat do obchodu v sekci Zakaznik, podsekci Moje objednavky:
+        /// Zobrazeni podsekce Obchod
+        /// </summary>
         private void ReturnToStoreButton_Click(object sender, EventArgs e)
         {
             StoreTabControl.SelectTab(StoreTab);
         }
 
-        private void LoginToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LoginRegisterDialog customerLogin = new LoginRegisterDialog();
-            customerLogin.ShowDialog();
-        }
-
-        // pridej polozku do kosiku
+        /// <summary>
+        /// Udalost kliknuti na tlacitko Pridat do kosiku v sekci Zakaznik, podsekci Obchod:
+        /// Zobrazeni formulare pridani polozky do kosiku
+        /// </summary>
         private void AddToBasketButton_Click(object sender, EventArgs e)
         {
             Product selectedProduct = GetSelectedProduct(ShopDataGridView);
@@ -276,7 +324,10 @@ namespace Eshop
             }
         }
 
-        // prihlasit se jako zakaznik
+        /// <summary>
+        /// Udalost kliknuti na tlacitko Prihlasit se v sekci Zakaznik, podsekci Obchod:
+        /// Zobrazeni prihlasovaciho formulare pro zakaznika
+        /// </summary>
         private void LoginAsCustomerButton_Click(object sender, EventArgs e)
         {
             // pokud jiz byl zakaznik prihlasen zeptame se jestli chce
@@ -297,7 +348,9 @@ namespace Eshop
             }
         }
 
-        // verifikuje prihlaseni uzivatele a upravi titulek formulare
+        /// <summary>
+        /// Zobrazeni prihlasovaciho formulare pro zakaznika
+        /// </summary>
         private void ProcessCustomerLogin()
         {
             Customer loggedInBefore = Session.CustomerLoggedIn;
@@ -332,7 +385,11 @@ namespace Eshop
             }
         }
 
-        // nacte zakaznikovy objednavky, vymaze registracni tablu, zobrazi info o prihlaseni
+        /// <summary>
+        /// Priprava sekce zakaznika pro prihlaseneho uzivatele:
+        /// nacteny zakaznikovy objednavky, vymaz registracni tably, info o prihlaseni
+        /// </summary>
+        /// <param name="customer"></param>
         private void PrepareViewToCustomer(Customer customer)
         {
             // zavre otevrenou registraci po prihlaseni
@@ -351,33 +408,49 @@ namespace Eshop
             Message.LoginSuccessInfo(customer);
         }
 
-        // serad produkty v shop view od nejlevnejsiho po nejdrazsi
+        /// <summary>
+        /// Udalost kliknuti na polozku Vzestupne od nejlevnejsiho produktu, kontextoveho menu Seradit podle ceny
+        /// v sekci Zakaznik, podsekci Obchod:
+        /// Serazeni tovaru v nahledu sekce Obchod podle ceny od nejlevnejsiho po nejdrazsi produkt 
+        /// </summary>
         private void AscendingSortTSMenuItem_Click(object sender, EventArgs e)
         {
             ShopDataGridView.Sort(ShopDataGridView.Columns[3],
                 ListSortDirection.Ascending);
         }
 
-        // serad produkty v shop view od nejdrazsiho po nejlevnejsi
+        /// Udalost kliknuti na polozku Sestupne od nejdrazsiho produktu, kontextoveho menu Seradit podle ceny
+        /// v sekci Zakaznik, podsekci Obchod:
+        /// Serazeni tovaru v nahledu sekce Obchod podle ceny od nejdrazsiho po nejlevnejsi produkt 
+        /// </summary>
         private void DescendingSortTSMenuItem_Click(object sender, EventArgs e)
         {
             ShopDataGridView.Sort(ShopDataGridView.Columns[3],
                 ListSortDirection.Descending);
         }
 
-        // po kliknuti zobrazi detail vybraneho produktu z shop view
+        /// <summary>
+        /// Udalost kliknuti na tlacitko Zobrazit detail v sekci Zakaznik, podsekci Obchod:
+        /// Zobrazi formular detailu produktu zvyrazneneho v nahledu
+        /// </summary>
         private void ShowItemDetailButton_Click(object sender, EventArgs e)
         {
             ShowSelectedProductDetails(ShopDataGridView);
         }
 
-        // prejit do kosik view z shop view po kliknuti na tlacitko
+        /// <summary>
+        /// Udalost kliknuti na tlacitko Prejit do kosiku v sekci Zakaznik, podsekci Obchod:
+        /// Zobrazeni podsekce Kosik
+        /// </summary>
         private void MoveToBasketButton_Click(object sender, EventArgs e)
         {
             StoreTabControl.SelectedTab = BasketTab;
         }
 
-        // odebrat vybranou polozku z kosika v kosik view
+        /// <summary>
+        /// Udalost kliknuti na tlacitko Odstranit polozku v sekci Zakaznik, podsekci Kosik:
+        /// Zobrazeni dialogu odebrani polozky z kosiku (eventualne odebrani polozky)
+        /// </summary>
         private void RemoveBasketItemButton_Click(object sender, EventArgs e)
         {
             Product selectedItem = GetSelectedProduct(BasketDataGridView);
@@ -397,13 +470,19 @@ namespace Eshop
             }
         }
 
-        // zobraz detail vybraneho produktu z view košíka
+        /// <summary>
+        /// Udalost kliknuti na tlacitko Zobrazit detail v sekci Zakaznik, podsekci Kosik:
+        /// Zobrazeni detailu zvyraznene polozky v nahledu
+        /// </summary>
         private void ShowDetailBasketItemButton_Click(object sender, EventArgs e)
         {
             ShowSelectedProductDetails(BasketDataGridView);
         }
 
-        // zepta se uzivatele jestli chce vazne smazat vsechny polozky z kosiku
+        /// <summary>
+        /// Zobrazeni dialogu smazani vsech polozek nahledu v sekci Zakaznik, podsekci Kosik
+        /// Pozn.: po potvrzeni se vymazou polozky nahledu a odstrani tabla Kosik
+        /// </summary>
         private void EmptyBasketButton_Click(object sender, EventArgs e)
         {
             string formName = "Vyprázdnit košík";
@@ -420,14 +499,21 @@ namespace Eshop
             }
         }
 
-        // vymaze polozky kosiku z pameti i nahledu
+        /// <summary>
+        /// Smazani polozek kosiku z pameti i nahledu v sekci Zakaznik, podsekci Kosik
+        /// </summary>
         public void EmptyBasketView()
         {
             Basket.Empty();
             DisplayItemsInBasketView();
         }
 
-        // Administratorske prihlaseni
+        /// <summary>
+        /// Udalost presunu mezi sekci Administrator a Zakaznik
+        /// Zobrazi prihlasovaci dialog pro neprihlaseneho administratora
+        /// Po prihlaseni administratora zviditelni podsekce Objednavky a Produkty Administratorske sekce a 
+        /// nacte zaznamy nahledu z pameti
+        /// </summary>
         private void UserViewsTabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (UserViewsTabControl.SelectedTab == UserViewsTabControl.TabPages["adminTabPage"]
@@ -447,6 +533,11 @@ namespace Eshop
                     // nacte se obsah produktoveho a objednavkoveho prehledu
                     LoadOrdersToAdminView(OrdersDataGridView);
                     LoadProductsToAdminView(ProductsDataGridView);
+
+                    if (IsDataGridViewEmpty(OrdersDataGridView))
+                    {
+                        DatabaseTabControl.SelectedTab = ProductsTabPage;
+                    }
                     SelectActualViewInAdminSection();
                 }
                 else
@@ -520,7 +611,10 @@ namespace Eshop
             }
         }
 
-        // pomocna metoda k vlozeni zaznamu objednavky do administratorskeho view
+        /// <summary>
+        /// Vlozi zaznam objednavky do nahledu v sekci Administrator, podsekci Objednavky
+        /// </summary>
+        /// <param name="order">vkladana objednavka</param>
         private void InsertOrderToAdminView(Order order)
         {
             DataGridView view = OrdersDataGridView;
@@ -540,7 +634,8 @@ namespace Eshop
         }
 
         /// <summary>
-        /// Vycisti registracni formular po uspesne registraci
+        /// Vycisteni registracniho formulare v sekci Zakaznik, podsekci Registrace
+        /// Pozn.: probehne po uspesne registraci, pred zatvorenim podsekce
         /// </summary>
         private void ClearRegistrationForm()
         {
@@ -557,10 +652,10 @@ namespace Eshop
         }
 
         /// <summary>
-        /// zjistuje jestli je dany datagridview prazdny nebo ne (pripad mazani z prazdneho)
+        /// Vraci informaci o tom zda je nahled prazdny
         /// </summary>
-        /// <param name="dataGridView"></param>
-        /// <returns></returns>
+        /// <param name="dataGridView">zkoumany nahled</param>
+        /// <returns>true pokud je nahled prazdny, jinak false</returns>
         private bool IsDataGridViewEmpty(DataGridView dataGridView)
         {
             if (dataGridView.Rows.Count == 0)
@@ -571,8 +666,9 @@ namespace Eshop
         }
 
         /// <summary>
-        /// Zobrazi detaily produktu vybraneho v danem dataGridView
+        /// Zobrazeni detailu zvyrazneneho produktu v nahledu
         /// </summary>
+        /// <param name="dataGridView">produktovy nahled</param>
         public static void ShowSelectedProductDetails(DataGridView dataGridView)
         {
             Product selectedProduct = GetSelectedProduct(dataGridView);
@@ -581,9 +677,10 @@ namespace Eshop
         }
 
         /// <summary>
-        /// Vybere a vrati objekt Produkt vybrany 
+        /// Vraceni instance zvyrazneneho produktu z produktoveho nahledu
         /// </summary>
-        /// <returns></returns>
+        /// <param name="dataGridView">produktovy nahled</param>
+        /// <returns>instance zvyrazneneho produktu</returns>
         private static Product GetSelectedProduct(DataGridView dataGridView)
         {
             int selectedProductID = Convert.ToInt32(dataGridView.SelectedRows[0].Cells[0].Value);
@@ -592,9 +689,9 @@ namespace Eshop
         }
 
         /// <summary>
-        /// Oznaci zaznam s udaji zvoleneho produktu ve zvolenem datagridview
+        /// Zvyrazneni zaznamu v danem nahledu
         /// </summary>
-        /// <param name="id">id zvyrazneneho radku</param>
+        /// <param name="id">id zvyrazneneho zaznamu</param>
         private static void SelectRecordInView(int id, DataGridView dataGridView)
         {
             foreach (DataGridViewRow row in dataGridView.Rows)
@@ -608,10 +705,10 @@ namespace Eshop
         }
 
         /// <summary>
-        /// Vraci oznacenou objednavku z prehledu objednavek jako objekt
+        /// Vraceni instanci objednavky ze zvyrazneneho zaznamu nahledu objednavek
         /// </summary>
-        /// <param name="dataGridView">prehled objednavek</param>
-        /// <returns>objednavka</returns>
+        /// <param name="dataGridView">objednavkovy nahled</param>
+        /// <returns>instance zvyraznene objednavky</returns>
         private static Order GetSelectedOrder(DataGridView dataGridView)
         {
             int selectedOrderID = Convert.ToInt32(dataGridView.SelectedRows[0].Cells[0].Value);
@@ -621,18 +718,18 @@ namespace Eshop
         }
 
         /// <summary>
-        /// vymaze polozku z GridView
+        /// Vymazani zaznamu z nahledu
         /// </summary>
-        /// <param name="dataGridView">gridview pro vymazani polozky</param>
+        /// <param name="dataGridView">vybrany nahled</param>
         private void RemoveSelectedRow(DataGridView dataGridView)
         {
             dataGridView.Rows.Remove(dataGridView.SelectedRows[0]);
         }
 
         /// <summary>
-        /// zobrazi novy produkt v productsDataGridView
+        /// Zobrazeni noveho zaznamu produktu v produktovem nahledu sekce Administrator podsekce Produkty
         /// </summary>
-        /// <param name="product">produkt k zobrazeni</param>
+        /// <param name="product">produkt pridavany do nahledu</param>
         public void ShowNewProduct(Product product)
         {
              ProductsDataGridView.Rows.Add(product.ID, product.Name, product.Cathegory, product.Price);
@@ -640,7 +737,7 @@ namespace Eshop
         }
 
         /// <summary>
-        /// refresh obsahu kosiku
+        /// Znovunacteni zaznamu v nahledu v sekci Zakaznik podsekci Kosik
         /// </summary>
         private void DisplayItemsInBasketView()
         {
@@ -655,15 +752,24 @@ namespace Eshop
             }
         }
 
-        /*** SEKCE PRO SORTOVACI POLOZKY SPLIT MENU ***/
+        /*** TRIDICI UDALOSTI STRIP MENU ***/
 
-        // zobraz vsechny produkty
+        /// <summary>
+        /// Udalost kliknuti na polozku Vsechny kategorie v strip menu Zvolit kategorii
+        /// v sekci Zakaznik podsekci obchod:
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LoadEverythingTSMenuItem_Click(object sender, EventArgs e)
         {
             LoadProductsToAdminView(ShopDataGridView);
         }
 
-        // zobraz jen chytre hodinky
+        /// <summary>
+        /// Udalost kliknuti na polozku Chytre hodinky v strip menu Zvolit kategorii
+        /// v sekci Zakaznik podsekci obchod:
+        /// Zobrazi jen produkty kategorie Chytre hodinky v produktovem nahledu
+        /// </summary>
         private void SmartWatchesTSMenuItem_Click(object sender, EventArgs e)
         {
             string smWatches = SmartWatchesTSMenuItem.Text;
@@ -671,47 +777,77 @@ namespace Eshop
         }
 
         // zobraz jen kryty a pouzdra
+
+        /// <summary>
+        /// Udalost kliknuti na polozku Kryty a pouzdra v strip menu Zvolit kategorii
+        /// v sekci Zakaznik podsekci obchod:
+        /// Zobrazi jen produkty kategorie Kryty a pouzdra v produktovem nahledu
+        /// </summary>
         private void CoversTSMenuItem_Click(object sender, EventArgs e)
         {
             string covers = CoversTSMenuItem.Text;
             LoadProductsToAdminView(ShopDataGridView, covers);
         }
 
-        // zobraz jen smartfony
+        /// <summary>
+        /// Udalost kliknuti na polozku Smartfony v strip menu Zvolit kategorii
+        /// v sekci Zakaznik podsekci obchod:
+        /// Zobrazi jen produkty kategorie Smartfony v produktovem nahledu
+        /// </summary>
         private void SmartphonesTSMenuItem_Click(object sender, EventArgs e)
         {
             string smphones = SmartphonesTSMenuItem.Text;
             LoadProductsToAdminView(ShopDataGridView, smphones);
         }
 
-        // zobraz jen tablety
+        /// <summary>
+        /// Udalost kliknuti na polozku Tablety v strip menu Zvolit kategorii
+        /// v sekci Zakaznik podsekci obchod:
+        /// Zobrazi jen produkty kategorie Tablety v produktovem nahledu
+        /// </summary>
         private void TabletsTSMenuItem_Click(object sender, EventArgs e)
         {
             string tablets = TabletsTSMenuItem.Text;
             LoadProductsToAdminView(ShopDataGridView, tablets);
         }
 
-        // zobraz jen tlacitkove telefony
+        /// <summary>
+        /// Udalost kliknuti na polozku Tlacitkove telefony v strip menu Zvolit kategorii
+        /// v sekci Zakaznik podsekci obchod:
+        /// Zobrazi jen produkty kategorie Tlacitkove telefony v produktovem nahledu
+        /// </summary>
         private void KeypadPhonesTSMenuItem_Click(object sender, EventArgs e)
         {
             string kphones = KeypadPhonesTSMenuItem.Text;
             LoadProductsToAdminView(ShopDataGridView, kphones);
         }
 
-        // zobraz jen ochranna skla
+        /// <summary>
+        /// Udalost kliknuti na polozku Tvrzena skla v strip menu Zvolit kategorii
+        /// v sekci Zakaznik podsekci obchod:
+        /// Zobrazi jen produkty kategorie Tvrzena skla v produktovem nahledu
+        /// </summary>
         private void ScreenProtectorsTSMenuItem_Click(object sender, EventArgs e)
         {
             string scprotectors = ScreenProtectorsTSMenuItem.Text;
             LoadProductsToAdminView(ShopDataGridView, scprotectors);
         }
 
-        // zobraz jen kabely a nabijecky
+        /// <summary>
+        /// Udalost kliknuti na polozku Nabijecky a kabely v strip menu Zvolit kategorii
+        /// v sekci Zakaznik podsekci obchod:
+        /// Zobrazi jen produkty kategorie Nabijecky a kabely v produktovem nahledu
+        /// </summary>
         private void ChargersCablesTSMenuItem_Click(object sender, EventArgs e)
         {
             string cables = ChargersCablesTSMenuItem.Text;
             LoadProductsToAdminView(ShopDataGridView, cables);
         }
 
+        /// <summary>
+        /// Udalost kliknuti na tlacitko Zrusit v sekci Zakaznik, podsekci Registrace:
+        /// Zruseni registrace, vycisteni a uzavreni tably Registrace
+        /// </summary>
         private void BackFromOrderButton_Click(object sender, EventArgs e)
         {
             CloseRegistration();
@@ -719,66 +855,96 @@ namespace Eshop
 
         /*** Uvedeni registracnich poli do puvodni barvy pri korekci spatnych udaju ***/
 
+        /// <summary>
+        /// Udalost vstupu do pole Email: reset zvyrazneni na puvodni barvu
+        /// </summary>
         private void EmailTextBox_Enter(object sender, EventArgs e)
         {
             EmailTLPanel.BackColor = SystemColors.GradientInactiveCaption;
         }
 
+        /// <summary>
+        /// Udalost vstupu do pole Heslo: reset zvyrazneni na puvodni barvu
+        /// </summary>
         private void PasswordTextBox_Enter(object sender, EventArgs e)
         {
             PasswordTLPanel.BackColor = SystemColors.GradientInactiveCaption;
         }
 
+        /// <summary>
+        /// Udalost vstupu do pole Jmeno: reset zvyrazneni na puvodni barvu
+        /// </summary>
         private void FirstNameTextBox_Enter(object sender, EventArgs e)
         {
             FirstNameTLPanel.BackColor = SystemColors.Control;
         }
 
+        /// <summary>
+        /// Udalost vstupu do pole Prijmeni: reset zvyrazneni na puvodni barvu
+        /// </summary>
         private void LastNameTextBox_Enter(object sender, EventArgs e)
         {
             LastNameTLPanel.BackColor = SystemColors.Control;
         }
 
+        /// <summary>
+        /// Udalost vstupu do pole Mobil: reset zvyrazneni na puvodni barvu
+        /// </summary>
         private void MobileMTextBox_Enter(object sender, EventArgs e)
         {
             MobileTLPanel.BackColor = SystemColors.Control;
         }
 
+        /// <summary>
+        /// Udalost vstupu do pole Obec: reset zvyrazneni na puvodni barvu
+        /// </summary>
         private void CityTextBox_Enter(object sender, EventArgs e)
         {
             CityTLPanel.BackColor = SystemColors.Control;
         }
 
+        /// <summary>
+        /// Udalost vstupu do pole Ulice: reset zvyrazneni na puvodni barvu
+        /// </summary>
         private void StreetTextBox_Enter(object sender, EventArgs e)
         {
             StreetTLPanel.BackColor = SystemColors.Control;
         }
 
+        /// <summary>
+        /// Udalost vstupu do pole Cislo popisu: reset zvyrazneni na puvodni barvu
+        /// </summary>
         private void HouseNumberTextBox_Enter(object sender, EventArgs e)
         {
             HouseNumberTLPanel.BackColor = SystemColors.Control;
         }
 
+        /// <summary>
+        /// Udalost vstupu do pole PSC: reset zvyrazneni na puvodni barvu
+        /// </summary>
         private void PostalCodeMaskTextBox_Enter(object sender, EventArgs e)
         {
             PostalCodeTLPanel.BackColor = SystemColors.Control;
         }
 
         /// <summary>
-        /// Povol nebo zakaz vice tlacitek (operaci)
+        /// Povoleni nebo zakazani vice tlacitek najednou
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="buttons"></param>
-        /// <param name="availability"></param>
-        private void SetAvailableButtons(object sender, List<Button> buttons, bool availability)
+        /// <param name="buttons">tlacitka k povoleni/zakazani</param>
+        /// <param name="availability">povoleni = true, zakazani = false</param>
+        private void SetAvailableButtons(List<Button> buttons, bool availability)
         {
-            DataGridView dataGridView = sender as DataGridView;
             foreach(Button btn in buttons) 
                 btn.Enabled = availability;
         }
         
-        /*** DataGridView - upravy dostupnych operaci podle poctu polozek ve view ***/
+        /*** UDALOSTI ZMENY OBSAHU NAHLEDU ***/
 
+        /// <summary>
+        /// Udalost pridani zaznamu do nahledu objednavek v sekci Administrator podsekci Objednavky:
+        /// Povoleni tlacitek Potvrdit, Zrusit, Odeslat, Zobrazit detail pro manipulaci s objednavky
+        /// Presunuti na tablu Objednavky po pridani noveho zaznamu do nahledu objednavek
+        /// </summary>
         private void OrdersDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             DataGridView thisView = sender as DataGridView;
@@ -788,7 +954,7 @@ namespace Eshop
             {
                 ConfirmOrderButton, CancelOrderButton, SendOrderButton, AdminOrderDetailButton
             };
-            SetAvailableButtons(sender, buttons, true);
+            SetAvailableButtons(buttons, true);
             
             // pri pridane objednavce se vybere tabla objednavek
             if (Session.AdminLoggedIn)
@@ -799,36 +965,46 @@ namespace Eshop
             thisView.Rows[e.RowIndex].Selected = true;
         }
 
+        /// <summary>
+        /// Udalost pridani zaznamu do nahledu produktu v sekci Administrator podsekci Objednavky:
+        /// Povoleni tlacitek Upravit, Vymazat Zobrazit detail pro manipulaci s produkty
+        /// </summary>
         private void ProductsDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             List<Button> buttons = new List<Button>() { UpdateProductButton, DeleteProductButton, ProductDetailButton};
-            SetAvailableButtons(sender, buttons, true);
+            SetAvailableButtons(buttons, true);
         }
 
+        /// <summary>
+        /// Udalost odstraneni zaznamu z nahledu produktu v sekci Administrator podsekci Objednavky:
+        /// Zakazani tlacitek Upravit, Vymazat Zobrazit detail - pokud je nahled produktu prazdny
+        /// </summary>
         private void ProductsDataGridView_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
-            bool accessibility = ProductsDataGridView.Rows.Count > 0;
+            bool enabledState = !IsDataGridViewEmpty(ProductsDataGridView);
             List<Button> buttons = new List<Button>() { UpdateProductButton, DeleteProductButton, ProductDetailButton };
-            SetAvailableButtons(sender, buttons, accessibility);
+            SetAvailableButtons(buttons, enabledState);
         }
 
+        /// <summary>
+        /// Udalost pridani zaznamu do nahledu produktu v sekci Zakaznik podsekci Obchod:
+        /// Pozn.: Pri nacteni aplikace jsou akce obchodu (tlacitka) vypnute, zapnou se po nacteni produktu do nahledu
+        /// </summary>
         private void ShopDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             List<Button> buttons = new List<Button>()
             {
                 LoginAsCustomerButton, ShowItemDetailButton
             };
-            SetAvailableButtons(sender, buttons, true);
+            SetAvailableButtons(buttons, true);
         }
 
+        /// <summary>
+        /// Udalost pridani zaznamu do nahledu polozek v sekci Zakaznik podsekci Kosik:
+        /// Tabla Kosik bude pridana, pokud jiz neni zobrazena v sekci Zakaznik
+        /// </summary>
         private void BasketDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            List<Button> buttons = new List<Button>()
-            {
-                RemoveBasketItemButton, ShowDetailBasketItemButton,
-                EmptyBasketButton, LoginToOrderButton
-            };
-            SetAvailableButtons(sender, buttons, true);
             MoveToBasketButton.Enabled = true;
             if (!StoreTabControl.TabPages.Contains(BasketTab))
             {
@@ -836,6 +1012,10 @@ namespace Eshop
             }
         }
 
+        /// <summary>
+        /// Udalost odstraneni zaznamu z nahledu polozek v sekci Zakaznik, podsekci Kosik:
+        /// Tabla Kosik bude odstranena pokud je nahled polozek kosiku prazdny
+        /// </summary>
         private void BasketDataGridView_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             var thisView = sender as DataGridView;
@@ -846,8 +1026,10 @@ namespace Eshop
             }
         }
 
-        // po pridani objednavky do zakaznickeho prehledu objednavky se focus presune na tablu objednavek
-        // a take se aktualne pridana objednavka vlozi do administratorskeho view pokud je prihlasen
+        /// <summary>
+        /// Udalost pridani zaznamu do nahledu objednavek v sekci Zakaznik, podsekci Moje objednavky:
+        /// Zobrazi se tabla Moje objednavky pokud jeste nebyla zobrazena, zvyrazni se pridany zaznam v nahledu
+        /// </summary>
         private void MyOrdersDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             var thisView = sender as DataGridView;
@@ -859,6 +1041,10 @@ namespace Eshop
             thisView.Rows[e.RowIndex].Selected = true;
         }
 
+        /// <summary>
+        /// Udalost kliknuti na tlacitko Zaregistrovat v sekci Zakaznik, podsekci Registrace
+        /// Verifikace registracnich udaju, zobrazeni chyb/uspesne registrace, prihlaseni registrovaneho zakaznika 
+        /// </summary>
         private void RegisterAndOrderButton_Click(object sender, EventArgs e)
         {
             bool allValid = Message.InvalidEntriesCheck(RegDetailsToValidate, Color.MistyRose);
@@ -938,8 +1124,9 @@ namespace Eshop
             }
         }
 
-        // uzavre registraci a odebere registracni tab
-        // po uspesnem prihlaseni, nebo registraci
+        /// <summary>
+        /// Uzavreni tably Registrace v sekci Zakaznik po uspesne registraci, nebo prihlaseni zakaznika
+        /// </summary>
         private void CloseRegistration()
         {
             ClearRegistrationForm();
@@ -948,7 +1135,11 @@ namespace Eshop
 
         /*** Akce prehledu objednavek ***/
 
-        // pomocna metoda zmeny stavu
+        /// <summary>
+        /// Nastaveni stavu objednavky
+        /// Pozn.: pri zmene stavu objednavky administratorem
+        /// </summary>
+        /// <param name="state">novy stav objednavky</param>
         private void ChangeOrderState(int state)
         {
             int stateID = state;
@@ -971,7 +1162,9 @@ namespace Eshop
             Message.OrderStateChangeInfo(stateName.ToLower());
         }
 
-        // zalogovani zmeny stavu objednavky (akce potvrzeni, zruseni objednavky)
+        /// <summary>
+        /// Logovani zmeny stavu objednavky (potvrzeni, zruseni)
+        /// </summary>
         private void LogOrderStateChange(Order order, int stateID)
         {
             switch (stateID)
@@ -985,7 +1178,12 @@ namespace Eshop
             }
         }
 
-        // zmen stav objednavky v mych objednavkach (pokud je nalezena)
+        /// <summary>
+        /// Aktualizace stavu objednavky v nahledu objednavek v sekci Zakaznik, podsekci Moje objednavky 
+        /// po zmene stavu objednavky administratorem 
+        /// </summary>
+        /// <param name="order">aktualizovana objednavka</param>
+        /// <param name="stateName">novy stav objednavky</param>
         private void UpdateOrderStateInMyOrders(Order order, string stateName)
         {
             foreach (DataGridViewRow row in MyOrdersDataGridView.Rows)
@@ -997,23 +1195,39 @@ namespace Eshop
             }
         }
 
-        /*** Zmeny stavu objednavky (potvrzena, zrusena, odeslana) logovani a zobrazeni detailu ***/
+        /*** ADMINISTRATORSKE AKCE OBJEDNAVKY, LOGOVANI, ZOBRAZENI DETAILU ***/
 
+        /// <summary>
+        /// Udalost kliknuti na tlacitko Potvrdit v sekci Administrator, podsekci Objednavky
+        /// Potvrdi objednavku zvyraznenou v nahledu objednavek
+        /// </summary>
         private void ConfirmOrderButton_Click(object sender, EventArgs e)
         {
             ChangeOrderState(OrderState.Confirmed);
         }
 
+        /// <summary>
+        /// Udalost kliknuti na tlacitko Zrušit v sekci Administrator, podsekci Objednavky
+        /// Zruší objednavku zvyraznenou v nahledu objednavek
+        /// </summary>
         private void CancelOrderButton_Click(object sender, EventArgs e)
         {
             ChangeOrderState(OrderState.Canceled);
         }
 
+        /// <summary>
+        /// Udalost kliknuti na tlacitko Odeslat v sekci Administrator, podsekci Objednavky
+        /// Odesle objednavku zvyraznenou v nahledu objednavek
+        /// </summary>
         private void SendOrderButton_Click(object sender, EventArgs e)
         {
             ChangeOrderState(OrderState.Sent);
         }
 
+        /// <summary>
+        /// Udalost kliknuti na tlacitko Zobrazit detail v sekci Administrator, podsekci Objednavky
+        /// Zobrazi formular detailu objednavky zvyraznene v nahledu objednavek
+        /// </summary>
         private void AdminOrderDetailButton_Click(object sender, EventArgs e)
         {
             Order selectedOrder = GetSelectedOrder(OrdersDataGridView);
@@ -1022,7 +1236,7 @@ namespace Eshop
         }
 
         /// <summary>
-        /// Zobrazi informaci o prihlaseni zakaznika v titulku okna
+        /// Zobrazeni jmena prihlaseneho zakaznika v titulku okna
         /// </summary>
         private void ShowLoggedCustomer()
         {
@@ -1034,8 +1248,13 @@ namespace Eshop
             }
         }
        
-        /*** Validacni pomocni metody k registraci ***/
+        /*** VALIDACE REGISTRACE ***/
 
+        /// <summary>
+        /// Overi zda je pole Mobil v sekci Zakaznik, podsekci Registrace
+        /// vyplneno spravne, zvyrazni chybne vyplneny udaj
+        /// </summary>
+        /// <returns>true pokud je pole vyplneno spravne, jinak false</returns>
         private bool IsPhoneValid()
         {
             bool invalidNumber = false;
@@ -1047,6 +1266,11 @@ namespace Eshop
             return !invalidNumber;
         }
 
+        /// <summary>
+        /// Overi zda je pole PSC v sekci Zakaznik, podsekci Registrace
+        /// vyplneno spravne, zvyrazni chybne vyplneny udaj
+        /// </summary>
+        /// <returns>true pokud je pole vyplneno spravne, jinak false</returns>
         private bool IsPostalCodeValid()
         {
             bool invalidNumber = false;
@@ -1058,7 +1282,14 @@ namespace Eshop
             return !invalidNumber;
         }
 
-        /*** Verifikace prihlasovacich udaju ***/
+        /*** VERIFIKACE PRIHLASOVACICH UDAJU ***/
+
+        /// <summary>
+        /// Overi zda je pole Email v sekci Zakaznik, podsekci Registrace
+        /// vyplneno spravne, zvyrazni chybne vyplneny udaj
+        /// Pozn.: pole Email akceptuje format znaky@znaky.znaky
+        /// </summary>
+        /// <returns>true pokud je pole vyplneno spravne, jinak false</returns>
         private bool IsEmailValid()
         {
             bool invalidEMail = false;
@@ -1074,6 +1305,11 @@ namespace Eshop
             return !invalidEMail;
         }
 
+        /// <summary>
+        /// Overi zda je pole Email v sekci Zakaznik, podsekci Registrace
+        /// vyplneno spravne, zvyrazni chybne vyplneny udaj
+        /// </summary>
+        /// <returns>true pokud je pole vyplneno spravne, jinak false</returns>
         private bool IsPasswordValid()
         {
             bool invalidPassword = false;
@@ -1085,25 +1321,36 @@ namespace Eshop
             return !invalidPassword;
         }
 
-        // po uzavreni aplikace se ukonci session logovani
+        /// <summary>
+        /// Udalost zavreni hlavniho formulare (ukonceni aplikace):
+        /// Vyslan signal k ukonceni logovani
+        /// </summary>
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Logger.StopLoggingSession();
         }
 
-        // fokus na view po zmene tably v zakaznicke sekci
+        /// <summary>
+        /// Udalost zmeny zobrazene tably v sekci Zakaznik:
+        /// Fokus na aktualny nahled zobrazene podsekce 
+        /// </summary>
         private void StoreTabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
             SelectActualViewInUserSection();
         }
-        // fokus na aktualni view po zmene tably v administrativni sekci
+
+        /// <summary>
+        /// Udalost zmeny zobrazene tably v sekci Administrator:
+        /// Fokus na aktualny nahled zobrazene podsekce 
+        /// </summary>
         private void DatabaseTabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
             SelectActualViewInAdminSection();
         }
 
-        /***  privatni metody pro selekci aktualne zobrazeneho nahledu ***/
-
+        /// <summary>
+        /// Fokus na nahled aktualne zobrazene tably v sekci Administrator
+        /// </summary>
         private void SelectActualViewInAdminSection()
         {
             var selectedTab = DatabaseTabControl.SelectedTab;
@@ -1118,6 +1365,9 @@ namespace Eshop
             }
         }
 
+        /// <summary>
+        /// Fokus na nahled aktualne zobrazene tably v sekci Zakaznik
+        /// </summary>
         private void SelectActualViewInUserSection()
         {
             var selectedTab = StoreTabControl.SelectedTab;

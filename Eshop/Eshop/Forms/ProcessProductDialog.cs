@@ -6,6 +6,9 @@ using System.Windows.Forms;
 
 namespace Eshop
 {
+    /// <summary>
+    /// Formular pro pridani a editaci produktu
+    /// </summary>
     public partial class ProcessProductDialog : Form
     {
         public MainForm MainForm { get; private set; }
@@ -22,6 +25,10 @@ namespace Eshop
             CenterToParent();
         }
 
+        /// <summary>
+        /// Udalost nacteni produktoveho formulare:
+        /// Upravy zobrazeni fomulare podle typu (pridani produktu, uprava produktu)
+        /// </summary>
         private void ProcessProductDialog_Load(object sender, EventArgs e)
         {
             EntriesToValidate = new List<Control>()
@@ -38,7 +45,10 @@ namespace Eshop
             }
         }
 
-        // metoda se spusti pouze kdyz je form spousten s parametrem changeProduct
+        /// <summary>
+        /// Nacteni udaju produktu predavaneho formulari pri konstrukci
+        /// Pozn.: udaje produktu se nactou pouze v pripade upravy produktu
+        /// </summary>
         private void LoadSelectedProductDetails()
         {
             ProductNameTextBox.Text = UpdateProduct.Name;
@@ -48,6 +58,10 @@ namespace Eshop
             ProductPictureBox.Image = UpdateProduct.Photo;
         }
 
+        /// <summary>
+        /// Udalost kliknuti na tlacitko Nahrat fotografii:
+        /// Otevren dialog vlozeni souboru s filtrem pro fotografie formatu jpg, png nebo bmp
+        /// </summary>
         private void LoadPhotoButton_Click(object sender, EventArgs e)
         {
             var filePath = string.Empty;
@@ -66,6 +80,11 @@ namespace Eshop
             }
         }
 
+        /// <summary>
+        /// Udalost kliknuti na tlacitko Vrat zmeny:
+        /// Pro pridavani produktu: vycisteni udaju
+        /// Pro upravu produktu: nacteni naposled ulozenych udaju produktu
+        /// </summary>
         private void RevertChangesButton_Click(object sender, EventArgs e)
         {
             // pokud je formular urcen k pridani produktu po zmacknuti revert vycisti form
@@ -73,7 +92,7 @@ namespace Eshop
             {
                 ClearForm();
             }
-            else // jinak vrat upravy a nacti udaje puvodniho produktu
+            else // jinak vrat upravy a nacti puvodni udaje
             {
                 LoadSelectedProductDetails();
             }
@@ -95,12 +114,19 @@ namespace Eshop
             ProductPictureBox.ImageLocation = string.Empty;
         }
 
-        // zakaze editaci pole kategorii
+        /// <summary>
+        /// Udalost zmacknuti klavesy v textovom poli: 
+        /// Zakaz primeho psani textu do pole Kategorie
+        /// </summary>
         private void ProductCathegoryCBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
         }
 
+        /// <summary>
+        /// Zmacknuti tlacitka Ulozit zmeny:
+        /// Ulozeni noveho produktu / aktualizace udaju produktu
+        /// </summary>
         private void SaveProductButton_Click(object sender, EventArgs e)
         {
             // kdyz okno slouzi k ukladani noveho produktu
@@ -116,17 +142,26 @@ namespace Eshop
 
         /*** Vraceni designu do puvodniho stavu po zmene chybne zadanych poli ***/
 
+        /// <summary>
+        /// Udalost vstup do pole Nazev: reset barvy na puvodni
+        /// </summary>
         private void ProductNameTextBox_Enter(object sender, EventArgs e)
         {
             ProductNameTLPanel.BackColor = SystemColors.GradientInactiveCaption;
         }
 
+        /// <summary>
+        /// Udalost vstup do pole Kategorie: reset barvy na puvodni
+        /// </summary>
         private void ProductCathegoryCBox_Enter(object sender, EventArgs e)
         {
             ProductCathegoryTLPanel.BackColor = SystemColors.GradientInactiveCaption;
         }
 
-        // oznacit spatny vstup do pole ceny barevne
+        /// <summary>
+        /// Udalost zmeny textu v poli cena:
+        /// Verifikace spravnosti vstupu, zvyrazneni chybneho vstupu, zobrazeni chybove hlasky
+        /// </summary>
         private void ProductPriceTextBox_TextChanged(object sender, EventArgs e)
         {
             string priceString = ProductPriceTextBox.Text;
@@ -145,6 +180,10 @@ namespace Eshop
 
         /*** Pomocne metody ke zpracovani vstupu ***/
 
+        /// <summary>
+        /// Kontrola spravnosti formatu vstupu pole Cena:
+        /// </summary>
+        /// <returns>true pokud je vlozeno cele cislo, jinak false</returns>
         private bool IsPriceValid()
         {
             if (!int.TryParse(ProductPriceTextBox.Text, out int price))
@@ -154,10 +193,12 @@ namespace Eshop
             return true;
         }
 
-        // uloz novy produkt do databaze a zobraz jej v dataGridView
+        /// <summary>
+        /// Ulozeni nove vytvorene produktu do databaze a 
+        /// zobrazeni produktu v nahledu produktu v sekci Administrator, podsekci Produkty
+        /// </summary>
         private void SaveNewProduct()
         {
-            
             // zaznamena jestli byli vsechny povinne polozky vyplneny
             bool allValid = Message.InvalidEntriesCheck(EntriesToValidate, Color.MistyRose);
 
@@ -181,6 +222,10 @@ namespace Eshop
             }
         }
 
+        /// <summary>
+        /// Aktualizace produktovych udaju v databazi
+        /// Pozn.: provedena pouze po uspesne kontrole spravnosti udaju
+        /// </summary>
         private void UpdateExistingProduct()
         {
             // zaznamena jestli byli vsechny povinne polozky vyplneny
@@ -214,7 +259,10 @@ namespace Eshop
             }
         }
 
-        // sestroj produkt podle udaju z formulare
+        /// <summary>
+        /// Vytvoreni produktu podle udaju z formulare
+        /// </summary>
+        /// <returns>instace vytvoreneho produktu</returns>
         private Product BuildProductFromDetails()
         {
             int id = -1;

@@ -4,6 +4,10 @@ using System.Windows.Forms;
 
 namespace Eshop
 {
+    /// <summary>
+    /// Formular zobrazeni detailu objednavky, 
+    /// Pozn.: pri zobrazeni detailu existujici objednavky je tlacitko Potvrdit objednavku zakazano
+    /// </summary>
     public partial class OrderDetailForm : Form
     {
         public Order Order { get; }
@@ -19,7 +23,11 @@ namespace Eshop
             CenterToParent();
         }
 
-        // nacti informace z objednavky do formularoveho okna
+        /// <summary>
+        /// Udalost nacitani formulare:
+        /// Pripraveni formulare k zobrazeni, nacteni informaci o zakaznikovi
+        /// pridani polozek do nahledu, nacteni cenove kalkulace objednavky
+        /// </summary>
         private void OrderDetailForm_Load(object sender, EventArgs e)
         {
             // zakaz tlacitko povtrzeni pokud form slouzi k zobrazeni detailu existujici objednavky (predvolene)
@@ -76,12 +84,18 @@ namespace Eshop
             FinalOrderSumValueLabel.Text = Order.FinalOrderPrice.ToString("N0");
         }
 
-        // po kliknuti zobrazi detail produktove polozky
+        /// <summary>
+        /// Udalost kliknuti na tlacitko Detail produktu
+        /// Zobrazeni formulare s detailem produktu pro zvyraznenou polozku v nahlede
+        /// </summary>
         private void ShowProductDetailButton_Click(object sender, EventArgs e)
         {
             MainForm.ShowSelectedProductDetails(OrderItemsDataGridView);
         }
 
+        /// <summary>
+        /// Udalost zmacknuti klavesy: po zmacknuti Escape klavesy se formular detailu objednavky zatvori
+        /// </summary>
         private void OrderDetailForm_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
@@ -91,6 +105,11 @@ namespace Eshop
         }
 
         // po potvrzeni objednavky se zobrazi sprava a zaroven vyprazdni a zavre kosik
+
+        /// <summary>
+        /// Udalost stisknuti tlacitka Potvrdit objednavku:
+        /// Zobrazeni spravy o uspesnem vytvoreni objednavky, vyprazdneni kosiku
+        /// </summary>
         private void CustomerConfirmOrderButton_Click(object sender, EventArgs e)
         {
             Message.CreatedOrderSuccesInfo();
@@ -100,7 +119,10 @@ namespace Eshop
             }
         }
 
-        // pri pridani radku se nastavi tooltip slevovym bunkam (pro popis slevy)
+        /// <summary>
+        /// Udalost pridani zaznamu do nahledu polozek objednavky v detailu objednavky:
+        /// Nacteny popisy slevovych strategii polozek do tooltipu bunek v sloupci Sleva % a Sleva Kc
+        /// </summary>
         private void OrderItemsDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             int addedRowIndex = e.RowIndex;

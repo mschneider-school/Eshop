@@ -602,56 +602,56 @@
             // LoadEverythingTSMenuItem
             // 
             this.LoadEverythingTSMenuItem.Name = "LoadEverythingTSMenuItem";
-            this.LoadEverythingTSMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.LoadEverythingTSMenuItem.Size = new System.Drawing.Size(180, 22);
             this.LoadEverythingTSMenuItem.Text = "Všechny kategorie";
             this.LoadEverythingTSMenuItem.Click += new System.EventHandler(this.LoadEverythingTSMenuItem_Click);
             // 
             // SmartWatchesTSMenuItem
             // 
             this.SmartWatchesTSMenuItem.Name = "SmartWatchesTSMenuItem";
-            this.SmartWatchesTSMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.SmartWatchesTSMenuItem.Size = new System.Drawing.Size(180, 22);
             this.SmartWatchesTSMenuItem.Text = "Chytré hodinky";
             this.SmartWatchesTSMenuItem.Click += new System.EventHandler(this.SmartWatchesTSMenuItem_Click);
             // 
             // ChargersCablesTSMenuItem
             // 
             this.ChargersCablesTSMenuItem.Name = "ChargersCablesTSMenuItem";
-            this.ChargersCablesTSMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.ChargersCablesTSMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ChargersCablesTSMenuItem.Text = "Nabíječky a kabely";
             this.ChargersCablesTSMenuItem.Click += new System.EventHandler(this.ChargersCablesTSMenuItem_Click);
             // 
             // CoversTSMenuItem
             // 
             this.CoversTSMenuItem.Name = "CoversTSMenuItem";
-            this.CoversTSMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.CoversTSMenuItem.Size = new System.Drawing.Size(180, 22);
             this.CoversTSMenuItem.Text = "Pouzdra a kryty";
             this.CoversTSMenuItem.Click += new System.EventHandler(this.CoversTSMenuItem_Click);
             // 
             // SmartphonesTSMenuItem
             // 
             this.SmartphonesTSMenuItem.Name = "SmartphonesTSMenuItem";
-            this.SmartphonesTSMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.SmartphonesTSMenuItem.Size = new System.Drawing.Size(180, 22);
             this.SmartphonesTSMenuItem.Text = "Smartfóny";
             this.SmartphonesTSMenuItem.Click += new System.EventHandler(this.SmartphonesTSMenuItem_Click);
             // 
             // TabletsTSMenuItem
             // 
             this.TabletsTSMenuItem.Name = "TabletsTSMenuItem";
-            this.TabletsTSMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.TabletsTSMenuItem.Size = new System.Drawing.Size(180, 22);
             this.TabletsTSMenuItem.Text = "Tablety";
             this.TabletsTSMenuItem.Click += new System.EventHandler(this.TabletsTSMenuItem_Click);
             // 
             // KeypadPhonesTSMenuItem
             // 
             this.KeypadPhonesTSMenuItem.Name = "KeypadPhonesTSMenuItem";
-            this.KeypadPhonesTSMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.KeypadPhonesTSMenuItem.Size = new System.Drawing.Size(180, 22);
             this.KeypadPhonesTSMenuItem.Text = "Tlačítkové telefony";
             this.KeypadPhonesTSMenuItem.Click += new System.EventHandler(this.KeypadPhonesTSMenuItem_Click);
             // 
             // ScreenProtectorsTSMenuItem
             // 
             this.ScreenProtectorsTSMenuItem.Name = "ScreenProtectorsTSMenuItem";
-            this.ScreenProtectorsTSMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.ScreenProtectorsTSMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ScreenProtectorsTSMenuItem.Text = "Tvrzená skla";
             this.ScreenProtectorsTSMenuItem.Click += new System.EventHandler(this.ScreenProtectorsTSMenuItem_Click);
             // 
@@ -860,7 +860,6 @@
             // 
             this.ShowDetailBasketItemButton.AutoSize = true;
             this.ShowDetailBasketItemButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ShowDetailBasketItemButton.Enabled = false;
             this.ShowDetailBasketItemButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ShowDetailBasketItemButton.Location = new System.Drawing.Point(181, 21);
             this.ShowDetailBasketItemButton.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
@@ -875,7 +874,6 @@
             // 
             this.EmptyBasketButton.AutoSize = true;
             this.EmptyBasketButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EmptyBasketButton.Enabled = false;
             this.EmptyBasketButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.EmptyBasketButton.Location = new System.Drawing.Point(355, 21);
             this.EmptyBasketButton.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);
@@ -891,7 +889,6 @@
             this.LoginToOrderButton.AutoSize = true;
             this.LoginToOrderButton.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.LoginToOrderButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoginToOrderButton.Enabled = false;
             this.LoginToOrderButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
             this.LoginToOrderButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.LoginToOrderButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -910,7 +907,6 @@
             this.RemoveBasketItemButton.AutoSize = true;
             this.RemoveBasketItemButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.RemoveBasketItemButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RemoveBasketItemButton.Enabled = false;
             this.RemoveBasketItemButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.RemoveBasketItemButton.Location = new System.Drawing.Point(7, 21);
             this.RemoveBasketItemButton.Margin = new System.Windows.Forms.Padding(7, 21, 7, 19);

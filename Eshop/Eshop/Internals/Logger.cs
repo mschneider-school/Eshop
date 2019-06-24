@@ -12,9 +12,9 @@ namespace Eshop
     {
         void WriteLog(string message);
     }
+
     /// <summary>
-    /// Uziti patternu singleton pro vytvareni instance souboru
-    /// pri pouziti property Instance
+    /// Trida pro zapis do souboru dedi od rozhrani ILog
     /// </summary>
     class FileLog : ILog
     {
@@ -35,6 +35,10 @@ namespace Eshop
             }
         }
 
+        /// <summary>
+        /// Implementace metody pro zapis logu do souboru
+        /// </summary>
+        /// <param name="message">podle typu spravy se rozhodne akce</param>
         public void WriteLog(string message)
         {
             if (message.StartsWith("START"))
@@ -61,9 +65,12 @@ namespace Eshop
             {
                 ParseLogInput(message);
             }
-            
         }
 
+        /// <summary>
+        /// Rozkouskovani spravy do elementu a zapis do logovaciho souboru
+        /// </summary>
+        /// <param name="message">sprava k rozkouskovani</param>
         private void ParseLogInput(string message)
         {    
             // message example:
@@ -95,14 +102,25 @@ namespace Eshop
         }
     }
 
+    /// <summary>
+    /// Trida pro zapis do konzole dedi od rozhrani ILog
+    /// </summary>
     class ConsoleLog : ILog
     {
+        /// <summary>
+        /// Implementace metody pro zapis logu do konzole
+        /// </summary>
+        /// <param name="message">sprava</param>
         public void WriteLog(string message)
         {
             System.Diagnostics.Debug.WriteLine(message);
         }
     }
 
+    /// <summary>
+    /// Trida logger vyuziva rozhrani pro vyber metody zapisu
+    /// metoda WriteLog z tridy FileLog, nebo ConsoleLog - podle volby uzivatele pri startu programu
+    /// </summary>
     class Logger
     {
         private static ILog log;
@@ -112,6 +130,11 @@ namespace Eshop
             log.WriteLog(message);
         }
 
+        /// <summary>
+        /// Povoleni logovani do souboru
+        /// Pozn.: pri startu aplikace volano z hl. formulare
+        /// </summary>
+        /// <param name="logToFile">povoleni logovani</param>
         public static void LogToFile(bool logToFile)
         {
             if (logToFile)
@@ -126,6 +149,10 @@ namespace Eshop
             }
         }
 
+        /// <summary>
+        /// Prevence vytvareni novych logovacich souboru pri dalsi instanci Logger tridy
+        /// </summary>
+        /// <returns>vraci true pokud je nastaveno logovani do souboru, jinak false</returns>
         public static bool IsFileLog()
         {
             // dalsi vytvorene FileLog objekty nevytvari nove log soubory
@@ -136,17 +163,26 @@ namespace Eshop
             return false;
         }
 
+        /// <summary>
+        /// Signal pro start logovani pri logovani do souboru, do konzole pouze vpise START
+        /// </summary>
         public static void StartLoggingSession()
         {
             log.WriteLog("START");
         }
 
+        /// <summary>
+        /// Signal pro konec logovani pri logovani do souboru, do konzole pouze vpise STOP
+        /// </summary>
         public static void StopLoggingSession()
         {
             log.WriteLog("STOP");
         }
 
-        // zalogovani vytvoreni objednavky
+        /// <summary>
+        /// Logovani nove vytvorene objednavky
+        /// </summary>
+        /// <param name="order">objednavka k zalogovani</param>
         public static void CreateOrderLog(Order order)
         {
             DateTime actualDateTime = DateTime.Now;
@@ -159,7 +195,10 @@ namespace Eshop
                 $"{order.FinalOrderPrice} CZK");
         }
 
-        // zalogovani potvrzeni objednavky
+        /// <summary>
+        /// Logovani potvrzeni objednavky administratorem
+        /// </summary>
+        /// <param name="order">objednavka k zalogovani</param>
         public static void ConfirmOrderLog(Order order)
         {
             DateTime actualDateTime = DateTime.Now; 
@@ -172,7 +211,10 @@ namespace Eshop
                 $"{order.FinalOrderPrice} CZK");
         }
 
-        // zalogovani zruseni objednavky
+        /// <summary>
+        /// Logovani zruseni objednavky administratorem
+        /// </summary>
+        /// <param name="order">objednavka k zalogovani</param>
         public static void CancelOrderLog(Order order)
         {
             DateTime actualDateTime = DateTime.Now;

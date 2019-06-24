@@ -4,6 +4,9 @@ using System.Windows.Forms;
 
 namespace Eshop
 {
+    /// <summary>
+    /// Formular slouzi k validaci prihlasovacich udaju a prihlaseni uzivatele
+    /// </summary>
     public partial class LoginRegisterDialog : Form
     {
         public bool adminLogin = false;
@@ -30,7 +33,11 @@ namespace Eshop
             adminLogin = true;
         }
 
-        // prihlaseni uzivatele do systemu
+        /// <summary>
+        /// Udalost kliknuti na tlacitko Prihlasit: overeni udaju a prihlaseni zakaznika nebo admina
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LoginUserButton_Click(object sender, EventArgs e)
         {
             // prihlaseni administratora
@@ -74,16 +81,25 @@ namespace Eshop
 
         /*** Vraceni designu do puvodniho stavu po zmene chybne zadanych poli ***/
 
+        /// <summary>
+        /// Udalost vstupu do pole Email: reset barvy na puvodni
+        /// </summary>
         private void UserNameTextBox_Enter(object sender, EventArgs e)
         {
             UserNameTLPanel.BackColor = SystemColors.GradientInactiveCaption;
         }
 
+        /// <summary>
+        /// Udalost vstupu do pole Heslo: reset barvy na puvodni
+        /// </summary>
         private void PasswordTextBox_Enter(object sender, EventArgs e)
         {
             PasswordTLPanel.BackColor = SystemColors.GradientInactiveCaption;
         }
 
+        /// <summary>
+        /// Udalost zmacknuti klavesy: Enter zavre prihlasovaci formular
+        /// </summary>
         private void LoginRegisterDialog_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)

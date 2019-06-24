@@ -1,5 +1,10 @@
 ﻿namespace Eshop
 {
+    /// <summary>
+    /// Trida reprezentuje zakaznika s jeho parametry ulozeneho v databaze. 
+    /// Slouzi k abstrakci prihlasovani, vytvareni noveho zakaznika a vyuziti 
+    /// udaju zakaznika k sestaveni detailu objednavky
+    /// </summary>
     public class Customer
     {
         /// <summary>
@@ -28,6 +33,19 @@
         public string Email { get; }
         public string Password { get; }
 
+        /// <summary>
+        /// Konsruktor zakaznika
+        /// </summary>
+        /// <param name="name">jmeno</param>
+        /// <param name="lastName">prijmeni</param>
+        /// <param name="mobilePhone">telefon</param>
+        /// <param name="city">mesto</param>
+        /// <param name="street">ulica</param>
+        /// <param name="houseNumber">cislo domu</param>
+        /// <param name="postalCode">postove smerove cislo</param>
+        /// <param name="email">email</param>
+        /// <param name="password">heslo</param>
+        /// <param name="id">identifikacni cislo</param>
         public Customer(string name, string lastName, int mobilePhone,
             string city, string street, string houseNumber,
             string postalCode, string email, string password, int id = -1)

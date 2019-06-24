@@ -2,6 +2,9 @@
 
 namespace Eshop
 {
+    /// <summary>
+    /// Trida slouzi k uchovani a manipulaci s polozky v sekci Zakaznik, podsekci Kosik
+    /// </summary>
     class Basket
     {
         public static Dictionary<Product, int> Items { get; private set; } 

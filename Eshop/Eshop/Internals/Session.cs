@@ -1,14 +1,19 @@
 ﻿namespace Eshop
 {
+    /// <summary>
+    /// Abstraktni trida slouzi k uchovani udaju o prihlaseni zakaznika/administratora
+    /// a provedeni operaci prihlaseni uzivatelu
+    /// </summary>
     abstract class Session
     {
         public static Customer CustomerLoggedIn { get; private set; }
         public static bool AdminLoggedIn { get; private set; }
 
         /// <summary>
-        /// Prihlaseni konkretniho zakaznika, zaroven mu priradi jeho ID
+        /// Prihlaseni konkretniho zakaznika
+        /// Pozn.: zaroven je prirazeno jeho ID z db
         /// </summary>
-        /// <param name="customer">zakaznik k prihlaseni</param>
+        /// <param name="customer">prihlasovany zakaznik</param>
         public static void LoginCustomer(Customer customer)
         {
             customer.LoadThisCustomerID();
@@ -16,12 +21,8 @@
         }
 
         /// <summary>
-        ///  Prihlaseni administratora
+        /// Prihlaseni administratora
         /// </summary>
-        /// <param name="admininstrator">administrator k prihlaseni</param>
-        public static void LoginAdmin()
-        {
-            AdminLoggedIn = true;
-        }
+        public static void LoginAdmin() => AdminLoggedIn = true;
     }
 }

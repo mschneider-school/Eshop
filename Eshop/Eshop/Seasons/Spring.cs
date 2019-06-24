@@ -2,6 +2,23 @@
 
 namespace Eshop
 {
+    /// <summary>
+    /// Trida dedi od abstraktni tridy metody k aplikaci slev na objednavku a jeji polozky
+    /// Jarni strategie:  
+    /// Procentualni polozkova sleva pri nakupu:
+    /// <list type="bullet">
+    /// <item>
+    /// nad 3 polozky vcetne 20%
+    /// </item>
+    /// <item>
+    /// nad 8 vcetne 30%
+    /// </item>
+    /// <item>
+    /// nad 12 vcetne 40%
+    /// </item>
+    /// </list>
+    /// Pozn.: Slevy objednavky pro jarni sezonu neplati
+    /// </summary>
     class Spring : Season
     {
         const int littleItemQuantity = 3;
@@ -14,6 +31,11 @@ namespace Eshop
         const int middleItemPercentualDiscount = 30;
         const int highItemPercentualDiscount = 40;
 
+        /// <summary>
+        /// Prideleni slevy polozce objednavky v kosiku (rozdeleni na slevnenou a neslevnenou cast polozky)
+        /// </summary>
+        /// <param name="basketItem">polozka kosiku transformovana na polozku objednavky</param>
+        /// <returns>kolekce s polozkou rozdelenou na slevnenou a neslevnenou polozku</returns>
         public override List<OrderItem> AssignDiscountsToItem(KeyValuePair<Product,int> basketItem)
         {
             List<OrderItem> orderItemSplit = new List<OrderItem>();
@@ -44,7 +66,7 @@ namespace Eshop
         }
 
         /// <summary>
-        /// Pomocna metoda ktera rozdeli polozku kosiku na polozku bez slevy a slevnenou polozku
+        /// Rozdeleni polozky kosiku na cast bez slevy a cast se slevou
         /// </summary>
         /// <param name="basketItem">polozka kosiku k rozdeleni</param>
         /// <param name="percentualDiscount">percentualni sleva aplikovana na slevnenou polozku</param>
@@ -78,12 +100,19 @@ namespace Eshop
             return new List<OrderItem> { nondiscountedItem, discountedItem };
         }
 
-        // pro jaro neplati pevna sleva z objednavky
+        /// <summary>
+        /// Vraci pevnou slevu objednavky
+        /// </summary>
+        /// <returns>nula</returns>
         public override int GetFixedOrderDiscount()
         {
             return noDiscount;
         }
-        // pro jaro neplati percentualni sleva z objednavky
+
+        /// <summary>
+        /// Vraci procentualni slevu objednavky
+        /// </summary>
+        /// <returns>nula</returns>
         public override int GetPercentualOrderDiscount()
         {
             return noDiscount;

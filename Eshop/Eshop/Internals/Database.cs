@@ -8,6 +8,9 @@ using System.Linq;
 
 namespace Eshop
 {
+    /// <summary>
+    /// Trida slouzi ke komunikaci s databazi, uchovani cached udaju v pameti a manipulaci s cached udaji
+    /// </summary>
     class Database
     {
         /*** Databazove specifikace ***/
@@ -26,26 +29,51 @@ namespace Eshop
 
         /*** Manipulace s cached daty ***/
 
+        /// <summary>
+        /// Vraceni instance produktu z produktu v pameti podle zadaneho ID
+        /// </summary>
+        /// <param name="id">hledane ID produktu</param>
+        /// <returns>instance nalezeneho produktu</returns>
         public static Product GetCachedProductByID(int id)
         {
             return CachedProducts.Find(product => product.ID == id);
         }
 
+        /// <summary>
+        /// Vraceni instance objednavky z objednavek v pameti podle zadaneho ID
+        /// </summary>
+        /// <param name="id">hledane ID objednavky</param>
+        /// <returns>instance nalezene objednavky</returns>
         public static Order GetCachedOrderByID(int id)
         {
             return CachedOrders.Find(order => order.ID == id);
         }
 
+        /// <summary>
+        /// Vraceni instance strategie ze strategii v pameti podle zadaneho ID
+        /// </summary>
+        /// <param name="id">hledane ID strategie</param>
+        /// <returns>instance nalezene strategie</returns>
         public static Strategy GetCachedStrategyByID(int id)
         {
             return CachedStrategies.Find(strategy => strategy.StrategyID == id);
         }
 
+        /// <summary>
+        /// Vraceni popisu stavu objenavky ze stavu objednavky v pameti podle zadaneho ID
+        /// </summary>
+        /// <param name="id">hledane ID stavu objednavky</param>
+        /// <returns>instance nalezeneho stavu objednavky</returns>
         public static string GetStateNameByID(int id)
         {
             return CachedOrderStates.Find(state => state.ID == id).Description;
         }
 
+        /// <summary>
+        /// Vraceni souctu objednavek prihlaseneho zakaznika
+        /// Pozn.: pro kalkulaci letni slevy
+        /// </summary>
+        /// <returns>soucet objednavek zakaznika</returns>
         public static int GetLoggedCustomerOrdersCount()
         {
             int ordersCount = CachedOrders.Where
@@ -53,15 +81,25 @@ namespace Eshop
             return ordersCount;
         }
 
-        // nalezne a vrati vsechny objednavky zakaznika
+        /// <summary>
+        /// Vraceni instanci vsech objednavek zakaznika
+        /// </summary>
+        /// <param name="customer">zakaznik jehoz objednavky jsou hledany</param>
+        /// <returns>instance objednavek zakaznika</returns>
         public static List<Order> GetCustomerOrders(Customer customer)
         {
             return CachedOrders.FindAll(order => order.Customer.ID == customer.ID);
         }
 
-        private static void ChangeCachedOrderState(Order changedOrder, int state)
+        /// <summary>
+        /// Zmen stav objednavky ulozene v pameti
+        /// Pozn.: metoda volana pri zmene stavu objednavky administratorem
+        /// </summary>
+        /// <param name="order">objednavka ktere stav se meni</param>
+        /// <param name="state">novy stav objednavky</param>
+        private static void ChangeCachedOrderState(Order order, int state)
         {
-            GetCachedOrderByID(changedOrder.ID).ChangeState(state);
+            GetCachedOrderByID(order.ID).ChangeState(state);
         }
 
         /*** Prikazy k selekci dat ***/
@@ -100,7 +138,7 @@ namespace Eshop
         /*** Metody k nacteni dat ***/
 
         /// <summary>
-        /// Pomocna funkce nacte produkty z databaze do pameti
+        /// Nacteni produktu z databaze do pameti
         /// </summary>
         /// <param name="reader">precteny sqlite zaznamy k spracovani</param>
         private static void LoadProducts(SQLiteDataReader reader)
@@ -136,7 +174,7 @@ namespace Eshop
         }
 
         /// <summary>
-        /// Pomocna metoda nacte kategorie z databaze do pameti
+        /// Nacteni kategorii z databaze do pameti
         /// </summary>
         /// <param name="reader">precteny sqlite zaznamy k zpracovani</param>
         public static void LoadCathegories(SQLiteDataReader reader)
@@ -155,7 +193,7 @@ namespace Eshop
         }
 
         /// <summary>
-        /// Pomocna metoda nacte objednavky z databaze do pameti
+        /// Nacteni objednavek z databaze do pameti
         /// </summary>
         /// <param name="reader">precteny sqlite zaznamy k zpracovani</param>
         public static void LoadOrders(SQLiteDataReader reader)
@@ -182,7 +220,7 @@ namespace Eshop
         }
 
         /// <summary>
-        /// Pomocna metoda nacte specialni polozky z databaze do pameti
+        /// Nacteni specialnich polozek z databaze do pameti
         /// </summary>
         /// <param name="reader">precteny sqlite zaznamy k zpracovani</param>
         public static void LoadSpecialOffers(SQLiteDataReader reader)
@@ -199,7 +237,7 @@ namespace Eshop
         }
 
         /// <summary>
-        /// Pomocna metoda nacte strategie z databaze do pameti
+        /// Nacteni strategii z databaze do pameti
         /// </summary>
         /// <param name="reader">precteny sqlite zaznamy k zpracovani</param>
         public static void LoadStrategies(SQLiteDataReader reader)
@@ -216,7 +254,7 @@ namespace Eshop
         }
 
         /// <summary>
-        /// Pomocna metoda nacte stavy objednavky z databaze do pameti
+        /// Nacteni stavu objednavek z databaze do pameti
         /// </summary>
         /// <param name="reader">precteny sqlite zaznamy k zpracovani</param>
         public static void LoadOrderStates(SQLiteDataReader reader)
@@ -233,7 +271,7 @@ namespace Eshop
         }
 
         /// <summary>
-        /// Metoda nacte data z databaze a spusti funkci k jejich ulozeni do pameti
+        /// Nacteni data z databaze a jejich ulozeni do pameti
         /// </summary>
         /// <param name="loadRecords">reference na funkci ukladajici prectene zaznamy</param>
         /// <param name="commandText">prikaz pro shromazdeni dat</param>
@@ -256,7 +294,8 @@ namespace Eshop
         /*** METODY MANIPULACE S DOTAZY ***/
 
         /// <summary>
-        /// Vrati zakaznika se zadanymi prihlasovacimi udaji, pokud neexistuje vrati null
+        /// Vraceni zakaznika se zadanymi prihlasovacimi udaji
+        /// Pozn.: pokud zakaznik neexistuje vrati null
         /// </summary> 
         /// <param name="email">uzivatelsky email</param>
         /// <param name="password">uzivatelske heslo</param>
@@ -303,9 +342,9 @@ namespace Eshop
         /*** Spracovani databazovych prikazu ***/
 
         /// <summary>
-        /// Vymaze produkt z databaze
+        /// Vymazani produktu z databaze
         /// </summary>
-        /// <param name="product">objekt typu Product k vymazani</param>
+        /// <param name="product">produkt k vymazani</param>
         public static void DeleteProduct(Product product)
         {
             using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
@@ -321,7 +360,11 @@ namespace Eshop
             }
         }
 
-        // pomocmna metoda ke konverzi obrazku na byte[]
+        /// <summary>
+        /// Konverze obrazku na pole bytu
+        /// </summary>
+        /// <param name="image">obrazek ke konverzi</param>
+        /// <returns>pole bytu reprezentujici obrazek</returns>
         private static byte[] ImageToBLOB(System.Drawing.Image image)
         {
             byte[] byteImage = null;
@@ -334,9 +377,9 @@ namespace Eshop
         }
 
         /// <summary>
-        /// Uklada novy produkt do databaze
+        /// Ulozeni noveho produktu do databaze
         /// </summary>
-        /// <param name="product"></param>
+        /// <param name="product">produkt k ulozeni</param>
         public static void CreateProduct(Product product)
         {
             int lastInsertedID = -1;
@@ -378,9 +421,10 @@ namespace Eshop
         }
 
         /// <summary>
-        /// Upravuje zmenene parametry produktu
+        /// Uprava parametru produktu
+        /// Pozn.: metoda volana pri uprave produktu administratorem
         /// </summary>
-        /// <param name="product"></param>
+        /// <param name="product">produkt k uprave</param>
         public static void UpdateProduct(Product product)
         {
             using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
@@ -414,7 +458,7 @@ namespace Eshop
         }
 
         /// <summary>
-        /// Zmeni stav objednavky na zvoleny stav a nahraje zmenu do pameti
+        /// Zmena stavu objednavky v db a pameti
         /// </summary>
         /// <param name="order">objednavka</param>
         /// <param name="state">novy stav</param>
@@ -440,7 +484,8 @@ namespace Eshop
         }
 
         /// <summary>
-        /// Overeni noveho uzivatelskeho emailu (nesmi byt jiz registrovan)
+        /// Overeni noveho uzivatelskeho emailu 
+        /// Pozn.: email nesmi byt jiz registrovan v db
         /// </summary>
         /// <param name="email">novy registracni email</param>
         public static bool IsEmailUnique(string email)
@@ -470,7 +515,7 @@ namespace Eshop
         }
 
         /// <summary>
-        /// Vytvori zakaznika a ulozi jeho udaje do databaze
+        /// Vytvoreni zakaznika a ulozeni jeho udaju do databaze
         /// </summary>
         /// <param name="customer">zakaznik</param>
         public static void CreateCustomer(Customer customer)
@@ -509,10 +554,10 @@ namespace Eshop
         }
 
         /// <summary>
-        /// Vraci ID prihlaseneho nebo nove vytvoreneho zakaznika k dalsimu zpracovani
+        /// Vraceni ID prihlaseneho nebo nove vytvoreneho zakaznika
         /// </summary>
-        /// <param name="customer">zakaznik ktereho ID potrebujeme</param>
-        /// <returns></returns>
+        /// <param name="customer">zakaznik jehoz ID se ma vyhledat v db</param>
+        /// <returns>id zakaznika v databazi</returns>
         public static int GetCustomerID(Customer customer)
         {
             int customerID = -1;
@@ -541,10 +586,10 @@ namespace Eshop
         }
 
         /// <summary>
-        /// Vraci zakaznika z databaze podle zadaneho ID
+        /// Vraceni instance zakaznika se zvolenym ID
         /// </summary>
         /// <param name="id">id hledaneho zakaznika</param>
-        /// <returns></returns>
+        /// <returns>instance nalezeneho zakaznika</returns>
         public static Customer GetCustomerByID(int id)
         {
             Customer customerFound = null;
@@ -583,8 +628,9 @@ namespace Eshop
         }
 
         /// <summary>
-        /// Vytvori objednavku a ulozi ji do databaze, rovnez ulozi i polozky objednavky
+        /// Vytvoreni a ulozeni objednavky a jeji polozek do databaze
         /// </summary>
+        /// <param name="order">objednavka k ulozeni do db</param>
         public static void CreateOrder(Order order)
         {
             int lastInsertedID = -1;
@@ -622,7 +668,7 @@ namespace Eshop
         }
 
         /// <summary>
-        /// Ulozi polozek dane objednavky do databaze
+        /// Ulozeni polozek objednavky do databaze
         /// </summary>
         /// <param name="order">objednavka jejiz polozky se ukladaji</param>
         private static void CreateOrderItems(Order order)
@@ -657,9 +703,9 @@ namespace Eshop
         }
 
         /// <summary>
-        /// interni metoda k nacteni polozek objednavky k objednavce do CachedOrders
+        /// Pripojeni polozek objednavky k objednavce v pameti
         /// </summary>
-        /// <param name="order">objednavka ke ktere se prirazuji jeji polozky</param>
+        /// <param name="order">objednavka ke ktere se pripojuji jeji polozky</param>
         private static void AttachOrderItemsToOrder(Order order)
         {
             using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
