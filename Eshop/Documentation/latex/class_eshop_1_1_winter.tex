@@ -1,0 +1,118 @@
+\hypertarget{class_eshop_1_1_winter}{}\section{Eshop.\+Winter Class Reference}
+\label{class_eshop_1_1_winter}\index{Eshop.Winter@{Eshop.Winter}}
+
+
+Trida dedi od abstraktni tridy metody k aplikaci slev na objednavku a jeji polozky Prideleny jsou slevy objednavky\+: 
+\begin{DoxyItemize}
+\item pro zakaznika s objednavkou nad 1000 Kc = sleva objednavky 10 \% + 100 Kč  
+\item pro zakaznika s objednavkou nad 5000 Kc = sleva objednavky 20 \% + 200 Kč  
+\item pro zakaznika s objednavkou nad 10000 Kc = sleva objednavky 30 \% + 500 Kč  
+\end{DoxyItemize}Pozn.\+: slevy polozky nejsou v zime aplikovany  
+
+
+Inheritance diagram for Eshop.\+Winter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_eshop_1_1_winter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_eshop_1_1_winter_a1fba448a83d80ce1cc8dc4d7e0da88e8}{Winter}} ()
+\begin{DoxyCompactList}\small\item\em Pri vytvareni instance konstruktor tridy spocte celkovou cenu polozek kosiku a nastavi podle ni slevovou strategii jako podklad pro vypocty slev objednavky \end{DoxyCompactList}\item 
+override List$<$ \mbox{\hyperlink{class_eshop_1_1_order_item}{Order\+Item}} $>$ \mbox{\hyperlink{class_eshop_1_1_winter_af4d2ccd9c970acc2d61ef67ef0ca8c9d}{Assign\+Discounts\+To\+Item}} (Key\+Value\+Pair$<$ \mbox{\hyperlink{class_eshop_1_1_product}{Product}}, int $>$ basket\+Item)
+\begin{DoxyCompactList}\small\item\em Vraci kolekci s polozkou bez slev polozky \end{DoxyCompactList}\item 
+override int \mbox{\hyperlink{class_eshop_1_1_winter_a0ddc9d5825968a20d65e8dfbed375c86}{Get\+Fixed\+Order\+Discount}} ()
+\begin{DoxyCompactList}\small\item\em Na zaklade vybrane strategie vraci pevnou slevu objednavky \end{DoxyCompactList}\item 
+override int \mbox{\hyperlink{class_eshop_1_1_winter_acb309c44d4b485d42b00e4b9ee0b29ba}{Get\+Percentual\+Order\+Discount}} ()
+\begin{DoxyCompactList}\small\item\em Na zaklade vybrane strategie vraci procentualni slevu objednavky \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_winter_a9d657918bc4414cac02bf72401b73504}\label{class_eshop_1_1_winter_a9d657918bc4414cac02bf72401b73504}} 
+int {\bfseries Assigned\+Strategy\+ID}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_winter_a1028e85ec7bdae0c4eddf8363c978ea5}\label{class_eshop_1_1_winter_a1028e85ec7bdae0c4eddf8363c978ea5}} 
+int {\bfseries Basket\+Items\+Total\+Price}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Trida dedi od abstraktni tridy metody k aplikaci slev na objednavku a jeji polozky Prideleny jsou slevy objednavky\+: 
+\begin{DoxyItemize}
+\item pro zakaznika s objednavkou nad 1000 Kc = sleva objednavky 10 \% + 100 Kč  
+\item pro zakaznika s objednavkou nad 5000 Kc = sleva objednavky 20 \% + 200 Kč  
+\item pro zakaznika s objednavkou nad 10000 Kc = sleva objednavky 30 \% + 500 Kč  
+\end{DoxyItemize}Pozn.\+: slevy polozky nejsou v zime aplikovany 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_eshop_1_1_winter_a1fba448a83d80ce1cc8dc4d7e0da88e8}\label{class_eshop_1_1_winter_a1fba448a83d80ce1cc8dc4d7e0da88e8}} 
+\index{Eshop.Winter@{Eshop.Winter}!Winter@{Winter}}
+\index{Winter@{Winter}!Eshop.Winter@{Eshop.Winter}}
+\subsubsection{\texorpdfstring{Winter()}{Winter()}}
+{\footnotesize\ttfamily Eshop.\+Winter.\+Winter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Pri vytvareni instance konstruktor tridy spocte celkovou cenu polozek kosiku a nastavi podle ni slevovou strategii jako podklad pro vypocty slev objednavky 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_eshop_1_1_winter_af4d2ccd9c970acc2d61ef67ef0ca8c9d}\label{class_eshop_1_1_winter_af4d2ccd9c970acc2d61ef67ef0ca8c9d}} 
+\index{Eshop.Winter@{Eshop.Winter}!AssignDiscountsToItem@{AssignDiscountsToItem}}
+\index{AssignDiscountsToItem@{AssignDiscountsToItem}!Eshop.Winter@{Eshop.Winter}}
+\subsubsection{\texorpdfstring{AssignDiscountsToItem()}{AssignDiscountsToItem()}}
+{\footnotesize\ttfamily override List$<$\mbox{\hyperlink{class_eshop_1_1_order_item}{Order\+Item}}$>$ Eshop.\+Winter.\+Assign\+Discounts\+To\+Item (\begin{DoxyParamCaption}\item[{Key\+Value\+Pair$<$ \mbox{\hyperlink{class_eshop_1_1_product}{Product}}, int $>$}]{basket\+Item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Vraci kolekci s polozkou bez slev polozky 
+
+
+
+Implements \mbox{\hyperlink{class_eshop_1_1_season}{Eshop.\+Season}}.
+
+\mbox{\Hypertarget{class_eshop_1_1_winter_a0ddc9d5825968a20d65e8dfbed375c86}\label{class_eshop_1_1_winter_a0ddc9d5825968a20d65e8dfbed375c86}} 
+\index{Eshop.Winter@{Eshop.Winter}!GetFixedOrderDiscount@{GetFixedOrderDiscount}}
+\index{GetFixedOrderDiscount@{GetFixedOrderDiscount}!Eshop.Winter@{Eshop.Winter}}
+\subsubsection{\texorpdfstring{GetFixedOrderDiscount()}{GetFixedOrderDiscount()}}
+{\footnotesize\ttfamily override int Eshop.\+Winter.\+Get\+Fixed\+Order\+Discount (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Na zaklade vybrane strategie vraci pevnou slevu objednavky 
+
+\begin{DoxyReturn}{Returns}
+pevna sleva objednavky
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_eshop_1_1_season}{Eshop.\+Season}}.
+
+\mbox{\Hypertarget{class_eshop_1_1_winter_acb309c44d4b485d42b00e4b9ee0b29ba}\label{class_eshop_1_1_winter_acb309c44d4b485d42b00e4b9ee0b29ba}} 
+\index{Eshop.Winter@{Eshop.Winter}!GetPercentualOrderDiscount@{GetPercentualOrderDiscount}}
+\index{GetPercentualOrderDiscount@{GetPercentualOrderDiscount}!Eshop.Winter@{Eshop.Winter}}
+\subsubsection{\texorpdfstring{GetPercentualOrderDiscount()}{GetPercentualOrderDiscount()}}
+{\footnotesize\ttfamily override int Eshop.\+Winter.\+Get\+Percentual\+Order\+Discount (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Na zaklade vybrane strategie vraci procentualni slevu objednavky 
+
+\begin{DoxyReturn}{Returns}
+procentualni sleva objednavky
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_eshop_1_1_season}{Eshop.\+Season}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Me/source/repos/\+A2\+O\+P\+N/\+Eshop/\+Eshop/\+Seasons/Winter.\+cs\end{DoxyCompactItemize}

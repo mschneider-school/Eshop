@@ -1,0 +1,224 @@
+\hypertarget{class_eshop_1_1_order_item}{}\section{Eshop.\+Order\+Item Class Reference}
+\label{class_eshop_1_1_order_item}\index{Eshop.OrderItem@{Eshop.OrderItem}}
+
+
+Trida objednavkove polozky slouzi k nacteni kolekce polozek k objednavce a spocteni pevnych a procentualnich slev polozek.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_eshop_1_1_order_item_a85aa0a0b80bfc8399f34a5cec4a4da40}{Order\+Item}} (\mbox{\hyperlink{class_eshop_1_1_product}{Product}} item, int quantity)
+\begin{DoxyCompactList}\small\item\em Jednoduchy konstruktor objednávkové položky \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_eshop_1_1_order_item_ac9751e73e7b9d2864869eee19a0fa5ba}{Order\+Item}} (int id, \mbox{\hyperlink{class_eshop_1_1_product}{Product}} item, int quantity, int fixed\+Discount, int percentual\+Discount, int strategy\+ID)
+\begin{DoxyCompactList}\small\item\em Plny konstruktor objednavkove polozky \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eshop_1_1_order_item_a7d3dbf9b8a436fbd1977a724c6ea8b83}{Set\+Fixed\+Discount}} (int fixed\+Discount)
+\begin{DoxyCompactList}\small\item\em Nastaveni nove pevne slevy polozky \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eshop_1_1_order_item_a75b364576208053e051406bae275cd22}{Set\+Percentual\+Discount}} (int percent\+Discount)
+\begin{DoxyCompactList}\small\item\em Nastaveni nove procentualni slevy polozky \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eshop_1_1_order_item_a8c45b7ee6da0b23934c7977cadba9017}{Set\+Strategy}} (int strategy\+ID)
+\begin{DoxyCompactList}\small\item\em Nastaveni identifikatoru slevove strategie polozky \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_eshop_1_1_order_item_a68867e76d65c7d59f440ac1f15bf755b}{Get\+Total\+Order\+Item\+Price}} ()
+\begin{DoxyCompactList}\small\item\em Vypocet celkove cenu polozky (mnozstvi $\ast$ cena produktu) \end{DoxyCompactList}\item 
+decimal \mbox{\hyperlink{class_eshop_1_1_order_item_ad6e18bac06d092157318b0d650f7abe8}{Get\+Total\+Order\+Item\+Discount}} ()
+\begin{DoxyCompactList}\small\item\em Vypocet celkove slevy polozky polozky, prevod procentualni slevy na pevnou a secteni s pevnou slevou polozky \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static List$<$ \mbox{\hyperlink{class_eshop_1_1_order_item}{Order\+Item}} $>$ \mbox{\hyperlink{class_eshop_1_1_order_item_a0b550553bf5e5fa18e52a18cd0970f9c}{Get\+Order\+Items\+From\+Basket}} (Dictionary$<$ \mbox{\hyperlink{class_eshop_1_1_product}{Product}}, int $>$ basket\+Items)
+\begin{DoxyCompactList}\small\item\em Vytvori nove polozky objednavky z polozek kosiku na zaklade aktualni sezonni strategie \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_order_item_ad8083c5a8364cc91c5fe74be7d3d235c}\label{class_eshop_1_1_order_item_ad8083c5a8364cc91c5fe74be7d3d235c}} 
+const string {\bfseries Table\+Name} = \char`\"{}Order\+Item\char`\"{}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_order_item_a693719de0a5fa77bdc8d1389dade8ed1}\label{class_eshop_1_1_order_item_a693719de0a5fa77bdc8d1389dade8ed1}} 
+const string {\bfseries Order\+Item\+I\+D\+Column} = \char`\"{}Order\+Item\+ID\char`\"{}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_order_item_a1a6bbc6bdc17f0349f8e9fc10b05b6a4}\label{class_eshop_1_1_order_item_a1a6bbc6bdc17f0349f8e9fc10b05b6a4}} 
+const string {\bfseries Product\+I\+D\+Column} = \char`\"{}Product\+ID\char`\"{}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_order_item_ad1f1132887ac9eb4d72381c8eb6be94b}\label{class_eshop_1_1_order_item_ad1f1132887ac9eb4d72381c8eb6be94b}} 
+const string {\bfseries Quantity\+Column} = \char`\"{}Quantity\char`\"{}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_order_item_ab69554de406188753c6802ca3f9772a3}\label{class_eshop_1_1_order_item_ab69554de406188753c6802ca3f9772a3}} 
+const string {\bfseries Fixed\+Discount\+Column} = \char`\"{}Fixed\+Discount\char`\"{}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_order_item_a5c8adcfe2d7301dbce5c3abc53989913}\label{class_eshop_1_1_order_item_a5c8adcfe2d7301dbce5c3abc53989913}} 
+const string {\bfseries Percentual\+Discount\+Column} = \char`\"{}Percentual\+Discount\char`\"{}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_order_item_a62e90f8ef5a13c8078095a0799562a2a}\label{class_eshop_1_1_order_item_a62e90f8ef5a13c8078095a0799562a2a}} 
+const string {\bfseries Strategy\+I\+D\+Column} = \char`\"{}Strategy\+ID\char`\"{}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_order_item_aced415d0ff3187b4bf74de249756b4ec}\label{class_eshop_1_1_order_item_aced415d0ff3187b4bf74de249756b4ec}} 
+const string {\bfseries Order\+I\+D\+Column} = \char`\"{}Order\+ID\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_order_item_a4c700a61df0360ddf20db063c28fe928}\label{class_eshop_1_1_order_item_a4c700a61df0360ddf20db063c28fe928}} 
+int {\bfseries ID}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_order_item_a4257242dcff3e7f6bd22b21c4f0d79db}\label{class_eshop_1_1_order_item_a4257242dcff3e7f6bd22b21c4f0d79db}} 
+\mbox{\hyperlink{class_eshop_1_1_product}{Product}} {\bfseries Item}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_order_item_a1be7b3bdd044e407ec266b0a8751a6b0}\label{class_eshop_1_1_order_item_a1be7b3bdd044e407ec266b0a8751a6b0}} 
+int {\bfseries Quantity}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_order_item_a6fee26f6b432aaac8d75055224652e68}\label{class_eshop_1_1_order_item_a6fee26f6b432aaac8d75055224652e68}} 
+int {\bfseries Fixed\+Discount}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_order_item_a81902296a618544a26a1c52dfe47c769}\label{class_eshop_1_1_order_item_a81902296a618544a26a1c52dfe47c769}} 
+int {\bfseries Percentual\+Discount}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_order_item_a7e59055b9e1f9d7a3ebf48d9a285d6d8}\label{class_eshop_1_1_order_item_a7e59055b9e1f9d7a3ebf48d9a285d6d8}} 
+int {\bfseries Strategy\+ID}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Trida objednavkove polozky slouzi k nacteni kolekce polozek k objednavce a spocteni pevnych a procentualnich slev polozek. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_eshop_1_1_order_item_a85aa0a0b80bfc8399f34a5cec4a4da40}\label{class_eshop_1_1_order_item_a85aa0a0b80bfc8399f34a5cec4a4da40}} 
+\index{Eshop.OrderItem@{Eshop.OrderItem}!OrderItem@{OrderItem}}
+\index{OrderItem@{OrderItem}!Eshop.OrderItem@{Eshop.OrderItem}}
+\subsubsection{\texorpdfstring{OrderItem()}{OrderItem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Eshop.\+Order\+Item.\+Order\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eshop_1_1_product}{Product}}}]{item,  }\item[{int}]{quantity }\end{DoxyParamCaption})}
+
+
+
+Jednoduchy konstruktor objednávkové položky 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & produkt položky\\
+\hline
+{\em quantity} & mnozstvi produktu\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eshop_1_1_order_item_ac9751e73e7b9d2864869eee19a0fa5ba}\label{class_eshop_1_1_order_item_ac9751e73e7b9d2864869eee19a0fa5ba}} 
+\index{Eshop.OrderItem@{Eshop.OrderItem}!OrderItem@{OrderItem}}
+\index{OrderItem@{OrderItem}!Eshop.OrderItem@{Eshop.OrderItem}}
+\subsubsection{\texorpdfstring{OrderItem()}{OrderItem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Eshop.\+Order\+Item.\+Order\+Item (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{\mbox{\hyperlink{class_eshop_1_1_product}{Product}}}]{item,  }\item[{int}]{quantity,  }\item[{int}]{fixed\+Discount,  }\item[{int}]{percentual\+Discount,  }\item[{int}]{strategy\+ID }\end{DoxyParamCaption})}
+
+
+
+Plny konstruktor objednavkove polozky 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & identifikacni cislo\\
+\hline
+{\em item} & produkt polozky\\
+\hline
+{\em quantity} & mnozstvi produktu\\
+\hline
+{\em fixed\+Discount} & pevna sleva položky\\
+\hline
+{\em percentual\+Discount} & procentualni sleva polozky\\
+\hline
+{\em strategy\+ID} & identifikacni cislo slevove strategie\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_eshop_1_1_order_item_a0b550553bf5e5fa18e52a18cd0970f9c}\label{class_eshop_1_1_order_item_a0b550553bf5e5fa18e52a18cd0970f9c}} 
+\index{Eshop.OrderItem@{Eshop.OrderItem}!GetOrderItemsFromBasket@{GetOrderItemsFromBasket}}
+\index{GetOrderItemsFromBasket@{GetOrderItemsFromBasket}!Eshop.OrderItem@{Eshop.OrderItem}}
+\subsubsection{\texorpdfstring{GetOrderItemsFromBasket()}{GetOrderItemsFromBasket()}}
+{\footnotesize\ttfamily static List$<$\mbox{\hyperlink{class_eshop_1_1_order_item}{Order\+Item}}$>$ Eshop.\+Order\+Item.\+Get\+Order\+Items\+From\+Basket (\begin{DoxyParamCaption}\item[{Dictionary$<$ \mbox{\hyperlink{class_eshop_1_1_product}{Product}}, int $>$}]{basket\+Items }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Vytvori nove polozky objednavky z polozek kosiku na zaklade aktualni sezonni strategie 
+
+
+\begin{DoxyParams}{Parameters}
+{\em basket\+Items} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eshop_1_1_order_item_ad6e18bac06d092157318b0d650f7abe8}\label{class_eshop_1_1_order_item_ad6e18bac06d092157318b0d650f7abe8}} 
+\index{Eshop.OrderItem@{Eshop.OrderItem}!GetTotalOrderItemDiscount@{GetTotalOrderItemDiscount}}
+\index{GetTotalOrderItemDiscount@{GetTotalOrderItemDiscount}!Eshop.OrderItem@{Eshop.OrderItem}}
+\subsubsection{\texorpdfstring{GetTotalOrderItemDiscount()}{GetTotalOrderItemDiscount()}}
+{\footnotesize\ttfamily decimal Eshop.\+Order\+Item.\+Get\+Total\+Order\+Item\+Discount (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Vypocet celkove slevy polozky polozky, prevod procentualni slevy na pevnou a secteni s pevnou slevou polozky 
+
+\begin{DoxyReturn}{Returns}
+celkova sleva polozky v korunach
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eshop_1_1_order_item_a68867e76d65c7d59f440ac1f15bf755b}\label{class_eshop_1_1_order_item_a68867e76d65c7d59f440ac1f15bf755b}} 
+\index{Eshop.OrderItem@{Eshop.OrderItem}!GetTotalOrderItemPrice@{GetTotalOrderItemPrice}}
+\index{GetTotalOrderItemPrice@{GetTotalOrderItemPrice}!Eshop.OrderItem@{Eshop.OrderItem}}
+\subsubsection{\texorpdfstring{GetTotalOrderItemPrice()}{GetTotalOrderItemPrice()}}
+{\footnotesize\ttfamily int Eshop.\+Order\+Item.\+Get\+Total\+Order\+Item\+Price (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Vypocet celkove cenu polozky (mnozstvi $\ast$ cena produktu) 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eshop_1_1_order_item_a7d3dbf9b8a436fbd1977a724c6ea8b83}\label{class_eshop_1_1_order_item_a7d3dbf9b8a436fbd1977a724c6ea8b83}} 
+\index{Eshop.OrderItem@{Eshop.OrderItem}!SetFixedDiscount@{SetFixedDiscount}}
+\index{SetFixedDiscount@{SetFixedDiscount}!Eshop.OrderItem@{Eshop.OrderItem}}
+\subsubsection{\texorpdfstring{SetFixedDiscount()}{SetFixedDiscount()}}
+{\footnotesize\ttfamily void Eshop.\+Order\+Item.\+Set\+Fixed\+Discount (\begin{DoxyParamCaption}\item[{int}]{fixed\+Discount }\end{DoxyParamCaption})}
+
+
+
+Nastaveni nove pevne slevy polozky 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fixed\+Discount} & nova pevna sleva polozky\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eshop_1_1_order_item_a75b364576208053e051406bae275cd22}\label{class_eshop_1_1_order_item_a75b364576208053e051406bae275cd22}} 
+\index{Eshop.OrderItem@{Eshop.OrderItem}!SetPercentualDiscount@{SetPercentualDiscount}}
+\index{SetPercentualDiscount@{SetPercentualDiscount}!Eshop.OrderItem@{Eshop.OrderItem}}
+\subsubsection{\texorpdfstring{SetPercentualDiscount()}{SetPercentualDiscount()}}
+{\footnotesize\ttfamily void Eshop.\+Order\+Item.\+Set\+Percentual\+Discount (\begin{DoxyParamCaption}\item[{int}]{percent\+Discount }\end{DoxyParamCaption})}
+
+
+
+Nastaveni nove procentualni slevy polozky 
+
+
+\begin{DoxyParams}{Parameters}
+{\em percent\+Discount} & nova procentualni sleva polozky\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eshop_1_1_order_item_a8c45b7ee6da0b23934c7977cadba9017}\label{class_eshop_1_1_order_item_a8c45b7ee6da0b23934c7977cadba9017}} 
+\index{Eshop.OrderItem@{Eshop.OrderItem}!SetStrategy@{SetStrategy}}
+\index{SetStrategy@{SetStrategy}!Eshop.OrderItem@{Eshop.OrderItem}}
+\subsubsection{\texorpdfstring{SetStrategy()}{SetStrategy()}}
+{\footnotesize\ttfamily void Eshop.\+Order\+Item.\+Set\+Strategy (\begin{DoxyParamCaption}\item[{int}]{strategy\+ID }\end{DoxyParamCaption})}
+
+
+
+Nastaveni identifikatoru slevove strategie polozky 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strategy\+ID} & identifikacni cislo slevove strategie polozky\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Me/source/repos/\+A2\+O\+P\+N/\+Eshop/\+Eshop/\+Entities/Order\+Item.\+cs\end{DoxyCompactItemize}

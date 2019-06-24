@@ -1,0 +1,113 @@
+\hypertarget{class_eshop_1_1_product}{}\section{Eshop.\+Product Class Reference}
+\label{class_eshop_1_1_product}\index{Eshop.Product@{Eshop.Product}}
+
+
+Trida obsahuje vlastnosti produktu jako jsou nazvy sloupcu v tabulce, vlastnosti produktu metody pro praci s objektem. Program vyuziva instanci objektu k nacteni informaci z databáze, úpravy produktu za běhu a zápis změn do databáze.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_eshop_1_1_product_aea293eb52fdb7166d444373a0d80ae15}{Product}} (string name, string cathegory, int price, Image photo, string description, int id=-\/1)
+\begin{DoxyCompactList}\small\item\em Konstruktor produktu \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eshop_1_1_product_add753283bbce6490fc826887736a99be}{Change\+ID}} (int id)
+\begin{DoxyCompactList}\small\item\em Zmen identifikacni cislo produktu \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_product_a9c6616d72c69886335a3c59cb4ba2e86}\label{class_eshop_1_1_product_a9c6616d72c69886335a3c59cb4ba2e86}} 
+const string {\bfseries Table\+Name} = \char`\"{}Product\char`\"{}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_product_a578666ccbf58dd071a856a8fdddeea9a}\label{class_eshop_1_1_product_a578666ccbf58dd071a856a8fdddeea9a}} 
+const string {\bfseries I\+D\+Column} = \char`\"{}Product\+ID\char`\"{}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_product_a366bb4af9ff2d522af69647d3ec2ca77}\label{class_eshop_1_1_product_a366bb4af9ff2d522af69647d3ec2ca77}} 
+const string {\bfseries Name\+Column} = \char`\"{}Name\char`\"{}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_product_a0f6341a85cb70b6f1a0fa0475f5e4feb}\label{class_eshop_1_1_product_a0f6341a85cb70b6f1a0fa0475f5e4feb}} 
+const string {\bfseries Cathegory\+Column} = \char`\"{}Cathegory\+ID\char`\"{}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_product_a9ec1c9894d63af31620aa0f14b41a76d}\label{class_eshop_1_1_product_a9ec1c9894d63af31620aa0f14b41a76d}} 
+const string {\bfseries Price\+Column} = \char`\"{}Price\char`\"{}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_product_a5ee3fe20cd25e8e3ebcd38a4d5f2e30b}\label{class_eshop_1_1_product_a5ee3fe20cd25e8e3ebcd38a4d5f2e30b}} 
+const string {\bfseries Photo\+Column} = \char`\"{}Photo\char`\"{}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_product_ae377aaebc54dd7f6eb8ea60f23d76945}\label{class_eshop_1_1_product_ae377aaebc54dd7f6eb8ea60f23d76945}} 
+const string {\bfseries Description\+Column} = \char`\"{}Description\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_product_a7c96eeb965bd5baa8eddb5601421c2f8}\label{class_eshop_1_1_product_a7c96eeb965bd5baa8eddb5601421c2f8}} 
+int {\bfseries ID}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_product_a960f38474f0d8c9f8f49804447079074}\label{class_eshop_1_1_product_a960f38474f0d8c9f8f49804447079074}} 
+string {\bfseries Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_product_aadf2d177d03b13806e1656d986e97c00}\label{class_eshop_1_1_product_aadf2d177d03b13806e1656d986e97c00}} 
+string {\bfseries Cathegory}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_product_a88ade23a5d45c3b8334341ec1c15f0f7}\label{class_eshop_1_1_product_a88ade23a5d45c3b8334341ec1c15f0f7}} 
+int {\bfseries Price}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_product_a8db3a3ade9ae207fec6efec1e1fff7e1}\label{class_eshop_1_1_product_a8db3a3ade9ae207fec6efec1e1fff7e1}} 
+Image {\bfseries Photo}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_product_aa5dfddbd5511f0db72f07a9810d1507a}\label{class_eshop_1_1_product_aa5dfddbd5511f0db72f07a9810d1507a}} 
+string {\bfseries Description}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Trida obsahuje vlastnosti produktu jako jsou nazvy sloupcu v tabulce, vlastnosti produktu metody pro praci s objektem. Program vyuziva instanci objektu k nacteni informaci z databáze, úpravy produktu za běhu a zápis změn do databáze. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_eshop_1_1_product_aea293eb52fdb7166d444373a0d80ae15}\label{class_eshop_1_1_product_aea293eb52fdb7166d444373a0d80ae15}} 
+\index{Eshop.Product@{Eshop.Product}!Product@{Product}}
+\index{Product@{Product}!Eshop.Product@{Eshop.Product}}
+\subsubsection{\texorpdfstring{Product()}{Product()}}
+{\footnotesize\ttfamily Eshop.\+Product.\+Product (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{string}]{cathegory,  }\item[{int}]{price,  }\item[{Image}]{photo,  }\item[{string}]{description,  }\item[{int}]{id = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+
+
+Konstruktor produktu 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ID} & identifikacni cislo produktu\\
+\hline
+{\em name} & nazev produktu\\
+\hline
+{\em cathegory} & kategorie produktu\\
+\hline
+{\em price} & cena produktu\\
+\hline
+{\em description} & popis produktu\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_eshop_1_1_product_add753283bbce6490fc826887736a99be}\label{class_eshop_1_1_product_add753283bbce6490fc826887736a99be}} 
+\index{Eshop.Product@{Eshop.Product}!ChangeID@{ChangeID}}
+\index{ChangeID@{ChangeID}!Eshop.Product@{Eshop.Product}}
+\subsubsection{\texorpdfstring{ChangeID()}{ChangeID()}}
+{\footnotesize\ttfamily void Eshop.\+Product.\+Change\+ID (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Zmen identifikacni cislo produktu 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & nove cislo produktu\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Me/source/repos/\+A2\+O\+P\+N/\+Eshop/\+Eshop/\+Entities/Product.\+cs\end{DoxyCompactItemize}

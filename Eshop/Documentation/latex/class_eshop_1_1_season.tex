@@ -1,0 +1,96 @@
+\hypertarget{class_eshop_1_1_season}{}\section{Eshop.\+Season Class Reference}
+\label{class_eshop_1_1_season}\index{Eshop.Season@{Eshop.Season}}
+
+
+Abstraktni trida ktera je podkladem pro tridy rocnich sezon\+: \mbox{\hyperlink{class_eshop_1_1_spring}{Spring}}, \mbox{\hyperlink{class_eshop_1_1_summer}{Summer}}, \mbox{\hyperlink{class_eshop_1_1_autumn}{Autumn}}, \mbox{\hyperlink{class_eshop_1_1_winter}{Winter}} Podkladem jsou metody\+: Assign\+Discounts\+To\+Item, Get\+Fixed\+Order\+Discount, Get\+Percentual\+Order\+Discount  
+
+
+Inheritance diagram for Eshop.\+Season\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_eshop_1_1_season}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_season_adaa1af009d4336f1911117b672608e68}\label{class_eshop_1_1_season_adaa1af009d4336f1911117b672608e68}} 
+abstract List$<$ \mbox{\hyperlink{class_eshop_1_1_order_item}{Order\+Item}} $>$ {\bfseries Assign\+Discounts\+To\+Item} (Key\+Value\+Pair$<$ \mbox{\hyperlink{class_eshop_1_1_product}{Product}}, int $>$ basket\+Item)
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_season_a81c4ed1d11900e7d133a0a4b11bcbf76}\label{class_eshop_1_1_season_a81c4ed1d11900e7d133a0a4b11bcbf76}} 
+abstract int {\bfseries Get\+Fixed\+Order\+Discount} ()
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_season_a275a459997adf53f474908a0daf66c2c}\label{class_eshop_1_1_season_a275a459997adf53f474908a0daf66c2c}} 
+abstract int {\bfseries Get\+Percentual\+Order\+Discount} ()
+\item 
+List$<$ \mbox{\hyperlink{class_eshop_1_1_order_item}{Order\+Item}} $>$ \mbox{\hyperlink{class_eshop_1_1_season_a29ea0bffce6c50d8b463a30e6805e26f}{Basket\+To\+Order\+Item\+No\+Change}} (Key\+Value\+Pair$<$ \mbox{\hyperlink{class_eshop_1_1_product}{Product}}, int $>$ basket\+Item, int strategy\+ID)
+\begin{DoxyCompactList}\small\item\em Vraci kolekci s polozkou objednavky na kterou se neaplikuji zadne polozkove slevy \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_eshop_1_1_season}{Season}} \mbox{\hyperlink{class_eshop_1_1_season_a3ebc704b1930bb304863e1c28058cbfa}{Get\+Current\+Season}} ()
+\begin{DoxyCompactList}\small\item\em Vraci aktualni sezonu podle aktualniho casu \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_season_af6e526a3052911a60660b66bbff092d4}\label{class_eshop_1_1_season_af6e526a3052911a60660b66bbff092d4}} 
+const string {\bfseries spring\+Date} = \char`\"{}2019-\/04-\/01 20\+:55\+:24.\+5344018\char`\"{}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_season_a404e503d9c00c193eaf3a2cb470ce823}\label{class_eshop_1_1_season_a404e503d9c00c193eaf3a2cb470ce823}} 
+const string {\bfseries autumn\+Date} = \char`\"{}2019-\/10-\/01 20\+:55\+:24.\+5344018\char`\"{}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_season_a7f4cd8477f9a9bfe46dc75c98ef90a60}\label{class_eshop_1_1_season_a7f4cd8477f9a9bfe46dc75c98ef90a60}} 
+const string {\bfseries winter\+Date} = \char`\"{}2020-\/02-\/01 20\+:55\+:24.\+5344018\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_season_a56ba39054b3add35b933b24921dc23dc}\label{class_eshop_1_1_season_a56ba39054b3add35b933b24921dc23dc}} 
+int {\bfseries No\+Discount} = 0\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstraktni trida ktera je podkladem pro tridy rocnich sezon\+: \mbox{\hyperlink{class_eshop_1_1_spring}{Spring}}, \mbox{\hyperlink{class_eshop_1_1_summer}{Summer}}, \mbox{\hyperlink{class_eshop_1_1_autumn}{Autumn}}, \mbox{\hyperlink{class_eshop_1_1_winter}{Winter}} Podkladem jsou metody\+: Assign\+Discounts\+To\+Item, Get\+Fixed\+Order\+Discount, Get\+Percentual\+Order\+Discount 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_eshop_1_1_season_a29ea0bffce6c50d8b463a30e6805e26f}\label{class_eshop_1_1_season_a29ea0bffce6c50d8b463a30e6805e26f}} 
+\index{Eshop.Season@{Eshop.Season}!BasketToOrderItemNoChange@{BasketToOrderItemNoChange}}
+\index{BasketToOrderItemNoChange@{BasketToOrderItemNoChange}!Eshop.Season@{Eshop.Season}}
+\subsubsection{\texorpdfstring{BasketToOrderItemNoChange()}{BasketToOrderItemNoChange()}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_eshop_1_1_order_item}{Order\+Item}}$>$ Eshop.\+Season.\+Basket\+To\+Order\+Item\+No\+Change (\begin{DoxyParamCaption}\item[{Key\+Value\+Pair$<$ \mbox{\hyperlink{class_eshop_1_1_product}{Product}}, int $>$}]{basket\+Item,  }\item[{int}]{strategy\+ID }\end{DoxyParamCaption})}
+
+
+
+Vraci kolekci s polozkou objednavky na kterou se neaplikuji zadne polozkove slevy 
+
+
+\begin{DoxyParams}{Parameters}
+{\em basket\+Item} & polozka kosiku\\
+\hline
+{\em strategy\+ID} & identifikacni cislo strategie objednavky\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+kolekce s polozkou bez slev k dalsimu zpracovani
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eshop_1_1_season_a3ebc704b1930bb304863e1c28058cbfa}\label{class_eshop_1_1_season_a3ebc704b1930bb304863e1c28058cbfa}} 
+\index{Eshop.Season@{Eshop.Season}!GetCurrentSeason@{GetCurrentSeason}}
+\index{GetCurrentSeason@{GetCurrentSeason}!Eshop.Season@{Eshop.Season}}
+\subsubsection{\texorpdfstring{GetCurrentSeason()}{GetCurrentSeason()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_eshop_1_1_season}{Season}} Eshop.\+Season.\+Get\+Current\+Season (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Vraci aktualni sezonu podle aktualniho casu 
+
+\begin{DoxyReturn}{Returns}
+aktualni objekt sezony
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Me/source/repos/\+A2\+O\+P\+N/\+Eshop/\+Eshop/\+Seasons/Season.\+cs\end{DoxyCompactItemize}

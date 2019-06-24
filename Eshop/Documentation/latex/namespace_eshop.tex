@@ -1,0 +1,72 @@
+\hypertarget{namespace_eshop}{}\section{Eshop Namespace Reference}
+\label{namespace_eshop}\index{Eshop@{Eshop}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_eshop_1_1_add_to_basket_dialog}{Add\+To\+Basket\+Dialog}}
+\begin{DoxyCompactList}\small\item\em Formular slouzi k pridani produktu ve zvolenem mnozstvi do kosiku \end{DoxyCompactList}\item 
+class {\bfseries Administrator}
+\begin{DoxyCompactList}\small\item\em Trida slouzi k uchovani udaju administratora \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eshop_1_1_autumn}{Autumn}}
+\begin{DoxyCompactList}\small\item\em Trida dedi od abstraktni tridy metody k aplikaci slev na objednavku a jeji polozky Individualni sleva polozky se aplikuje pokud se produkt nachazi v tabulce specialnich produktu v db Pozn.\+: slevy objednavky nejsou na podzim aplikovany \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eshop_1_1_basket}{Basket}}
+\begin{DoxyCompactList}\small\item\em Trida slouzi k uchovani a manipulaci s polozky v sekci Zakaznik, podsekci Kosik \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eshop_1_1_cathegory}{Cathegory}}
+\begin{DoxyCompactList}\small\item\em Trida obsahuje kategorii a jeji id pridelovane produktu. Program vyuziva instanci objektu k nacteni informaci z databáze, úpravy produktu za běhu a zápis změn do databáze. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eshop_1_1_confirm_dialog}{Confirm\+Dialog}}
+\begin{DoxyCompactList}\small\item\em Univerzalni formular slouzi k potvrzeni akce (napr. vymazani produktu) Text tlacitek \char`\"{}\+Ano\char`\"{} a \char`\"{}\+Ne\char`\"{}, spravu a titulek okna lze nastavit konstruktorem \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eshop_1_1_console_log}{Console\+Log}}
+\begin{DoxyCompactList}\small\item\em Trida pro zapis do konzole dedi od rozhrani \mbox{\hyperlink{interface_eshop_1_1_i_log}{I\+Log}} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eshop_1_1_customer}{Customer}}
+\begin{DoxyCompactList}\small\item\em Trida reprezentuje zakaznika s jeho parametry ulozeneho v databaze. Slouzi k abstrakci prihlasovani, vytvareni noveho zakaznika a vyuziti udaju zakaznika k sestaveni detailu objednavky \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eshop_1_1_database}{Database}}
+\begin{DoxyCompactList}\small\item\em Trida slouzi ke komunikaci s databazi, uchovani cached udaju v pameti a manipulaci s cached udaji \end{DoxyCompactList}\item 
+class {\bfseries Extension\+Methods}
+\begin{DoxyCompactList}\small\item\em Trida rozsireni. Obsahuje rozsireni pro podporu dvojiho nacteni nahledu (k zamezeni flickering) Zdroj\+: \href{https://yuriyseniuk.blogspot.com/2010/11/how-to-increase-speed-of-datagridview.html}{\texttt{ https\+://yuriyseniuk.\+blogspot.\+com/2010/11/how-\/to-\/increase-\/speed-\/of-\/datagridview.\+html}} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eshop_1_1_file_log}{File\+Log}}
+\begin{DoxyCompactList}\small\item\em Trida pro zapis do souboru dedi od rozhrani \mbox{\hyperlink{interface_eshop_1_1_i_log}{I\+Log}} \end{DoxyCompactList}\item 
+interface \mbox{\hyperlink{interface_eshop_1_1_i_log}{I\+Log}}
+\begin{DoxyCompactList}\small\item\em Vyuziti techniky dependency injection k logovani do souboru nebo do konzole (output view) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eshop_1_1_logger}{Logger}}
+\begin{DoxyCompactList}\small\item\em Trida logger vyuziva rozhrani pro vyber metody zapisu metoda Write\+Log z tridy \mbox{\hyperlink{class_eshop_1_1_file_log}{File\+Log}}, nebo \mbox{\hyperlink{class_eshop_1_1_console_log}{Console\+Log}} -\/ podle volby uzivatele pri startu programu \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eshop_1_1_login_register_dialog}{Login\+Register\+Dialog}}
+\begin{DoxyCompactList}\small\item\em Formular slouzi k validaci prihlasovacich udaju a prihlaseni uzivatele \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eshop_1_1_main_form}{Main\+Form}}
+\begin{DoxyCompactList}\small\item\em Hlavni formular aplikace ktery se zobrazi jako prvni. Obsahuje sekci Zakaznika a Administratora. V sekci Administrator se nachazi podsekce Objednavky a Produkty. V sekci Zakaznik se nachazi podsekce Obchod, Kosik, Registrace, Moje objednavky, ktere jsou zobrazeny nebo skryty podle aktualni aktivity zakaznika. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eshop_1_1_message}{Message}}
+\begin{DoxyCompactList}\small\item\em Trida slouzi k vyvolani informacnich, varovnich, chybovych zprav v reakci na akce uzivatele \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eshop_1_1_order}{Order}}
+\begin{DoxyCompactList}\small\item\em Trida slouzi k sestaveni objednavky a nacteni objednavek z databaze. Mezi parametry tridy patri instance zakaznika a kolekce polozek objednavky \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eshop_1_1_order_detail_form}{Order\+Detail\+Form}}
+\begin{DoxyCompactList}\small\item\em Formular zobrazeni detailu objednavky, Pozn.\+: pri zobrazeni detailu existujici objednavky je tlacitko Potvrdit objednavku zakazano \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eshop_1_1_order_item}{Order\+Item}}
+\begin{DoxyCompactList}\small\item\em Trida objednavkove polozky slouzi k nacteni kolekce polozek k objednavce a spocteni pevnych a procentualnich slev polozek. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eshop_1_1_process_product_dialog}{Process\+Product\+Dialog}}
+\begin{DoxyCompactList}\small\item\em Formular pro pridani a editaci produktu \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eshop_1_1_product}{Product}}
+\begin{DoxyCompactList}\small\item\em Trida obsahuje vlastnosti produktu jako jsou nazvy sloupcu v tabulce, vlastnosti produktu metody pro praci s objektem. Program vyuziva instanci objektu k nacteni informaci z databáze, úpravy produktu za běhu a zápis změn do databáze. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eshop_1_1_product_details_form}{Product\+Details\+Form}}
+\begin{DoxyCompactList}\small\item\em Formular detailu produktu \end{DoxyCompactList}\item 
+class {\bfseries Program}
+\item 
+class \mbox{\hyperlink{class_eshop_1_1_save_log_dialog}{Save\+Log\+Dialog}}
+\begin{DoxyCompactList}\small\item\em Uvodni dialog volby zpusobu logovani Pozn.\+: predvolenym zpusobem je logovani do konzole \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eshop_1_1_season}{Season}}
+\begin{DoxyCompactList}\small\item\em Abstraktni trida ktera je podkladem pro tridy rocnich sezon\+: \mbox{\hyperlink{class_eshop_1_1_spring}{Spring}}, \mbox{\hyperlink{class_eshop_1_1_summer}{Summer}}, \mbox{\hyperlink{class_eshop_1_1_autumn}{Autumn}}, \mbox{\hyperlink{class_eshop_1_1_winter}{Winter}} Podkladem jsou metody\+: Assign\+Discounts\+To\+Item, Get\+Fixed\+Order\+Discount, Get\+Percentual\+Order\+Discount \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eshop_1_1_session}{Session}}
+\begin{DoxyCompactList}\small\item\em Abstraktni trida slouzi k uchovani udaju o prihlaseni zakaznika/administratora a provedeni operaci prihlaseni uzivatelu \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eshop_1_1_spring}{Spring}}
+\begin{DoxyCompactList}\small\item\em Trida dedi od abstraktni tridy metody k aplikaci slev na objednavku a jeji polozky Jarni strategie\+: \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eshop_1_1_summer}{Summer}}
+\begin{DoxyCompactList}\small\item\em Trida dedi od abstraktni tridy metody k aplikaci slev na objednavku a jeji polozky. Procentualni sleva objednavky pri nakupu\+: 
+\begin{DoxyItemize}
+\item pro zakaznika s 5 a vice existujicimi objednavky, sleva na objednavku 10\%  
+\item pro zakaznika s 10 a vice existujicimi objednavky, sleva na objednavku 20\%  
+\end{DoxyItemize}Pozn.\+: na polozku nejsou v lete aplikovany slevy \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eshop_1_1_winter}{Winter}}
+\begin{DoxyCompactList}\small\item\em Trida dedi od abstraktni tridy metody k aplikaci slev na objednavku a jeji polozky Prideleny jsou slevy objednavky\+: 
+\begin{DoxyItemize}
+\item pro zakaznika s objednavkou nad 1000 Kc = sleva objednavky 10 \% + 100 Kč  
+\item pro zakaznika s objednavkou nad 5000 Kc = sleva objednavky 20 \% + 200 Kč  
+\item pro zakaznika s objednavkou nad 10000 Kc = sleva objednavky 30 \% + 500 Kč  
+\end{DoxyItemize}Pozn.\+: slevy polozky nejsou v zime aplikovany \end{DoxyCompactList}\end{DoxyCompactItemize}

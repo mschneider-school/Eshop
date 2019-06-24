@@ -1,0 +1,121 @@
+\hypertarget{class_eshop_1_1_summer}{}\section{Eshop.\+Summer Class Reference}
+\label{class_eshop_1_1_summer}\index{Eshop.Summer@{Eshop.Summer}}
+
+
+Trida dedi od abstraktni tridy metody k aplikaci slev na objednavku a jeji polozky. Procentualni sleva objednavky pri nakupu\+: 
+\begin{DoxyItemize}
+\item pro zakaznika s 5 a vice existujicimi objednavky, sleva na objednavku 10\%  
+\item pro zakaznika s 10 a vice existujicimi objednavky, sleva na objednavku 20\%  
+\end{DoxyItemize}Pozn.\+: na polozku nejsou v lete aplikovany slevy  
+
+
+Inheritance diagram for Eshop.\+Summer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_eshop_1_1_summer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_eshop_1_1_summer_ae45885f55eff0d151906fa6fc8a81fb3}{Summer}} ()
+\begin{DoxyCompactList}\small\item\em Pri vytvareni instance konstruktor tridy zvoli a nastavi vybranou strategii podle poctu objednavek prave prihlaseneho zakaznika (objednavatele) \end{DoxyCompactList}\item 
+override List$<$ \mbox{\hyperlink{class_eshop_1_1_order_item}{Order\+Item}} $>$ \mbox{\hyperlink{class_eshop_1_1_summer_ae35f16e3f104e0ef827771c32a35a3d6}{Assign\+Discounts\+To\+Item}} (Key\+Value\+Pair$<$ \mbox{\hyperlink{class_eshop_1_1_product}{Product}}, int $>$ basket\+Item)
+\begin{DoxyCompactList}\small\item\em Vraci kolekci s polozkou bez slev polozky \end{DoxyCompactList}\item 
+override int \mbox{\hyperlink{class_eshop_1_1_summer_a762d12ed77cc1dfa28b13a487fd0c0ae}{Get\+Fixed\+Order\+Discount}} ()
+\begin{DoxyCompactList}\small\item\em Vraci pevnou slevu objednavky \end{DoxyCompactList}\item 
+override int \mbox{\hyperlink{class_eshop_1_1_summer_a3b3b71b9a83e117fb3b5a2a7e3da3a1a}{Get\+Percentual\+Order\+Discount}} ()
+\begin{DoxyCompactList}\small\item\em Vraci procentualni slevu objednavky \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_summer_adfbad32d082d73db9dbd86b728f4fa3c}\label{class_eshop_1_1_summer_adfbad32d082d73db9dbd86b728f4fa3c}} 
+int {\bfseries Assigned\+Strategy\+ID}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Trida dedi od abstraktni tridy metody k aplikaci slev na objednavku a jeji polozky. Procentualni sleva objednavky pri nakupu\+: 
+\begin{DoxyItemize}
+\item pro zakaznika s 5 a vice existujicimi objednavky, sleva na objednavku 10\%  
+\item pro zakaznika s 10 a vice existujicimi objednavky, sleva na objednavku 20\%  
+\end{DoxyItemize}Pozn.\+: na polozku nejsou v lete aplikovany slevy 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_eshop_1_1_summer_ae45885f55eff0d151906fa6fc8a81fb3}\label{class_eshop_1_1_summer_ae45885f55eff0d151906fa6fc8a81fb3}} 
+\index{Eshop.Summer@{Eshop.Summer}!Summer@{Summer}}
+\index{Summer@{Summer}!Eshop.Summer@{Eshop.Summer}}
+\subsubsection{\texorpdfstring{Summer()}{Summer()}}
+{\footnotesize\ttfamily Eshop.\+Summer.\+Summer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Pri vytvareni instance konstruktor tridy zvoli a nastavi vybranou strategii podle poctu objednavek prave prihlaseneho zakaznika (objednavatele) 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_eshop_1_1_summer_ae35f16e3f104e0ef827771c32a35a3d6}\label{class_eshop_1_1_summer_ae35f16e3f104e0ef827771c32a35a3d6}} 
+\index{Eshop.Summer@{Eshop.Summer}!AssignDiscountsToItem@{AssignDiscountsToItem}}
+\index{AssignDiscountsToItem@{AssignDiscountsToItem}!Eshop.Summer@{Eshop.Summer}}
+\subsubsection{\texorpdfstring{AssignDiscountsToItem()}{AssignDiscountsToItem()}}
+{\footnotesize\ttfamily override List$<$\mbox{\hyperlink{class_eshop_1_1_order_item}{Order\+Item}}$>$ Eshop.\+Summer.\+Assign\+Discounts\+To\+Item (\begin{DoxyParamCaption}\item[{Key\+Value\+Pair$<$ \mbox{\hyperlink{class_eshop_1_1_product}{Product}}, int $>$}]{basket\+Item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Vraci kolekci s polozkou bez slev polozky 
+
+
+\begin{DoxyParams}{Parameters}
+{\em basket\+Item} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_eshop_1_1_season}{Eshop.\+Season}}.
+
+\mbox{\Hypertarget{class_eshop_1_1_summer_a762d12ed77cc1dfa28b13a487fd0c0ae}\label{class_eshop_1_1_summer_a762d12ed77cc1dfa28b13a487fd0c0ae}} 
+\index{Eshop.Summer@{Eshop.Summer}!GetFixedOrderDiscount@{GetFixedOrderDiscount}}
+\index{GetFixedOrderDiscount@{GetFixedOrderDiscount}!Eshop.Summer@{Eshop.Summer}}
+\subsubsection{\texorpdfstring{GetFixedOrderDiscount()}{GetFixedOrderDiscount()}}
+{\footnotesize\ttfamily override int Eshop.\+Summer.\+Get\+Fixed\+Order\+Discount (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Vraci pevnou slevu objednavky 
+
+\begin{DoxyReturn}{Returns}
+nula
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_eshop_1_1_season}{Eshop.\+Season}}.
+
+\mbox{\Hypertarget{class_eshop_1_1_summer_a3b3b71b9a83e117fb3b5a2a7e3da3a1a}\label{class_eshop_1_1_summer_a3b3b71b9a83e117fb3b5a2a7e3da3a1a}} 
+\index{Eshop.Summer@{Eshop.Summer}!GetPercentualOrderDiscount@{GetPercentualOrderDiscount}}
+\index{GetPercentualOrderDiscount@{GetPercentualOrderDiscount}!Eshop.Summer@{Eshop.Summer}}
+\subsubsection{\texorpdfstring{GetPercentualOrderDiscount()}{GetPercentualOrderDiscount()}}
+{\footnotesize\ttfamily override int Eshop.\+Summer.\+Get\+Percentual\+Order\+Discount (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Vraci procentualni slevu objednavky 
+
+\begin{DoxyReturn}{Returns}
+nula
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_eshop_1_1_season}{Eshop.\+Season}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Me/source/repos/\+A2\+O\+P\+N/\+Eshop/\+Eshop/\+Seasons/Summer.\+cs\end{DoxyCompactItemize}

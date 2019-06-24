@@ -1,0 +1,92 @@
+\hypertarget{class_eshop_1_1_autumn}{}\section{Eshop.\+Autumn Class Reference}
+\label{class_eshop_1_1_autumn}\index{Eshop.Autumn@{Eshop.Autumn}}
+
+
+Trida dedi od abstraktni tridy metody k aplikaci slev na objednavku a jeji polozky Individualni sleva polozky se aplikuje pokud se produkt nachazi v tabulce specialnich produktu v db Pozn.\+: slevy objednavky nejsou na podzim aplikovany  
+
+
+Inheritance diagram for Eshop.\+Autumn\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_eshop_1_1_autumn}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override List$<$ \mbox{\hyperlink{class_eshop_1_1_order_item}{Order\+Item}} $>$ \mbox{\hyperlink{class_eshop_1_1_autumn_a8b81fea543d4da4da80b981e3d18e71f}{Assign\+Discounts\+To\+Item}} (Key\+Value\+Pair$<$ \mbox{\hyperlink{class_eshop_1_1_product}{Product}}, int $>$ basket\+Item)
+\begin{DoxyCompactList}\small\item\em Aplikace pevne slevy na polozku, pokud se polozka nachazi v tabulce specialnich produktu \end{DoxyCompactList}\item 
+override int \mbox{\hyperlink{class_eshop_1_1_autumn_ac5ee4a4898239df20f6d62a88adf039a}{Get\+Fixed\+Order\+Discount}} ()
+\begin{DoxyCompactList}\small\item\em Vraci pevnou slevu objednavky \end{DoxyCompactList}\item 
+override int \mbox{\hyperlink{class_eshop_1_1_autumn_afa26bcecad81dc25d57e5fed3379810c}{Get\+Percentual\+Order\+Discount}} ()
+\begin{DoxyCompactList}\small\item\em Vraci procentualni slevu objednavky \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Trida dedi od abstraktni tridy metody k aplikaci slev na objednavku a jeji polozky Individualni sleva polozky se aplikuje pokud se produkt nachazi v tabulce specialnich produktu v db Pozn.\+: slevy objednavky nejsou na podzim aplikovany 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_eshop_1_1_autumn_a8b81fea543d4da4da80b981e3d18e71f}\label{class_eshop_1_1_autumn_a8b81fea543d4da4da80b981e3d18e71f}} 
+\index{Eshop.Autumn@{Eshop.Autumn}!AssignDiscountsToItem@{AssignDiscountsToItem}}
+\index{AssignDiscountsToItem@{AssignDiscountsToItem}!Eshop.Autumn@{Eshop.Autumn}}
+\subsubsection{\texorpdfstring{AssignDiscountsToItem()}{AssignDiscountsToItem()}}
+{\footnotesize\ttfamily override List$<$\mbox{\hyperlink{class_eshop_1_1_order_item}{Order\+Item}}$>$ Eshop.\+Autumn.\+Assign\+Discounts\+To\+Item (\begin{DoxyParamCaption}\item[{Key\+Value\+Pair$<$ \mbox{\hyperlink{class_eshop_1_1_product}{Product}}, int $>$}]{basket\+Item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Aplikace pevne slevy na polozku, pokud se polozka nachazi v tabulce specialnich produktu 
+
+
+\begin{DoxyParams}{Parameters}
+{\em basket\+Item} & polozka kosiku transformovana na polozku objednavky\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+kolekce s polozkou s pridelenou slevou
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_eshop_1_1_season}{Eshop.\+Season}}.
+
+\mbox{\Hypertarget{class_eshop_1_1_autumn_ac5ee4a4898239df20f6d62a88adf039a}\label{class_eshop_1_1_autumn_ac5ee4a4898239df20f6d62a88adf039a}} 
+\index{Eshop.Autumn@{Eshop.Autumn}!GetFixedOrderDiscount@{GetFixedOrderDiscount}}
+\index{GetFixedOrderDiscount@{GetFixedOrderDiscount}!Eshop.Autumn@{Eshop.Autumn}}
+\subsubsection{\texorpdfstring{GetFixedOrderDiscount()}{GetFixedOrderDiscount()}}
+{\footnotesize\ttfamily override int Eshop.\+Autumn.\+Get\+Fixed\+Order\+Discount (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Vraci pevnou slevu objednavky 
+
+\begin{DoxyReturn}{Returns}
+nula
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_eshop_1_1_season}{Eshop.\+Season}}.
+
+\mbox{\Hypertarget{class_eshop_1_1_autumn_afa26bcecad81dc25d57e5fed3379810c}\label{class_eshop_1_1_autumn_afa26bcecad81dc25d57e5fed3379810c}} 
+\index{Eshop.Autumn@{Eshop.Autumn}!GetPercentualOrderDiscount@{GetPercentualOrderDiscount}}
+\index{GetPercentualOrderDiscount@{GetPercentualOrderDiscount}!Eshop.Autumn@{Eshop.Autumn}}
+\subsubsection{\texorpdfstring{GetPercentualOrderDiscount()}{GetPercentualOrderDiscount()}}
+{\footnotesize\ttfamily override int Eshop.\+Autumn.\+Get\+Percentual\+Order\+Discount (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Vraci procentualni slevu objednavky 
+
+\begin{DoxyReturn}{Returns}
+nula
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_eshop_1_1_season}{Eshop.\+Season}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Me/source/repos/\+A2\+O\+P\+N/\+Eshop/\+Eshop/\+Seasons/Autumn.\+cs\end{DoxyCompactItemize}

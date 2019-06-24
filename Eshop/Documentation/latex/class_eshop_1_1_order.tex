@@ -1,0 +1,181 @@
+\hypertarget{class_eshop_1_1_order}{}\section{Eshop.\+Order Class Reference}
+\label{class_eshop_1_1_order}\index{Eshop.Order@{Eshop.Order}}
+
+
+Trida slouzi k sestaveni objednavky a nacteni objednavek z databaze. Mezi parametry tridy patri instance zakaznika a kolekce polozek objednavky  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_eshop_1_1_order_a7521c71e22f3d753e91f5fbfe53eee20}{Order}} (\mbox{\hyperlink{class_eshop_1_1_customer}{Customer}} customer, List$<$ \mbox{\hyperlink{class_eshop_1_1_order_item}{Order\+Item}} $>$ order\+Items, int fixed\+Discount, int percentual\+Discount, int state, Date\+Time creation\+Date\+Time, int id=-\/1)
+\begin{DoxyCompactList}\small\item\em Konstruktor objednavky \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eshop_1_1_order_a7fee74a9ab6d7a0f97e913a5a7d327b8}{Change\+ID}} (int id)
+\begin{DoxyCompactList}\small\item\em Zmen identifikacni cislo objednavky \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eshop_1_1_order_a33412d95cfca5324b7f0c15daea7f3f4}{Change\+State}} (int state)
+\begin{DoxyCompactList}\small\item\em Zmen stav objednavky \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eshop_1_1_order_a5ca64e128e83878de3eeea26c8c61fb1}{Calculate\+Order\+Pricing}} ()
+\begin{DoxyCompactList}\small\item\em Spocti ceny\+: celkova suma pred slevnenim, celkova sleva objednavky, konecna suma objednavky \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_eshop_1_1_order}{Order}} \mbox{\hyperlink{class_eshop_1_1_order_aa52c3d772414d3bd1387422bc2544268}{Build\+Order}} (List$<$ \mbox{\hyperlink{class_eshop_1_1_order_item}{Order\+Item}} $>$ order\+Items)
+\begin{DoxyCompactList}\small\item\em Sestaveni objednavky z pridelenych polozek \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_order_a7c5a41df44ff672fba3a6e365fc20ba3}\label{class_eshop_1_1_order_a7c5a41df44ff672fba3a6e365fc20ba3}} 
+const string {\bfseries Table\+Name} = \char`\"{}Order\+Detail\char`\"{}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_order_a3bae31e634dfa819157b7dac0d94e840}\label{class_eshop_1_1_order_a3bae31e634dfa819157b7dac0d94e840}} 
+const string {\bfseries Order\+I\+D\+Column} = \char`\"{}Order\+ID\char`\"{}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_order_aff0f043a6e3d13d67073eb1b366cd984}\label{class_eshop_1_1_order_aff0f043a6e3d13d67073eb1b366cd984}} 
+const string {\bfseries Customer\+Column} = \char`\"{}Customer\+ID\char`\"{}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_order_ae107d251b46d7395cb2ffcbc12ba621d}\label{class_eshop_1_1_order_ae107d251b46d7395cb2ffcbc12ba621d}} 
+const string {\bfseries Fixed\+Discount\+Column} = \char`\"{}Fixed\+Discount\char`\"{}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_order_a1dec48de20e836ebedc7158abeb2ae80}\label{class_eshop_1_1_order_a1dec48de20e836ebedc7158abeb2ae80}} 
+const string {\bfseries Percentual\+Discount\+Column} = \char`\"{}Percentual\+Discount\char`\"{}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_order_a3268cb8ab42cbe07e303af04f0f70b13}\label{class_eshop_1_1_order_a3268cb8ab42cbe07e303af04f0f70b13}} 
+const string {\bfseries State\+I\+D\+Column} = \char`\"{}State\+ID\char`\"{}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_order_a7d6eea038cef271d1d38a279c168bb77}\label{class_eshop_1_1_order_a7d6eea038cef271d1d38a279c168bb77}} 
+const string {\bfseries Date\+Time\+Column} = \char`\"{}Date\+Time\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_order_aeae6ee761b8c96bcf4a20a65044c5736}\label{class_eshop_1_1_order_aeae6ee761b8c96bcf4a20a65044c5736}} 
+int {\bfseries ID}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_order_acf07ed7a19444bcda9e4aa7093220835}\label{class_eshop_1_1_order_acf07ed7a19444bcda9e4aa7093220835}} 
+\mbox{\hyperlink{class_eshop_1_1_customer}{Customer}} {\bfseries Customer}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_order_a391dd5092657f04d1ab6beea15d094e3}\label{class_eshop_1_1_order_a391dd5092657f04d1ab6beea15d094e3}} 
+List$<$ \mbox{\hyperlink{class_eshop_1_1_order_item}{Order\+Item}} $>$ {\bfseries Order\+Items}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_order_a7c5727530ae64c99b436080b14478503}\label{class_eshop_1_1_order_a7c5727530ae64c99b436080b14478503}} 
+int {\bfseries Fixed\+Discount}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_order_a8f7d7017df879c63d7d2fb0d489d76f2}\label{class_eshop_1_1_order_a8f7d7017df879c63d7d2fb0d489d76f2}} 
+int {\bfseries Percentual\+Discount}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_order_a8a75761ddbf4c4520d3176a3f3ef1d36}\label{class_eshop_1_1_order_a8a75761ddbf4c4520d3176a3f3ef1d36}} 
+int {\bfseries State}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_order_a0d6f356dfac0a0e371c7b81a59c9f738}\label{class_eshop_1_1_order_a0d6f356dfac0a0e371c7b81a59c9f738}} 
+Date\+Time {\bfseries Creation\+Date\+Time}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_order_a31c3ffb2f581554d008cab3d86df8a3c}\label{class_eshop_1_1_order_a31c3ffb2f581554d008cab3d86df8a3c}} 
+int {\bfseries Total\+Order\+Before\+Discount\+Price}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_order_a15229f62e5fd0d06511f35aa1d166575}\label{class_eshop_1_1_order_a15229f62e5fd0d06511f35aa1d166575}} 
+decimal {\bfseries Total\+Order\+Discount}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_order_a2d0988982ee355f3baff758f63d0a4c2}\label{class_eshop_1_1_order_a2d0988982ee355f3baff758f63d0a4c2}} 
+int {\bfseries Final\+Order\+Price}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Trida slouzi k sestaveni objednavky a nacteni objednavek z databaze. Mezi parametry tridy patri instance zakaznika a kolekce polozek objednavky 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_eshop_1_1_order_a7521c71e22f3d753e91f5fbfe53eee20}\label{class_eshop_1_1_order_a7521c71e22f3d753e91f5fbfe53eee20}} 
+\index{Eshop.Order@{Eshop.Order}!Order@{Order}}
+\index{Order@{Order}!Eshop.Order@{Eshop.Order}}
+\subsubsection{\texorpdfstring{Order()}{Order()}}
+{\footnotesize\ttfamily Eshop.\+Order.\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eshop_1_1_customer}{Customer}}}]{customer,  }\item[{List$<$ \mbox{\hyperlink{class_eshop_1_1_order_item}{Order\+Item}} $>$}]{order\+Items,  }\item[{int}]{fixed\+Discount,  }\item[{int}]{percentual\+Discount,  }\item[{int}]{state,  }\item[{Date\+Time}]{creation\+Date\+Time,  }\item[{int}]{id = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+
+
+Konstruktor objednavky 
+
+
+\begin{DoxyParams}{Parameters}
+{\em customer} & zakaznik\\
+\hline
+{\em order\+Items} & polozky objednavky\\
+\hline
+{\em fixed\+Discount} & pevna sleva objednavky\\
+\hline
+{\em percentual\+Discount} & percentualni sleva objednavky\\
+\hline
+{\em state} & stav\\
+\hline
+{\em creation\+Date\+Time} & datum a cas vytvoreni\\
+\hline
+{\em id} & identifikacni cislo objednavky\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_eshop_1_1_order_aa52c3d772414d3bd1387422bc2544268}\label{class_eshop_1_1_order_aa52c3d772414d3bd1387422bc2544268}} 
+\index{Eshop.Order@{Eshop.Order}!BuildOrder@{BuildOrder}}
+\index{BuildOrder@{BuildOrder}!Eshop.Order@{Eshop.Order}}
+\subsubsection{\texorpdfstring{BuildOrder()}{BuildOrder()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_eshop_1_1_order}{Order}} Eshop.\+Order.\+Build\+Order (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{class_eshop_1_1_order_item}{Order\+Item}} $>$}]{order\+Items }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sestaveni objednavky z pridelenych polozek 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order\+Items} & pridelene polozky objednavky\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+objednavka
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eshop_1_1_order_a5ca64e128e83878de3eeea26c8c61fb1}\label{class_eshop_1_1_order_a5ca64e128e83878de3eeea26c8c61fb1}} 
+\index{Eshop.Order@{Eshop.Order}!CalculateOrderPricing@{CalculateOrderPricing}}
+\index{CalculateOrderPricing@{CalculateOrderPricing}!Eshop.Order@{Eshop.Order}}
+\subsubsection{\texorpdfstring{CalculateOrderPricing()}{CalculateOrderPricing()}}
+{\footnotesize\ttfamily void Eshop.\+Order.\+Calculate\+Order\+Pricing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Spocti ceny\+: celkova suma pred slevnenim, celkova sleva objednavky, konecna suma objednavky 
+
+\mbox{\Hypertarget{class_eshop_1_1_order_a7fee74a9ab6d7a0f97e913a5a7d327b8}\label{class_eshop_1_1_order_a7fee74a9ab6d7a0f97e913a5a7d327b8}} 
+\index{Eshop.Order@{Eshop.Order}!ChangeID@{ChangeID}}
+\index{ChangeID@{ChangeID}!Eshop.Order@{Eshop.Order}}
+\subsubsection{\texorpdfstring{ChangeID()}{ChangeID()}}
+{\footnotesize\ttfamily void Eshop.\+Order.\+Change\+ID (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Zmen identifikacni cislo objednavky 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & nove identifikacni cislo\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eshop_1_1_order_a33412d95cfca5324b7f0c15daea7f3f4}\label{class_eshop_1_1_order_a33412d95cfca5324b7f0c15daea7f3f4}} 
+\index{Eshop.Order@{Eshop.Order}!ChangeState@{ChangeState}}
+\index{ChangeState@{ChangeState}!Eshop.Order@{Eshop.Order}}
+\subsubsection{\texorpdfstring{ChangeState()}{ChangeState()}}
+{\footnotesize\ttfamily void Eshop.\+Order.\+Change\+State (\begin{DoxyParamCaption}\item[{int}]{state }\end{DoxyParamCaption})}
+
+
+
+Zmen stav objednavky 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & novy stav objednavky\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Me/source/repos/\+A2\+O\+P\+N/\+Eshop/\+Eshop/\+Entities/Order.\+cs\end{DoxyCompactItemize}

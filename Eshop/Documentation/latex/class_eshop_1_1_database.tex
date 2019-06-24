@@ -1,0 +1,564 @@
+\hypertarget{class_eshop_1_1_database}{}\section{Eshop.\+Database Class Reference}
+\label{class_eshop_1_1_database}\index{Eshop.Database@{Eshop.Database}}
+
+
+Trida slouzi ke komunikaci s databazi, uchovani cached udaju v pameti a manipulaci s cached udaji  
+
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_eshop_1_1_product}{Product}} \mbox{\hyperlink{class_eshop_1_1_database_a77cb0c6d892ec285991db9b705ea8ed6}{Get\+Cached\+Product\+By\+ID}} (int id)
+\begin{DoxyCompactList}\small\item\em Vraceni instance produktu z produktu v pameti podle zadaneho ID \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_eshop_1_1_order}{Order}} \mbox{\hyperlink{class_eshop_1_1_database_a7a2971f27ae7da358f1fceca1bd712ec}{Get\+Cached\+Order\+By\+ID}} (int id)
+\begin{DoxyCompactList}\small\item\em Vraceni instance objednavky z objednavek v pameti podle zadaneho ID \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_eshop_1_1_database_entites_1_1_strategy}{Strategy}} \mbox{\hyperlink{class_eshop_1_1_database_a3dcc471a096b7d40671266fa0853648d}{Get\+Cached\+Strategy\+By\+ID}} (int id)
+\begin{DoxyCompactList}\small\item\em Vraceni instance strategie ze strategii v pameti podle zadaneho ID \end{DoxyCompactList}\item 
+static string \mbox{\hyperlink{class_eshop_1_1_database_a6339b833e02a6898bd488e1562b6475e}{Get\+State\+Name\+By\+ID}} (int id)
+\begin{DoxyCompactList}\small\item\em Vraceni popisu stavu objenavky ze stavu objednavky v pameti podle zadaneho ID \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_eshop_1_1_database_aabc0c3c9814f08e1547d9f5203027537}{Get\+Logged\+Customer\+Orders\+Count}} ()
+\begin{DoxyCompactList}\small\item\em Vraceni souctu objednavek prihlaseneho zakaznika Pozn.\+: pro kalkulaci letni slevy \end{DoxyCompactList}\item 
+static List$<$ \mbox{\hyperlink{class_eshop_1_1_order}{Order}} $>$ \mbox{\hyperlink{class_eshop_1_1_database_a0e0919b49fd17301bfb70453552948b6}{Get\+Customer\+Orders}} (\mbox{\hyperlink{class_eshop_1_1_customer}{Customer}} customer)
+\begin{DoxyCompactList}\small\item\em Vraceni instanci vsech objednavek zakaznika \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_eshop_1_1_database_a740a0b27bde20b1000993f96550a570d}{Load\+Cathegories}} (S\+Q\+Lite\+Data\+Reader reader)
+\begin{DoxyCompactList}\small\item\em Nacteni kategorii z databaze do pameti \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_eshop_1_1_database_ac17365c3ead366345290d2e8919f0e1a}{Load\+Orders}} (S\+Q\+Lite\+Data\+Reader reader)
+\begin{DoxyCompactList}\small\item\em Nacteni objednavek z databaze do pameti \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_eshop_1_1_database_a329b6c5162884bb8eaa7407c0a0526f3}{Load\+Special\+Offers}} (S\+Q\+Lite\+Data\+Reader reader)
+\begin{DoxyCompactList}\small\item\em Nacteni specialnich polozek z databaze do pameti \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_eshop_1_1_database_af63f03aac766810014723c21d8798e35}{Load\+Strategies}} (S\+Q\+Lite\+Data\+Reader reader)
+\begin{DoxyCompactList}\small\item\em Nacteni strategii z databaze do pameti \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_eshop_1_1_database_aa12ddf3915d8952fb6f5e4c87b272444}{Load\+Order\+States}} (S\+Q\+Lite\+Data\+Reader reader)
+\begin{DoxyCompactList}\small\item\em Nacteni stavu objednavek z databaze do pameti \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_eshop_1_1_database_a9cff1ffe604cabea07eec4b807d0e1c2}{Read\+Table\+Data}} (Action$<$ S\+Q\+Lite\+Data\+Reader $>$ load\+Records, string command\+Text)
+\begin{DoxyCompactList}\small\item\em Nacteni data z databaze a jejich ulozeni do pameti \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_eshop_1_1_customer}{Customer}} \mbox{\hyperlink{class_eshop_1_1_database_a27295cdd902acbf23a5ab9647725f4b8}{Get\+Verified\+Customer}} (string email, string password)
+\begin{DoxyCompactList}\small\item\em Vraceni zakaznika se zadanymi prihlasovacimi udaji Pozn.\+: pokud zakaznik neexistuje vrati null \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_eshop_1_1_database_af1e45f95550ba58b35c2e3814696193c}{Delete\+Product}} (\mbox{\hyperlink{class_eshop_1_1_product}{Product}} product)
+\begin{DoxyCompactList}\small\item\em Vymazani produktu z databaze \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_eshop_1_1_database_a9b42824ae9bc2e583a589b031f37f457}{Create\+Product}} (\mbox{\hyperlink{class_eshop_1_1_product}{Product}} product)
+\begin{DoxyCompactList}\small\item\em Ulozeni noveho produktu do databaze \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_eshop_1_1_database_a2f2575d8ac2a4bb07c782a19497663da}{Update\+Product}} (\mbox{\hyperlink{class_eshop_1_1_product}{Product}} product)
+\begin{DoxyCompactList}\small\item\em Uprava parametru produktu Pozn.\+: metoda volana pri uprave produktu administratorem \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_eshop_1_1_database_a8df93acf09e8978c520cd83da7393fe7}{Change\+Order\+State}} (\mbox{\hyperlink{class_eshop_1_1_order}{Order}} order, int state)
+\begin{DoxyCompactList}\small\item\em Zmena stavu objednavky v db a pameti \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_eshop_1_1_database_abbe61af76e675e7dcc8c3e5bb4654b5a}{Is\+Email\+Unique}} (string email)
+\begin{DoxyCompactList}\small\item\em Overeni noveho uzivatelskeho emailu Pozn.\+: email nesmi byt jiz registrovan v db \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_eshop_1_1_database_ad1ca42e5306e3151dbe0e3be03d89eec}{Create\+Customer}} (\mbox{\hyperlink{class_eshop_1_1_customer}{Customer}} customer)
+\begin{DoxyCompactList}\small\item\em Vytvoreni zakaznika a ulozeni jeho udaju do databaze \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_eshop_1_1_database_a4f6bab0fe88f9bd59f31acddd5aaa0e9}{Get\+Customer\+ID}} (\mbox{\hyperlink{class_eshop_1_1_customer}{Customer}} customer)
+\begin{DoxyCompactList}\small\item\em Vraceni ID prihlaseneho nebo nove vytvoreneho zakaznika \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_eshop_1_1_customer}{Customer}} \mbox{\hyperlink{class_eshop_1_1_database_ae53edd2dd11678fc40a4594574ebf353}{Get\+Customer\+By\+ID}} (int id)
+\begin{DoxyCompactList}\small\item\em Vraceni instance zakaznika se zvolenym ID \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_eshop_1_1_database_a4faa9a3bc15b629843563b35f8c2ea89}{Create\+Order}} (\mbox{\hyperlink{class_eshop_1_1_order}{Order}} order)
+\begin{DoxyCompactList}\small\item\em Vytvoreni a ulozeni objednavky a jeji polozek do databaze \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_database_ab024b4e6a204818457f8a880e89e6d09}\label{class_eshop_1_1_database_ab024b4e6a204818457f8a880e89e6d09}} 
+static Action$<$ S\+Q\+Lite\+Data\+Reader $>$ {\bfseries load\+Products} = Load\+Products
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_database_a00c5788250e599af4bd23734ba8d090b}\label{class_eshop_1_1_database_a00c5788250e599af4bd23734ba8d090b}} 
+static Action$<$ S\+Q\+Lite\+Data\+Reader $>$ {\bfseries load\+Cathegories} = \mbox{\hyperlink{class_eshop_1_1_database_a740a0b27bde20b1000993f96550a570d}{Load\+Cathegories}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_database_a4439c8d63351dbdd674f46f2bdee4c94}\label{class_eshop_1_1_database_a4439c8d63351dbdd674f46f2bdee4c94}} 
+static Action$<$ S\+Q\+Lite\+Data\+Reader $>$ {\bfseries load\+Orders} = \mbox{\hyperlink{class_eshop_1_1_database_ac17365c3ead366345290d2e8919f0e1a}{Load\+Orders}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_database_a9fa9a57671e1ba37cbe8b003b52fa65c}\label{class_eshop_1_1_database_a9fa9a57671e1ba37cbe8b003b52fa65c}} 
+static Action$<$ S\+Q\+Lite\+Data\+Reader $>$ {\bfseries load\+Special\+Offers} = \mbox{\hyperlink{class_eshop_1_1_database_a329b6c5162884bb8eaa7407c0a0526f3}{Load\+Special\+Offers}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_database_a37ecbafc413e90c33ad1d60dc4962552}\label{class_eshop_1_1_database_a37ecbafc413e90c33ad1d60dc4962552}} 
+static Action$<$ S\+Q\+Lite\+Data\+Reader $>$ {\bfseries load\+Strategies} = \mbox{\hyperlink{class_eshop_1_1_database_af63f03aac766810014723c21d8798e35}{Load\+Strategies}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_database_affeb838d01a3c4eddbb31c7b94eacb91}\label{class_eshop_1_1_database_affeb838d01a3c4eddbb31c7b94eacb91}} 
+static Action$<$ S\+Q\+Lite\+Data\+Reader $>$ {\bfseries load\+Order\+States} = \mbox{\hyperlink{class_eshop_1_1_database_aa12ddf3915d8952fb6f5e4c87b272444}{Load\+Order\+States}}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_database_ac9d0477f1f5107a155f7d59f2fdcd9e8}\label{class_eshop_1_1_database_ac9d0477f1f5107a155f7d59f2fdcd9e8}} 
+static string {\bfseries Database\+File\+Name} = \char`\"{}../../../App\+Data/mobileshop.\+db\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_database_a98a7f9cf7e8df4e96ae82e26ae3f5c6a}\label{class_eshop_1_1_database_a98a7f9cf7e8df4e96ae82e26ae3f5c6a}} 
+static string {\bfseries Connection\+String} = \$\char`\"{}Data Source=\{Database\+File\+Name\};Version=3;\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_database_ac8f5160ffc13bdc056b4bdfd46e2019a}\label{class_eshop_1_1_database_ac8f5160ffc13bdc056b4bdfd46e2019a}} 
+static List$<$ \mbox{\hyperlink{class_eshop_1_1_product}{Product}} $>$ {\bfseries Cached\+Products} = new List$<$\mbox{\hyperlink{class_eshop_1_1_product}{Product}}$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_database_a2f403386c6481ed9717199b824c77eb3}\label{class_eshop_1_1_database_a2f403386c6481ed9717199b824c77eb3}} 
+static List$<$ \mbox{\hyperlink{class_eshop_1_1_order}{Order}} $>$ {\bfseries Cached\+Orders} = new List$<$\mbox{\hyperlink{class_eshop_1_1_order}{Order}}$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_database_a91e87e815906f7c8f022377ba0a3d1f2}\label{class_eshop_1_1_database_a91e87e815906f7c8f022377ba0a3d1f2}} 
+static List$<$ \mbox{\hyperlink{class_eshop_1_1_cathegory}{Cathegory}} $>$ {\bfseries Cached\+Cathegories} = new List$<$\mbox{\hyperlink{class_eshop_1_1_cathegory}{Cathegory}}$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_database_a19ff043293ba2b24a9af08939ab467b6}\label{class_eshop_1_1_database_a19ff043293ba2b24a9af08939ab467b6}} 
+static List$<$ \mbox{\hyperlink{class_eshop_1_1_database_entites_1_1_special_offer}{Special\+Offer}} $>$ {\bfseries Cached\+Special\+Offers} = new List$<$\mbox{\hyperlink{class_eshop_1_1_database_entites_1_1_special_offer}{Special\+Offer}}$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_database_ab7a409168315eb14931324316e982366}\label{class_eshop_1_1_database_ab7a409168315eb14931324316e982366}} 
+static List$<$ \mbox{\hyperlink{class_eshop_1_1_database_entites_1_1_strategy}{Strategy}} $>$ {\bfseries Cached\+Strategies} = new List$<$\mbox{\hyperlink{class_eshop_1_1_database_entites_1_1_strategy}{Strategy}}$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_database_a863e45584a10c9cddd877a2d3d076388}\label{class_eshop_1_1_database_a863e45584a10c9cddd877a2d3d076388}} 
+static List$<$ \mbox{\hyperlink{class_eshop_1_1_database_entites_1_1_order_state}{Order\+State}} $>$ {\bfseries Cached\+Order\+States} = new List$<$\mbox{\hyperlink{class_eshop_1_1_database_entites_1_1_order_state}{Order\+State}}$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+static string {\bfseries Load\+Products\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+static string {\bfseries Load\+Cathegories\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+static string {\bfseries Load\+Orders\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+static string {\bfseries Load\+Special\+Offers\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+static string {\bfseries Load\+Strategies\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+static string {\bfseries Load\+Order\+States\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Trida slouzi ke komunikaci s databazi, uchovani cached udaju v pameti a manipulaci s cached udaji 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_eshop_1_1_database_a8df93acf09e8978c520cd83da7393fe7}\label{class_eshop_1_1_database_a8df93acf09e8978c520cd83da7393fe7}} 
+\index{Eshop.Database@{Eshop.Database}!ChangeOrderState@{ChangeOrderState}}
+\index{ChangeOrderState@{ChangeOrderState}!Eshop.Database@{Eshop.Database}}
+\subsubsection{\texorpdfstring{ChangeOrderState()}{ChangeOrderState()}}
+{\footnotesize\ttfamily static void Eshop.\+Database.\+Change\+Order\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eshop_1_1_order}{Order}}}]{order,  }\item[{int}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Zmena stavu objednavky v db a pameti 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & objednavka\\
+\hline
+{\em state} & novy stav\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eshop_1_1_database_ad1ca42e5306e3151dbe0e3be03d89eec}\label{class_eshop_1_1_database_ad1ca42e5306e3151dbe0e3be03d89eec}} 
+\index{Eshop.Database@{Eshop.Database}!CreateCustomer@{CreateCustomer}}
+\index{CreateCustomer@{CreateCustomer}!Eshop.Database@{Eshop.Database}}
+\subsubsection{\texorpdfstring{CreateCustomer()}{CreateCustomer()}}
+{\footnotesize\ttfamily static void Eshop.\+Database.\+Create\+Customer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eshop_1_1_customer}{Customer}}}]{customer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Vytvoreni zakaznika a ulozeni jeho udaju do databaze 
+
+
+\begin{DoxyParams}{Parameters}
+{\em customer} & zakaznik\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eshop_1_1_database_a4faa9a3bc15b629843563b35f8c2ea89}\label{class_eshop_1_1_database_a4faa9a3bc15b629843563b35f8c2ea89}} 
+\index{Eshop.Database@{Eshop.Database}!CreateOrder@{CreateOrder}}
+\index{CreateOrder@{CreateOrder}!Eshop.Database@{Eshop.Database}}
+\subsubsection{\texorpdfstring{CreateOrder()}{CreateOrder()}}
+{\footnotesize\ttfamily static void Eshop.\+Database.\+Create\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eshop_1_1_order}{Order}}}]{order }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Vytvoreni a ulozeni objednavky a jeji polozek do databaze 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & objednavka k ulozeni do db\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eshop_1_1_database_a9b42824ae9bc2e583a589b031f37f457}\label{class_eshop_1_1_database_a9b42824ae9bc2e583a589b031f37f457}} 
+\index{Eshop.Database@{Eshop.Database}!CreateProduct@{CreateProduct}}
+\index{CreateProduct@{CreateProduct}!Eshop.Database@{Eshop.Database}}
+\subsubsection{\texorpdfstring{CreateProduct()}{CreateProduct()}}
+{\footnotesize\ttfamily static void Eshop.\+Database.\+Create\+Product (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eshop_1_1_product}{Product}}}]{product }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Ulozeni noveho produktu do databaze 
+
+
+\begin{DoxyParams}{Parameters}
+{\em product} & produkt k ulozeni\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eshop_1_1_database_af1e45f95550ba58b35c2e3814696193c}\label{class_eshop_1_1_database_af1e45f95550ba58b35c2e3814696193c}} 
+\index{Eshop.Database@{Eshop.Database}!DeleteProduct@{DeleteProduct}}
+\index{DeleteProduct@{DeleteProduct}!Eshop.Database@{Eshop.Database}}
+\subsubsection{\texorpdfstring{DeleteProduct()}{DeleteProduct()}}
+{\footnotesize\ttfamily static void Eshop.\+Database.\+Delete\+Product (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eshop_1_1_product}{Product}}}]{product }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Vymazani produktu z databaze 
+
+
+\begin{DoxyParams}{Parameters}
+{\em product} & produkt k vymazani\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eshop_1_1_database_a7a2971f27ae7da358f1fceca1bd712ec}\label{class_eshop_1_1_database_a7a2971f27ae7da358f1fceca1bd712ec}} 
+\index{Eshop.Database@{Eshop.Database}!GetCachedOrderByID@{GetCachedOrderByID}}
+\index{GetCachedOrderByID@{GetCachedOrderByID}!Eshop.Database@{Eshop.Database}}
+\subsubsection{\texorpdfstring{GetCachedOrderByID()}{GetCachedOrderByID()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_eshop_1_1_order}{Order}} Eshop.\+Database.\+Get\+Cached\+Order\+By\+ID (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Vraceni instance objednavky z objednavek v pameti podle zadaneho ID 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & hledane ID objednavky\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+instance nalezene objednavky
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eshop_1_1_database_a77cb0c6d892ec285991db9b705ea8ed6}\label{class_eshop_1_1_database_a77cb0c6d892ec285991db9b705ea8ed6}} 
+\index{Eshop.Database@{Eshop.Database}!GetCachedProductByID@{GetCachedProductByID}}
+\index{GetCachedProductByID@{GetCachedProductByID}!Eshop.Database@{Eshop.Database}}
+\subsubsection{\texorpdfstring{GetCachedProductByID()}{GetCachedProductByID()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_eshop_1_1_product}{Product}} Eshop.\+Database.\+Get\+Cached\+Product\+By\+ID (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Vraceni instance produktu z produktu v pameti podle zadaneho ID 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & hledane ID produktu\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+instance nalezeneho produktu
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eshop_1_1_database_a3dcc471a096b7d40671266fa0853648d}\label{class_eshop_1_1_database_a3dcc471a096b7d40671266fa0853648d}} 
+\index{Eshop.Database@{Eshop.Database}!GetCachedStrategyByID@{GetCachedStrategyByID}}
+\index{GetCachedStrategyByID@{GetCachedStrategyByID}!Eshop.Database@{Eshop.Database}}
+\subsubsection{\texorpdfstring{GetCachedStrategyByID()}{GetCachedStrategyByID()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_eshop_1_1_database_entites_1_1_strategy}{Strategy}} Eshop.\+Database.\+Get\+Cached\+Strategy\+By\+ID (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Vraceni instance strategie ze strategii v pameti podle zadaneho ID 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & hledane ID strategie\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+instance nalezene strategie
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eshop_1_1_database_ae53edd2dd11678fc40a4594574ebf353}\label{class_eshop_1_1_database_ae53edd2dd11678fc40a4594574ebf353}} 
+\index{Eshop.Database@{Eshop.Database}!GetCustomerByID@{GetCustomerByID}}
+\index{GetCustomerByID@{GetCustomerByID}!Eshop.Database@{Eshop.Database}}
+\subsubsection{\texorpdfstring{GetCustomerByID()}{GetCustomerByID()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_eshop_1_1_customer}{Customer}} Eshop.\+Database.\+Get\+Customer\+By\+ID (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Vraceni instance zakaznika se zvolenym ID 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & id hledaneho zakaznika\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+instance nalezeneho zakaznika
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eshop_1_1_database_a4f6bab0fe88f9bd59f31acddd5aaa0e9}\label{class_eshop_1_1_database_a4f6bab0fe88f9bd59f31acddd5aaa0e9}} 
+\index{Eshop.Database@{Eshop.Database}!GetCustomerID@{GetCustomerID}}
+\index{GetCustomerID@{GetCustomerID}!Eshop.Database@{Eshop.Database}}
+\subsubsection{\texorpdfstring{GetCustomerID()}{GetCustomerID()}}
+{\footnotesize\ttfamily static int Eshop.\+Database.\+Get\+Customer\+ID (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eshop_1_1_customer}{Customer}}}]{customer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Vraceni ID prihlaseneho nebo nove vytvoreneho zakaznika 
+
+
+\begin{DoxyParams}{Parameters}
+{\em customer} & zakaznik jehoz ID se ma vyhledat v db\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+id zakaznika v databazi
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eshop_1_1_database_a0e0919b49fd17301bfb70453552948b6}\label{class_eshop_1_1_database_a0e0919b49fd17301bfb70453552948b6}} 
+\index{Eshop.Database@{Eshop.Database}!GetCustomerOrders@{GetCustomerOrders}}
+\index{GetCustomerOrders@{GetCustomerOrders}!Eshop.Database@{Eshop.Database}}
+\subsubsection{\texorpdfstring{GetCustomerOrders()}{GetCustomerOrders()}}
+{\footnotesize\ttfamily static List$<$\mbox{\hyperlink{class_eshop_1_1_order}{Order}}$>$ Eshop.\+Database.\+Get\+Customer\+Orders (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eshop_1_1_customer}{Customer}}}]{customer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Vraceni instanci vsech objednavek zakaznika 
+
+
+\begin{DoxyParams}{Parameters}
+{\em customer} & zakaznik jehoz objednavky jsou hledany\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+instance objednavek zakaznika
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eshop_1_1_database_aabc0c3c9814f08e1547d9f5203027537}\label{class_eshop_1_1_database_aabc0c3c9814f08e1547d9f5203027537}} 
+\index{Eshop.Database@{Eshop.Database}!GetLoggedCustomerOrdersCount@{GetLoggedCustomerOrdersCount}}
+\index{GetLoggedCustomerOrdersCount@{GetLoggedCustomerOrdersCount}!Eshop.Database@{Eshop.Database}}
+\subsubsection{\texorpdfstring{GetLoggedCustomerOrdersCount()}{GetLoggedCustomerOrdersCount()}}
+{\footnotesize\ttfamily static int Eshop.\+Database.\+Get\+Logged\+Customer\+Orders\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Vraceni souctu objednavek prihlaseneho zakaznika Pozn.\+: pro kalkulaci letni slevy 
+
+\begin{DoxyReturn}{Returns}
+soucet objednavek zakaznika
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eshop_1_1_database_a6339b833e02a6898bd488e1562b6475e}\label{class_eshop_1_1_database_a6339b833e02a6898bd488e1562b6475e}} 
+\index{Eshop.Database@{Eshop.Database}!GetStateNameByID@{GetStateNameByID}}
+\index{GetStateNameByID@{GetStateNameByID}!Eshop.Database@{Eshop.Database}}
+\subsubsection{\texorpdfstring{GetStateNameByID()}{GetStateNameByID()}}
+{\footnotesize\ttfamily static string Eshop.\+Database.\+Get\+State\+Name\+By\+ID (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Vraceni popisu stavu objenavky ze stavu objednavky v pameti podle zadaneho ID 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & hledane ID stavu objednavky\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+instance nalezeneho stavu objednavky
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eshop_1_1_database_a27295cdd902acbf23a5ab9647725f4b8}\label{class_eshop_1_1_database_a27295cdd902acbf23a5ab9647725f4b8}} 
+\index{Eshop.Database@{Eshop.Database}!GetVerifiedCustomer@{GetVerifiedCustomer}}
+\index{GetVerifiedCustomer@{GetVerifiedCustomer}!Eshop.Database@{Eshop.Database}}
+\subsubsection{\texorpdfstring{GetVerifiedCustomer()}{GetVerifiedCustomer()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_eshop_1_1_customer}{Customer}} Eshop.\+Database.\+Get\+Verified\+Customer (\begin{DoxyParamCaption}\item[{string}]{email,  }\item[{string}]{password }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Vraceni zakaznika se zadanymi prihlasovacimi udaji Pozn.\+: pokud zakaznik neexistuje vrati null 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & uzivatelsky email\\
+\hline
+{\em password} & uzivatelske heslo\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vraci objekt typu zakaznika kdyz nalezne zakaznika s udaji, jinak vraci null
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eshop_1_1_database_abbe61af76e675e7dcc8c3e5bb4654b5a}\label{class_eshop_1_1_database_abbe61af76e675e7dcc8c3e5bb4654b5a}} 
+\index{Eshop.Database@{Eshop.Database}!IsEmailUnique@{IsEmailUnique}}
+\index{IsEmailUnique@{IsEmailUnique}!Eshop.Database@{Eshop.Database}}
+\subsubsection{\texorpdfstring{IsEmailUnique()}{IsEmailUnique()}}
+{\footnotesize\ttfamily static bool Eshop.\+Database.\+Is\+Email\+Unique (\begin{DoxyParamCaption}\item[{string}]{email }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Overeni noveho uzivatelskeho emailu Pozn.\+: email nesmi byt jiz registrovan v db 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & novy registracni email\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eshop_1_1_database_a740a0b27bde20b1000993f96550a570d}\label{class_eshop_1_1_database_a740a0b27bde20b1000993f96550a570d}} 
+\index{Eshop.Database@{Eshop.Database}!LoadCathegories@{LoadCathegories}}
+\index{LoadCathegories@{LoadCathegories}!Eshop.Database@{Eshop.Database}}
+\subsubsection{\texorpdfstring{LoadCathegories()}{LoadCathegories()}}
+{\footnotesize\ttfamily static void Eshop.\+Database.\+Load\+Cathegories (\begin{DoxyParamCaption}\item[{S\+Q\+Lite\+Data\+Reader}]{reader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Nacteni kategorii z databaze do pameti 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reader} & precteny sqlite zaznamy k zpracovani\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eshop_1_1_database_ac17365c3ead366345290d2e8919f0e1a}\label{class_eshop_1_1_database_ac17365c3ead366345290d2e8919f0e1a}} 
+\index{Eshop.Database@{Eshop.Database}!LoadOrders@{LoadOrders}}
+\index{LoadOrders@{LoadOrders}!Eshop.Database@{Eshop.Database}}
+\subsubsection{\texorpdfstring{LoadOrders()}{LoadOrders()}}
+{\footnotesize\ttfamily static void Eshop.\+Database.\+Load\+Orders (\begin{DoxyParamCaption}\item[{S\+Q\+Lite\+Data\+Reader}]{reader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Nacteni objednavek z databaze do pameti 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reader} & precteny sqlite zaznamy k zpracovani\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eshop_1_1_database_aa12ddf3915d8952fb6f5e4c87b272444}\label{class_eshop_1_1_database_aa12ddf3915d8952fb6f5e4c87b272444}} 
+\index{Eshop.Database@{Eshop.Database}!LoadOrderStates@{LoadOrderStates}}
+\index{LoadOrderStates@{LoadOrderStates}!Eshop.Database@{Eshop.Database}}
+\subsubsection{\texorpdfstring{LoadOrderStates()}{LoadOrderStates()}}
+{\footnotesize\ttfamily static void Eshop.\+Database.\+Load\+Order\+States (\begin{DoxyParamCaption}\item[{S\+Q\+Lite\+Data\+Reader}]{reader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Nacteni stavu objednavek z databaze do pameti 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reader} & precteny sqlite zaznamy k zpracovani\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eshop_1_1_database_a329b6c5162884bb8eaa7407c0a0526f3}\label{class_eshop_1_1_database_a329b6c5162884bb8eaa7407c0a0526f3}} 
+\index{Eshop.Database@{Eshop.Database}!LoadSpecialOffers@{LoadSpecialOffers}}
+\index{LoadSpecialOffers@{LoadSpecialOffers}!Eshop.Database@{Eshop.Database}}
+\subsubsection{\texorpdfstring{LoadSpecialOffers()}{LoadSpecialOffers()}}
+{\footnotesize\ttfamily static void Eshop.\+Database.\+Load\+Special\+Offers (\begin{DoxyParamCaption}\item[{S\+Q\+Lite\+Data\+Reader}]{reader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Nacteni specialnich polozek z databaze do pameti 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reader} & precteny sqlite zaznamy k zpracovani\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eshop_1_1_database_af63f03aac766810014723c21d8798e35}\label{class_eshop_1_1_database_af63f03aac766810014723c21d8798e35}} 
+\index{Eshop.Database@{Eshop.Database}!LoadStrategies@{LoadStrategies}}
+\index{LoadStrategies@{LoadStrategies}!Eshop.Database@{Eshop.Database}}
+\subsubsection{\texorpdfstring{LoadStrategies()}{LoadStrategies()}}
+{\footnotesize\ttfamily static void Eshop.\+Database.\+Load\+Strategies (\begin{DoxyParamCaption}\item[{S\+Q\+Lite\+Data\+Reader}]{reader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Nacteni strategii z databaze do pameti 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reader} & precteny sqlite zaznamy k zpracovani\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eshop_1_1_database_a9cff1ffe604cabea07eec4b807d0e1c2}\label{class_eshop_1_1_database_a9cff1ffe604cabea07eec4b807d0e1c2}} 
+\index{Eshop.Database@{Eshop.Database}!ReadTableData@{ReadTableData}}
+\index{ReadTableData@{ReadTableData}!Eshop.Database@{Eshop.Database}}
+\subsubsection{\texorpdfstring{ReadTableData()}{ReadTableData()}}
+{\footnotesize\ttfamily static void Eshop.\+Database.\+Read\+Table\+Data (\begin{DoxyParamCaption}\item[{Action$<$ S\+Q\+Lite\+Data\+Reader $>$}]{load\+Records,  }\item[{string}]{command\+Text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Nacteni data z databaze a jejich ulozeni do pameti 
+
+
+\begin{DoxyParams}{Parameters}
+{\em load\+Records} & reference na funkci ukladajici prectene zaznamy\\
+\hline
+{\em command\+Text} & prikaz pro shromazdeni dat\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eshop_1_1_database_a2f2575d8ac2a4bb07c782a19497663da}\label{class_eshop_1_1_database_a2f2575d8ac2a4bb07c782a19497663da}} 
+\index{Eshop.Database@{Eshop.Database}!UpdateProduct@{UpdateProduct}}
+\index{UpdateProduct@{UpdateProduct}!Eshop.Database@{Eshop.Database}}
+\subsubsection{\texorpdfstring{UpdateProduct()}{UpdateProduct()}}
+{\footnotesize\ttfamily static void Eshop.\+Database.\+Update\+Product (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eshop_1_1_product}{Product}}}]{product }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Uprava parametru produktu Pozn.\+: metoda volana pri uprave produktu administratorem 
+
+
+\begin{DoxyParams}{Parameters}
+{\em product} & produkt k uprave\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_eshop_1_1_database_ad90033e47ea802c51c2e0a2013a4e54e}\label{class_eshop_1_1_database_ad90033e47ea802c51c2e0a2013a4e54e}} 
+\index{Eshop.Database@{Eshop.Database}!LoadCathegoriesCommand@{LoadCathegoriesCommand}}
+\index{LoadCathegoriesCommand@{LoadCathegoriesCommand}!Eshop.Database@{Eshop.Database}}
+\subsubsection{\texorpdfstring{LoadCathegoriesCommand}{LoadCathegoriesCommand}}
+{\footnotesize\ttfamily string Eshop.\+Database.\+Load\+Cathegories\+Command\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{            \$\textcolor{stringliteral}{"SELECT * FROM \{Cathegory.TableName\}"}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_eshop_1_1_database_a16da80dd028260d1010514f20235f888}\label{class_eshop_1_1_database_a16da80dd028260d1010514f20235f888}} 
+\index{Eshop.Database@{Eshop.Database}!LoadOrdersCommand@{LoadOrdersCommand}}
+\index{LoadOrdersCommand@{LoadOrdersCommand}!Eshop.Database@{Eshop.Database}}
+\subsubsection{\texorpdfstring{LoadOrdersCommand}{LoadOrdersCommand}}
+{\footnotesize\ttfamily string Eshop.\+Database.\+Load\+Orders\+Command\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{            \$\textcolor{stringliteral}{"SELECT * FROM \{Order.TableName\}"}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_eshop_1_1_database_ab73d9871abe4bf825d5eb5fc1be4c26f}\label{class_eshop_1_1_database_ab73d9871abe4bf825d5eb5fc1be4c26f}} 
+\index{Eshop.Database@{Eshop.Database}!LoadOrderStatesCommand@{LoadOrderStatesCommand}}
+\index{LoadOrderStatesCommand@{LoadOrderStatesCommand}!Eshop.Database@{Eshop.Database}}
+\subsubsection{\texorpdfstring{LoadOrderStatesCommand}{LoadOrderStatesCommand}}
+{\footnotesize\ttfamily string Eshop.\+Database.\+Load\+Order\+States\+Command\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{            \$\textcolor{stringliteral}{"SELECT * FROM \{OrderState.TableName\}"}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_eshop_1_1_database_a981b07dc3f140e97a1b9632139a39c0b}\label{class_eshop_1_1_database_a981b07dc3f140e97a1b9632139a39c0b}} 
+\index{Eshop.Database@{Eshop.Database}!LoadProductsCommand@{LoadProductsCommand}}
+\index{LoadProductsCommand@{LoadProductsCommand}!Eshop.Database@{Eshop.Database}}
+\subsubsection{\texorpdfstring{LoadProductsCommand}{LoadProductsCommand}}
+{\footnotesize\ttfamily string Eshop.\+Database.\+Load\+Products\+Command\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{            \$\textcolor{stringliteral}{"SELECT p.\{Product.IDColumn\}, p.\{Product.NameColumn\}, "} +}
+\DoxyCodeLine{            \$\textcolor{stringliteral}{"c.Description AS \{Product.CathegoryColumn\}, "} +}
+\DoxyCodeLine{            \$\textcolor{stringliteral}{"p.\{Product.PriceColumn\}, p.\{Product.PhotoColumn\},"} +}
+\DoxyCodeLine{            \$\textcolor{stringliteral}{"p.\{Product.DescriptionColumn\} FROM \{Product.TableName\} AS p "} +}
+\DoxyCodeLine{            \$\textcolor{stringliteral}{"JOIN Cathegory AS c WHERE p.\{Product.CathegoryColumn\} = c.\{Product.CathegoryColumn\}"}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_eshop_1_1_database_a3d8c8f85b7ff06b38f40ac4b7afe5f51}\label{class_eshop_1_1_database_a3d8c8f85b7ff06b38f40ac4b7afe5f51}} 
+\index{Eshop.Database@{Eshop.Database}!LoadSpecialOffersCommand@{LoadSpecialOffersCommand}}
+\index{LoadSpecialOffersCommand@{LoadSpecialOffersCommand}!Eshop.Database@{Eshop.Database}}
+\subsubsection{\texorpdfstring{LoadSpecialOffersCommand}{LoadSpecialOffersCommand}}
+{\footnotesize\ttfamily string Eshop.\+Database.\+Load\+Special\+Offers\+Command\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{            \$\textcolor{stringliteral}{"SELECT * FROM \{SpecialOffer.TableName\}"}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_eshop_1_1_database_a6289313513f4908a221c38198647bddf}\label{class_eshop_1_1_database_a6289313513f4908a221c38198647bddf}} 
+\index{Eshop.Database@{Eshop.Database}!LoadStrategiesCommand@{LoadStrategiesCommand}}
+\index{LoadStrategiesCommand@{LoadStrategiesCommand}!Eshop.Database@{Eshop.Database}}
+\subsubsection{\texorpdfstring{LoadStrategiesCommand}{LoadStrategiesCommand}}
+{\footnotesize\ttfamily string Eshop.\+Database.\+Load\+Strategies\+Command\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{            \$\textcolor{stringliteral}{"SELECT * FROM \{Strategy.TableName\}"}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Me/source/repos/\+A2\+O\+P\+N/\+Eshop/\+Eshop/\+Internals/Database.\+cs\end{DoxyCompactItemize}

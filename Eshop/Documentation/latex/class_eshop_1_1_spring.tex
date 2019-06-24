@@ -1,0 +1,97 @@
+\hypertarget{class_eshop_1_1_spring}{}\section{Eshop.\+Spring Class Reference}
+\label{class_eshop_1_1_spring}\index{Eshop.Spring@{Eshop.Spring}}
+
+
+Trida dedi od abstraktni tridy metody k aplikaci slev na objednavku a jeji polozky Jarni strategie\+:  
+
+
+Inheritance diagram for Eshop.\+Spring\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_eshop_1_1_spring}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override List$<$ \mbox{\hyperlink{class_eshop_1_1_order_item}{Order\+Item}} $>$ \mbox{\hyperlink{class_eshop_1_1_spring_a153afff8b69d351f44248def96bfff7c}{Assign\+Discounts\+To\+Item}} (Key\+Value\+Pair$<$ \mbox{\hyperlink{class_eshop_1_1_product}{Product}}, int $>$ basket\+Item)
+\begin{DoxyCompactList}\small\item\em Prideleni slevy polozce objednavky v kosiku (rozdeleni na slevnenou a neslevnenou cast polozky) \end{DoxyCompactList}\item 
+override int \mbox{\hyperlink{class_eshop_1_1_spring_aa3dfae255c5d19147350cd78fa140f55}{Get\+Fixed\+Order\+Discount}} ()
+\begin{DoxyCompactList}\small\item\em Vraci pevnou slevu objednavky \end{DoxyCompactList}\item 
+override int \mbox{\hyperlink{class_eshop_1_1_spring_a1c4c4c98856a009b527eb0c74af83297}{Get\+Percentual\+Order\+Discount}} ()
+\begin{DoxyCompactList}\small\item\em Vraci procentualni slevu objednavky \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Trida dedi od abstraktni tridy metody k aplikaci slev na objednavku a jeji polozky Jarni strategie\+: 
+
+Procentualni polozkova sleva pri nakupu\+: 
+\begin{DoxyItemize}
+\item nad 3 polozky vcetne 20\%  
+\item nad 8 vcetne 30\%  
+\item nad 12 vcetne 40\%  
+\end{DoxyItemize}Pozn.\+: Slevy objednavky pro jarni sezonu neplati 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_eshop_1_1_spring_a153afff8b69d351f44248def96bfff7c}\label{class_eshop_1_1_spring_a153afff8b69d351f44248def96bfff7c}} 
+\index{Eshop.Spring@{Eshop.Spring}!AssignDiscountsToItem@{AssignDiscountsToItem}}
+\index{AssignDiscountsToItem@{AssignDiscountsToItem}!Eshop.Spring@{Eshop.Spring}}
+\subsubsection{\texorpdfstring{AssignDiscountsToItem()}{AssignDiscountsToItem()}}
+{\footnotesize\ttfamily override List$<$\mbox{\hyperlink{class_eshop_1_1_order_item}{Order\+Item}}$>$ Eshop.\+Spring.\+Assign\+Discounts\+To\+Item (\begin{DoxyParamCaption}\item[{Key\+Value\+Pair$<$ \mbox{\hyperlink{class_eshop_1_1_product}{Product}}, int $>$}]{basket\+Item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Prideleni slevy polozce objednavky v kosiku (rozdeleni na slevnenou a neslevnenou cast polozky) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em basket\+Item} & polozka kosiku transformovana na polozku objednavky\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+kolekce s polozkou rozdelenou na slevnenou a neslevnenou polozku
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_eshop_1_1_season}{Eshop.\+Season}}.
+
+\mbox{\Hypertarget{class_eshop_1_1_spring_aa3dfae255c5d19147350cd78fa140f55}\label{class_eshop_1_1_spring_aa3dfae255c5d19147350cd78fa140f55}} 
+\index{Eshop.Spring@{Eshop.Spring}!GetFixedOrderDiscount@{GetFixedOrderDiscount}}
+\index{GetFixedOrderDiscount@{GetFixedOrderDiscount}!Eshop.Spring@{Eshop.Spring}}
+\subsubsection{\texorpdfstring{GetFixedOrderDiscount()}{GetFixedOrderDiscount()}}
+{\footnotesize\ttfamily override int Eshop.\+Spring.\+Get\+Fixed\+Order\+Discount (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Vraci pevnou slevu objednavky 
+
+\begin{DoxyReturn}{Returns}
+nula
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_eshop_1_1_season}{Eshop.\+Season}}.
+
+\mbox{\Hypertarget{class_eshop_1_1_spring_a1c4c4c98856a009b527eb0c74af83297}\label{class_eshop_1_1_spring_a1c4c4c98856a009b527eb0c74af83297}} 
+\index{Eshop.Spring@{Eshop.Spring}!GetPercentualOrderDiscount@{GetPercentualOrderDiscount}}
+\index{GetPercentualOrderDiscount@{GetPercentualOrderDiscount}!Eshop.Spring@{Eshop.Spring}}
+\subsubsection{\texorpdfstring{GetPercentualOrderDiscount()}{GetPercentualOrderDiscount()}}
+{\footnotesize\ttfamily override int Eshop.\+Spring.\+Get\+Percentual\+Order\+Discount (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Vraci procentualni slevu objednavky 
+
+\begin{DoxyReturn}{Returns}
+nula
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_eshop_1_1_season}{Eshop.\+Season}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Me/source/repos/\+A2\+O\+P\+N/\+Eshop/\+Eshop/\+Seasons/Spring.\+cs\end{DoxyCompactItemize}

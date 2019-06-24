@@ -1,0 +1,202 @@
+\hypertarget{class_eshop_1_1_message}{}\section{Eshop.\+Message Class Reference}
+\label{class_eshop_1_1_message}\index{Eshop.Message@{Eshop.Message}}
+
+
+Trida slouzi k vyvolani informacnich, varovnich, chybovych zprav v reakci na akce uzivatele  
+
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_eshop_1_1_message_ac09dfcff0e3dd57daf5201b4dc067628}{Invalid\+Password\+Warning}} ()
+\begin{DoxyCompactList}\small\item\em Chybova zprava o zadani spatneho hesla administratora \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_eshop_1_1_message_ad267192472e20da18e864fb0b9ff99c7}{Invalid\+Credentials\+Warning}} ()
+\begin{DoxyCompactList}\small\item\em Chybova zprava o zadani spatnych prihlasovacich udaju zakaznika \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_eshop_1_1_message_a5f220c2649c5747b92eacf54ec271a24}{Quantity\+Format\+Warning}} ()
+\begin{DoxyCompactList}\small\item\em Chybove varovani o zadani spatneho formatu cisla do pole \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_eshop_1_1_message_a22381f9edb7f12ad6f3ec13db3c19409}{Null\+Quantity\+Warning}} ()
+\begin{DoxyCompactList}\small\item\em Chybove varovani o zadani nulove kvantity \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_eshop_1_1_message_abf2f3c2c283038881294ed1837cc96dd}{Invalid\+Entries\+Warning}} ()
+\begin{DoxyCompactList}\small\item\em Chybove varovani o nespravne zadanych udajech \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_eshop_1_1_message_aa0408274ba9f49a4083f9b92e0750613}{Email\+Registered\+Warning}} ()
+\begin{DoxyCompactList}\small\item\em Chybova zprava pri registraci -\/ email je jiz registrovan \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_eshop_1_1_message_ad51bfaf42591c9b99562d18493cd0941}{Registration\+Success\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Informace o uspesne registraci \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_eshop_1_1_message_adaf1da11f78e3212111dc58cf2ac34bb}{Registration\+To\+Order\+Success\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Informace o uspesne registraci v procesu objednavani \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_eshop_1_1_message_aa6688b49480807d22a54941fd213fd97}{Login\+Success\+Info}} (\mbox{\hyperlink{class_eshop_1_1_customer}{Customer}} logged\+In)
+\begin{DoxyCompactList}\small\item\em Informace o prihlaseni uzivatele \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_eshop_1_1_message_a30072f121d6e675a3a811155c6e255c1}{Created\+Order\+Succes\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Informace o uspesnem vytvoreni objednavky \end{DoxyCompactList}\item 
+static Dialog\+Result \mbox{\hyperlink{class_eshop_1_1_message_a61bf9f2dade0aae2da655784c9527206}{Login\+New\+Customer\+Question}} ()
+\begin{DoxyCompactList}\small\item\em Otazka na akci prihlaseni pod jinym uctem \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_eshop_1_1_message_a4e2447f5c0bab152ff87165a878b0682}{Order\+State\+Change\+Info}} (string state)
+\begin{DoxyCompactList}\small\item\em Informace o zmene stavu objednavky administratorem \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_eshop_1_1_message_a39bfc2274d5690fd3c70f213fa048651}{Invalid\+Entries\+Check}} (List$<$ Control $>$ entry\+Controls, Color color)
+\begin{DoxyCompactList}\small\item\em Overeni vyplneni udaju povinnych poli, oznaceni chybejicich udaju \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Trida slouzi k vyvolani informacnich, varovnich, chybovych zprav v reakci na akce uzivatele 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_eshop_1_1_message_a30072f121d6e675a3a811155c6e255c1}\label{class_eshop_1_1_message_a30072f121d6e675a3a811155c6e255c1}} 
+\index{Eshop.Message@{Eshop.Message}!CreatedOrderSuccesInfo@{CreatedOrderSuccesInfo}}
+\index{CreatedOrderSuccesInfo@{CreatedOrderSuccesInfo}!Eshop.Message@{Eshop.Message}}
+\subsubsection{\texorpdfstring{CreatedOrderSuccesInfo()}{CreatedOrderSuccesInfo()}}
+{\footnotesize\ttfamily static void Eshop.\+Message.\+Created\+Order\+Succes\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Informace o uspesnem vytvoreni objednavky 
+
+\mbox{\Hypertarget{class_eshop_1_1_message_aa0408274ba9f49a4083f9b92e0750613}\label{class_eshop_1_1_message_aa0408274ba9f49a4083f9b92e0750613}} 
+\index{Eshop.Message@{Eshop.Message}!EmailRegisteredWarning@{EmailRegisteredWarning}}
+\index{EmailRegisteredWarning@{EmailRegisteredWarning}!Eshop.Message@{Eshop.Message}}
+\subsubsection{\texorpdfstring{EmailRegisteredWarning()}{EmailRegisteredWarning()}}
+{\footnotesize\ttfamily static void Eshop.\+Message.\+Email\+Registered\+Warning (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Chybova zprava pri registraci -\/ email je jiz registrovan 
+
+\mbox{\Hypertarget{class_eshop_1_1_message_ad267192472e20da18e864fb0b9ff99c7}\label{class_eshop_1_1_message_ad267192472e20da18e864fb0b9ff99c7}} 
+\index{Eshop.Message@{Eshop.Message}!InvalidCredentialsWarning@{InvalidCredentialsWarning}}
+\index{InvalidCredentialsWarning@{InvalidCredentialsWarning}!Eshop.Message@{Eshop.Message}}
+\subsubsection{\texorpdfstring{InvalidCredentialsWarning()}{InvalidCredentialsWarning()}}
+{\footnotesize\ttfamily static void Eshop.\+Message.\+Invalid\+Credentials\+Warning (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Chybova zprava o zadani spatnych prihlasovacich udaju zakaznika 
+
+\mbox{\Hypertarget{class_eshop_1_1_message_a39bfc2274d5690fd3c70f213fa048651}\label{class_eshop_1_1_message_a39bfc2274d5690fd3c70f213fa048651}} 
+\index{Eshop.Message@{Eshop.Message}!InvalidEntriesCheck@{InvalidEntriesCheck}}
+\index{InvalidEntriesCheck@{InvalidEntriesCheck}!Eshop.Message@{Eshop.Message}}
+\subsubsection{\texorpdfstring{InvalidEntriesCheck()}{InvalidEntriesCheck()}}
+{\footnotesize\ttfamily static bool Eshop.\+Message.\+Invalid\+Entries\+Check (\begin{DoxyParamCaption}\item[{List$<$ Control $>$}]{entry\+Controls,  }\item[{Color}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Overeni vyplneni udaju povinnych poli, oznaceni chybejicich udaju 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entry\+Controls} & kolekce elementu k validaci\\
+\hline
+{\em color} & chybova barva\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true pokud jsou pole vyplnena, jinak false
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eshop_1_1_message_abf2f3c2c283038881294ed1837cc96dd}\label{class_eshop_1_1_message_abf2f3c2c283038881294ed1837cc96dd}} 
+\index{Eshop.Message@{Eshop.Message}!InvalidEntriesWarning@{InvalidEntriesWarning}}
+\index{InvalidEntriesWarning@{InvalidEntriesWarning}!Eshop.Message@{Eshop.Message}}
+\subsubsection{\texorpdfstring{InvalidEntriesWarning()}{InvalidEntriesWarning()}}
+{\footnotesize\ttfamily static void Eshop.\+Message.\+Invalid\+Entries\+Warning (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Chybove varovani o nespravne zadanych udajech 
+
+\mbox{\Hypertarget{class_eshop_1_1_message_ac09dfcff0e3dd57daf5201b4dc067628}\label{class_eshop_1_1_message_ac09dfcff0e3dd57daf5201b4dc067628}} 
+\index{Eshop.Message@{Eshop.Message}!InvalidPasswordWarning@{InvalidPasswordWarning}}
+\index{InvalidPasswordWarning@{InvalidPasswordWarning}!Eshop.Message@{Eshop.Message}}
+\subsubsection{\texorpdfstring{InvalidPasswordWarning()}{InvalidPasswordWarning()}}
+{\footnotesize\ttfamily static void Eshop.\+Message.\+Invalid\+Password\+Warning (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Chybova zprava o zadani spatneho hesla administratora 
+
+\mbox{\Hypertarget{class_eshop_1_1_message_a61bf9f2dade0aae2da655784c9527206}\label{class_eshop_1_1_message_a61bf9f2dade0aae2da655784c9527206}} 
+\index{Eshop.Message@{Eshop.Message}!LoginNewCustomerQuestion@{LoginNewCustomerQuestion}}
+\index{LoginNewCustomerQuestion@{LoginNewCustomerQuestion}!Eshop.Message@{Eshop.Message}}
+\subsubsection{\texorpdfstring{LoginNewCustomerQuestion()}{LoginNewCustomerQuestion()}}
+{\footnotesize\ttfamily static Dialog\+Result Eshop.\+Message.\+Login\+New\+Customer\+Question (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Otazka na akci prihlaseni pod jinym uctem 
+
+\begin{DoxyReturn}{Returns}
+odpoved na prihlaseni pod jinym uctem
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eshop_1_1_message_aa6688b49480807d22a54941fd213fd97}\label{class_eshop_1_1_message_aa6688b49480807d22a54941fd213fd97}} 
+\index{Eshop.Message@{Eshop.Message}!LoginSuccessInfo@{LoginSuccessInfo}}
+\index{LoginSuccessInfo@{LoginSuccessInfo}!Eshop.Message@{Eshop.Message}}
+\subsubsection{\texorpdfstring{LoginSuccessInfo()}{LoginSuccessInfo()}}
+{\footnotesize\ttfamily static void Eshop.\+Message.\+Login\+Success\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eshop_1_1_customer}{Customer}}}]{logged\+In }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Informace o prihlaseni uzivatele 
+
+
+\begin{DoxyParams}{Parameters}
+{\em logged\+In} & prihlaseny uzivatel\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eshop_1_1_message_a22381f9edb7f12ad6f3ec13db3c19409}\label{class_eshop_1_1_message_a22381f9edb7f12ad6f3ec13db3c19409}} 
+\index{Eshop.Message@{Eshop.Message}!NullQuantityWarning@{NullQuantityWarning}}
+\index{NullQuantityWarning@{NullQuantityWarning}!Eshop.Message@{Eshop.Message}}
+\subsubsection{\texorpdfstring{NullQuantityWarning()}{NullQuantityWarning()}}
+{\footnotesize\ttfamily static void Eshop.\+Message.\+Null\+Quantity\+Warning (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Chybove varovani o zadani nulove kvantity 
+
+\mbox{\Hypertarget{class_eshop_1_1_message_a4e2447f5c0bab152ff87165a878b0682}\label{class_eshop_1_1_message_a4e2447f5c0bab152ff87165a878b0682}} 
+\index{Eshop.Message@{Eshop.Message}!OrderStateChangeInfo@{OrderStateChangeInfo}}
+\index{OrderStateChangeInfo@{OrderStateChangeInfo}!Eshop.Message@{Eshop.Message}}
+\subsubsection{\texorpdfstring{OrderStateChangeInfo()}{OrderStateChangeInfo()}}
+{\footnotesize\ttfamily static void Eshop.\+Message.\+Order\+State\+Change\+Info (\begin{DoxyParamCaption}\item[{string}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Informace o zmene stavu objednavky administratorem 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & novy stav objednavky\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eshop_1_1_message_a5f220c2649c5747b92eacf54ec271a24}\label{class_eshop_1_1_message_a5f220c2649c5747b92eacf54ec271a24}} 
+\index{Eshop.Message@{Eshop.Message}!QuantityFormatWarning@{QuantityFormatWarning}}
+\index{QuantityFormatWarning@{QuantityFormatWarning}!Eshop.Message@{Eshop.Message}}
+\subsubsection{\texorpdfstring{QuantityFormatWarning()}{QuantityFormatWarning()}}
+{\footnotesize\ttfamily static void Eshop.\+Message.\+Quantity\+Format\+Warning (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Chybove varovani o zadani spatneho formatu cisla do pole 
+
+\mbox{\Hypertarget{class_eshop_1_1_message_ad51bfaf42591c9b99562d18493cd0941}\label{class_eshop_1_1_message_ad51bfaf42591c9b99562d18493cd0941}} 
+\index{Eshop.Message@{Eshop.Message}!RegistrationSuccessInfo@{RegistrationSuccessInfo}}
+\index{RegistrationSuccessInfo@{RegistrationSuccessInfo}!Eshop.Message@{Eshop.Message}}
+\subsubsection{\texorpdfstring{RegistrationSuccessInfo()}{RegistrationSuccessInfo()}}
+{\footnotesize\ttfamily static void Eshop.\+Message.\+Registration\+Success\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Informace o uspesne registraci 
+
+\mbox{\Hypertarget{class_eshop_1_1_message_adaf1da11f78e3212111dc58cf2ac34bb}\label{class_eshop_1_1_message_adaf1da11f78e3212111dc58cf2ac34bb}} 
+\index{Eshop.Message@{Eshop.Message}!RegistrationToOrderSuccessInfo@{RegistrationToOrderSuccessInfo}}
+\index{RegistrationToOrderSuccessInfo@{RegistrationToOrderSuccessInfo}!Eshop.Message@{Eshop.Message}}
+\subsubsection{\texorpdfstring{RegistrationToOrderSuccessInfo()}{RegistrationToOrderSuccessInfo()}}
+{\footnotesize\ttfamily static void Eshop.\+Message.\+Registration\+To\+Order\+Success\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Informace o uspesne registraci v procesu objednavani 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Me/source/repos/\+A2\+O\+P\+N/\+Eshop/\+Eshop/\+Internals/Message.\+cs\end{DoxyCompactItemize}

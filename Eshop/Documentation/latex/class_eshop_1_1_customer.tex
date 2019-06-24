@@ -1,0 +1,154 @@
+\hypertarget{class_eshop_1_1_customer}{}\section{Eshop.\+Customer Class Reference}
+\label{class_eshop_1_1_customer}\index{Eshop.Customer@{Eshop.Customer}}
+
+
+Trida reprezentuje zakaznika s jeho parametry ulozeneho v databaze. Slouzi k abstrakci prihlasovani, vytvareni noveho zakaznika a vyuziti udaju zakaznika k sestaveni detailu objednavky  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_eshop_1_1_customer_a3669e0d15cd58f46f81b9b22153feb9f}{Customer}} (string name, string last\+Name, int mobile\+Phone, string city, string street, string house\+Number, string postal\+Code, string email, string password, int id=-\/1)
+\begin{DoxyCompactList}\small\item\em Konsruktor zakaznika \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eshop_1_1_customer_aabd2fbc8a9b8353e07fb7ad191464ef1}{Load\+This\+Customer\+ID}} ()
+\begin{DoxyCompactList}\small\item\em Priradi zakaznikovi jeho ID hodnotu z databaze \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const string \mbox{\hyperlink{class_eshop_1_1_customer_aaca79a11328569acabc8e6441b103ef3}{Table\+Name}} = \char`\"{}Customer\char`\"{}
+\begin{DoxyCompactList}\small\item\em nazvy sloupcu v tabulce \mbox{\hyperlink{class_eshop_1_1_customer}{Customer}} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_eshop_1_1_customer_abb04c779dfa3b713a7fafb3ddf807d7c}\label{class_eshop_1_1_customer_abb04c779dfa3b713a7fafb3ddf807d7c}} 
+const string {\bfseries I\+D\+Column} = \char`\"{}Customer\+ID\char`\"{}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_customer_af517f2f1bc96aba4d2e4e867555987aa}\label{class_eshop_1_1_customer_af517f2f1bc96aba4d2e4e867555987aa}} 
+const string {\bfseries Name\+Column} = \char`\"{}Name\char`\"{}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_customer_ab91f8edc3914e3990ae4dcb453f436b2}\label{class_eshop_1_1_customer_ab91f8edc3914e3990ae4dcb453f436b2}} 
+const string {\bfseries Last\+Name\+Column} = \char`\"{}Last\+Name\char`\"{}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_customer_a32fda7274c27318ed505f576108b2cb9}\label{class_eshop_1_1_customer_a32fda7274c27318ed505f576108b2cb9}} 
+const string {\bfseries Phone\+Column} = \char`\"{}Phone\char`\"{}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_customer_a555a8c9409216b4855feedf680e7e839}\label{class_eshop_1_1_customer_a555a8c9409216b4855feedf680e7e839}} 
+const string {\bfseries City\+Column} = \char`\"{}City\char`\"{}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_customer_af6bdf0ba31f125faf1b4f5f037bddc4a}\label{class_eshop_1_1_customer_af6bdf0ba31f125faf1b4f5f037bddc4a}} 
+const string {\bfseries Street\+Column} = \char`\"{}Street\char`\"{}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_customer_ae9fe58147ecb7e0d93b41b53b7442cf8}\label{class_eshop_1_1_customer_ae9fe58147ecb7e0d93b41b53b7442cf8}} 
+const string {\bfseries House\+Number\+Column} = \char`\"{}House\+Number\char`\"{}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_customer_a2816d9e395d34978e3e46736521d5bea}\label{class_eshop_1_1_customer_a2816d9e395d34978e3e46736521d5bea}} 
+const string {\bfseries Postal\+Code\+Column} = \char`\"{}Postal\+Code\char`\"{}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_customer_a8ec3b9bf48844f7cc29b31a4f37d56dd}\label{class_eshop_1_1_customer_a8ec3b9bf48844f7cc29b31a4f37d56dd}} 
+const string {\bfseries Email\+Column} = \char`\"{}Email\char`\"{}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_customer_af6ec21a2a9e7cf668c918a79aae5b844}\label{class_eshop_1_1_customer_af6ec21a2a9e7cf668c918a79aae5b844}} 
+const string {\bfseries Password\+Column} = \char`\"{}Password\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_customer_acd998d6bb84da19f1455b747d9977576}\label{class_eshop_1_1_customer_acd998d6bb84da19f1455b747d9977576}} 
+int {\bfseries ID}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_customer_a665ecb43cb3758647854a2a63f65ec1b}\label{class_eshop_1_1_customer_a665ecb43cb3758647854a2a63f65ec1b}} 
+string {\bfseries Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_customer_af0f6170772a27802d456f38ad59d0ded}\label{class_eshop_1_1_customer_af0f6170772a27802d456f38ad59d0ded}} 
+string {\bfseries Last\+Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_customer_ab317385f59909a521a61f60badf5ed4d}\label{class_eshop_1_1_customer_ab317385f59909a521a61f60badf5ed4d}} 
+int {\bfseries Mobile\+Phone}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_customer_a5627de1480bf140bf4c28fb54a1b26a1}\label{class_eshop_1_1_customer_a5627de1480bf140bf4c28fb54a1b26a1}} 
+string {\bfseries City}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_customer_a4b1339d69d3b9a26cf96b949dabc4cdc}\label{class_eshop_1_1_customer_a4b1339d69d3b9a26cf96b949dabc4cdc}} 
+string {\bfseries Street}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_customer_ad303179357ff1fdf1755ed8995f5e288}\label{class_eshop_1_1_customer_ad303179357ff1fdf1755ed8995f5e288}} 
+string {\bfseries House\+Number}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_customer_a52433054ee1e816cacfbcdacc80b6633}\label{class_eshop_1_1_customer_a52433054ee1e816cacfbcdacc80b6633}} 
+string {\bfseries Postal\+Code}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_customer_a92ecc9ed6396ec5890d3594b059b8a97}\label{class_eshop_1_1_customer_a92ecc9ed6396ec5890d3594b059b8a97}} 
+string {\bfseries Email}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_eshop_1_1_customer_a9dc6b3b015d979610e7c86b31d3183f5}\label{class_eshop_1_1_customer_a9dc6b3b015d979610e7c86b31d3183f5}} 
+string {\bfseries Password}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Trida reprezentuje zakaznika s jeho parametry ulozeneho v databaze. Slouzi k abstrakci prihlasovani, vytvareni noveho zakaznika a vyuziti udaju zakaznika k sestaveni detailu objednavky 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_eshop_1_1_customer_a3669e0d15cd58f46f81b9b22153feb9f}\label{class_eshop_1_1_customer_a3669e0d15cd58f46f81b9b22153feb9f}} 
+\index{Eshop.Customer@{Eshop.Customer}!Customer@{Customer}}
+\index{Customer@{Customer}!Eshop.Customer@{Eshop.Customer}}
+\subsubsection{\texorpdfstring{Customer()}{Customer()}}
+{\footnotesize\ttfamily Eshop.\+Customer.\+Customer (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{string}]{last\+Name,  }\item[{int}]{mobile\+Phone,  }\item[{string}]{city,  }\item[{string}]{street,  }\item[{string}]{house\+Number,  }\item[{string}]{postal\+Code,  }\item[{string}]{email,  }\item[{string}]{password,  }\item[{int}]{id = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+
+
+Konsruktor zakaznika 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & jmeno\\
+\hline
+{\em last\+Name} & prijmeni\\
+\hline
+{\em mobile\+Phone} & telefon\\
+\hline
+{\em city} & mesto\\
+\hline
+{\em street} & ulica\\
+\hline
+{\em house\+Number} & cislo domu\\
+\hline
+{\em postal\+Code} & postove smerove cislo\\
+\hline
+{\em email} & email\\
+\hline
+{\em password} & heslo\\
+\hline
+{\em id} & identifikacni cislo\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_eshop_1_1_customer_aabd2fbc8a9b8353e07fb7ad191464ef1}\label{class_eshop_1_1_customer_aabd2fbc8a9b8353e07fb7ad191464ef1}} 
+\index{Eshop.Customer@{Eshop.Customer}!LoadThisCustomerID@{LoadThisCustomerID}}
+\index{LoadThisCustomerID@{LoadThisCustomerID}!Eshop.Customer@{Eshop.Customer}}
+\subsubsection{\texorpdfstring{LoadThisCustomerID()}{LoadThisCustomerID()}}
+{\footnotesize\ttfamily void Eshop.\+Customer.\+Load\+This\+Customer\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Priradi zakaznikovi jeho ID hodnotu z databaze 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_eshop_1_1_customer_aaca79a11328569acabc8e6441b103ef3}\label{class_eshop_1_1_customer_aaca79a11328569acabc8e6441b103ef3}} 
+\index{Eshop.Customer@{Eshop.Customer}!TableName@{TableName}}
+\index{TableName@{TableName}!Eshop.Customer@{Eshop.Customer}}
+\subsubsection{\texorpdfstring{TableName}{TableName}}
+{\footnotesize\ttfamily const string Eshop.\+Customer.\+Table\+Name = \char`\"{}Customer\char`\"{}}
+
+
+
+nazvy sloupcu v tabulce \mbox{\hyperlink{class_eshop_1_1_customer}{Customer}} 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Me/source/repos/\+A2\+O\+P\+N/\+Eshop/\+Eshop/\+Entities/Customer.\+cs\end{DoxyCompactItemize}
